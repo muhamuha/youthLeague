@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.zzdpush.dao.ds1.HhlZzdKpiMapper">
+    
+    <resultMap type="com.wzxc.zzdpush.vo.HhlZzdKpi" id="HhlZzdKpiResult">
+        <result property="id"    column="id"    />
+        <result property="kpiName"    column="kpi_name"    />
+        <result property="kpiId"    column="kpi_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="status"    column="status"    />
+    </resultMap>
+
+    <sql id="selectHhlZzdKpiVo">
+        select id, kpi_name, kpi_id, create_time, status from hhl_zzd_kpi
+    </sql>
+
+    <select id="selectHhlZzdKpiList" parameterType="HhlZzdKpi" resultMap="HhlZzdKpiResult">
+        <include refid="selectHhlZzdKpiVo"/>
+        <where>  
+            <if test="kpiName != null  and kpiName != ''"> and kpi_name like concat('%', #{kpiName}, '%')</if>
+            <if test="status != null "> and status = #{status}</if>
+        </where>
+    </select>
+    
+    <select id="selectHhlZzdKpiById" parameterType="Integer" resultMap="HhlZzdKpiResult">
+        <include refid="selectHhlZzdKpiVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertHhlZzdKpi" parameterType="HhlZzdKpi" useGeneratedKeys="true" keyProperty="id">
+        insert into hhl_zzd_kpi
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="kpiName != null">kpi_name,</if>
+            create_time, status
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="kpiName != null">#{kpiName},</if>
+            sysdate(), 1
+         </trim>
+    </insert>
+
+    <update id="updateHhlZzdKpi" parameterType="HhlZzdKpi">
+        update hhl_zzd_kpi
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="kpiName != null">kpi_name = #{kpiName},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteHhlZzdKpiById" parameterType="Integer">
+        UPDATE hhl_zzd_kpi SET status = 0 WHERE id = #{id}
+    </delete>
+
+    <delete id="deleteHhlZzdKpiByIds" parameterType="String">
+        UPDATE hhl_zzd_kpi SET status = 0 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

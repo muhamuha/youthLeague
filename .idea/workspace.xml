@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="zzd" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/config/Ds2Config.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/text/Convert.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/uuid/UUID.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/AddressUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/sql/SqlUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/ZzdPushApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/StringUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/service/impl/HhlZzdPushTemplateServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/mapper/system/ds1/HhlZzdPushHisProcessMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/utils/IndicatorUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/utils/JwtUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/application-prod.yaml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelGroupRepServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/MapDataUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/DateUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/uuid/IdUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/controller/HhlZzdPushTemplateController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/PolicyBaseInfoRepMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/Check.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/LabelBaseInfoRepMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/GroupBaseInfoRepMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/servlet/KbengineRequestWrapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/page/TableSupport.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/Aspect/CheckParamAop.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/IpUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/config/Ds1Config.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/TkPolicyRepMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/domain/AjaxResult.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/CheckUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/RefLabelRepMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/PolicyBaseInfoRep.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/security/Md5Utils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/GroupBaseInfoRep.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/mapper/system/ds1/HhlZzdPushTemplateMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/http/HttpUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/service/impl/HhlZzdIndicatorServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/mapper/system/ds2/HhlZzdIndicatorMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application-test.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/vo/TemplateContent.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/utils/JodaUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/TkPolicyController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/xss/XssHttpServletRequestWrapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/reflect/ReflectUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/controller/HhlZzdApiController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application-prod.yaml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/controller/BaseController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/constant/Constants.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/xss/XssFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/exception/MyExceptionFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/json/JSONObject.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelBaseInfoRepServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/config/RuoYiConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/controller/HhlZzdPushHisController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/GroupBaseInfoRepServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/LabelGroupRepMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/GroupBaseInfoRepController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/LabelBaseInfoRepController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/PolicyBaseInfoRepController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/ExceptionUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/service/impl/HhlZzdPushHisServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/TkPolicyRepServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/RefLabelRepServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/mapper/system/ds1/HhlZzdPushHisMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/config/Ds1Config.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/PolicyBaseInfoRepServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/shiro/ShiroConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/service/impl/HhlZzdPushUserServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/RequestIdUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/domain/KbengineResult.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/exception/MyExceptionHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/config/Ds3Config.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/mapper/system/ds1/HhlZzdKpiMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ImageUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/aspect/ChangeLogAspect.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/PolicyFileRepMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/text/CharsetKit.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/FileUploadUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/service/impl/HhlZzdKpiServiceImpl.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="C:\Maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1nuGogwbNSfLkilaZnbqzOtOmyX" />
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\static" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\mapper" />
+      <recent name="C:\javaProject\zzd\zzd-push\src\main\resources\mapper\system\ds1" />
+      <recent name="C:\javaProject\zzd\zzd-common\src\main" />
+      <recent name="C:\javaProject\zzd\zzd-push\src\main\resources\jar" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wzxc.zzdpush.utils" />
+      <recent name="com.wzxc.kbengine.Aspect" />
+      <recent name="com.wzxc.common.core.page" />
+      <recent name="com.wzxc.kbengine.shiro" />
+      <recent name="com.wzxc.common.core.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\mapper\system\ds1" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\dao\ds1" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service\impl" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\vo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.KbEngineApplication">
+    <configuration name="IdUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wzxc.common.utils.uuid.IdUtils" />
+      <module name="zzd-common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wzxc.common.utils.uuid.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolicyBaseInfoRepController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wzxc.kbengine.controller.PolicyBaseInfoRepController" />
+      <module name="kb-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wzxc.kbengine.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KbEngineApplicationTests.fun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kb-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wzxc.kbengine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wzxc.kbengine" />
+      <option name="MAIN_CLASS_NAME" value="com.wzxc.kbengine.KbEngineApplicationTests" />
+      <option name="METHOD_NAME" value="fun" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KbEngineApplicationTests.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kb-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wzxc.kbengine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wzxc.kbengine" />
+      <option name="MAIN_CLASS_NAME" value="com.wzxc.kbengine.KbEngineApplicationTests" />
+      <option name="METHOD_NAME" value="fun1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KbEngineApplicationTests.fun2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kb-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wzxc.kbengine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wzxc.kbengine" />
+      <option name="MAIN_CLASS_NAME" value="com.wzxc.kbengine.KbEngineApplicationTests" />
+      <option name="METHOD_NAME" value="fun2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kb-engine" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.kbengine.KbEngineApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KbEngineApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kb-engine" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.kbengine.KbEngineApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="web-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.webservice.WebServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZzdPushApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zzd-push" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.zzdpush.ZzdPushApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.IdUtils" />
+      <item itemvalue="Application.PolicyBaseInfoRepController" />
+      <item itemvalue="JUnit.KbEngineApplicationTests.fun" />
+      <item itemvalue="JUnit.KbEngineApplicationTests.fun1" />
+      <item itemvalue="JUnit.KbEngineApplicationTests.fun2" />
+      <item itemvalue="Spring Boot.Demo1Application" />
+      <item itemvalue="Spring Boot.ZzdPushApplication" />
+      <item itemvalue="Spring Boot.KbEngineApplication" />
+      <item itemvalue="Spring Boot.WebServiceApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.KbEngineApplicationTests.fun1" />
+        <item itemvalue="JUnit.KbEngineApplicationTests.fun2" />
+        <item itemvalue="JUnit.KbEngineApplicationTests.fun" />
+        <item itemvalue="Application.PolicyBaseInfoRepController" />
+        <item itemvalue="Application.IdUtils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpringBootOptions">
+    <option name="showAdditionalConfigNotification" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="" />
+      <created>1612232738047</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612232738047</updated>
+      <workItem from="1612232742980" duration="15693000" />
+      <workItem from="1612312632246" duration="14950000" />
+      <workItem from="1612350859115" duration="8102000" />
+      <workItem from="1612399163616" duration="18326000" />
+      <workItem from="1612485938326" duration="8495000" />
+      <workItem from="1612626575470" duration="4062000" />
+      <workItem from="1612658319297" duration="20504000" />
+      <workItem from="1612744818616" duration="24339000" />
+      <workItem from="1612831195835" duration="4817000" />
+      <workItem from="1613021969639" duration="888000" />
+      <workItem from="1613133859642" duration="365000" />
+      <workItem from="1613608522660" duration="21504000" />
+      <workItem from="1613695099501" duration="25592000" />
+      <workItem from="1613781720939" duration="23254000" />
+      <workItem from="1613954980592" duration="22876000" />
+      <workItem from="1613988326601" duration="1169000" />
+      <workItem from="1614040567965" duration="22828000" />
+      <workItem from="1614126720187" duration="4761000" />
+      <workItem from="1614213553801" duration="17907000" />
+      <workItem from="1614299557030" duration="595000" />
+      <workItem from="1614322578211" duration="4247000" />
+      <workItem from="1614655511185" duration="2453000" />
+      <workItem from="1614673438858" duration="2431000" />
+      <workItem from="1614753934879" duration="2062000" />
+      <workItem from="1614819431016" duration="1732000" />
+      <workItem from="1614905349147" duration="3724000" />
+      <workItem from="1615185798445" duration="3641000" />
+      <workItem from="1615252533533" duration="1751000" />
+      <workItem from="1615338496066" duration="4999000" />
+      <workItem from="1615424237172" duration="23489000" />
+      <workItem from="1615513331274" duration="23162000" />
+      <workItem from="1615704665761" duration="10684000" />
+      <workItem from="1615771229200" duration="28949000" />
+      <workItem from="1615858007079" duration="44192000" />
+      <workItem from="1615943351297" duration="30743000" />
+      <workItem from="1615995854553" duration="6228000" />
+      <workItem from="1616030746326" duration="3136000" />
+      <workItem from="1616034829952" duration="630000" />
+      <workItem from="1616036095015" duration="1403000" />
+      <workItem from="1616037836582" duration="17509000" />
+      <workItem from="1616116223505" duration="20289000" />
+      <workItem from="1616309169646" duration="6801000" />
+      <workItem from="1616325813790" duration="2490000" />
+      <workItem from="1616374855652" duration="17762000" />
+      <workItem from="1616462183944" duration="8092000" />
+      <workItem from="1616479414399" duration="15800000" />
+      <workItem from="1616514786275" duration="3599000" />
+      <workItem from="1616548327597" duration="19351000" />
+      <workItem from="1616635650912" duration="14965000" />
+      <workItem from="1616721013296" duration="7635000" />
+      <workItem from="1616920783447" duration="3139000" />
+      <workItem from="1616981441391" duration="8331000" />
+      <workItem from="1617071367758" duration="594000" />
+      <workItem from="1617157756390" duration="7008000" />
+      <workItem from="1617262454859" duration="1213000" />
+      <workItem from="1617328545922" duration="5404000" />
+      <workItem from="1617469050586" duration="450000" />
+      <workItem from="1617761869386" duration="356000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/utils/IndicatorUtil.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/shiro/JwtFilter.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="apiResult" />
+        <watch expression="postClient.postRequest.signature.parameter.entrySet().toArray()[0]" />
+        <watch expression="postClient" />
+        <watch expression="orgCodeSet.toArray()[2]" />
+        <watch expression="orgCodeSet.toArray()[3]" />
+        <watch expression="hhlZzdPushTemplateParents.get(2)" />
+        <watch expression="emList.get(19)" />
+        <watch expression="emList.get(19)" language="JAVA" />
+        <watch expression="documentation" />
+        <watch expression="swagger" />
+        <watch expression="((java.util.ArrayList)((Operation)((Path)((TreeMap.Entry)((TreeMap)swagger.paths).entrySet().toArray()[10]).getValue()).post).parameters).get(0)" custom="java.util.TreeMap,java.util.TreeMap.Entry,java.util.ArrayList,io.swagger.models.Path,io.swagger.models.Operation" />
+        <watch expression="((TreeMap)((TreeMultimap)apiListings).map).entrySet().toArray()[4]" custom="com.google.common.collect.TreeMultimap,java.util.TreeMap" />
+        <watch expression="((java.util.ArrayList)((Operation)((Path)((TreeMap.Entry)((TreeMap)swagger.paths).entrySet().toArray()[10]).getValue()).post).parameters).get(0)" custom="java.util.TreeMap,java.util.TreeMap.Entry,java.util.ArrayList,io.swagger.models.Path,io.swagger.models.Operation" />
+        <watch expression="((TreeMultimap)apiListings).values" custom="com.google.common.collect.TreeMultimap" />
+        <watch expression="documentation" />
+        <watch expression="documentation" language="JAVA" />
+        <watch expression="this" />
+        <watch expression="listingContext.documentationContext" />
+        <watch expression="((RequestMappingContext)((com.google.common.collect.AbstractMapBasedMultimap.RandomAccessWrappedList)((com.google.common.collect.ImmutableEntry)((com.google.common.collect.AbstractMapBasedMultimap.AsMap)listingContext.requestMappingsByResourceGroup).entrySet().toArray()[4]).getValue()).get(0)).handler" custom="springfox.documentation.spi.service.contexts.RequestMappingContext,com.google.common.collect.AbstractMapBasedMultimap.RandomAccessWrappedList,com.google.common.collect.ImmutableEntry,com.google.common.collect.AbstractMapBasedMultimap.AsMap" />
+        <watch expression="context" />
+        <watch expression="resourceListing.apis.get(0).path" />
+        <watch expression="((java.util.ArrayList)((Operation)((Path)((TreeMap.Entry)((TreeMap)swagger.paths).entrySet().toArray()[10]).getValue()).post).parameters).get(0)" custom="java.util.TreeMap,java.util.TreeMap.Entry,java.util.ArrayList,io.swagger.models.Path,io.swagger.models.Operation" />
+        <watch expression="((HashMap.Node)((com.alibaba.fastjson.JSONObject)((com.alibaba.fastjson.JSONArray)((HashMap.Node)((com.alibaba.fastjson.JSONObject)((HashMap.Node)jsonObject.entrySet().toArray()[0]).getValue()).entrySet().toArray()[1]).getValue()).get(0)).entrySet().toArray()[0]).getValue()" custom="com.alibaba.fastjson.JSONObject,java.util.HashMap.Node,com.alibaba.fastjson.JSONArray" />
+        <watch expression="((com.alibaba.fastjson.JSONObject)((HashMap.Node)jsonObject.entrySet().toArray()[0]).getValue()).entrySet().toArray()[1]" custom="com.alibaba.fastjson.JSONObject,java.util.HashMap.Node" />
+        <watch expression="((com.alibaba.fastjson.JSONObject)((HashMap.Node)jsonObject.entrySet().toArray()[0]).getValue()).entrySet().toArray()[1]" custom="com.alibaba.fastjson.JSONObject,java.util.HashMap.Node" />
+        <watch expression="((com.alibaba.fastjson.JSONObject)((HashMap.Node)jsonObject.entrySet().toArray()[0]).getValue()).entrySet().toArray()[1]" custom="com.alibaba.fastjson.JSONObject,java.util.HashMap.Node" />
+        <watch expression="((com.alibaba.fastjson.JSONObject)((HashMap.Node)jsonObject.entrySet().toArray()[0]).getValue()).entrySet().toArray()[1]" custom="com.alibaba.fastjson.JSONObject,java.util.HashMap.Node" />
+        <watch expression="((com.alibaba.fastjson.JSONObject)((HashMap.Node)jsonObject.entrySet().toArray()[0]).getValue()).entrySet().toArray()[1]" custom="com.alibaba.fastjson.JSONObject,java.util.HashMap.Node" />
+        <watch expression="((com.alibaba.fastjson.JSONObject)((HashMap.Node)jsonObject.entrySet().toArray()[0]).getValue()).entrySet().toArray()[2]" custom="com.alibaba.fastjson.JSONObject,java.util.HashMap.Node" />
+        <watch expression="hhlZzdIndicator" />
+      </configuration>
+      <configuration name="Application">
+        <watch expression="((HttpURLConnection)urlConnection).http" custom="sun.net.www.protocol.http.HttpURLConnection" />
+        <watch expression="((Collections.UnmodifiableMap.UnmodifiableEntrySet.UnmodifiableEntry)((Collections.UnmodifiableMap)headerFields).entrySet().toArray()[5]).getValue()" custom="java.util.Collections.UnmodifiableMap.UnmodifiableEntrySet.UnmodifiableEntry,java.util.Collections.UnmodifiableMap" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

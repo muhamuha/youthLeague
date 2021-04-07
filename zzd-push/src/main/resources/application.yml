@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: prod
+#    active: dev
+
+mybatis:
+  mapper-locations: classpath:mapper/system/**/*.xml  # 注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.wzxc.zzdpush.vo  # 注意：对应实体类的路径
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      wzxc:
+        zzdpush:
+          dao: debug
+
+swagger:
+  enabled: true
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+
+zzd:
+  name: 浙政钉开发系统
+  version: v1.0.0
+
+jwt:
+  secret: WKcIR5%vPHiOAKn8
+  principals: zzd-push
+
+

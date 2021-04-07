@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.zzdpush.dao.ds1.HhlZzdPushTemplateMapper">
+    
+    <resultMap type="com.wzxc.zzdpush.vo.HhlZzdPushTemplateParent" id="HhlZzdPushTemplateParentResult">
+        <result property="id"    column="id"    />
+        <result property="templateName"    column="template_name"    />
+        <result property="status"    column="status"    />
+        <result property="parentId"    column="parent_id"    />
+        <result property="contentTemplate"    column="content"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="isKpi"    column="is_kpi"    />
+        <result property="sort"    column="sort"    />
+        <result property="templateNameSearch"    column="templateNameSearch"    />
+        <result property="contentSearch"    column="contentSearch"    />
+        <collection property="sonList" javaType="java.util.ArrayList" ofType="com.wzxc.zzdpush.vo.HhlZzdPushTemplate"
+                    select="com.wzxc.zzdpush.dao.ds1.HhlZzdPushTemplateMapper.selectSonList" column="{parentId=id, templateName=templateNameSearch, content=contentSearch, parentIdSearch=parentIdSearch}" />
+    </resultMap>
+
+    <resultMap type="com.wzxc.zzdpush.vo.HhlZzdPushTemplate" id="HhlZzdPushTemplateResult">
+        <result property="id"    column="id"    />
+        <result property="templateName"    column="template_name"    />
+        <result property="status"    column="status"    />
+        <result property="parentId"    column="parent_id"    />
+        <result property="contentTemplate"    column="content"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="isKpi"    column="is_kpi"    />
+        <result property="sort"    column="sort"    />
+    </resultMap>
+
+    <sql id="selectHhlZzdPushTemplateVo">
+        select id, template_name, status, parent_id, content, create_time, sort, is_kpi
+        from hhl_zzd_push_template
+    </sql>
+
+    <!--  获取所有的大类 + 对应指标  -->
+    <select id="selectHhlZzdPushTemplateList" parameterType="HhlZzdPushTemplate" resultMap="HhlZzdPushTemplateParentResult">
+        select id, template_name, status, parent_id, content, create_time, sort, is_kpi,
+        case when #{templateName} IS NULL then NULL else #{templateName} end as templateNameSearch,
+        case when #{parentId} IS NULL then NULL else #{parentId} end as parentIdSearch,
+        case when #{content} IS NULL then NULL else #{content} end as contentSearch
+        from hhl_zzd_push_template
+        <where>
+            parent_id = 0 and status = 1
+        </where>
+        order by sort
+    </select>
+
+<!--  获取所有子结点  -->
+    <select id="selectSonList" resultMap="HhlZzdPushTemplateResult">
+        <include refid="selectHhlZzdPushTemplateVo"/>
+        <where>
+            <if test="templateName != null  and templateName != ''"> and template_name like concat('%', #{templateName}, '%')</if>
+            <if test="content != null  and content != ''"> and content like concat('%', #{content}, '%')</if>
+            <if test="parentIdSearch != null"> and parent_id = #{parentIdSearch}</if>
+             and is_kpi = 1
+             and parent_id = #{parentId}
+             and status = 1
+        </where>
+        order by sort
+    </select>
+    
+    <select id="selectHhlZzdPushTemplateById" parameterType="String" resultMap="HhlZzdPushTemplateResult">
+        <include refid="selectHhlZzdPushTemplateVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertHhlZzdPushTemplate" parameterType="HhlZzdPushTemplate">
+        insert into hhl_zzd_push_template
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="templateName != null">template_name,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="content != null">content,</if>
+            create_time, sort, is_kpi, status
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="templateName != null">#{templateName},</if>
+            <if test="parentId != null">#{parentId},</if>
+            <if test="content != null">#{content},</if>
+            sysdate(), (select max(a.sort) + 1 from (select sort, parent_id, is_kpi from hhl_zzd_push_template) a where a.parent_id = #{parentId} and a.is_kpi = 1), 1, 1
+         </trim>
+    </insert>
+
+    <update id="updateHhlZzdPushTemplate" parameterType="HhlZzdPushTemplate">
+        update hhl_zzd_push_template
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="templateName != null">template_name = #{templateName},</if>
+            <if test="parentId != null">parent_id = #{parentId},</if>
+            <if test="content != null">content = #{content},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <update id="deleteHhlZzdPushTemplateById" parameterType="String">
+        update hhl_zzd_push_template set status = 0 where id = #{id}
+    </update>
+
+    <update id="deleteHhlZzdPushTemplateByIds" parameterType="String">
+        update hhl_zzd_push_template set status = 0 where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+</mapper>

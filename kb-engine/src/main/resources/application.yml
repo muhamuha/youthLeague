@@ -1,0 +1,35 @@
+spring:
+  profiles:
+#    active: prod
+#    active: dev
+    active: test
+  servlet:
+    multipart:
+      max-request-size: 50MB
+
+mybatis:
+  mapper-locations: classpath:mapper/system/**/*.xml  # 注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.wzxc.kbengine.vo  # 注意：对应实体类的路径
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      wzxc:
+        kbengine:
+          dao: debug
+
+swagger:
+  enabled: true
+  title: 标题：省数据改革门户系统开发_接口文档
+  description: 描述：用于省数据改革门户系统开发的接口文档
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+

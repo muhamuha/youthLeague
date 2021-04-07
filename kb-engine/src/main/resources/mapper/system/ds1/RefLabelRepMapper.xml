@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.kbengine.dao.ds1.RefLabelRepMapper">
+    
+    <resultMap type="com.wzxc.kbengine.vo.RefLabelRep" id="RefLabelRepResult">
+        <result property="id"    column="id"    />
+        <result property="labelBaseInfoRepId"    column="label_base_info_rep_id"    />
+        <result property="refId"    column="ref_id"    />
+        <result property="refType"    column="ref_type"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="remark"    column="remark"    />
+        <result property="creator"    column="creator"    />
+        <result property="updator"    column="updator"    />
+        <result property="labelName"    column="label_name"    />
+    </resultMap>
+
+    <sql id="selectRefLabelRepVo">
+        select id, label_base_info_rep_id, ref_id, ref_type, create_time, remark, creator, updator, label_name from ref_label_detail_view
+    </sql>
+
+    <select id="selectRefLabelRepList" parameterType="com.wzxc.kbengine.vo.RefLabelRep" resultMap="RefLabelRepResult">
+        <include refid="selectRefLabelRepVo"/>
+        <where>  
+            <if test="labelBaseInfoRepId != null "> and label_base_info_rep_id = #{labelBaseInfoRepId}</if>
+            <if test="refId != null "> and ref_id = #{refId}</if>
+            <if test="refType != null "> and ref_type = #{refType}</if>
+            <if test="creator != null  and creator != ''"> and creator = #{creator}</if>
+            <if test="updator != null  and updator != ''"> and updator = #{v}</if>
+        </where>
+        order by create_time desc
+    </select>
+    
+    <select id="selectRefLabelRepById" parameterType="Long" resultMap="RefLabelRepResult">
+        <include refid="selectRefLabelRepVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertRefLabelRep" parameterType="com.wzxc.kbengine.vo.RefLabelRep" useGeneratedKeys="true" keyProperty="id">
+        insert into ref_label_rep
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="labelBaseInfoRepId != null">label_base_info_rep_id,</if>
+            <if test="refId != null">ref_id,</if>
+            <if test="refType != null">ref_type,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="remark != null">remark,</if>
+            <if test="creator != null and creator != ''">creator,</if>
+            <if test="updator != null">updator,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="labelBaseInfoRepId != null">#{labelBaseInfoRepId},</if>
+            <if test="refId != null">#{refId},</if>
+            <if test="refType != null">#{refType},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="creator != null and creator != ''">#{creator},</if>
+            <if test="updator != null">#{updator},</if>
+         </trim>
+    </insert>
+
+    <update id="updateRefLabelRep" parameterType="com.wzxc.kbengine.vo.RefLabelRep">
+        update ref_label_rep
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="labelBaseInfoRepId != null">label_base_info_rep_id = #{labelBaseInfoRepId},</if>
+            <if test="refId != null">ref_id = #{refId},</if>
+            <if test="refType != null">ref_type = #{refType},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="creator != null and creator != ''">creator = #{creator},</if>
+            <if test="updator != null">updator = #{updator},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteRefLabelRepById" parameterType="Long">
+        delete from ref_label_rep where id = #{id}
+    </delete>
+
+    <delete id="deleteRefLabelRepByIds" parameterType="String">
+        delete from ref_label_rep where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+<!--  清空所有标签  -->
+    <delete id="clearLabels" parameterType="Long">
+        delete from ref_label_rep where ref_id = #{id}
+    </delete>
+
+</mapper>

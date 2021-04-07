@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.zzdpush.dao.ds1.HhlZzdPushHisProcessMapper">
+    
+    <resultMap type="com.wzxc.zzdpush.vo.HhlZzdPushHisProcess" id="HhlZzdPushHisProcessResult">
+        <result property="id"    column="id"    />
+        <result property="pushId"    column="push_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="type"    column="type"    />
+        <result property="status"    column="status"    />
+        <result property="pushReturn"    column="push_return"    />
+        <result property="content"    column="content"    />
+    </resultMap>
+
+    <sql id="selectHhlZzdPushHisProcessVo">
+        select id, push_id, create_time, type, status, push_return, content from hhl_zzd_push_his_process
+    </sql>
+
+    <select id="selectHhlZzdPushHisProcessList" parameterType="HhlZzdPushHisProcess" resultMap="HhlZzdPushHisProcessResult">
+        <include refid="selectHhlZzdPushHisProcessVo"/>
+        <where>  
+            <if test="pushId != null "> and push_id = #{pushId}</if>
+            <if test="type != null "> and type = #{type}</if>
+            <if test="status != null "> and status = #{status}</if>
+        </where>
+    </select>
+    
+    <select id="selectHhlZzdPushHisProcessById" parameterType="Long" resultMap="HhlZzdPushHisProcessResult">
+        <include refid="selectHhlZzdPushHisProcessVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertHhlZzdPushHisProcess" parameterType="HhlZzdPushHisProcess" useGeneratedKeys="true" keyProperty="id">
+        insert into hhl_zzd_push_his_process
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pushId != null">push_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="type != null">type,</if>
+            <if test="status != null">status,</if>
+            <if test="pushReturn != null and pushReturn != ''">push_return,</if>
+            <if test="content != null and content != ''">content,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pushId != null">#{pushId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="type != null">#{type},</if>
+            <if test="status != null">#{status},</if>
+            <if test="pushReturn != null and pushReturn != ''">#{pushReturn},</if>
+            <if test="content != null and content != ''">#{content},</if>
+         </trim>
+    </insert>
+
+    <update id="updateHhlZzdPushHisProcess" parameterType="HhlZzdPushHisProcess">
+        update hhl_zzd_push_his_process
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="pushId != null">push_id = #{pushId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="type != null">type = #{type},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="pushReturn != null and pushReturn != ''">#{pushReturn},</if>
+            <if test="content != null and content != ''">#{content},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteHhlZzdPushHisProcessById" parameterType="Long">
+        delete from hhl_zzd_push_his_process where id = #{id}
+    </delete>
+
+    <delete id="deleteHhlZzdPushHisProcessByIds" parameterType="String">
+        delete from hhl_zzd_push_his_process where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

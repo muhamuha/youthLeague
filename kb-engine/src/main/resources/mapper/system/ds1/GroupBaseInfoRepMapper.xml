@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.kbengine.dao.ds1.GroupBaseInfoRepMapper">
+    
+    <resultMap type="com.wzxc.kbengine.vo.GroupBaseInfoRep" id="GroupBaseInfoRepResult">
+        <result property="id"    column="id"    />
+        <result property="groupId"    column="group_id"    />
+        <result property="groupName"    column="group_name"    />
+        <result property="remark"    column="remark"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="creator"    column="creator"    />
+        <result property="updator"    column="updator"    />
+        <result property="groupType"    column="group_type"    />
+        <result property="parentId"    column="parent_id"    />
+        <collection property="labelBaseInfoRepList" ofType="com.wzxc.kbengine.vo.LabelGroupRep" javaType="java.util.ArrayList"
+        select="com.wzxc.kbengine.dao.ds1.LabelGroupRepMapper.selectLabelGroupRepList" column="{groupBaseInfoRepId=id}"/>
+    </resultMap>
+
+    <sql id="selectGroupBaseInfoRepVo">
+        select id, group_id, group_name, remark, create_time, update_time, creator, updator, group_type, parent_id from group_base_info_rep
+    </sql>
+
+    <select id="selectGroupBaseInfoRepList" parameterType="GroupBaseInfoRep" resultMap="GroupBaseInfoRepResult">
+        <include refid="selectGroupBaseInfoRepVo"/>
+        <where>  
+            <if test="groupId != null "> and group_id = #{groupId}</if>
+            <if test="groupName != null  and groupName != ''"> and group_name like concat('%', #{groupName}, '%')</if>
+            <if test="creator != null  and creator != ''"> and creator = #{creator}</if>
+            <if test="updator != null  and updator != ''"> and updator = #{updator}</if>
+            <if test="groupType != null "> and group_type = #{groupType}</if>
+            <if test="parentId != null "> and parent_id = #{parentId}</if>
+            <if test="createTimeBegin != null "> and createTime >= #{createTimeBegin}</if>
+            <if test="createTimeEnd != null "> and createTime &lt;= #{createTimeEnd}</if>
+        </where>
+        order by create_time desc
+    </select>
+    
+    <select id="selectGroupBaseInfoRepById" parameterType="Long" resultMap="GroupBaseInfoRepResult">
+        <include refid="selectGroupBaseInfoRepVo"/>
+        where id = #{id}
+    </select>
+
+<!--  是否存在重复名称的分组  -->
+    <select id="haveRepeatName" parameterType="GroupBaseInfoRep" resultType="int">
+        select count(*) from group_base_info_rep where group_name = #{groupName}
+    </select>
+        
+    <insert id="insertGroupBaseInfoRep" parameterType="GroupBaseInfoRep" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into group_base_info_rep
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="groupId != null">group_id,</if>
+            <if test="groupName != null and groupName != ''">group_name,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="creator != null and creator != ''">creator,</if>
+            <if test="updator != null">updator,</if>
+            <if test="groupType != null">group_type,</if>
+            <if test="parentId != null">parent_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="groupId != null">#{groupId},</if>
+            <if test="groupName != null and groupName != ''">#{groupName},</if>
+            <if test="remark != null and remark != ''">#{remark},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="creator != null and creator != ''">#{creator},</if>
+            <if test="updator != null">#{updator},</if>
+            <if test="groupType != null">#{groupType},</if>
+            <if test="parentId != null">#{parentId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateGroupBaseInfoRep" parameterType="GroupBaseInfoRep">
+        update group_base_info_rep
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="groupId != null">group_id = #{groupId},</if>
+            <if test="groupName != null and groupName != ''">group_name = #{groupName},</if>
+            <if test="remark != null and remark != ''">remark = #{remark},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="creator != null and creator != ''">creator = #{creator},</if>
+            <if test="updator != null">updator = #{updator},</if>
+            <if test="groupType != null">group_type = #{groupType},</if>
+            <if test="parentId != null">parent_id = #{parentId},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteGroupBaseInfoRepById" parameterType="Long">
+        delete from group_base_info_rep where id = #{id}
+    </delete>
+
+    <delete id="deleteGroupBaseInfoRepByIds" parameterType="String">
+        delete from group_base_info_rep where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "zzd",
+      "type": "com.wzxc.common.config.RuoYiConfig",
+      "sourceType": "com.wzxc.common.config.RuoYiConfig"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
