@@ -1,20 +1,14 @@
-package com.wzxc.kbengine.exception;
+package com.wzxc.configcommon.exception;
 
 import com.alibaba.fastjson.JSONObject;
 import com.wzxc.common.constant.Constants;
-import com.wzxc.common.utils.ServletUtils;
 import com.wzxc.common.utils.StringUtils;
-import com.wzxc.kbengine.servlet.KbengineRequestWrapper;
+import com.wzxc.configcommon.servlet.MyRequestWrapper;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.util.ContentCachingRequestWrapper;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  * 该类捕捉在filter或者拦截器中抛出的异常
@@ -30,17 +24,18 @@ public class MyExceptionFilter implements Filter {
                 filterChain.doFilter(servletRequest, servletResponse);
 
             } else if (servletRequest instanceof HttpServletRequest) {
-                KbengineRequestWrapper kbengineRequestWrapper = new KbengineRequestWrapper((HttpServletRequest) servletRequest);
-                String body = kbengineRequestWrapper.getBody();
+                MyRequestWrapper myRequestWrapper = new MyRequestWrapper((HttpServletRequest) servletRequest);
+                String body = myRequestWrapper.getBody();
                 try{
                     JSONObject jsonObject = JSONObject.parseObject(body);
                     ((HttpServletRequest) servletRequest).getSession().setAttribute(Constants.PAGE_NUM, jsonObject.get(Constants.PAGE_NUM));
                     ((HttpServletRequest) servletRequest).getSession().setAttribute(Constants.PAGE_SIZE, jsonObject.get(Constants.PAGE_SIZE));
                     ((HttpServletRequest) servletRequest).getSession().setAttribute(Constants.IS_PAGE, jsonObject.get(Constants.IS_PAGE));
+                    filterChain.doFilter(myRequestWrapper, servletResponse);
                 } catch(Exception e){
                     log.error("MyExceptionFilter(e) --- ", e);
                 } finally {
-                    filterChain.doFilter(kbengineRequestWrapper, servletResponse);
+                    filterChain.doFilter(myRequestWrapper, servletResponse);
                 }
 
             }

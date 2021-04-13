@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="" />
+    <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/ErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/servlet/MyRequestWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/shiro/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/shiro/MyShiroRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/shiro/ShiroConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/config/DataSourceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/OtherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/application-prod.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/application-test.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/http/AESUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/http/HttpsUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/http/MD5Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/http/SSLClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/exception/MyExceptionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/exception/MyExceptionFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +66,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/config/Ds2Config.java" root0="SKIP_INSPECTION" />
@@ -84,6 +119,7 @@
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/TkPolicyController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/xss/XssHttpServletRequestWrapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/reflect/ReflectUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/OtherController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/controller/HhlZzdApiController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application-prod.yaml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/controller/BaseController.java" root0="SKIP_INSPECTION" />
@@ -96,6 +132,10 @@
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/config/RuoYiConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/controller/HhlZzdPushHisController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/GroupBaseInfoRepServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/http/SSLClient.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/http/MD5Utils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/http/HttpsUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/http/AESUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/LabelGroupRepMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/GroupBaseInfoRepController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/LabelBaseInfoRepController.java" root0="SKIP_INSPECTION" />
@@ -113,6 +153,9 @@
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/domain/KbengineResult.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/exception/MyExceptionHandler.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/resources/application-prod.yaml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/resources/application-test.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/config/Ds3Config.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/mapper/system/ds1/HhlZzdKpiMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ImageUtils.java" root0="SKIP_INSPECTION" />
@@ -135,25 +178,34 @@
     </option>
   </component>
   <component name="ProjectId" id="1nuGogwbNSfLkilaZnbqzOtOmyX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sz-wenzhou/src/main/resources/mapper/system/ds1" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\ds1" />
       <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\static" />
       <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\mapper" />
-      <recent name="C:\javaProject\zzd\zzd-push\src\main\resources\mapper\system\ds1" />
-      <recent name="C:\javaProject\zzd\zzd-common\src\main" />
-      <recent name="C:\javaProject\zzd\zzd-push\src\main\resources\jar" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.wzxc.szwenzhou" />
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.wzxc.zzdpush.utils" />
@@ -163,11 +215,11 @@
       <recent name="com.wzxc.common.core.domain" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\mapper\system\ds1" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\dao\ds1" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service\impl" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\vo" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources" />
+      <recent name="C:\javaProject\zzd\config-common\src\main\java\com\wzxc\configcommon" />
+      <recent name="C:\javaProject\zzd\common-config\src\main\java\com\wzdx\commonconfig" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\java\com\wzxc\szwenzhou" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -201,7 +253,7 @@
       <module name="kb-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wzxc.kbengine.controller.*" />
+          <option name="PATTERN" value="com.wzxc.szwenzhou.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -257,6 +309,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommonConfigApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="common-config" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.commonconfig.CommonConfigApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonConfigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="common-config" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzdx.commonconfig.CommonConfigApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigCommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="config-common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.configcommon.ConfigCommonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Demo1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="kb-engine" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.kbengine.KbEngineApplication" />
@@ -265,9 +338,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sz-wenzhou" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.szwenzhou.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="KbEngineApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="kb-engine" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.kbengine.KbEngineApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SzWenzhouApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sz-wenzhou" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wzxc.szwenzhou.SzwenzhouApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -296,6 +383,11 @@
       <item itemvalue="Spring Boot.ZzdPushApplication" />
       <item itemvalue="Spring Boot.KbEngineApplication" />
       <item itemvalue="Spring Boot.WebServiceApplication" />
+      <item itemvalue="Spring Boot.DemoApplication" />
+      <item itemvalue="Spring Boot.CommonConfigApplication" />
+      <item itemvalue="Spring Boot.SzWenzhouApplication" />
+      <item itemvalue="Spring Boot.CommonConfigApplication (1)" />
+      <item itemvalue="Spring Boot.ConfigCommonApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -377,12 +469,30 @@
       <workItem from="1617262454859" duration="1213000" />
       <workItem from="1617328545922" duration="5404000" />
       <workItem from="1617469050586" duration="450000" />
-      <workItem from="1617761869386" duration="356000" />
+      <workItem from="1617761869386" duration="1598000" />
+      <workItem from="1617847308621" duration="19389000" />
+      <workItem from="1617931935314" duration="23203000" />
+      <workItem from="1617967410605" duration="880000" />
+      <workItem from="1618118005404" duration="4058000" />
+      <workItem from="1618191487397" duration="1247000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kb-engine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sz-wenzhou" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzd-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzd-push" charset="UTF-8" />

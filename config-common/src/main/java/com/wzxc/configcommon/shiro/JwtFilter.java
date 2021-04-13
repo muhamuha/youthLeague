@@ -1,8 +1,6 @@
-package com.wzxc.kbengine.shiro;
+package com.wzxc.configcommon.shiro;
 
 import com.wzxc.common.utils.RequestIdUtils;
-import com.wzxc.common.utils.StringUtils;
-import com.wzxc.common.utils.uuid.IdUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authz.UnauthorizedException;

@@ -171,6 +171,13 @@
                 <version>${zzd.version}</version>
             </dependency>
 
+            <!-- 通用配置依赖包 -->
+            <dependency>
+                <groupId>com.wzxc</groupId>
+                <artifactId>config-common</artifactId>
+                <version>${zzd.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -179,6 +186,8 @@
         <module>zzd-push</module>
         <module>zzd-common</module>
         <module>kb-engine</module>
+        <module>sz-wenzhou</module>
+        <module>config-common</module>
     </modules>
 
 </project>

@@ -9,6 +9,8 @@
         <option value="$PROJECT_DIR$/zzd-common/pom.xml" />
         <option value="$PROJECT_DIR$/kb-engine/pom.xml" />
         <option value="$PROJECT_DIR$/web-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sz-wenzhou/pom.xml" />
+        <option value="$PROJECT_DIR$/config-common/pom.xml" />
       </list>
     </option>
   </component>
