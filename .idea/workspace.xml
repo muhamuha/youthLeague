@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/config/Ds1Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/service/TestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/service/impl/TestServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/PolicyBaseInfoRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/PolicyBaseInfoRepMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/config/Ds1Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/config/Ds1Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/mapper.system.ds1/StatisticRptRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/mapper/system/ds1/StatisticRptRepMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,11 +189,11 @@
       <recent name="com.wzxc.szwenzhou.vo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper" />
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\" />
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\ds1" />
       <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\static" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -209,20 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SzWenzhouApplication">
-    <configuration name="IdUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wzxc.common.utils.uuid.IdUtils" />
-      <module name="zzd-common" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wzxc.common.utils.uuid.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DemoApplicationTests.download">
     <configuration name="PolicyBaseInfoRepController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wzxc.kbengine.controller.PolicyBaseInfoRepController" />
       <module name="kb-engine" />
@@ -232,6 +218,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplicationTests.download" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sz-wenzhou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wzxc.szwenzhou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wzxc.szwenzhou" />
+      <option name="MAIN_CLASS_NAME" value="com.wzxc.szwenzhou.DemoApplicationTests" />
+      <option name="METHOD_NAME" value="download" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -349,7 +351,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.IdUtils" />
       <item itemvalue="Application.PolicyBaseInfoRepController" />
       <item itemvalue="JUnit.KbEngineApplicationTests.fun" />
       <item itemvalue="JUnit.KbEngineApplicationTests.fun1" />
@@ -363,14 +364,15 @@
       <item itemvalue="Spring Boot.SzWenzhouApplication" />
       <item itemvalue="Spring Boot.CommonConfigApplication (1)" />
       <item itemvalue="Spring Boot.ConfigCommonApplication" />
+      <item itemvalue="JUnit.DemoApplicationTests.download" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DemoApplicationTests.download" />
         <item itemvalue="JUnit.KbEngineApplicationTests.fun1" />
         <item itemvalue="JUnit.KbEngineApplicationTests.fun2" />
         <item itemvalue="JUnit.KbEngineApplicationTests.fun" />
         <item itemvalue="Application.PolicyBaseInfoRepController" />
-        <item itemvalue="Application.IdUtils" />
       </list>
     </recent_temporary>
   </component>
@@ -450,7 +452,7 @@
       <workItem from="1617967410605" duration="880000" />
       <workItem from="1618118005404" duration="4058000" />
       <workItem from="1618191487397" duration="1247000" />
-      <workItem from="1618277246043" duration="1336000" />
+      <workItem from="1618277246043" duration="4542000" />
     </task>
     <servers />
   </component>

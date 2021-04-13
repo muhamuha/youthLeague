@@ -35,7 +35,7 @@ public class Ds1Config {
             bean.setTypeAliasesPackage("com.wzxc.szwenzhou.vo");
             return bean.getObject();
         } catch (FileNotFoundException e){
-            log.error("mybatis配置初始化失败！原因：找不到mapper文件");
+            log.error("mybatis配置初始化失败！原因：找不到xml映射文件");
             return bean.getObject();
         }
     }

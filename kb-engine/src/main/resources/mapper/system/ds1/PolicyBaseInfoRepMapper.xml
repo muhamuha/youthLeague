@@ -76,6 +76,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectPolicyBaseInfoRepList" parameterType="PolicyBaseInfoRep" resultMap="PolicyBaseInfoRepResult">
         <include refid="selectPolicyBaseInfoRepVo"/>
         <where>
+            resource not in ('省平台录入')
             <if test="id != null"> and id = #{id}</if>
             <if test="policyId != null  and policyId != ''"> and policy_id = #{policyId}</if>
             <if test="policyType != null or policyType == 0"> and policy_type = #{policyType}</if>
@@ -109,6 +110,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectPolicyBaseInfoRepListByTkId" parameterType="PolicyBaseInfoRep" resultMap="PolicyBaseInfoRepResult">
         <include refid="selectPolicyBaseInfoRepVo_tkId"/>
         <where>
+            a.resource not in ('省平台录入')
             <if test="id != null"> and a.id = #{id}</if>
             <if test="policyId != null  and policyId != ''"> and a.policy_id = #{policyId}</if>
             <if test="policyType != null or policyType == 0"> and a.policy_type = #{policyType}</if>
@@ -137,6 +139,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectPolicyBaseInfoRepByTkIdOnly" parameterType="PolicyBaseInfoRep" resultMap="PolicyBaseInfoRepResult">
         <include refid="selectPolicyBaseInfoRepVo_a"/>
         <where>
+            a.resource not in ('省平台录入') and
             a.id in ((select distinct policy_rep_id from tk_policy_rep where tk_base_info_id = #{tkBaseInfoId}))
             <if test="policyId != null and policyId != ''"> and a.policy_id = #{policyId}</if>
             <if test="policyType != null or policyType == 0"> and a.policy_type = #{policyType}</if>
