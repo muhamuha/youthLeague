@@ -1,36 +1,56 @@
-package com.wzxc.szwenzhou;
+package com.wzxc.szwenzhou.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.wzxc.common.core.controller.BaseController;
 import com.wzxc.common.core.domain.KbengineResult;
+import com.wzxc.common.utils.DateUtils;
+import com.wzxc.common.utils.StringUtils;
+import com.wzxc.common.utils.http.HttpsUtils;
 import com.wzxc.szwenzhou.service.impl.StatisticRptRepServiceImpl;
 import com.wzxc.szwenzhou.vo.StatisticRptRep;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.charset.Charset;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@SpringBootTest
-class DemoApplicationTests {
+@CrossOrigin
+@RestController
+@RequestMapping("/Statistic")
+@Slf4j
+public class StatisticRptRepController extends BaseController {
 
     @Autowired
     private StatisticRptRepServiceImpl statisticRptRepService;
-    @Test
-    void download() {
-        StatisticRptRep statisticRptRep = new StatisticRptRep();
-        statisticRptRep.setTaskSystem(0);
+    @PostMapping("/report/get")
+    public KbengineResult list(@RequestBody @ApiIgnore StatisticRptRep statisticRptRep) throws IOException {
+        Map<String, Object> resultMap = new HashMap<>();
+        startPage();
+        List<StatisticRptRep> statisticRptReps = statisticRptRepService.selectStatisticRptRepList(statisticRptRep);
+        buildTableInfo(statisticRptReps, resultMap);
+        return KbengineResult.success("查询成功", resultMap);
+    }
+
+    @PostMapping("/report/download")
+    public KbengineResult download(@RequestBody @ApiIgnore StatisticRptRep statisticRptRep, HttpServletResponse response) throws IOException {
         Map<String, Object> resultMap = new HashMap<>();
         List<StatisticRptRep> statisticRptReps = statisticRptRepService.selectStatisticRptRepList(statisticRptRep);
         HSSFWorkbook workbook = new HSSFWorkbook();
@@ -67,8 +87,10 @@ class DemoApplicationTests {
                 row.createCell(9).setCellValue(new String((statisticRptInfo.getMobile()==null?"":statisticRptInfo.getMobile()).getBytes(), "UTF-8"));
             }
 
-            File file = new File("C:\\Users\\ms\\Desktop\\统计通报表.xlsx");
-            FileOutputStream out = new FileOutputStream(file);
+            response.reset(); // 非常重要
+            response.setContentType("Content-Type: application/octet-stream");
+            response.setHeader("Content-Disposition", "attachment; filename=" + "统计通报表");
+            OutputStream out = response.getOutputStream();
             try {
                 workbook.write(out);
             } catch (Exception e) {
@@ -81,6 +103,7 @@ class DemoApplicationTests {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        return null;
     }
 
 }
