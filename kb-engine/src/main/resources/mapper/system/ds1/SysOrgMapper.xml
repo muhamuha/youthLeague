@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.kbengine.dao.ds1.SysOrgMapper">
+    <resultMap type="com.wzxc.kbengine.vo.SysOrg" id="SysOrgResult">
+        <result property="orgName"    column="org_name"    />
+        <result property="orgCode"    column="org_code"    />
+    </resultMap>
+
+    <select id="selectSysOrgList" parameterType="SysOrg" resultMap="SysOrgResult">
+        select so.org_name,so.org_code from cityos_user.sys_organization so
+        where so.valid_flag ='1' and so.org_label ='1'
+        <if test="orgName != null  and orgName != ''">
+            and so.org_name like concat('%', #{orgName}, '%')</if>
+        order by convert (so.org_name using gbk)
+    </select>
+</mapper>

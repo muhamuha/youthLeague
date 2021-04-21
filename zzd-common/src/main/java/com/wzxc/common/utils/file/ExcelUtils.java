@@ -7,15 +7,16 @@ import com.wzxc.common.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -260,5 +261,27 @@ public class ExcelUtils {
             }
         }
         return fieldNameList;
+    }
+
+    public static XSSFWorkbook exportEXCELFile( List<List<Object>> dataList, String filename) {
+
+        XSSFWorkbook workbook = new XSSFWorkbook();
+		XSSFSheet sheet;
+        try {
+            sheet = workbook.createSheet(new String(filename.getBytes(), "UTF-8"));
+			XSSFRow row = null;
+
+            for(int i = 0;i<dataList.size();i++){
+                row = sheet.createRow(i);
+                List<Object> data = dataList.get(i);
+                for(int j=0;j<data.size();j++){
+                    row.createCell(j).setCellValue(new String(data.get(j).toString().getBytes(), "UTF-8"));
+                }
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return workbook;
     }
 }
