@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/OtherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/OtherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/PolicyBaseInfoRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/PolicyBaseInfoRepMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/test/java/com/wzxc/szwenzhou/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/test/java/com/wzxc/szwenzhou/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/utils/file/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/utils/file/ExcelUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +49,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/config/Ds2Config.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/text/Convert.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/StatisticRptRepController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/uuid/UUID.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/AddressUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/config/Ds1Config.java" root0="SKIP_INSPECTION" />
@@ -170,16 +175,16 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\ds1" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\static" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.wzxc.szwenzhou" />
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources" />
-      <recent name="C:\javaProject\zzd\config-common\src\main\java\com\wzxc\configcommon" />
-      <recent name="C:\javaProject\zzd\common-config\src\main\java\com\wzdx\commonconfig" />
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\java\com\wzxc\szwenzhou" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.wzxc.szwenzhou.dao.ds1" />
@@ -188,12 +193,12 @@
       <recent name="com.wzxc.szwenzhou.controller" />
       <recent name="com.wzxc.szwenzhou.vo" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper" />
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\" />
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\ds1" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\static" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources" />
+      <recent name="C:\javaProject\zzd\config-common\src\main\java\com\wzxc\configcommon" />
+      <recent name="C:\javaProject\zzd\common-config\src\main\java\com\wzdx\commonconfig" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\java\com\wzxc\szwenzhou" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -459,6 +464,7 @@
       <workItem from="1618795540837" duration="2883000" />
       <workItem from="1618818946769" duration="2594000" />
       <workItem from="1618881782573" duration="2552000" />
+      <workItem from="1619054986201" duration="3522000" />
     </task>
     <servers />
   </component>
@@ -490,11 +496,6 @@
           <url>file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/shiro/JwtFilter.java</url>
           <line>57</line>
           <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sz-wenzhou/src/test/java/com/wzxc/szwenzhou/DemoApplicationTests.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

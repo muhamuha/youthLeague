@@ -27,7 +27,7 @@ class DemoApplicationTests {
 
     @Autowired
     private StatisticRptRepServiceImpl statisticRptRepService;
-    @Test
+
     void download() {
         StatisticRptRep statisticRptRep = new StatisticRptRep();
         statisticRptRep.setTaskSystem(0);

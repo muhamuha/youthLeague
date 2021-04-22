@@ -29,8 +29,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="unscrambleUrl"    column="unscramble_url"    />
         <result property="fileOutId"    column="file_out_id"    />
         <result property="policyContentSi"    column="policy_content_si"    />
-<!--        <collection property="labelBaseInfoRepList" ofType="com.wzxc.kbengine.vo.RefLabelRep" javaType="java.util.ArrayList"-->
-<!--                    select="com.wzxc.kbengine.dao.ds1.RefLabelRepMapper.selectRefLabelRepList" column="{refId=id}"/>-->
+        <collection property="labelBaseInfoRepList" ofType="com.wzxc.kbengine.vo.RefLabelRep" javaType="java.util.ArrayList"
+                    select="com.wzxc.kbengine.dao.ds1.RefLabelRepMapper.selectRefLabelRepList" column="{refId=id}"/>
     </resultMap>
 
     <resultMap type="com.wzxc.kbengine.vo.PolicyBaseInfoRep" id="PolicyBaseInfoRepResultSyn">
