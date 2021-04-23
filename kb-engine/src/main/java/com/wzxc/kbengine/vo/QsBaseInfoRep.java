@@ -34,17 +34,17 @@ public class QsBaseInfoRep
 2:数字社会系统;
 3:数字经济系统;
 4:数字法制系统 */
-    private Long qSystem;
+    private Integer qSystem;
 
     /** 访问权限
 0：全部可见
  */
-    private Long qPermission;
+    private Integer qPermission;
 
     /** 审核状态：
 0：待审核
 1：审核通过 */
-    private Long status;
+    private Integer status;
 
     private Date createTime;
 
@@ -59,7 +59,7 @@ public class QsBaseInfoRep
     /** 数源
 0：手工录入
 1：批导入 */
-    private Long resource;
+    private Integer resource;
 
     /** 是否有效
 0：有效

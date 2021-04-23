@@ -22,7 +22,7 @@ public class SearchLog
     /** 日志类型
 0：搜索浏览量日志
 1：搜索次数（关联类型）日志 */
-    private Long logType;
+    private Integer logType;
 
     /** 入参 */
     private String paramtersIn;
@@ -35,7 +35,7 @@ public class SearchLog
 4：政策
 5：评价
 6：问题 */
-    private Long searchType;
+    private Integer searchType;
 
     private Date createTime;
 
