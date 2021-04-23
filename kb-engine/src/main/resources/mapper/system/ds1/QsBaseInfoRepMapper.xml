@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzxc.kbengine.dao.ds1.QsBaseInfoRepMapper">
     
-    <resultMap type="com.wzxc.kbengine.dao.ds1.QsBaseInfoRep" id="QsBaseInfoRepResult">
+    <resultMap type="com.wzxc.kbengine.vo.QsBaseInfoRep" id="QsBaseInfoRepResult">
         <result property="id"    column="id"    />
         <result property="qTitle"    column="q_title"    />
         <result property="qDes"    column="q_des"    />

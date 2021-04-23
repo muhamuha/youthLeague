@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.wzxc.common.core.text.Convert;
 import com.wzxc.common.utils.DateUtils;
+import com.wzxc.configcommon.shiro.JwtFilter;
 import com.wzxc.kbengine.service.ILabelGroupRepService;
-import com.wzxc.kbengine.shiro.JwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.wzxc.kbengine.dao.ds1.LabelGroupRepMapper;

@@ -21,7 +21,6 @@ import com.wzxc.common.validate.Check;
 import com.wzxc.kbengine.service.impl.PolicyBaseInfoRepServiceImpl;
 import com.wzxc.kbengine.service.impl.RefLabelRepServiceImpl;
 import com.wzxc.kbengine.service.impl.TkPolicyRepServiceImpl;
-import com.wzxc.kbengine.shiro.JwtFilter;
 import com.wzxc.kbengine.vo.LabelBaseInfoRep;
 import com.wzxc.kbengine.vo.PolicyBaseInfoRep;
 import com.wzxc.kbengine.vo.RefLabelRep;

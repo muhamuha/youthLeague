@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.wzxc.common.core.text.Convert;
 import com.wzxc.common.utils.DateUtils;
+import com.wzxc.configcommon.shiro.JwtFilter;
 import com.wzxc.kbengine.dao.ds1.SearchLogMapper;
 import com.wzxc.kbengine.vo.SearchLog;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,7 @@ public class SearchLogServiceImpl implements ISearchLogService
     @Override
     public int insertSearchLog(SearchLog searchLog)
     {
+        searchLog.setCreator(JwtFilter.getUserId());
         searchLog.setCreateTime(DateUtils.getNowDate());
         return searchLogMapper.insertSearchLog(searchLog);
     }

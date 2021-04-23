@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableSwaggerBootstrapUI
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.wzxc.kbengine", "com.wzxc.common"})
+@ComponentScan(basePackages = {"com.wzxc.kbengine", "com.wzxc.configcommon"})
 public class KbEngineApplication {
 
     public static void main(String[] args) {

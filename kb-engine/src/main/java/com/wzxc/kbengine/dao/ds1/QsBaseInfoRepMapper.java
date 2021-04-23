@@ -25,7 +25,9 @@ public interface QsBaseInfoRepMapper
      * @param qsBaseInfoRep 【请填写功能名称】
      * @return 【请填写功能名称】集合
      */
-    public List<QsBaseInfoRep> selectQsBaseInfoRepList(QsBaseInfoRep qsBaseInfoRep);
+    public List<QsBaseInfoRep>
+
+    selectQsBaseInfoRepList(QsBaseInfoRep qsBaseInfoRep);
 
     /**
      * 新增【请填写功能名称】

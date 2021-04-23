@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzxc.kbengine.dao.ds1.SearchLogMapper">
     
-    <resultMap type="com.wzxc.kbengine.dao.ds1.SearchLog" id="SearchLogResult">
+    <resultMap type="com.wzxc.kbengine.vo.SearchLog" id="SearchLogResult">
         <result property="id"    column="id"    />
         <result property="logType"    column="log_type"    />
         <result property="paramtersIn"    column="paramters_in"    />
@@ -41,7 +41,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <insert id="insertSearchLog" parameterType="SearchLog">
         insert into search_log
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">id,</if>
             <if test="logType != null">log_type,</if>
             <if test="paramtersIn != null">paramters_in,</if>
             <if test="searchType != null">search_type,</if>
@@ -52,7 +51,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="paramtersOut != null">paramters_out,</if>
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="id != null">#{id},</if>
             <if test="logType != null">#{logType},</if>
             <if test="paramtersIn != null">#{paramtersIn},</if>
             <if test="searchType != null">#{searchType},</if>

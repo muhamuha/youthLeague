@@ -1,6 +1,7 @@
 package com.wzxc.configcommon.exception;
 
 import com.wzxc.common.core.domain.AjaxResult;
+import com.wzxc.common.core.domain.KbengineResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorController;
@@ -33,15 +34,15 @@ public class MyExceptionAdvice implements ErrorController {
      * JSON格式错误信息
      */
     @RequestMapping(value = path_default)
-    public AjaxResult error(HttpServletRequest request, WebRequest webRequest) {
+    public KbengineResult error(HttpServletRequest request, WebRequest webRequest) {
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
         switch (statusCode) {
             case 404:
-                return AjaxResult.error("接口地址错误");
+                return KbengineResult.error("接口地址错误");
             case 400:
-                return AjaxResult.error("缺少必要参数");
+                return KbengineResult.error("缺少必要参数");
             default:
-                return AjaxResult.error("发生未知异常");
+                return KbengineResult.error("发生未知异常");
         }
     }
 

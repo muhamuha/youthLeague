@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.wzxc</groupId>
-            <artifactId>web-service</artifactId>
+            <artifactId>config-common</artifactId>
         </dependency>
     </dependencies>
 

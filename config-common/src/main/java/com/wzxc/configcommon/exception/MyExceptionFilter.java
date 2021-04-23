@@ -31,7 +31,6 @@ public class MyExceptionFilter implements Filter {
                     ((HttpServletRequest) servletRequest).getSession().setAttribute(Constants.PAGE_NUM, jsonObject.get(Constants.PAGE_NUM));
                     ((HttpServletRequest) servletRequest).getSession().setAttribute(Constants.PAGE_SIZE, jsonObject.get(Constants.PAGE_SIZE));
                     ((HttpServletRequest) servletRequest).getSession().setAttribute(Constants.IS_PAGE, jsonObject.get(Constants.IS_PAGE));
-                    filterChain.doFilter(myRequestWrapper, servletResponse);
                 } catch(Exception e){
                     log.error("MyExceptionFilter(e) --- ", e);
                 } finally {

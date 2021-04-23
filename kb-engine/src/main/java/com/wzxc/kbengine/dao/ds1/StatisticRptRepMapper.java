@@ -21,5 +21,4 @@ public interface StatisticRptRepMapper
      */
     public List<StatisticRptRep> selectStatisticRptRepList(StatisticRptRep statisticRptRep);
 
-    public List<StatisticRptRep> selectStatisticRptRepListForTaskLevel(StatisticRptRep statisticRptRep);
 }
