@@ -33,11 +33,7 @@ public class StatisticRptRepServiceImpl implements IStatisticRptRepService
             String orgCode = "'"+statisticRptRep.getOrgCode().replace(",","','")+"'";
             statisticRptRep.setOrgCode(orgCode);
         }
-        if(statisticRptRep.getTaskLevel()!=null&&statisticRptRep.getTaskLevel()!=""&&statisticRptRep.getTaskLevel().contains("5")){
-            return statisticRptRepMapper.selectStatisticRptRepListForTaskLevel(statisticRptRep);
-        }else{
             return statisticRptRepMapper.selectStatisticRptRepList(statisticRptRep);
-        }
     }
 
 }

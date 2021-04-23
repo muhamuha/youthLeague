@@ -7,12 +7,78 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="orgName"    column="org_name"    />
         <result property="orgCode"    column="org_code"    />
     </resultMap>
-
     <select id="selectSysOrgList" parameterType="SysOrg" resultMap="SysOrgResult">
-        select so.org_name,so.org_code from cityos_user.sys_organization so
-        where so.valid_flag ='1' and so.org_label ='1'
+        select * from(
+        select so.org_code ,concat(so2.parent_name,concat('--',concat(so.parent_name,concat('--', so.org_name )))) as org_name
+        from cityos_user.sys_organization so left join cityos_user.sys_organization so2 on so.parent_code = so2.org_code
+        where so.valid_flag = '1' and so.org_label = '1' and so.org_code in
+        (select tbi.org_code from szzf_db.tk_base_info tbi where tbi.task_process_status !=4 and tbi.valid_flag = 1)) a
+        where 1=1
         <if test="orgName != null  and orgName != ''">
-            and so.org_name like concat('%', #{orgName}, '%')</if>
-        order by convert (so.org_name using gbk)
+            and a.org_name like concat('%', #{orgName}, '%')</if>
+        order by convert (a.org_name using gbk);
     </select>
+
+    <!--查询任务关联的牵头单位数据，拼接两级，若两级存在重复数据，则重复数据拼接三级-->
+<!--    <select id="selectSysOrgList" parameterType="SysOrg" resultMap="SysOrgResult">-->
+<!--    select * from(-->
+<!--        select * from (select so.org_code ,concat(so.parent_name,concat('&#45;&#45;', so.org_name )) as org_name-->
+<!--        from cityos_user.sys_organization so where so.valid_flag ='1' and so.org_label ='1'-->
+<!--        and so.org_code in (select tbi.org_code from szzf_db.tk_base_info tbi where tbi.task_process_status !=4 and tbi.valid_flag = 1)) a-->
+<!--        where a.org_name not in (-->
+<!--        select c.org_name from(select b.org_name ,count(b.org_name) as nums  from (select so2.org_code ,concat(so2.parent_name,concat('&#45;&#45;', so2.org_name )) as org_name-->
+<!--        from cityos_user.sys_organization so2 where so2.valid_flag ='1' and so2.org_label ='1'-->
+<!--        and so2.org_code in (select tbi2.org_code from szzf_db.tk_base_info tbi2 where tbi2.task_process_status !=4 and tbi2.valid_flag = 1)) b-->
+<!--        group by b.org_name) c where c.nums>1)-->
+
+<!--        UNION all-->
+
+<!--        select so3.org_code ,concat(so4.parent_name,concat('-',concat(so3.parent_name,concat('-',so3.org_name)))) as org_name from cityos_user.sys_organization so3-->
+<!--        left join cityos_user.sys_organization so4 on so3.parent_code = so4.org_code-->
+<!--        where so3.org_code in (-->
+<!--        select a.org_code from (select so.org_code ,concat(so.parent_name,concat('&#45;&#45;', so.org_name )) as org_name-->
+<!--        from cityos_user.sys_organization so where so.valid_flag ='1' and so.org_label ='1'-->
+<!--        and so.org_code in (select tbi.org_code from szzf_db.tk_base_info tbi where tbi.task_process_status !=4 and tbi.valid_flag = 1)) a-->
+<!--        where a.org_name in (-->
+<!--        select c.org_name from(select b.org_name ,count(b.org_name) as nums  from (select so2.org_code ,concat(so2.parent_name,concat('&#45;&#45;', so2.org_name )) as org_name-->
+<!--        from cityos_user.sys_organization so2 where so2.valid_flag ='1' and so2.org_label ='1'-->
+<!--        and so2.org_code in (select tbi2.org_code from szzf_db.tk_base_info tbi2 where tbi2.task_process_status !=4 and tbi2.valid_flag = 1)) b-->
+<!--        group by b.org_name) c where c.nums>1))) d-->
+<!--        where 1=1-->
+<!--        <if test="orgName != null  and orgName != ''">-->
+<!--                    and so.org_name like concat('%', #{orgName}, '%')</if>-->
+<!--        order by convert (d.org_name using gbk);-->
+<!--    </select>-->
+<!--查询所有的牵头单位数据，拼接两级，若两级存在重复数据，则重复数据拼接三级-->
+<!--    <select id="selectSysOrgList" parameterType="SysOrg" resultMap="SysOrgResult">-->
+<!--        select * from (select * from (-->
+<!--        select so.org_code ,concat(so.parent_name,concat('&#45;&#45;', so.org_name )) as org_name-->
+<!--        from cityos_user.sys_organization so where so.valid_flag ='1' and so.org_label ='1' ) a-->
+<!--        where a.org_name not in (-->
+<!--        select c.org_name from (-->
+<!--        select b.org_name,count(b.org_name) as nums from(-->
+<!--        select concat(so2.parent_name,concat('&#45;&#45;', so2.org_name )) as org_name from cityos_user.sys_organization so2-->
+<!--        where so2.valid_flag ='1' and so2.org_label ='1' ) b-->
+<!--        group by b.org_name)-->
+<!--        c where c.nums>1)-->
+
+<!--        UNION all-->
+<!--        select so.org_code ,concat(so2.parent_name,concat('&#45;&#45;',concat(so.parent_name,concat('&#45;&#45;', so.org_name )))) as org_name-->
+<!--        from cityos_user.sys_organization so left join cityos_user.sys_organization so2 on so.parent_code = so2.org_code-->
+<!--        where so.valid_flag = '1' and so.org_label = '1' and so.org_code in(-->
+<!--        select a.org_code from (-->
+<!--        select so3.org_code ,concat(so3.parent_name,concat('&#45;&#45;', so3.org_name )) as org_name-->
+<!--        from cityos_user.sys_organization so3 where so3.valid_flag ='1' and so3.org_label ='1' ) a-->
+<!--        where a.org_name in (-->
+<!--        select c.org_name from (-->
+<!--        select b.org_name,count(b.org_name) as nums from(-->
+<!--        select concat(so4.parent_name,concat('&#45;&#45;', so4.org_name )) as org_name from cityos_user.sys_organization so4-->
+<!--        where so4.valid_flag ='1' and so4.org_label ='1' ) b-->
+<!--        group by b.org_name)-->
+<!--        c where c.nums>1))) d-->
+<!--        where 1=1-->
+<!--        <if test="orgName != null  and orgName != ''">-->
+<!--            and so.org_name like concat('%', #{orgName}, '%')</if>-->
+<!--        order by convert (d.org_name using gbk);-->
+<!--    </select>-->
 </mapper>
