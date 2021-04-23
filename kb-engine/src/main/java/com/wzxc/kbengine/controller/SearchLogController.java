@@ -8,11 +8,8 @@ import java.util.Map;
 import com.wzxc.common.core.controller.BaseController;
 import com.wzxc.common.core.domain.KbengineResult;
 import com.wzxc.kbengine.vo.SearchLog;
-import lombok.extern.java.Log;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.wzxc.kbengine.service.ISearchLogService;
 
@@ -58,7 +55,7 @@ public class SearchLogController extends BaseController
     /**
      * 删除【请填写功能名称】
      */
-    @PostMapping( "/remove")
+    @PostMapping("/remove")
     public KbengineResult remove(Long id)
     {
         int isSuccess = searchLogService.deleteSearchLogById(id);

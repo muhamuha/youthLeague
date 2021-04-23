@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/SearchLogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/QsBaseInfoRepMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/SearchLogMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/IQsBaseInfoRepService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/ISearchLogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/QsBaseInfoRepServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/SearchLogServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/QsBaseInfoRep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/SearchLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/SearchLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/SearchLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/SearchLogController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -477,7 +465,7 @@
       <workItem from="1618818946769" duration="2594000" />
       <workItem from="1618881782573" duration="2552000" />
       <workItem from="1619054986201" duration="4120000" />
-      <workItem from="1619141409120" duration="3421000" />
+      <workItem from="1619141409120" duration="6337000" />
     </task>
     <servers />
   </component>
