@@ -1,5 +1,6 @@
 package com.wzxc.kbengine.vo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.util.Date;
@@ -20,12 +21,15 @@ public class QsBaseInfoRep
     private Long id;
 
     /** 问题标题 */
+    @JsonProperty("qTitle")
     private String qTitle;
 
     /** 问题描述 */
+    @JsonProperty("qDes")
     private String qDes;
 
     /** 问题回答 */
+    @JsonProperty("qAnswer")
     private String qAnswer;
 
     /** 问题所属领域
@@ -34,11 +38,13 @@ public class QsBaseInfoRep
 2:数字社会系统;
 3:数字经济系统;
 4:数字法制系统 */
+    @JsonProperty("qSystem")
     private Integer qSystem;
 
     /** 访问权限
 0：全部可见
  */
+    @JsonProperty("qPermission")
     private Integer qPermission;
 
     /** 审核状态：

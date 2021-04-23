@@ -3,42 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/KbEngineApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/KbEngineApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/config/WebConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/PolicyBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/PolicyBaseInfoRepController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/SearchLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/SearchLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/StatisticRptRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/StatisticRptRepController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/QsBaseInfoRepMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/QsBaseInfoRepMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/StatisticRptRepMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/StatisticRptRepMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/exception/ErrorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/exception/MyExceptionAdvice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/exception/MyExceptionFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/exception/MyExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/GroupBaseInfoRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/GroupBaseInfoRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelBaseInfoRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelBaseInfoRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelGroupRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelGroupRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/PolicyBaseInfoRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/PolicyBaseInfoRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/RefLabelRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/RefLabelRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/SearchLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/SearchLogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/StatisticRptRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/StatisticRptRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/TkPolicyRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/TkPolicyRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/servlet/KbengineRequestWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/JwtFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/MyShiroRealm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/ShiroConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/QsBaseInfoRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/QsBaseInfoRep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/SearchLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/SearchLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/SearchLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/SearchLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/StatisticRptRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/StatisticRptRepMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/SysOrgMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/SysOrgMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,6 +115,7 @@
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/uuid/IdUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/page/TableSupport.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/QsBaseInfoRepMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/OtherController.java" root0="SKIP_INSPECTION" />
@@ -499,7 +466,7 @@
       <workItem from="1618818946769" duration="2594000" />
       <workItem from="1618881782573" duration="2552000" />
       <workItem from="1619054986201" duration="4120000" />
-      <workItem from="1619141409120" duration="8691000" />
+      <workItem from="1619141409120" duration="11977000" />
     </task>
     <servers />
   </component>
@@ -533,29 +500,24 @@
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionFilter.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/SearchLogController.java</url>
-          <line>81</line>
+          <line>83</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionAdvice.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionFilter.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/ErrorController.java</url>
           <line>12</line>
           <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionFilter.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

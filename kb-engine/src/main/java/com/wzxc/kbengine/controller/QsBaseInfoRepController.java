@@ -17,7 +17,6 @@ import com.wzxc.kbengine.vo.QsBaseInfoRep;
 import io.swagger.annotations.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import com.wzxc.kbengine.service.IQsBaseInfoRepService;
 import springfox.documentation.annotations.ApiIgnore;
@@ -30,7 +29,6 @@ import javax.servlet.http.HttpServletResponse;
  * @author huanghl
  * @date 2021-04-23
  */
-
 @RestController
 @CrossOrigin
 @RequestMapping("/kbengine/rep")
@@ -50,8 +48,7 @@ public class QsBaseInfoRepController extends BaseController {
             @ApiImplicitParam(name = "qTitle",value = "问题标题", required = false, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qDes",value = "问题描述", required = false, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qAnswer",value = "问题回答", required = false, paramType = "query", dataType="String"),
-            @ApiImplicitParam(name = "qSystem",value = "问题所属领域:0-党政机关整体智治系统;1-数字政府系统;2-数字社会系统;3-数字经济系统;4-数字法制系统",
-                    required = false, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "qSystem",value = "问题所属领域:0-党政机关整体智治系统;1-数字政府系统;2-数字社会系统;3-数字经济系统;4-数字法制系统", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "qPermission",value = "访问权限:0-全部可见", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "status",value = "审核状态:0-待审核;1-审核通过", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "creator",value = "创建人", required = false, paramType = "query", dataType="string"),
@@ -65,7 +62,6 @@ public class QsBaseInfoRepController extends BaseController {
             @ApiResponse(code = 13500, message = "ERROR")
     })
     @PostMapping("/list")
-    @ResponseBody
     public KbengineResult list(@RequestBody @ApiIgnore QsBaseInfoRep qsBaseInfoRep) throws IOException {
         Map<String, Object> resultMap = new HashMap<>();
         startPage();
@@ -101,9 +97,8 @@ public class QsBaseInfoRepController extends BaseController {
     @CheckParams({
             @CheckParam(value = Check.NotNull, argName = "qsBaseInfoRep.qTitle", msg = "缺少问题标题（qTitle）"),
             @CheckParam(value = Check.NotNull, argName = "qsBaseInfoRep.qSystem", msg = "缺少问题所属领域（qSystem）"),
-            @CheckParam(value = Check.NotNull, argName = "qsBaseInfoRep.qPermission", msg = "缺少访问权限（qPermission）"),
     })
-    @GetMapping("/add")
+    @PostMapping("/add")
     public KbengineResult add(@RequestBody @ApiIgnore QsBaseInfoRep qsBaseInfoRep) {
         int isSuccess = qsBaseInfoRepService.insertQsBaseInfoRep(qsBaseInfoRep);
         if(isSuccess == 0){
