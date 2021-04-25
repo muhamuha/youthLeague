@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/QPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/QSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/Stauts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/static/FAQInsertTemplate.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/QsBaseInfoRepMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/QsBaseInfoRepMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/IQsBaseInfoRepService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/IQsBaseInfoRepService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/QsBaseInfoRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/QsBaseInfoRepServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/QsBaseInfoRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/QsBaseInfoRep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +177,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/kb-engine/src/main/resources/static" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -176,30 +185,30 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.wzxc.szwenzhou" />
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\controller" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service\impl" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\vo" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\dao\ds1" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.wzxc.szwenzhou.dao.ds1" />
-      <recent name="com.wzxc.szwenzhou.service.impl" />
-      <recent name="com.wzxc.szwenzhou.service" />
-      <recent name="com.wzxc.szwenzhou.controller" />
-      <recent name="com.wzxc.szwenzhou.vo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\dao\ds1" />
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper" />
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\" />
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\ds1" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.wzxc.szwenzhou" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wzxc.kbengine.en.QsBaseInfoRep" />
+      <recent name="com.wzxc.szwenzhou.dao.ds1" />
+      <recent name="com.wzxc.szwenzhou.service.impl" />
+      <recent name="com.wzxc.szwenzhou.service" />
+      <recent name="com.wzxc.szwenzhou.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\static" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\controller" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service\impl" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\vo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -466,7 +475,8 @@
       <workItem from="1618818946769" duration="2594000" />
       <workItem from="1618881782573" duration="2552000" />
       <workItem from="1619054986201" duration="4120000" />
-      <workItem from="1619141409120" duration="11977000" />
+      <workItem from="1619141409120" duration="12115000" />
+      <workItem from="1619312986168" duration="2555000" />
     </task>
     <servers />
   </component>
@@ -508,16 +518,6 @@
           <url>file://$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/ErrorController.java</url>
           <line>12</line>
           <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionFilter.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

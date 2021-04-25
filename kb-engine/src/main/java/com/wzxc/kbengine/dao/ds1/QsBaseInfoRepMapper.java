@@ -1,6 +1,8 @@
 package com.wzxc.kbengine.dao.ds1;
 
 import java.util.List;
+
+import com.wzxc.common.core.dao.InsertBatchCommon;
 import com.wzxc.kbengine.vo.QsBaseInfoRep;
 
 /**
@@ -60,4 +62,6 @@ public interface QsBaseInfoRepMapper
      * @return 结果
      */
     public int deleteQsBaseInfoRepByIds(String[] ids);
+
+    int insertBatch(InsertBatchCommon insertBatchCommon);
 }

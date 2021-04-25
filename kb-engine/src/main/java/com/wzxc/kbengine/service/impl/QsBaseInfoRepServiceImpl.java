@@ -2,8 +2,10 @@ package com.wzxc.kbengine.service.impl;
 
 import java.util.List;
 
+import com.wzxc.common.core.dao.InsertBatchCommon;
 import com.wzxc.common.core.text.Convert;
 import com.wzxc.common.utils.DateUtils;
+import com.wzxc.configcommon.shiro.JwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.wzxc.kbengine.dao.ds1.QsBaseInfoRepMapper;
@@ -55,7 +57,9 @@ public class QsBaseInfoRepServiceImpl implements IQsBaseInfoRepService
     @Override
     public int insertQsBaseInfoRep(QsBaseInfoRep qsBaseInfoRep)
     {
-        qsBaseInfoRep.setCreateTime(DateUtils.getNowDate());
+        qsBaseInfoRep.setCreator(JwtFilter.getUserId());
+        qsBaseInfoRep.setUpdator(JwtFilter.getUserId());
+        qsBaseInfoRep.setResource(0);
         return qsBaseInfoRepMapper.insertQsBaseInfoRep(qsBaseInfoRep);
     }
 
@@ -68,7 +72,7 @@ public class QsBaseInfoRepServiceImpl implements IQsBaseInfoRepService
     @Override
     public int updateQsBaseInfoRep(QsBaseInfoRep qsBaseInfoRep)
     {
-        qsBaseInfoRep.setUpdateTime(DateUtils.getNowDate());
+        qsBaseInfoRep.setUpdator(JwtFilter.getUserId());
         return qsBaseInfoRepMapper.updateQsBaseInfoRep(qsBaseInfoRep);
     }
 
@@ -94,5 +98,10 @@ public class QsBaseInfoRepServiceImpl implements IQsBaseInfoRepService
     public int deleteQsBaseInfoRepById(Long id)
     {
         return qsBaseInfoRepMapper.deleteQsBaseInfoRepById(id);
+    }
+
+    @Override
+    public int insertBatch(InsertBatchCommon insertBatchCommon) {
+        return qsBaseInfoRepMapper.insertBatch(insertBatchCommon);
     }
 }

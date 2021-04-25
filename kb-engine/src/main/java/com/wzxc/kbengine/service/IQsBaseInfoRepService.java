@@ -1,6 +1,8 @@
 package com.wzxc.kbengine.service;
 
 import java.util.List;
+
+import com.wzxc.common.core.dao.InsertBatchCommon;
 import com.wzxc.kbengine.vo.QsBaseInfoRep;
 
 /**
@@ -58,4 +60,6 @@ public interface IQsBaseInfoRepService
      * @return 结果
      */
     public int deleteQsBaseInfoRepById(Long id);
+
+    int insertBatch(InsertBatchCommon insertBatchCommon);
 }

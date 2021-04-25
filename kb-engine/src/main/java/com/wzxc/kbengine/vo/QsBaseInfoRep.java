@@ -33,23 +33,23 @@ public class QsBaseInfoRep
     private String qAnswer;
 
     /** 问题所属领域
-0:党政机关整体智治系统,
-1:数字政府系统;
-2:数字社会系统;
-3:数字经济系统;
-4:数字法制系统 */
+        0:党政机关整体智治系统,
+        1:数字政府系统;
+        2:数字社会系统;
+        3:数字经济系统;
+        4:数字法制系统 */
     @JsonProperty("qSystem")
     private Integer qSystem;
 
     /** 访问权限
-0：全部可见
- */
+        0：全部可见
+     */
     @JsonProperty("qPermission")
     private Integer qPermission;
 
     /** 审核状态：
-0：待审核
-1：审核通过 */
+        0：待审核
+        1：审核通过 */
     private Integer status;
 
     private Date createTime;
@@ -63,13 +63,13 @@ public class QsBaseInfoRep
     private String updator;
 
     /** 数源
-0：手工录入
-1：批导入 */
+        0：手工录入
+        1：批导入 */
     private Integer resource;
 
     /** 是否有效
-0：有效
-1：无效 */
+        0：有效
+        1：无效 */
     private Integer isValid;
 
 }

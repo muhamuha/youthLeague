@@ -27,15 +27,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectQsBaseInfoRepList" parameterType="QsBaseInfoRep" resultMap="QsBaseInfoRepResult">
         <include refid="selectQsBaseInfoRepVo"/>
         <where>  
-            <if test="qTitle != null  and qTitle != ''"> and q_title = #{qTitle}</if>
-            <if test="qDes != null  and qDes != ''"> and q_des = #{qDes}</if>
-            <if test="qAnswer != null  and qAnswer != ''"> and q_answer = #{qAnswer}</if>
+            <if test="qTitle != null  and qTitle != ''"> and q_title like '%${qTitle}%'</if>
             <if test="qSystem != null "> and q_system = #{qSystem}</if>
             <if test="qPermission != null "> and q_permission = #{qPermission}</if>
             <if test="status != null "> and status = #{status}</if>
-            <if test="creator != null  and creator != ''"> and creator = #{creator}</if>
-            <if test="updator != null  and updator != ''"> and updator = #{updator}</if>
-            <if test="resource != null "> and resource = #{resource}</if>
             <if test="isValid != null "> and is_valid = #{isValid}</if>
         </where>
     </select>
@@ -54,8 +49,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="qSystem != null">q_system,</if>
             <if test="qPermission != null">q_permission,</if>
             <if test="status != null">status,</if>
-            <if test="createTime != null">create_time,</if>
-            <if test="updateTime != null">update_time,</if>
             <if test="creator != null and creator != ''">creator,</if>
             <if test="updator != null">updator,</if>
             <if test="resource != null">resource,</if>
@@ -68,8 +61,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="qSystem != null">#{qSystem},</if>
             <if test="qPermission != null">#{qPermission},</if>
             <if test="status != null">#{status},</if>
-            <if test="createTime != null">#{createTime},</if>
-            <if test="updateTime != null">#{updateTime},</if>
             <if test="creator != null and creator != ''">#{creator},</if>
             <if test="updator != null">#{updator},</if>
             <if test="resource != null">#{resource},</if>
@@ -86,9 +77,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="qSystem != null">q_system = #{qSystem},</if>
             <if test="qPermission != null">q_permission = #{qPermission},</if>
             <if test="status != null">status = #{status},</if>
-            <if test="createTime != null">create_time = #{createTime},</if>
-            <if test="updateTime != null">update_time = #{updateTime},</if>
-            <if test="creator != null and creator != ''">creator = #{creator},</if>
             <if test="updator != null">updator = #{updator},</if>
             <if test="resource != null">resource = #{resource},</if>
             <if test="isValid != null">is_valid = #{isValid},</if>
@@ -96,9 +84,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         where id = #{id}
     </update>
 
-    <delete id="deleteQsBaseInfoRepById" parameterType="Long">
-        delete from qs_base_info_rep where id = #{id}
-    </delete>
+    <update id="deleteQsBaseInfoRepById" parameterType="Long">
+        update qs_base_info_rep set is_valid = 1 where id = #{id}
+    </update>
 
     <delete id="deleteQsBaseInfoRepByIds" parameterType="String">
         delete from qs_base_info_rep where id in 
@@ -106,5 +94,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             #{id}
         </foreach>
     </delete>
+
+    <!--  FAQ批导入  -->
+    <insert id="insertBatch" parameterType="com.wzxc.common.core.dao.InsertBatchCommon">
+        INSERT INTO
+        <foreach collection ="fieldList" index="index" item="field" separator ="," open="qs_base_info_rep(" close=")">
+            ${field}
+        </foreach>
+        VALUES
+        <foreach collection ="contentList" index="index" item="rowList" separator =",">
+            <foreach collection="rowList" index="index" item="item" separator ="," open="(" close=")">
+                #{item}
+            </foreach>
+        </foreach>
+    </insert>
 
 </mapper>
