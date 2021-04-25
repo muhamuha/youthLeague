@@ -57,6 +57,8 @@ public class QsBaseInfoRepController extends BaseController {
     @ApiOperation(value = "查询FAQ列表", notes = "查询FAQ列表", httpMethod = "POST")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "qTitle",value = "问题标题", required = false, paramType = "query", dataType="string"),
+            @ApiImplicitParam(name = "qDes",value = "问题描述", required = false, paramType = "query", dataType="string"),
+            @ApiImplicitParam(name = "qAnswer",value = "问题答案", required = false, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qSystem",value = "问题所属领域:0-党政机关整体智治系统;1-数字政府系统;2-数字社会系统;3-数字经济系统;4-数字法制系统", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "qPermission",value = "访问权限:0-全部可见", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "status",value = "审核状态:0-待审核;1-审核通过", required = false, paramType = "query", dataType="int"),

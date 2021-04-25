@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/KbEngineApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/KbEngineApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/SearchLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/SearchLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/Stauts.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/Status.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/static/FAQInsertTemplate.xls" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/static/FAQInsertTemplate.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/SzwenzhouApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/SzwenzhouApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/utils/file/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/utils/file/ExcelUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -475,7 +467,7 @@
       <workItem from="1618881782573" duration="2552000" />
       <workItem from="1619054986201" duration="4120000" />
       <workItem from="1619141409120" duration="12115000" />
-      <workItem from="1619312986168" duration="12724000" />
+      <workItem from="1619312986168" duration="13605000" />
     </task>
     <servers />
   </component>

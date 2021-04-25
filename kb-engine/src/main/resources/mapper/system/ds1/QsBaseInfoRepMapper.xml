@@ -29,6 +29,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <where>
             is_valid = 0
             <if test="qTitle != null  and qTitle != ''"> and q_title like '%${qTitle}%'</if>
+            <if test="qDes != null  and qDes != ''"> and q_des like '%${qDes}%'</if>
+            <if test="qAnswer != null  and qAnswer != ''"> and q_answer like '%${qAnswer}%'</if>
             <if test="qSystem != null "> and q_system = #{qSystem}</if>
             <if test="qPermission != null "> and q_permission = #{qPermission}</if>
             <if test="status != null "> and status = #{status}</if>
