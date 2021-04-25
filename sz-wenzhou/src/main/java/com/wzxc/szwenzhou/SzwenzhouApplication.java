@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableSwaggerBootstrapUI
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.wzxc.szwenzhou", "com.wzxc.configcommon"})
+@ComponentScan(basePackages = {"com.wzxc.*"})
 public class SzwenzhouApplication {
 
     public static void main(String[] args) {

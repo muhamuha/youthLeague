@@ -42,7 +42,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @RestController
 @CrossOrigin
-@RequestMapping("/kbengine/rep")
+@RequestMapping("/kbengine/FAQ")
 @Api(tags="FAQ操作接口")
 public class QsBaseInfoRepController extends BaseController {
 
@@ -50,10 +50,10 @@ public class QsBaseInfoRepController extends BaseController {
     private IQsBaseInfoRepService qsBaseInfoRepService;
 
     private final String [] columnHeads={"问题标题","问题描述","问题答案","问题所属领域","访问权限","审核状态","创建人","更新人","数据来源"};
+
     /**
      * 查询【请填写功能名称】列表
      */
-
     @ApiOperation(value = "查询FAQ列表", notes = "查询FAQ列表", httpMethod = "POST")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "qTitle",value = "问题标题", required = false, paramType = "query", dataType="string"),
@@ -78,7 +78,6 @@ public class QsBaseInfoRepController extends BaseController {
     /**
      * 新增【请填写功能名称】
      */
-
     @ApiOperation(value = "添加FAQ", notes = "添加FAQ", httpMethod = "POST")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "qTitle",value = "问题标题", required = true, paramType = "query", dataType="string"),
@@ -110,7 +109,6 @@ public class QsBaseInfoRepController extends BaseController {
     /**
      * 修改【请填写功能名称】
      */
-
     @ApiOperation(value = "修改FAQ", notes = "修改FAQ", httpMethod = "POST")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id",value = "主键", required = true, paramType = "query", dataType="long"),
@@ -155,7 +153,7 @@ public class QsBaseInfoRepController extends BaseController {
             @ApiResponse(code = 13500, message = "ERROR")
     })
     @CheckParams({
-            @CheckParam(value = Check.NotNull, argName = "qsBaseInfoRep.id", msg = "缺少系统主键"),
+            @CheckParam(value = Check.NotNull, argName = "id", msg = "缺少系统主键"),
     })
     @PostMapping("/remove")
     public KbengineResult remove(Long id)
@@ -182,7 +180,7 @@ public class QsBaseInfoRepController extends BaseController {
     })
     @GetMapping(value = "/downloadTemplate")
     public KbengineResult downLoad(HttpServletResponse response) throws Exception {
-        String fileName = "FAQInsertTemplate.xlsx";
+        String fileName = "FAQInsertTemplate.xls";
         InputStream templateFile = this.getClass().getClassLoader().getResourceAsStream("static" + File.separator + fileName);
         if (templateFile == null) {
             return KbengineResult.error("模板文件不存在");
@@ -245,7 +243,7 @@ public class QsBaseInfoRepController extends BaseController {
         fieldNameList.add("creator");
         fieldNameList.add("updator");
         for(List<String> row : contentList){
-            row.add("数字温州 - 批导入");
+            row.add("0");
             row.add(JwtFilter.getUserId());
             row.add(JwtFilter.getUserId());
         }
@@ -255,7 +253,6 @@ public class QsBaseInfoRepController extends BaseController {
 
     @ApiOperation(value = "FAQ列表导出", notes = "FAQ列表导出", httpMethod = "GET")
     @ApiImplicitParams({
-
             @ApiImplicitParam(name = "qTitle",value = "问题标题", required = false, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qDes",value = "问题描述", required = false, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qAnswer",value = "问题回答", required = false, paramType = "query", dataType="String"),

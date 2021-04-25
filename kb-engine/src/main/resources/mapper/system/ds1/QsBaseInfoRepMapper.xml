@@ -26,7 +26,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     <select id="selectQsBaseInfoRepList" parameterType="QsBaseInfoRep" resultMap="QsBaseInfoRepResult">
         <include refid="selectQsBaseInfoRepVo"/>
-        <where>  
+        <where>
+            is_valid = 0
             <if test="qTitle != null  and qTitle != ''"> and q_title like '%${qTitle}%'</if>
             <if test="qSystem != null "> and q_system = #{qSystem}</if>
             <if test="qPermission != null "> and q_permission = #{qPermission}</if>
@@ -37,7 +38,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <select id="selectQsBaseInfoRepById" parameterType="Long" resultMap="QsBaseInfoRepResult">
         <include refid="selectQsBaseInfoRepVo"/>
-        where id = #{id}
+        where id = #{id} and is_valid = 0
     </select>
         
     <insert id="insertQsBaseInfoRep" parameterType="QsBaseInfoRep" useGeneratedKeys="true" keyProperty="id">

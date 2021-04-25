@@ -70,7 +70,7 @@ public class SearchLogController extends BaseController
             @ApiImplicitParam(name = "logType",value = "日志类型:0-搜索浏览量日志;1-搜索次数（关联类型）日志", required = true, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "paramtersIn",value = "入参", required = false, paramType = "query", dataType="String"),
             @ApiImplicitParam(name = "searchType",value = "搜索的类型:0-综合;1-任务;2：指标;3-工作;4-政策;5-评价;6-问题", required = false, paramType = "query", dataType="int"),
-            @ApiImplicitParam(name = "paramtersOut",value = "反参", required = false, paramType = "query", dataType="String"),
+            @ApiImplicitParam(name = "paramtersOut",value = "返参", required = false, paramType = "query", dataType="String"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),

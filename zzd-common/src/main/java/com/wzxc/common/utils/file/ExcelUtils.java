@@ -117,9 +117,9 @@ public class ExcelUtils {
         // 为跳过第一行目录设置count
         int rowCount = 0;
         for (Row row : sheet) {
+            rowCount++;
             List<String> rowList = new ArrayList<>();
-            if(rowCount == 0){ // 跳过第一行的目录
-                rowCount++;
+            if(rowCount == 1){ // 跳过第一行的目录
                 continue;
             }
             if(row != null && !isRowEmpty(row, columnCount)){ // 当前行是空行，跳过
@@ -151,16 +151,16 @@ public class ExcelUtils {
                                 isValid = true;
                             }
                             if(!isValid){
-                                throw new InsertBatchException("发现错误行：" + ++rowCount + "，错误列：" + ++currentColumnCount);
+                                throw new InsertBatchException("发现错误行：" + rowCount + "，错误列：" + ++currentColumnCount);
                             }
                         } catch (Exception e) {
-                            throw new InsertBatchException("发现错误行：" + ++rowCount + "，错误列：" + ++currentColumnCount);
+                            throw new InsertBatchException("发现错误行：" + rowCount + "，错误列：" + ++currentColumnCount);
                         }
                     } else{
                         isValid = (Boolean) insertBatchParam.value().fun.apply(cellValue, insertBatchParam.express());
                     }
                     if(!isValid){
-                        throw new InsertBatchException("发现错误行：" + ++rowCount + "，错误列：" + (++currentColumnCount));
+                        throw new InsertBatchException("发现错误行：" + rowCount + "，错误列：" + (++currentColumnCount));
                     }
                     rowList.add(cellValue);
                 }

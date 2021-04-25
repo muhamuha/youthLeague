@@ -1,6 +1,6 @@
 package com.wzxc.kbengine.en.QsBaseInfoRep;
 
-public enum Stauts {
+public enum Status {
 
     NEEDAUDIT("待审核", 0),
     AUDITPASS("审核通过", 1);
@@ -8,7 +8,7 @@ public enum Stauts {
     public String key;
     public Integer value;
 
-    Stauts(String key, Integer value){
+    Status(String key, Integer value){
         this.key = key;
         this.value = value;
     }
