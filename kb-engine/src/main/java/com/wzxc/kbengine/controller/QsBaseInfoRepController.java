@@ -22,6 +22,10 @@ import com.wzxc.common.utils.reflect.ReflectUtils;
 import com.wzxc.common.utils.uuid.IdUtils;
 import com.wzxc.common.validate.Check;
 import com.wzxc.configcommon.shiro.JwtFilter;
+import com.wzxc.kbengine.en.QsBaseInfoRep.QPermission;
+import com.wzxc.kbengine.en.QsBaseInfoRep.QSystem;
+import com.wzxc.kbengine.en.QsBaseInfoRep.Resource;
+import com.wzxc.kbengine.en.QsBaseInfoRep.Status;
 import com.wzxc.kbengine.service.impl.QsBaseInfoRepServiceImpl;
 import com.wzxc.kbengine.vo.QsBaseInfoRep;
 import io.swagger.annotations.*;
@@ -255,25 +259,32 @@ public class QsBaseInfoRepController extends BaseController {
 
     @ApiOperation(value = "FAQ列表导出", notes = "FAQ列表导出", httpMethod = "GET")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "qTitle",value = "问题标题", required = false, paramType = "query", dataType="string"),
-            @ApiImplicitParam(name = "qDes",value = "问题描述", required = false, paramType = "query", dataType="string"),
+            @ApiImplicitParam(name = "qTitle",value = "问题标题", required = true, paramType = "query", dataType="string"),
+            @ApiImplicitParam(name = "qDes",value = "问题描述", required = true, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qAnswer",value = "问题回答", required = false, paramType = "query", dataType="String"),
-            @ApiImplicitParam(name = "qSystem",value = "问题所属领域:0-党政机关整体智治系统;1-数字政府系统;2-数字社会系统;3-数字经济系统;4-数字法制系统",
-                    required = false, paramType = "query", dataType="int"),
-            @ApiImplicitParam(name = "qPermission",value = "访问权限:0-全部可见", required = false, paramType = "query", dataType="int"),
-            @ApiImplicitParam(name = "status",value = "审核状态:0-待审核;1-审核通过", required = false, paramType = "query", dataType="int"),
-            @ApiImplicitParam(name = "creator",value = "创建人", required = false, paramType = "query", dataType="string"),
-            @ApiImplicitParam(name = "updator",value = "更新人", required = false, paramType = "query", dataType="string"),
-            @ApiImplicitParam(name = "resource",value = "数源:0-手工录入;1-批导入", required = false, paramType = "query", dataType="int"),
-            @ApiImplicitParam(name = "isValid",value = "是否有效:0-有效;1-无效", required = false, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "qSystem",value = "问题所属领域:0-党政机关整体智治系统;1-数字政府系统;2-数字社会系统;3-数字经济系统;4-数字法制系统", required = true, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "qPermission",value = "访问权限:0-全部可见（默认0全部可见）", required = false, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "status",value = "审核状态:0-待审核;1-审核通过（默认0待审核）", required = false, paramType = "query", dataType="int"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
             @ApiResponse(code = 13500, message = "ERROR")
     })
     @GetMapping("/download")
-    public KbengineResult download(@RequestBody @ApiIgnore QsBaseInfoRep qsBaseInfoRep, HttpServletResponse response) throws IOException {
+    public KbengineResult download(@RequestParam(value = "qTitle", required = false) String qTitle,
+                                   @RequestParam(value = "qDes", required = false) String qDes,
+                                   @RequestParam(value = "qAnswer", required = false) String qAnswer,
+                                   @RequestParam(value = "qSystem", required = false) Integer qSystem,
+                                   @RequestParam(value = "qPermission", required = false) Integer qPermission,
+                                   @RequestParam(value = "status", required = false) Integer status, HttpServletResponse response) throws IOException {
         Map<String, Object> resultMap = new HashMap<>();
+        QsBaseInfoRep qsBaseInfoRep = new QsBaseInfoRep();
+        qsBaseInfoRep.setQTitle(qTitle);
+        qsBaseInfoRep.setQDes(qDes);
+        qsBaseInfoRep.setQAnswer(qAnswer);
+        qsBaseInfoRep.setQSystem(qSystem);
+        qsBaseInfoRep.setQPermission(qPermission);
+        qsBaseInfoRep.setStatus(status);
         List<QsBaseInfoRep> list = qsBaseInfoRepService.selectQsBaseInfoRepList(qsBaseInfoRep);
         List<List<Object>> excelList = new ArrayList<List<Object>>();
         List columnHeadList = new ArrayList();
@@ -287,12 +298,12 @@ public class QsBaseInfoRepController extends BaseController {
             dataList.add(qsBaseInfo.getQTitle()==null?"":qsBaseInfo.getQTitle());
             dataList.add(qsBaseInfo.getQDes()==null?"":qsBaseInfo.getQDes());
             dataList.add(qsBaseInfo.getQAnswer()==null?"":qsBaseInfo.getQAnswer());
-            dataList.add(qsBaseInfo.getQSystem()==null?"":qsBaseInfo.getQSystem());
-            dataList.add(qsBaseInfo.getQPermission()==null?"":qsBaseInfo.getQPermission());
-            dataList.add(qsBaseInfo.getStatus()==null?"":qsBaseInfo.getStatus());
+            dataList.add(qsBaseInfo.getQSystem()==null?"": QSystem.getKeyByValue(qsBaseInfo.getQSystem()));
+            dataList.add(qsBaseInfo.getQPermission()==null?"":QPermission.getKeyByValue(qsBaseInfo.getQPermission()));
+            dataList.add(qsBaseInfo.getStatus()==null?"": Status.getKeyByValue(qsBaseInfo.getStatus()));
             dataList.add(qsBaseInfo.getCreator()==null?"":qsBaseInfo.getCreator());
             dataList.add(qsBaseInfo.getUpdator()==null?"":qsBaseInfo.getUpdator());
-            dataList.add(qsBaseInfo.getResource()==null?"":qsBaseInfo.getResource());
+            dataList.add(qsBaseInfo.getResource()==null?"": Resource.getKeyByValue(qsBaseInfo.getResource()));
             excelList.add(dataList);
         }
 

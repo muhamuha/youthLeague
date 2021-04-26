@@ -99,8 +99,8 @@ public class StatisticRptRepController extends BaseController {
                                    @RequestParam(value = "taskLevel", required = false) String taskLevel,
                                    @RequestParam(value = "taskSource", required = false) String taskSource,
                                    @RequestParam(value = "taskName", required = false) String taskName,
-                                   @RequestParam(value = "quotaCount", required = false) int quotaCount,
-                                   @RequestParam(value = "policyCount", required = false) int policyCount,
+                                   @RequestParam(value = "quotaCount", required = false) Integer quotaCount,
+                                   @RequestParam(value = "policyCount", required = false) Integer policyCount,
                                    HttpServletResponse response) throws IOException {
         StatisticRptRep statisticRptRep = new StatisticRptRep();
         statisticRptRep.setOrgCode(orgCode);
