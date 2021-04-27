@@ -36,8 +36,8 @@ public class StatisticRptRepController extends BaseController {
     @Autowired
     private SysOrgServiceImpl sysOrgService;
 
-    private final String [] columnHeads={"牵头单位ID", "牵头单位", "领域", "任务来源", "任务名称", "任务层级",
-            "任务路径", "任务指标数", "改革清单数", "工作计划数", "政策体系数","业务维护员ID", "业务维护员", "手机号"};
+    private final String [] columnHeads={"牵头单位ID", "牵头单位", "领域", "任务来源", "任务名称", "任务层级", "任务路径",
+            "任务指标数", "改革清单数", "工作计划数", "政策体系数","业务维护员ID", "业务维护员", "手机号","门户是否展示"};
 
     @ApiOperation(value = "查询牵头单位列表", notes = "查询牵头单位列表", httpMethod = "POST")
     @ApiImplicitParams({
@@ -135,6 +135,7 @@ public class StatisticRptRepController extends BaseController {
             dataList.add(statisticRptInfo.getTaskMaintainerId()==null?"":statisticRptInfo.getTaskMaintainerId());
             dataList.add(statisticRptInfo.getFullName()==null?"":statisticRptInfo.getFullName());
             dataList.add(statisticRptInfo.getMobile()==null?"":statisticRptInfo.getMobile());
+            dataList.add(statisticRptInfo.getCanShow()==null?"":statisticRptInfo.getCanShow());
             excelList.add(dataList);
         }
 

@@ -76,4 +76,8 @@ public class StatisticRptRep {
     /** 任务来源 */
     @ApiModelProperty(value = "任务来源")
     private String taskSource;
+
+    /** 门户是否展示 */
+    @ApiModelProperty(value = "门户是否展示")
+    private String canShow;
 }
