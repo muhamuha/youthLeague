@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/shiro/JwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/shiro/MyShiroRealm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/shiro/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/exception/MyExceptionAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/shiro/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/shiro/MyShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/MyShiroRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-common/src/main/java/com/wzxc/configcommon/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/ShiroConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/Resource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/GroupBaseInfoRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/GroupBaseInfoRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelBaseInfoRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelBaseInfoRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelGroupRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/LabelGroupRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/PolicyBaseInfoRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/PolicyBaseInfoRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/QsBaseInfoRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/QsBaseInfoRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/RefLabelRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/RefLabelRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/SearchLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/SearchLogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/TkPolicyRepServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/TkPolicyRepServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/OtherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/OtherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/StatisticRptRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/StatisticRptRepController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/QPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/QPermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/QSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/QSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/QsBaseInfoRep/Status.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +217,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SzWenzhouApplication">
+  <component name="RunManager" selected="Spring Boot.KbEngineApplication">
     <configuration name="OtherController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wzxc.szwenzhou.controller.OtherController" />
       <module name="sz-wenzhou" />
@@ -484,7 +472,7 @@
       <workItem from="1619141409120" duration="12115000" />
       <workItem from="1619312986168" duration="14449000" />
       <workItem from="1619401019835" duration="6204000" />
-      <workItem from="1619495052273" duration="2317000" />
+      <workItem from="1619495052273" duration="2715000" />
     </task>
     <servers />
   </component>

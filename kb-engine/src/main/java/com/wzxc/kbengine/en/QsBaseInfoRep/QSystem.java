@@ -23,4 +23,15 @@ public enum QSystem {
     public Integer getValue(){
         return value;
     }
+
+    public static String getKeyByValue( int enumValue) {
+        String value = "";
+        for (QSystem item : values()) {
+            if (item.getValue()==enumValue) {
+                value = item.getKey();
+                break;
+            }
+        }
+        return value;
+    }
 }

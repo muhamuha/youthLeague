@@ -1,13 +1,14 @@
 package com.wzxc.kbengine.en.QsBaseInfoRep;
 
-public enum QPermission {
+public enum Resource {
 
-    ALLALLOW("全部可见", 0);
+    NEEDAUDIT("温州数字门户 - 手工录入", 0),
+    AUDITPASS("温州数字门户 - 批导入", 1);
 
     public String key;
     public Integer value;
 
-    QPermission(String key, Integer value){
+    Resource(String key, Integer value){
         this.key = key;
         this.value = value;
     }
@@ -22,7 +23,7 @@ public enum QPermission {
 
     public static String getKeyByValue( int enumValue) {
         String value = "";
-        for (QPermission item : values()) {
+        for (Resource item : values()) {
             if (item.getValue()==enumValue) {
                 value = item.getKey();
                 break;

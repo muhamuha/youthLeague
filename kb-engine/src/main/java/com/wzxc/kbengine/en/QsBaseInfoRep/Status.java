@@ -20,4 +20,15 @@ public enum Status {
     public Integer getValue(){
         return value;
     }
+
+    public static String getKeyByValue( int enumValue) {
+        String value = "";
+        for (Status item : values()) {
+            if (item.getValue()==enumValue) {
+                value = item.getKey();
+                break;
+            }
+        }
+        return value;
+    }
 }
