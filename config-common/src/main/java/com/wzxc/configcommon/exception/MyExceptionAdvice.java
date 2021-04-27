@@ -1,6 +1,5 @@
 package com.wzxc.configcommon.exception;
 
-import com.wzxc.common.core.domain.AjaxResult;
 import com.wzxc.common.core.domain.KbengineResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;

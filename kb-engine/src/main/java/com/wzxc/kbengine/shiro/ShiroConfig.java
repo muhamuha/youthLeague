@@ -1,4 +1,4 @@
-package com.wzxc.configcommon.shiro;
+package com.wzxc.kbengine.shiro;
 
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;

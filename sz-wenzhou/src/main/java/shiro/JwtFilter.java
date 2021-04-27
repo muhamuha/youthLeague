@@ -1,4 +1,4 @@
-package com.wzxc.configcommon.shiro;
+package shiro;
 
 import com.wzxc.common.utils.RequestIdUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +20,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     private static final String TOKEN = "userId";
     private static ThreadLocal<String> userIdThreadLocal = new ThreadLocal<>();
 
-    private String[] anonUrl = new String[]{"/digital-kbengine/v1/other/accessToken"};
+    private String[] anonUrl = new String[]{};
 
     private AntPathMatcher pathMatcher = new AntPathMatcher();
 

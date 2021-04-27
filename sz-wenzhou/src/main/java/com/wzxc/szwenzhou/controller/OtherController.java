@@ -60,7 +60,6 @@ public class OtherController {
                 HttpEntity resEntity = response.getEntity();
                 if(resEntity != null){
                     String result = EntityUtils.toString(resEntity,"UTF-8");
-
                     return result;
                 }
             }

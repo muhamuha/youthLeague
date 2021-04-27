@@ -7,7 +7,7 @@ import com.wzxc.common.core.dao.InsertBatchCommon;
 import com.wzxc.common.core.text.Convert;
 import com.wzxc.common.utils.DateUtils;
 import com.wzxc.common.utils.uuid.IdUtils;
-import com.wzxc.configcommon.shiro.JwtFilter;
+import com.wzxc.kbengine.shiro.JwtFilter;
 import io.jsonwebtoken.Jwt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
