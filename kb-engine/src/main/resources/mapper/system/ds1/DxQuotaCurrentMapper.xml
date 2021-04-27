@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.kbengine.dao.ds1.DxQuotaCurrentMapper">
+    
+    <resultMap type="com.wzxc.kbengine.vo.DxQuotaCurrent" id="DxQuotaCurrentResult">
+        <result property="id"    column="id"    />
+        <result property="quotaName"    column="quota_name"    />
+        <result property="quotaDesc"    column="quota_desc"    />
+        <result property="valueUnit"    column="value_unit"    />
+        <result property="nodeId"    column="node_id"    />
+        <result property="quotaValue"    column="quota_value"    />
+        <result property="quotaYoy"    column="quota_yoy"    />
+        <result property="quotaMom"    column="quota_mom"    />
+        <result property="remarks"    column="remarks"    />
+        <result property="creator"    column="creator"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="updator"    column="updator"    />
+        <result property="isValid"    column="is_valid"    />
+    </resultMap>
+
+    <sql id="selectDxQuotaCurrentVo">
+        select id, quota_name, quota_desc, value_unit, node_id, quota_value, quota_yoy, quota_mom, remarks, creator, create_time, update_time, updator, is_valid from dx_quota_current
+    </sql>
+
+    <select id="selectDxQuotaCurrentList" parameterType="DxQuotaCurrent" resultMap="DxQuotaCurrentResult">
+        <include refid="selectDxQuotaCurrentVo"/>
+        <where>  
+            <if test="quotaName != null  and quotaName != ''"> and quota_name like concat('%', #{quotaName}, '%')</if>
+            <if test="quotaDesc != null  and quotaDesc != ''"> and quota_desc = #{quotaDesc}</if>
+            <if test="valueUnit != null  and valueUnit != ''"> and value_unit = #{valueUnit}</if>
+            <if test="nodeId != null "> and node_id = #{nodeId}</if>
+            <if test="quotaValue != null  and quotaValue != ''"> and quota_value = #{quotaValue}</if>
+            <if test="quotaYoy != null  and quotaYoy != ''"> and quota_yoy = #{quotaYoy}</if>
+            <if test="quotaMom != null  and quotaMom != ''"> and quota_mom = #{quotaMom}</if>
+            <if test="remarks != null  and remarks != ''"> and remarks = #{remarks}</if>
+            <if test="creator != null  and creator != ''"> and creator = #{creator}</if>
+            <if test="updator != null  and updator != ''"> and updator = #{updator}</if>
+            <if test="isValid != null "> and is_valid = #{isValid}</if>
+        </where>
+    </select>
+    
+    <select id="selectDxQuotaCurrentById" parameterType="Long" resultMap="DxQuotaCurrentResult">
+        <include refid="selectDxQuotaCurrentVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertDxQuotaCurrent" parameterType="DxQuotaCurrent" useGeneratedKeys="true" keyProperty="id">
+        insert into dx_quota_current
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="quotaName != null and quotaName != ''">quota_name,</if>
+            <if test="quotaDesc != null">quota_desc,</if>
+            <if test="valueUnit != null">value_unit,</if>
+            <if test="nodeId != null">node_id,</if>
+            <if test="quotaValue != null and quotaValue != ''">quota_value,</if>
+            <if test="quotaYoy != null">quota_yoy,</if>
+            <if test="quotaMom != null">quota_mom,</if>
+            <if test="remarks != null">remarks,</if>
+            <if test="creator != null and creator != ''">creator,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="updator != null">updator,</if>
+            <if test="isValid != null">is_valid,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="quotaName != null and quotaName != ''">#{quotaName},</if>
+            <if test="quotaDesc != null">#{quotaDesc},</if>
+            <if test="valueUnit != null">#{valueUnit},</if>
+            <if test="nodeId != null">#{nodeId},</if>
+            <if test="quotaValue != null and quotaValue != ''">#{quotaValue},</if>
+            <if test="quotaYoy != null">#{quotaYoy},</if>
+            <if test="quotaMom != null">#{quotaMom},</if>
+            <if test="remarks != null">#{remarks},</if>
+            <if test="creator != null and creator != ''">#{creator},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="updator != null">#{updator},</if>
+            <if test="isValid != null">#{isValid},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDxQuotaCurrent" parameterType="DxQuotaCurrent">
+        update dx_quota_current
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="quotaName != null and quotaName != ''">quota_name = #{quotaName},</if>
+            <if test="quotaDesc != null">quota_desc = #{quotaDesc},</if>
+            <if test="valueUnit != null">value_unit = #{valueUnit},</if>
+            <if test="nodeId != null">node_id = #{nodeId},</if>
+            <if test="quotaValue != null and quotaValue != ''">quota_value = #{quotaValue},</if>
+            <if test="quotaYoy != null">quota_yoy = #{quotaYoy},</if>
+            <if test="quotaMom != null">quota_mom = #{quotaMom},</if>
+            <if test="remarks != null">remarks = #{remarks},</if>
+            <if test="creator != null and creator != ''">creator = #{creator},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="updator != null">updator = #{updator},</if>
+            <if test="isValid != null">is_valid = #{isValid},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDxQuotaCurrentById" parameterType="Long">
+        delete from dx_quota_current where id = #{id}
+    </delete>
+
+    <delete id="deleteDxQuotaCurrentByIds" parameterType="String">
+        delete from dx_quota_current where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

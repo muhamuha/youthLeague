@@ -52,7 +52,7 @@ public class ShiroConfig {
 
         // 在 Shiro过滤器链上加入 自定义过滤器JWTFilter 并取名为jwt
         LinkedHashMap<String, Filter> filters = new LinkedHashMap<>();
-        filters.put("jwt", new JwtFilter());
+        filters.put("jwt", new com.wzxc.kbengine.shiro.JwtFilter());
         shiroFilterFactoryBean.setFilters(filters);
 
         // 自定义url规则

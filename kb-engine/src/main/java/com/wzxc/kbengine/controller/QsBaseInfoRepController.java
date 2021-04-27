@@ -60,6 +60,7 @@ public class QsBaseInfoRepController extends BaseController {
      */
     @ApiOperation(value = "查询FAQ列表", notes = "查询FAQ列表", httpMethod = "POST")
     @ApiImplicitParams({
+            @ApiImplicitParam(name = "id",value = "主键", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "qTitle",value = "问题标题", required = false, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qDes",value = "问题描述", required = false, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qAnswer",value = "问题答案", required = false, paramType = "query", dataType="string"),

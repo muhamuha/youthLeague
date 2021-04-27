@@ -28,6 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectQsBaseInfoRepVo"/>
         <where>
             is_valid = 0
+            <if test="id != null"> and id = #{id}</if>
             <if test="qTitle != null  and qTitle != ''"> and q_title like '%${qTitle}%'</if>
             <if test="qDes != null  and qDes != ''"> and q_des like '%${qDes}%'</if>
             <if test="qAnswer != null  and qAnswer != ''"> and q_answer like '%${qAnswer}%'</if>
