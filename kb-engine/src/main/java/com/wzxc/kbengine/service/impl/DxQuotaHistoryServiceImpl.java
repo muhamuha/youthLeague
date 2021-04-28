@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.wzxc.common.core.text.Convert;
 import com.wzxc.common.utils.DateUtils;
+import com.wzxc.kbengine.shiro.JwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.wzxc.kbengine.dao.ds1.DxQuotaHistoryMapper;
@@ -55,6 +56,7 @@ public class DxQuotaHistoryServiceImpl implements IDxQuotaHistoryService
     @Override
     public int insertDxQuotaHistory(DxQuotaHistory dxQuotaHistory)
     {
+        dxQuotaHistory.setCreator(JwtFilter.getUserId());
         dxQuotaHistory.setCreateTime(DateUtils.getNowDate());
         return dxQuotaHistoryMapper.insertDxQuotaHistory(dxQuotaHistory);
     }

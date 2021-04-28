@@ -260,32 +260,39 @@ public class QsBaseInfoRepController extends BaseController {
 
     @ApiOperation(value = "FAQ列表导出", notes = "FAQ列表导出", httpMethod = "GET")
     @ApiImplicitParams({
+            @ApiImplicitParam(name = "id",value = "主键", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "qTitle",value = "问题标题", required = true, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qDes",value = "问题描述", required = true, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "qAnswer",value = "问题回答", required = false, paramType = "query", dataType="String"),
             @ApiImplicitParam(name = "qSystem",value = "问题所属领域:0-党政机关整体智治系统;1-数字政府系统;2-数字社会系统;3-数字经济系统;4-数字法制系统", required = true, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "qPermission",value = "访问权限:0-全部可见（默认0全部可见）", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "status",value = "审核状态:0-待审核;1-审核通过（默认0待审核）", required = false, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "isValid",value = "是否有效:0-有效;1-无效", required = false, paramType = "query", dataType="int"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
             @ApiResponse(code = 13500, message = "ERROR")
     })
     @GetMapping("/download")
-    public KbengineResult download(@RequestParam(value = "qTitle", required = false) String qTitle,
+    public KbengineResult download(@RequestParam(value = "id", required = false) Long id,
+                                   @RequestParam(value = "qTitle", required = false) String qTitle,
                                    @RequestParam(value = "qDes", required = false) String qDes,
                                    @RequestParam(value = "qAnswer", required = false) String qAnswer,
                                    @RequestParam(value = "qSystem", required = false) Integer qSystem,
                                    @RequestParam(value = "qPermission", required = false) Integer qPermission,
-                                   @RequestParam(value = "status", required = false) Integer status, HttpServletResponse response) throws IOException {
+                                   @RequestParam(value = "status", required = false) Integer status,
+                                   @RequestParam(value = "isValid", required = false) Integer isValid,
+                                   HttpServletResponse response) throws IOException {
         Map<String, Object> resultMap = new HashMap<>();
         QsBaseInfoRep qsBaseInfoRep = new QsBaseInfoRep();
+        qsBaseInfoRep.setId(id);
         qsBaseInfoRep.setQTitle(qTitle);
         qsBaseInfoRep.setQDes(qDes);
         qsBaseInfoRep.setQAnswer(qAnswer);
         qsBaseInfoRep.setQSystem(qSystem);
         qsBaseInfoRep.setQPermission(qPermission);
         qsBaseInfoRep.setStatus(status);
+        qsBaseInfoRep.setIsValid(isValid);
         List<QsBaseInfoRep> list = qsBaseInfoRepService.selectQsBaseInfoRepList(qsBaseInfoRep);
         List<List<Object>> excelList = new ArrayList<List<Object>>();
         List columnHeadList = new ArrayList();

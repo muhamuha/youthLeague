@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.wzxc.common.core.text.Convert;
 import com.wzxc.common.utils.DateUtils;
+import com.wzxc.kbengine.shiro.JwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.wzxc.kbengine.dao.ds1.DxQuotaCurrentMapper;
@@ -55,7 +56,10 @@ public class DxQuotaCurrentServiceImpl implements IDxQuotaCurrentService
     @Override
     public int insertDxQuotaCurrent(DxQuotaCurrent dxQuotaCurrent)
     {
+        dxQuotaCurrent.setCreator(JwtFilter.getUserId());
         dxQuotaCurrent.setCreateTime(DateUtils.getNowDate());
+        dxQuotaCurrent.setUpdator(JwtFilter.getUserId());
+        dxQuotaCurrent.setUpdateTime(DateUtils.getNowDate());
         return dxQuotaCurrentMapper.insertDxQuotaCurrent(dxQuotaCurrent);
     }
 
@@ -68,6 +72,7 @@ public class DxQuotaCurrentServiceImpl implements IDxQuotaCurrentService
     @Override
     public int updateDxQuotaCurrent(DxQuotaCurrent dxQuotaCurrent)
     {
+        dxQuotaCurrent.setUpdator(JwtFilter.getUserId());
         dxQuotaCurrent.setUpdateTime(DateUtils.getNowDate());
         return dxQuotaCurrentMapper.updateDxQuotaCurrent(dxQuotaCurrent);
     }

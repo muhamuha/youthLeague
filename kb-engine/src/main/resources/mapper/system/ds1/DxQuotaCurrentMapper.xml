@@ -27,7 +27,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     <select id="selectDxQuotaCurrentList" parameterType="DxQuotaCurrent" resultMap="DxQuotaCurrentResult">
         <include refid="selectDxQuotaCurrentVo"/>
-        <where>  
+        <where>
+            <if test="id != null  and id != ''"> and id = #{id}</if>
             <if test="quotaName != null  and quotaName != ''"> and quota_name like concat('%', #{quotaName}, '%')</if>
             <if test="quotaDesc != null  and quotaDesc != ''"> and quota_desc = #{quotaDesc}</if>
             <if test="valueUnit != null  and valueUnit != ''"> and value_unit = #{valueUnit}</if>
