@@ -2,6 +2,7 @@ package com.wzxc.kbengine.service.impl;
 
 import java.util.List;
 
+import com.wzxc.common.core.dao.InsertBatchCommon;
 import com.wzxc.common.core.text.Convert;
 import com.wzxc.common.utils.DateUtils;
 import com.wzxc.kbengine.shiro.JwtFilter;
@@ -95,5 +96,10 @@ public class DxQuotaHistoryServiceImpl implements IDxQuotaHistoryService
     public int deleteDxQuotaHistoryById(Long id)
     {
         return dxQuotaHistoryMapper.deleteDxQuotaHistoryById(id);
+    }
+
+    @Override
+    public int insertBatch(InsertBatchCommon insertBatchCommon) {
+        return dxQuotaHistoryMapper.insertBatch(insertBatchCommon);
     }
 }

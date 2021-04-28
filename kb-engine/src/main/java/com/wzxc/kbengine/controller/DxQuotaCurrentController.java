@@ -1,16 +1,28 @@
 package com.wzxc.kbengine.controller;
 
-import java.io.IOException;
+import java.io.*;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.wzxc.common.annotation.CheckParam;
 import com.wzxc.common.annotation.CheckParams;
+import com.wzxc.common.annotation.InsertBatchParam;
+import com.wzxc.common.annotation.InsertBatchParams;
 import com.wzxc.common.core.controller.BaseController;
+import com.wzxc.common.core.dao.InsertBatchCommon;
 import com.wzxc.common.core.domain.KbengineResult;
+import com.wzxc.common.utils.DateUtils;
+import com.wzxc.common.utils.file.ExcelUtils;
+import com.wzxc.common.utils.reflect.ReflectUtils;
+import com.wzxc.common.utils.uuid.IdUtils;
 import com.wzxc.common.validate.Check;
 import com.wzxc.kbengine.service.IDxQuotaHistoryService;
+import com.wzxc.kbengine.shiro.JwtFilter;
 import com.wzxc.kbengine.vo.DxQuotaHistory;
 import io.swagger.annotations.*;
 import org.springframework.beans.BeanUtils;
@@ -18,7 +30,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.wzxc.kbengine.vo.DxQuotaCurrent;
 import com.wzxc.kbengine.service.IDxQuotaCurrentService;
+import org.springframework.web.multipart.MultipartFile;
 import springfox.documentation.annotations.ApiIgnore;
+
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * 【请填写功能名称】Controller
@@ -132,5 +147,102 @@ public class DxQuotaCurrentController extends BaseController {
             return KbengineResult.error("删除失败");
         }
         return KbengineResult.success("删除成功");
+    }
+
+    /**
+     * 下载批导入excel模板
+     * @param filePath  文件上传时，返回的相对路径
+     * @param response
+     * @param isOnLine  传入true，表示打开，但是打开的是浏览器能识别的文件，比如图片、pdf，word等无法打开
+     *                  传入false,只是下载，如果不传入这个参数默认为false
+     * @throws Exception
+     */
+    @ApiOperation(value = "下载批导入模板", notes = "下载批导入模板", httpMethod = "GET")
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @GetMapping(value = "/downloadTemplate")
+    public KbengineResult downLoad(HttpServletResponse response) throws Exception {
+        String fileName = "dxQuotaCurrentInsertTemplate.xlsx";
+        InputStream templateFile = this.getClass().getClassLoader().getResourceAsStream("static" + File.separator + fileName);
+        if (templateFile == null) {
+            return KbengineResult.error("模板文件不存在");
+        }
+        fileName = new String(fileName.getBytes("UTF-8"), "ISO-8859-1");
+        BufferedInputStream br = new BufferedInputStream(templateFile);
+        byte[] buf = new byte[1024];
+        int len = 0;
+        response.reset(); // 非常重要
+        response.setContentType("Content-Type: application/octet-stream");
+        response.setHeader("Content-Disposition", "attachment; filename=" + fileName);
+        OutputStream out = response.getOutputStream();
+        while ((len = br.read(buf)) > 0)
+            out.write(buf, 0, len);
+        br.close();
+        out.close();
+        return null;
+    }
+
+    /**
+     * excel批导入
+     */
+    @ApiOperation(value = "批导入", notes = "批导入", httpMethod = "POST")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "file",value = "文件名称", required = true, paramType = "query", dataType="Object"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @InsertBatchParams({
+            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "指标名称（必填）", fieldName = "quota_name"),
+            @InsertBatchParam(value = Check.IsEnum, fieldNameZh = "地区（必填）", fieldName = "node_id", express = "com.wzxc.kbengine.en.dxQuotaCurrent.NodeId"),
+            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "指标值（必填）", fieldName = "quota_value"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "指标单位（选填）", fieldName = "value_unit"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "指标定义（选填）", fieldName = "quota_desc"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "同比值（选填）", fieldName = "quota_yoy"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "环比值（选填）", fieldName = "quota_mom"),
+    })
+    @PostMapping(value = "/batch")
+    public KbengineResult insertBatch(@RequestParam("file") MultipartFile file) {
+        Method method = ReflectUtils.getAccessibleMethodByName(this, "insertBatch", 1);
+        Annotation annotation = ReflectUtils.getAnntationByMethod(method, "InsertBatchParams");
+        InsertBatchParam[] insertBatchParams = ((InsertBatchParams) annotation).value();
+        if (file.isEmpty()) {
+            return KbengineResult.error("上传失败，请选择文件");
+        }
+        // 获取字段中文名称
+        List<String> fieldNameZhList = ExcelUtils.exportTitleListFromExcel(file);
+        // 获取字段名称
+        List<String> fieldNameList = ExcelUtils.getFieldNameList(fieldNameZhList, insertBatchParams);
+        List<String> fieldNameList1 = ExcelUtils.getFieldNameList(fieldNameZhList, insertBatchParams);
+        // 获取数据
+        List<List<String>> contentList = ExcelUtils.exportContentListFromExcel(file, fieldNameList, insertBatchParams);
+        List<List<String>> contentList1 = ExcelUtils.exportContentListFromExcel(file, fieldNameList1, insertBatchParams);
+        if(contentList == null || contentList.size() == 0){
+            return KbengineResult.success("导入成功");
+        }
+        InsertBatchCommon insertBatchCommon = new InsertBatchCommon();
+        insertBatchCommon.setFieldList(fieldNameList);
+        insertBatchCommon.setContentList(contentList);
+        fieldNameList.add("creator");
+        fieldNameList.add("updator");
+        for(List<String> row : contentList){
+            row.add(JwtFilter.getUserId());
+            row.add(JwtFilter.getUserId());
+        }
+        dxQuotaCurrentService.insertBatch(insertBatchCommon);
+
+        // 批导入指标历史
+        InsertBatchCommon insertBatchCommon1 = new InsertBatchCommon();
+        insertBatchCommon1.setFieldList(fieldNameList1);
+        insertBatchCommon1.setContentList(contentList1);
+        fieldNameList1.add("creator");
+        for(List<String> row : contentList1){
+            row.add(JwtFilter.getUserId());
+        }
+        dxQuotaHistoryService.insertBatch(insertBatchCommon1);
+        return KbengineResult.success("批导入成功");
     }
 }

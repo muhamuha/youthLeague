@@ -1,6 +1,8 @@
 package com.wzxc.kbengine.service;
 
 import java.util.List;
+
+import com.wzxc.common.core.dao.InsertBatchCommon;
 import com.wzxc.kbengine.vo.DxQuotaCurrent;
 
 /**
@@ -58,4 +60,6 @@ public interface IDxQuotaCurrentService
      * @return 结果
      */
     public int deleteDxQuotaCurrentById(Long id);
+
+    int insertBatch(InsertBatchCommon insertBatchCommon);
 }

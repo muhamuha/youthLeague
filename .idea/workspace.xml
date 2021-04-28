@@ -2,26 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/DxQuotaCurrentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/DxQuotaHistoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/DxQuotaCurrentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/DxQuotaHistoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/IDxQuotaCurrentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/IDxQuotaHistoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/DxQuotaCurrentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/DxQuotaHistoryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/DxQuotaCurrent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/DxQuotaHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/DxQuotaCurrentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/DxQuotaHistoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/dxQuotaCurrent/NodeId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/static/dxQuotaCurrentInsertTemplate.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/shiro/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/shiro/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/shiro/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/shiro/MyShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/shiro/MyShiroRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/shiro/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/DxQuotaCurrentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/DxQuotaCurrentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/DxQuotaCurrentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/DxQuotaCurrentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/DxQuotaHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/DxQuotaHistoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/IDxQuotaCurrentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/IDxQuotaCurrentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/IDxQuotaHistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/IDxQuotaHistoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/DxQuotaCurrentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/DxQuotaCurrentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/DxQuotaHistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/DxQuotaHistoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/DxQuotaCurrentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/DxQuotaCurrentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/DxQuotaHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/DxQuotaHistoryMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,8 +44,8 @@
       <list>
         <option value="Interface" />
         <option value="AnnotationType" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -130,11 +123,14 @@
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/MapDataUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/DateUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/uuid/IdUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/DxQuotaCurrentMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/core/page/TableSupport.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/DxQuotaCurrentServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/DxQuotaCurrentController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/DxQuotaHistoryMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/dao/ds1/QsBaseInfoRepMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/OtherController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/resources/application-prod.yaml" root0="SKIP_INSPECTION" />
@@ -188,7 +184,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/kb-engine/src/main/resources/static" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -489,7 +485,8 @@
       <workItem from="1619141409120" duration="12115000" />
       <workItem from="1619312986168" duration="14449000" />
       <workItem from="1619401019835" duration="6204000" />
-      <workItem from="1619495052273" duration="11120000" />
+      <workItem from="1619495052273" duration="11390000" />
+      <workItem from="1619589882014" duration="6788000" />
     </task>
     <servers />
   </component>

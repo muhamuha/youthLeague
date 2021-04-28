@@ -1,6 +1,8 @@
 package com.wzxc.kbengine.dao.ds1;
 
 import java.util.List;
+
+import com.wzxc.common.core.dao.InsertBatchCommon;
 import com.wzxc.kbengine.vo.DxQuotaHistory;
 
 /**
@@ -58,4 +60,6 @@ public interface DxQuotaHistoryMapper
      * @return 结果
      */
     public int deleteDxQuotaHistoryByIds(String[] ids);
+
+    int insertBatch(InsertBatchCommon insertBatchCommon);
 }

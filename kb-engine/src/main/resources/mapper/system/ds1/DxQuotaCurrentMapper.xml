@@ -113,4 +113,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </foreach>
     </delete>
 
+    <!--  指标当前值批导入  -->
+    <insert id="insertBatch" parameterType="com.wzxc.common.core.dao.InsertBatchCommon">
+        INSERT INTO
+        <foreach collection ="fieldList" index="index" item="field" separator ="," open="dx_quota_current(" close=")">
+            ${field}
+        </foreach>
+        VALUES
+        <foreach collection ="contentList" index="index" item="rowList" separator =",">
+            <foreach collection="rowList" index="index" item="item" separator ="," open="(" close=")">
+                #{item}
+            </foreach>
+        </foreach>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <foreach collection ="fieldList" index="index" item="field">
+                <if test="field != 'updator'">${field} = VALUES(${field}),</if>
+            </foreach>
+        </trim>
+    </insert>
+
 </mapper>
