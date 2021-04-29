@@ -20,10 +20,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     private static final String TOKEN = "userId";
     private static ThreadLocal<String> userIdThreadLocal = new ThreadLocal<>();
 
-    private String[] anonUrl = new String[]{
-            "https://sz.wenzhou.gov.cn/szdoor-service/digital-door-dx/v1/other/brain/quota",
-            "https://sz-test.wenzhou.gov.cn/szdoor-service/digital-door-dx/v1/other/brain/quota"
-    };
+    private String[] anonUrl = new String[]{};
 
     private AntPathMatcher pathMatcher = new AntPathMatcher();
 
@@ -57,24 +54,23 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
      */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws UnauthorizedException {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        // 生成requestId
-        RequestIdUtils.createRequestId(httpServletRequest);
-        // 获取免认证接口 url
-        log.info("url --- " + httpServletRequest.getRequestURL().toString());
-        boolean match = false;
-        for (String u : anonUrl) {
-            if (pathMatcher.match(u, httpServletRequest.getRequestURL().toString())) {
-                match = true;
-            }
-        }
-        if (match) {
-            return true;
-        }
-        if (isLoginAttempt(request, response)) {
-            return executeLogin(request, response);
-        }
-        return false;
+//        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+//        // 生成requestId
+//        RequestIdUtils.createRequestId(httpServletRequest);
+//        // 获取免认证接口 url
+//        boolean match = false;
+//        for (String u : anonUrl) {
+//            if (pathMatcher.match(u, httpServletRequest.getRequestURI())) {
+//                match = true;
+//            }
+//        }
+//        if (match) {
+//            return true;
+//        }
+//        if (isLoginAttempt(request, response)) {
+//            return executeLogin(request, response);
+//        }
+        return true;
     }
 
     /**

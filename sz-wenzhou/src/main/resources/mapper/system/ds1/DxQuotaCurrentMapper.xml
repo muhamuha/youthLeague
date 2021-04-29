@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.szwenzhou.dao.ds1.DxQuotaCurrentMapper">
+    
+    <resultMap type="com.wzxc.szwenzhou.vo.DxQuotaCurrent" id="DxQuotaCurrentResult">
+        <result property="id"    column="id"    />
+        <result property="quotaName"    column="quota_name"    />
+        <result property="quotaDesc"    column="quota_desc"    />
+        <result property="valueUnit"    column="value_unit"    />
+        <result property="nodeId"    column="node_id"    />
+        <result property="quotaValue"    column="quota_value"    />
+        <result property="quotaYoy"    column="quota_yoy"    />
+        <result property="quotaMom"    column="quota_mom"    />
+        <result property="remarks"    column="remarks"    />
+        <result property="creator"    column="creator"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="updator"    column="updator"    />
+        <result property="isValid"    column="is_valid"    />
+    </resultMap>
+
+    <resultMap type="com.wzxc.szwenzhou.vo.DxQuotaCurrent" id="DxQuotaCurrentResultV">
+        <result property="id"    column="id"    />
+        <result property="quotaName"    column="quota_name"    />
+        <result property="quotaDesc"    column="quota_desc"    />
+        <result property="valueUnit"    column="value_unit"    />
+        <result property="nodeId"    column="node_id"    />
+        <result property="quotaValue"    column="quota_value"    />
+        <result property="quotaYoy"    column="quota_yoy"    />
+        <result property="quotaMom"    column="quota_mom"    />
+        <result property="remarks"    column="remarks"    />
+        <result property="creator"    column="creator"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="updator"    column="updator"    />
+        <result property="isValid"    column="is_valid"    />
+        <result property="regionName"    column="region_name"    />
+    </resultMap>
+
+    <sql id="selectDxQuotaCurrentVo">
+        select id, quota_name, quota_desc, value_unit, node_id, quota_value, quota_yoy, quota_mom, remarks, creator, create_time, update_time, updator, is_valid from dx_quota_current
+    </sql>
+
+    <sql id="selectDxQuotaCurrentVoV">
+        select id, quota_name, quota_desc, value_unit, node_id, quota_value, quota_yoy, quota_mom, remarks, creator, create_time, update_time, updator, is_valid, region_name from v_dx_quota_current
+    </sql>
+
+    <select id="selectDxQuotaCurrentByName" parameterType="DxQuotaCurrent" resultMap="DxQuotaCurrentResultV">
+        <include refid="selectDxQuotaCurrentVoV"/>
+        <where>
+            is_valid = 0 and quota_name = #{quotaName}
+        </where>
+        order by node_id
+    </select>
+
+</mapper>

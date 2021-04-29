@@ -26,6 +26,7 @@ C:\javaProject\zzd\zzd-common\src\main\java\com\wzxc\common\exception\DemoModeEx
 C:\javaProject\zzd\zzd-common\src\main\java\com\wzxc\common\constant\UserConstants.java
 C:\javaProject\zzd\zzd-common\src\main\java\com\wzxc\common\utils\http\HttpsUtils.java
 C:\javaProject\zzd\zzd-common\src\main\java\com\wzxc\common\exception\BusinessException.java
+C:\javaProject\zzd\zzd-common\src\main\java\com\wzxc\common\utils\security\Base64Utils.java
 C:\javaProject\zzd\zzd-common\src\main\java\com\wzxc\common\exception\user\UserDeleteException.java
 C:\javaProject\zzd\zzd-common\src\main\java\com\wzxc\common\utils\StringUtils.java
 C:\javaProject\zzd\zzd-common\src\main\java\com\wzxc\common\exception\file\FileSizeLimitExceededException.java
