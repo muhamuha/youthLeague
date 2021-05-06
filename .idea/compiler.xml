@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zzd-common" />
         <module name="sz-wenzhou" />
-        <module name="web-service" />
         <module name="config-common" />
+        <module name="zzd-common" />
         <module name="zzd-push" />
         <module name="kb-engine" />
+        <module name="web-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

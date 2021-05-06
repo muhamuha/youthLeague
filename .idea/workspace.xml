@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/DxQuotaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/dao/ds1/DxQuotaCurrentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/service/IDxQuotaCurrentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/service/impl/DxQuotaCurrentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/vo/DxQuotaCurrent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/mapper/system/ds1/DxQuotaCurrentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/security/Base64Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/dxQuotaCurrent/NodeId.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/dxQuotaCurrent/NodeId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/controller/StatisticRptRepController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/dao/ds1/StatisticRptRepMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/service/IStatisticRptRepService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/service/TestService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/service/impl/StatisticRptRepServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/service/impl/TestServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/shiro/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/shiro/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/vo/StatisticRptRep.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/main/resources/mapper/system/ds1/StatisticRptRepMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sz-wenzhou/src/test/java/com/wzxc/szwenzhou/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/sz-wenzhou/src/test/java/com/wzxc/szwenzhou/DemoApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -384,6 +364,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.OtherController" />
+      <item itemvalue="Application.Base64Utils" />
       <item itemvalue="JUnit.KbEngineApplicationTests.fun1" />
       <item itemvalue="JUnit.KbEngineApplicationTests.fun2" />
       <item itemvalue="JUnit.DemoApplicationTests.download" />
@@ -396,7 +377,6 @@
       <item itemvalue="Spring Boot.SzWenzhouApplication" />
       <item itemvalue="Spring Boot.CommonConfigApplication (1)" />
       <item itemvalue="Spring Boot.ConfigCommonApplication" />
-      <item itemvalue="Application.Base64Utils" />
     </list>
     <recent_temporary>
       <list>
@@ -497,7 +477,8 @@
       <workItem from="1619401019835" duration="6204000" />
       <workItem from="1619495052273" duration="11390000" />
       <workItem from="1619589882014" duration="12664000" />
-      <workItem from="1619659489874" duration="5744000" />
+      <workItem from="1619659489874" duration="8261000" />
+      <workItem from="1619753038375" duration="4084000" />
     </task>
     <servers />
   </component>
