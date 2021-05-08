@@ -2,8 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/policyBaseInfoRep/FileObjectList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/policyBaseInfoRep/NodeId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/static/policyInsertTemplate.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/constant/ValidateConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/Filter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/FilterUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/PolicyBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/PolicyBaseInfoRepController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/PolicySystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/policyBaseInfoRep/PolicySystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/PolicyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/policyBaseInfoRep/PolicyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/static/policyInsertTemplate.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/annotation/InsertBatchParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/annotation/InsertBatchParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/Check.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/CheckUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/CheckUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/annotation/InsertBatchParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/annotation/InsertBatchParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/utils/file/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/utils/file/ExcelUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/validate/Check.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/validate/Check.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/validate/CheckUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/validate/CheckUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +54,8 @@
       <list>
         <option value="Interface" />
         <option value="AnnotationType" />
-        <option value="Enum" />
         <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -47,6 +68,7 @@
     <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/config/Ds1Config.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/Filter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/ZzdPushApplication.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/service/impl/HhlZzdPushTemplateServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/mapper/system/ds1/HhlZzdPushHisProcessMapper.xml" root0="SKIP_INSPECTION" />
@@ -107,6 +129,7 @@
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/uuid/UUID.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/AddressUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/sql/SqlUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/policyBaseInfoRep/FileObjectList.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/web-service/pom.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/StringUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/utils/IndicatorUtil.java" root0="SKIP_INSPECTION" />
@@ -150,6 +173,7 @@
     <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/resources/application-test.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/resources/mapper/system/ds1/HhlZzdKpiMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/SearchLogController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/FilterUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/aspect/ChangeLogAspect.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/sz-wenzhou/src/main/java/com/wzxc/szwenzhou/shiro/JwtFilter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/service/impl/SearchLogServiceImpl.java" root0="SKIP_INSPECTION" />
@@ -177,7 +201,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sz-wenzhou/src/main/resources/mapper/system/ds1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/kb-engine/src/main/resources/static" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -190,18 +214,18 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
       <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\static" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
       <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\controller" />
       <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service\impl" />
       <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wzxc.kbengine.en.policyBaseInfoRep" />
       <recent name="com.wzxc.szwenzhou.dao.ds1" />
       <recent name="com.wzxc.szwenzhou.service.impl" />
       <recent name="mapper.system.ds1" />
       <recent name="com.wzxc.kbengine.en.QsBaseInfoRep" />
-      <recent name="com.wzxc.szwenzhou.service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\java\com\wzxc\szwenzhou\vo" />
@@ -479,6 +503,10 @@
       <workItem from="1619589882014" duration="12664000" />
       <workItem from="1619659489874" duration="8261000" />
       <workItem from="1619753038375" duration="4084000" />
+      <workItem from="1620265453096" duration="1738000" />
+      <workItem from="1620290908856" duration="4007000" />
+      <workItem from="1620351627841" duration="5319000" />
+      <workItem from="1620443379115" duration="13384000" />
     </task>
     <servers />
   </component>
@@ -510,16 +538,6 @@
           <url>file://$PROJECT_DIR$/zzd-push/src/main/java/com/wzxc/zzdpush/shiro/JwtFilter.java</url>
           <line>57</line>
           <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/Aspect/CheckParamAop.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/Aspect/CheckParamAop.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/sz-wenzhou/src/main/java/shiro/JwtFilter.java</url>

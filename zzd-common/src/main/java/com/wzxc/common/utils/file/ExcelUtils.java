@@ -143,6 +143,7 @@ public class ExcelUtils {
                     // 校验数据
                     boolean isValid = false;
                     InsertBatchParam insertBatchParam = insertBatchParamList.get(currentColumnCount);
+                    // 进行合法性校验
                     if(insertBatchParam.value().methodName.equals("isEnum")){ // 有枚举映射关系
                         try {
                             String enumValue = (String) insertBatchParam.value().fun.apply(cellValue, insertBatchParam.express());
@@ -162,6 +163,8 @@ public class ExcelUtils {
                     if(!isValid){
                         throw new InsertBatchException("发现错误行：" + rowCount + "，错误列：" + (++currentColumnCount));
                     }
+                    // 过滤器处理
+                    cellValue = (String) insertBatchParam.filter().fun.apply(cellValue, insertBatchParam.express());
                     rowList.add(cellValue);
                 }
                 resultList.add(rowList);

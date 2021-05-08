@@ -83,6 +83,26 @@ public class QsBaseInfoRepController extends BaseController {
     }
 
     /**
+     * 查询【请填写功能名称】详情
+     */
+    @ApiOperation(value = "查看FAQ详情", notes = "查看FAQ详情", httpMethod = "POST")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id",value = "主键", required = false, paramType = "query", dataType="int"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK", response = QsBaseInfoRep.class),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @PostMapping("/detail")
+    public KbengineResult detail(Long id) throws IOException {
+        QsBaseInfoRep baseInfoRep = qsBaseInfoRepService.selectQsBaseInfoRepById(id);
+        if(baseInfoRep == null){
+            return KbengineResult.error("查询失败");
+        }
+        return KbengineResult.success("查询成功", baseInfoRep);
+    }
+
+    /**
      * 新增【请填写功能名称】
      */
     @ApiOperation(value = "添加FAQ", notes = "添加FAQ", httpMethod = "POST")

@@ -1,4 +1,4 @@
-package com.wzxc.kbengine.en;
+package com.wzxc.kbengine.en.policyBaseInfoRep;
 
 public enum PolicySystem {
 

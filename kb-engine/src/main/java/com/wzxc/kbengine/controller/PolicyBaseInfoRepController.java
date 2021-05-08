@@ -18,9 +18,11 @@ import com.wzxc.common.utils.file.ExcelUtils;
 import com.wzxc.common.utils.reflect.ReflectUtils;
 import com.wzxc.common.utils.uuid.IdUtils;
 import com.wzxc.common.validate.Check;
+import com.wzxc.common.validate.Filter;
 import com.wzxc.kbengine.service.impl.PolicyBaseInfoRepServiceImpl;
 import com.wzxc.kbengine.service.impl.RefLabelRepServiceImpl;
 import com.wzxc.kbengine.service.impl.TkPolicyRepServiceImpl;
+import com.wzxc.kbengine.shiro.JwtFilter;
 import com.wzxc.kbengine.vo.LabelBaseInfoRep;
 import com.wzxc.kbengine.vo.PolicyBaseInfoRep;
 import com.wzxc.kbengine.vo.RefLabelRep;
@@ -304,24 +306,25 @@ public class PolicyBaseInfoRepController extends BaseController {
      */
     @ApiOperation(value = "批导入", notes = "批导入", httpMethod = "POST")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "file",value = "文件名称", required = true, paramType = "query", dataType="Object"),
+            @ApiImplicitParam(name = "file", value = "文件名称", required = true, paramType = "query", dataType="Object"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
             @ApiResponse(code = 13500, message = "ERROR")
     })
     @InsertBatchParams({
-            @InsertBatchParam(value = Check.IsEnum, fieldNameZh = "发布层级描述", fieldName = "policy_type", express = "com.wzxc.kbengine.en.PolicyType"),
-            @InsertBatchParam(value = Check.Date, fieldNameZh = "发布时间", fieldName = "file_publish_time"),
-            @InsertBatchParam(value = Check.Date, fieldNameZh = "实施时间", fieldName = "file_imp_time"),
-            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "制定单位名称", fieldName = "unit_name"),
-            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "制定单位编码", fieldName = "unit_code"),
-            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "创建人名称", fieldName = "creator"),
-            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "政策名称", fieldName = "policy_name"),
-            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "政策文号", fieldName = "policy_number"),
-            @InsertBatchParam(value = Check.Any, fieldNameZh = "备注", fieldName = "remark"),
-            @InsertBatchParam(value = Check.IsEnum, fieldNameZh = "政策所属领域", fieldName = "policy_system", express = "com.wzxc.kbengine.en.PolicySystem"),
-            @InsertBatchParam(value = Check.Any, fieldNameZh = "拟稿人名称", fieldName = "drafter"),
+            @InsertBatchParam(value = Check.IsEnum, fieldNameZh = "政策所属领域（必填）", fieldName = "policy_system", express = "com.wzxc.kbengine.en.policyBaseInfoRep.PolicySystem"),
+            @InsertBatchParam(value = Check.IsEnum, fieldNameZh = "发布层级描述（必填）", fieldName = "policy_type", express = "com.wzxc.kbengine.en.policyBaseInfoRep.PolicyType"),
+            @InsertBatchParam(value = Check.IsEnum, fieldNameZh = "地区（必填）", fieldName = "node_id", express = "com.wzxc.kbengine.en.policyBaseInfoRep.NodeId"),
+            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "政策名称（必填）", fieldName = "policy_name"),
+            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "政策文号（必填）", fieldName = "policy_number"),
+            @InsertBatchParam(value = Check.DateOrEmpty, fieldNameZh = "发布时间（选填）", fieldName = "file_publish_time"),
+            @InsertBatchParam(value = Check.DateOrEmpty, fieldNameZh = "实施时间（选填）", fieldName = "file_imp_time"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "制定单位名称（选填）", fieldName = "unit_name"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "政策正文（选填）", fieldName = "policy_content_si"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "备注（选填）", fieldName = "remark"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "拟稿人（选填）", fieldName = "drafter"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "政策文件（选填，格式：文件名称+“$”+url地址，多个用逗号隔开）", fieldName = "file_object_list", filter = Filter.Customize, express = "com.wzxc.kbengine.en.policyBaseInfoRep.FileObjectList"),
     })
     @PostMapping(value = "/policies/batch")
     public KbengineResult insertBatch(@RequestParam("file") MultipartFile file) {
@@ -348,14 +351,8 @@ public class PolicyBaseInfoRepController extends BaseController {
         fieldNameList.add("update_time");
         fieldNameList.add("cd_operation");
         fieldNameList.add("resource");
+        fieldNameList.add("creator");
         fieldNameList.add("updator");
-        // 获取creator的index
-        int creatorIndex = 0;
-        for(; creatorIndex < fieldNameList.size(); creatorIndex++){
-            if(fieldNameList.get(creatorIndex).equals("creator")){
-                break;
-            }
-        }
         SimpleDateFormat sdf = new SimpleDateFormat( " yyyy-MM-dd HH:mm:ss" );
         for(List<String> row : contentList){
             row.add("wz_" + IdUtils.getSnowflakeId());
@@ -363,9 +360,38 @@ public class PolicyBaseInfoRepController extends BaseController {
             row.add(sdf.format(DateUtils.getNowDate()));
             row.add("i");
             row.add("数字温州 - 批导入");
-            row.add(row.get(creatorIndex));
+            row.add(JwtFilter.getUserId());
+            row.add(JwtFilter.getUserId());
         }
         policyBaseInfoRepService.insertBatch(insertBatchCommon);
+        return KbengineResult.success("批导入成功");
+    }
+
+    /**
+     * 接口批导入
+     */
+    @ApiOperation(value = "批导入-接口导入", notes = "批导入-接口导入", httpMethod = "POST")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "data", value = "导入数据", required = true, paramType = "query", dataType="Object"),
+})
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @CheckParams({
+            @CheckParam(value = Check.NotNull, argName = "policyBaseInfoRep.filePublishTime", msg = "缺少政策发布时间（filePublishTime）"),
+            @CheckParam(value = Check.NotNull, argName = "policyBaseInfoRep.unitName", msg = "缺少发布部门（unitName）"),
+            @CheckParam(value = Check.NotNull, argName = "policyBaseInfoRep.resource", msg = "缺少数源（resource）"),
+            @CheckParam(value = Check.NotNull, argName = "policyBaseInfoRep.policyName", msg = "缺少政策名称（policyName）"),
+            @CheckParam(value = Check.NotNull, argName = "policyBaseInfoRep.policyNumber", msg = "缺少文号（policyNumber）"),
+            @CheckParam(value = Check.NotNull, argName = "policyBaseInfoRep.policyType", msg = "缺少发布层级（policyType）"),
+            @CheckParam(value = Check.NotNull, argName = "policyBaseInfoRep.drafter", msg = "缺少拟稿人（drafter）"),
+    })
+    @PostMapping(value = "/policies/batch/1")
+    public KbengineResult insertBatch1(@RequestBody List<PolicyBaseInfoRep> PolicyBaseInfoRepList){
+        Method method = ReflectUtils.getAccessibleMethodByName(this, "insertBatch", 1);
+        Annotation annotation = ReflectUtils.getAnntationByMethod(method, "InsertBatchParams");
+        InsertBatchParam[] insertBatchParams = ((InsertBatchParams) annotation).value();
         return KbengineResult.success("批导入成功");
     }
 

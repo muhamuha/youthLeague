@@ -24,8 +24,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select id, q_title, q_des, q_answer, q_system, q_permission, status, create_time, update_time, creator, updator, resource, is_valid from qs_base_info_rep
     </sql>
 
+    <sql id="selectQsBaseInfoRepVo_list">
+        select id, q_title, q_des, q_system, q_permission, status, create_time, update_time, (select employee_name from cityos_user.sys_employee where id = qs_base_info_rep.creator) creator, (select employee_name from cityos_user.sys_employee where id = qs_base_info_rep.updator) updator, resource, is_valid from qs_base_info_rep
+    </sql>
+
     <select id="selectQsBaseInfoRepList" parameterType="QsBaseInfoRep" resultMap="QsBaseInfoRepResult">
-        <include refid="selectQsBaseInfoRepVo"/>
+        <include refid="selectQsBaseInfoRepVo_list"/>
         <where>
             is_valid = 0
             <if test="id != null"> and id = #{id}</if>

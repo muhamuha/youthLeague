@@ -144,6 +144,19 @@ public class CheckUtil {
         return Boolean.FALSE;
     }
 
+    /**
+     * 判断参数是一个日期或者为空
+     * 支持Date类型
+     * 支持LocalDate类型
+     * 支持String类型，yyyy-MM-dd、yyyyMMdd、yyyy/MM/dd格式； 默认仅支持yyyy-MM-dd
+     */
+    public static Boolean isDateOrEmpty(Object value, String express){
+        if(isNull(value, express)) {
+            return Boolean.TRUE;
+        }
+        return isDate(value, express);
+    }
+
 
     /**
      * 判断参数是否是一个日期

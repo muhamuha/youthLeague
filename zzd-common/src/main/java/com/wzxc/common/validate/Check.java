@@ -15,6 +15,7 @@ public enum Check {
     True("参数必须为 true", "isTrue", CheckUtil::isTrue),
 
     Date("参数必须是一个日期 yyyy-MM-dd", "isDate", CheckUtil::isDate),
+    DateOrEmpty("参数是一个日期 yyyy-MM-dd，或者为空", "isDateOrEmpty", CheckUtil::isDateOrEmpty),
 
     DateTime("参数必须是一个日期时间  yyyy-MM-dd HH:mm:ss", "isDateTime", CheckUtil::isDateTime),
 
