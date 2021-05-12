@@ -75,6 +75,7 @@ public class PolicyBaseInfoRepController extends BaseController {
             @ApiImplicitParam(name = "drafter",value = "拟稿人", required = false, paramType = "query", dataType="string"),
             @ApiImplicitParam(name = "policySystem",value = "领域（0:党政机关整体智治系统,1:数字政府系统;2:数字社会系统;3:数字经济系统;4:数字法制系统）", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "policyStatus",value = "状态（0：启用 1：停用）", required = false, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "taskId",value = "所属任务id（默认所有任务）", required = false, paramType = "query", dataType="long"),
             @ApiImplicitParam(name = "tkBaseInfoId",value = "所属任务id（默认所有任务）", required = false, paramType = "query", dataType="long"),
             @ApiImplicitParam(name = "isValid",value = "是否有效（0：有效 1：无效，默认0有效）", required = false, paramType = "query", dataType="int"),
             @ApiImplicitParam(name = "pageSize",value = "页码（默认10）", required = false, paramType = "query", dataType="int"),
@@ -90,7 +91,7 @@ public class PolicyBaseInfoRepController extends BaseController {
         Map<String, Object> resultMap = new HashMap<>();
         startPage();
         List<PolicyBaseInfoRep> policyBaseInfoReps = new ArrayList<>();
-        if(policyBaseInfoRep.getTkBaseInfoId() == null){ // 只查询政策表
+        if(policyBaseInfoRep.getTkBaseInfoId() == null && policyBaseInfoRep.getTaskId() == null){ // 只查询政策表
             policyBaseInfoReps = policyBaseInfoRepService.selectPolicyBaseInfoRepList(policyBaseInfoRep);
         } else{ // 需要关联 政策任务关联表
             // 判断是否只显示任务相关的政策

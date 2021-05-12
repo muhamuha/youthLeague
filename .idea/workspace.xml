@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/policyBaseInfoRep/FileObjectList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/policyBaseInfoRep/NodeId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/static/policyInsertTemplate.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/constant/ValidateConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/Filter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/FilterUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/PolicyBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/PolicyBaseInfoRepController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/controller/QsBaseInfoRepController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/PolicySystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/policyBaseInfoRep/PolicySystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/PolicyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/en/policyBaseInfoRep/PolicyType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/QsBaseInfoRepMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/static/policyInsertTemplate.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/annotation/InsertBatchParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/annotation/InsertBatchParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/CheckUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/src/main/java/com/wzxc/common/validate/CheckUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/annotation/InsertBatchParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/annotation/InsertBatchParam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/utils/file/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/utils/file/ExcelUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/validate/Check.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/validate/Check.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/validate/CheckUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/classes/com/wzxc/common/validate/CheckUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/zzd-common/target/zzd-common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/PolicyBaseInfoRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/java/com/wzxc/kbengine/vo/PolicyBaseInfoRep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/PolicyBaseInfoRepMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kb-engine/src/main/resources/mapper/system/ds1/PolicyBaseInfoRepMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,16 +191,16 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\java\com\wzxc\szwenzhou\vo" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\dao\ds1" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper" />
+      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.wzxc.szwenzhou" />
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\static" />
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\controller" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service\impl" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.wzxc.kbengine.en.policyBaseInfoRep" />
@@ -227,12 +209,12 @@
       <recent name="mapper.system.ds1" />
       <recent name="com.wzxc.kbengine.en.QsBaseInfoRep" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\java\com\wzxc\szwenzhou\vo" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\dao\ds1" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\resources\static" />
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper" />
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\controller" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service\impl" />
+      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -506,7 +488,10 @@
       <workItem from="1620265453096" duration="1738000" />
       <workItem from="1620290908856" duration="4007000" />
       <workItem from="1620351627841" duration="5319000" />
-      <workItem from="1620443379115" duration="13384000" />
+      <workItem from="1620443379115" duration="13568000" />
+      <workItem from="1620609270621" duration="2883000" />
+      <workItem from="1620717919548" duration="2941000" />
+      <workItem from="1620786204682" duration="4622000" />
     </task>
     <servers />
   </component>

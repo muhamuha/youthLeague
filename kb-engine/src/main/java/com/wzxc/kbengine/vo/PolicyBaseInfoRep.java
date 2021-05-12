@@ -135,9 +135,14 @@ public class PolicyBaseInfoRep extends BaseEntity
     private String fileOutId;
 
     /** 关联的任务id */
-    @ApiModelProperty(value = "关联的任务id")
+    @ApiModelProperty(value = "关联的任务id（主键）")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Long tkBaseInfoId;
+
+    /** 关联的任务id */
+    @ApiModelProperty(value = "关联的任务id")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String taskId;
 
     /** 是否与任务相关 */
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
