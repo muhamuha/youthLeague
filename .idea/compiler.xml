@@ -6,28 +6,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zzd-common" />
-        <module name="sz-wenzhou" />
+        <module name="util-common" />
         <module name="web-service" />
-        <module name="config-common" />
-        <module name="zzd-push" />
-        <module name="kb-engine" />
+        <module name="busi-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common-config" target="1.8" />
+      <module name="config-common" target="1.8" />
       <module name="demo1" target="1.8" />
+      <module name="sz-wenzhou" target="1.8" />
+      <module name="zzd-push" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="busi-service" options="-parameters" />
       <module name="common-config" options="-parameters" />
       <module name="config-common" options="-parameters" />
       <module name="demo1" options="-parameters" />
-      <module name="kb-engine" options="-parameters" />
       <module name="sz-wenzhou" options="-parameters" />
+      <module name="util-common" options="-parameters" />
       <module name="web-service" options="-parameters" />
-      <module name="zzd-common" options="-parameters" />
       <module name="zzd-push" options="-parameters" />
     </option>
   </component>

@@ -1,0 +1,39 @@
+project:
+  author:
+    name: MUHAMUHA
+    email: 2472350821@qq.com
+  version: v1
+
+spring:
+  profiles:
+#    active: prod
+    active: dev
+#    active: test
+  servlet:
+    multipart:
+      max-request-size: 50MB
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      wzxc:
+        kbengine:
+          dao: debug
+
+swagger:
+  enabled: true
+  title: MUHAMUHAの接口文档
+  description: MUHAMUHAの接口文档
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+

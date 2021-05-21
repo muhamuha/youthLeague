@@ -1,6 +1,0 @@
-# 加密密钥
-secret: aH4KCpqmlgSwZBUsnWABur50zasLxLtu
-# token有效时长
-expire: 3600 * 8
-# header 名称
-header: zzdPush

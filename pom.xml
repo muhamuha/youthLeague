@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.wzxc</groupId>
-    <artifactId>zzd</artifactId>
+    <artifactId>muhamuha-framework-server</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -45,7 +45,6 @@
     <!-- 依赖声明 -->
     <dependencyManagement>
         <dependencies>
-
             <!--阿里数据库连接池 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -129,7 +128,7 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
-<!--     JSOUP 爬虫 解析html       -->
+            <!--     JSOUP 爬虫 解析html       -->
             <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
             <dependency>
                 <groupId>org.jsoup</groupId>
@@ -160,34 +159,65 @@
             <!-- 通用工具依赖包 -->
             <dependency>
                 <groupId>com.wzxc</groupId>
-                <artifactId>zzd-common</artifactId>
+                <artifactId>util-common</artifactId>
                 <version>${zzd.version}</version>
             </dependency>
 
-            <!-- 后台服务通用依赖包 -->
+            <!-- 后台服务依赖包 -->
             <dependency>
                 <groupId>com.wzxc</groupId>
                 <artifactId>web-service</artifactId>
                 <version>${zzd.version}</version>
             </dependency>
 
-            <!-- 通用配置依赖包 -->
-            <dependency>
-                <groupId>com.wzxc</groupId>
-                <artifactId>config-common</artifactId>
-                <version>${zzd.version}</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <!--    Spring web    -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--    Spring test    -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <!-- Spring mybatis -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+
+        <!-- Spring框架基本的核心工具 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+        <!--    Spring aop模块    -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <!--    lombok    -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+
     <modules>
         <module>web-service</module>
-        <module>zzd-push</module>
-        <module>zzd-common</module>
-        <module>kb-engine</module>
-        <module>sz-wenzhou</module>
-        <module>config-common</module>
+        <module>util-common</module>
+        <module>busi-service</module>
     </modules>
 
 </project>
