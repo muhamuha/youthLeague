@@ -39,6 +39,8 @@ public class Ds1Config {
             default: { path = "classpath:mapper/system/ds1/test/*.xml"; break; }
         }
         try{
+
+            
             Resource[] rs = pathMatchingResourcePatternResolver.getResources(path);
             for(Resource r : rs){
                 resources.add(r);
