@@ -1,5 +1,7 @@
 package com.wzxc.webservice.config;
 
+import com.baomidou.mybatisplus.core.config.GlobalConfig;
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import com.wzxc.common.utils.spring.SpringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -27,7 +29,7 @@ public class Ds1Config {
     @Bean(name = "ds1SqlSessionFactory")
     @Primary
     public SqlSessionFactory ds1SqlSessionFactory(@Qualifier("ds1DataSource") DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+        MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         String activeProfile = SpringUtils.getActiveProfile(); // 判断环境
         String path = "";

@@ -1,0 +1,43 @@
+package ${cfg.packageName}.vo;
+
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+import java.io.Serializable;
+import java.util.Date;
+
+/**
+ * 实体类对象 【请填写功能名称】
+ * 
+ * @author ${cfg.author}
+ * @date ${cfg.datetime}
+ */
+@Data
+@TableName("${cfg.tableName}")
+@ApiModel(value="${cfg.voName}对象", description="$!{table.comment}")
+public class ${cfg.voName} implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    #foreach($field in ${cfg.fields})
+    #if(${field.columnComment} != "")
+    @ApiModelProperty(value = "${field.columnComment}")
+    #end
+## 主键
+#if(${field.columnKey} == "PRI")
+    @TableId(value = "${field.fieldName}", type = IdType.AUTO)
+#else
+    @TableField("${field.fieldName}")
+#end
+## 是否是逻辑删除字段
+#if("$!field.fieldName" == "deleted")
+    @TableLogic
+#end
+    private ${field.javaType} ${field.javaField};
+
+    #end
+}

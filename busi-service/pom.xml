@@ -22,6 +22,11 @@
             <groupId>com.wzxc</groupId>
             <artifactId>web-service</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.wzxc</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

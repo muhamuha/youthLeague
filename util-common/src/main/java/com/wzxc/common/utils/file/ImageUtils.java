@@ -1,6 +1,6 @@
 package com.wzxc.common.utils.file;
 
-import com.wzxc.common.config.RuoYiConfig;
+import com.wzxc.common.config.GlobalConfig;
 import com.wzxc.common.constant.Constants;
 import com.wzxc.common.utils.StringUtils;
 import org.apache.poi.util.IOUtils;
@@ -82,7 +82,7 @@ public class ImageUtils
             else
             {
                 // 本机地址
-                String localPath = RuoYiConfig.getProfile();
+                String localPath = GlobalConfig.getProfile();
                 String downloadPath = localPath + StringUtils.substringAfter(url, Constants.RESOURCE_PREFIX);
                 in = new FileInputStream(downloadPath);
             }

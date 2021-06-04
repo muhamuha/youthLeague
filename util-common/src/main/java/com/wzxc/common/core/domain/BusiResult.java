@@ -5,7 +5,7 @@ import com.wzxc.common.utils.StringUtils;
 
 import java.util.HashMap;
 
-public class KbengineResult extends HashMap<String, Object> {
+public class BusiResult extends HashMap<String, Object> {
 
     private static final long serialVersionUID = 1L;
 
@@ -53,7 +53,7 @@ public class KbengineResult extends HashMap<String, Object> {
     /**
      * 初始化一个新创建的 KbengineResult 对象，使其表示一个空消息。
      */
-    public KbengineResult() { }
+    public BusiResult() { }
 
     /**
      * 初始化一个新创建的 KbengineResult 对象
@@ -61,7 +61,7 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param type 状态类型
      * @param msg 返回内容
      */
-    public KbengineResult(boolean isSuccess, KbengineResult.Type type, String msg)
+    public BusiResult(boolean isSuccess, BusiResult.Type type, String msg)
     {
         super.put(IS_SUCCESS, isSuccess);
         super.put(CODE_TAG, type.value);
@@ -76,7 +76,7 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param msg 返回内容
      * @param data 数据对象
      */
-    public KbengineResult(boolean isSuccess, KbengineResult.Type type, String msg, Object data)
+    public BusiResult(boolean isSuccess, BusiResult.Type type, String msg, Object data)
     {
         super.put(CODE_TAG, type.value);
         super.put(MSG_TAG, msg);
@@ -93,7 +93,7 @@ public class KbengineResult extends HashMap<String, Object> {
      * @return 数据对象
      */
     @Override
-    public KbengineResult put(String key, Object value)
+    public BusiResult put(String key, Object value)
     {
         super.put(key, value);
         return this;
@@ -104,9 +104,9 @@ public class KbengineResult extends HashMap<String, Object> {
      *
      * @return 成功消息
      */
-    public static KbengineResult success()
+    public static BusiResult success()
     {
-        return KbengineResult.success("操作成功");
+        return BusiResult.success("操作成功");
     }
 
     /**
@@ -114,9 +114,9 @@ public class KbengineResult extends HashMap<String, Object> {
      *
      * @return 成功消息
      */
-    public static KbengineResult success(Object data)
+    public static BusiResult success(Object data)
     {
-        return KbengineResult.success("操作成功", data);
+        return BusiResult.success("操作成功", data);
     }
 
     /**
@@ -125,9 +125,9 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param msg 返回内容
      * @return 成功消息
      */
-    public static KbengineResult success(String msg)
+    public static BusiResult success(String msg)
     {
-        return KbengineResult.success(msg, null);
+        return BusiResult.success(msg, null);
     }
 
     /**
@@ -137,9 +137,9 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param data 数据对象
      * @return 成功消息
      */
-    public static KbengineResult success(String msg, Object data)
+    public static BusiResult success(String msg, Object data)
     {
-        return new KbengineResult(true, KbengineResult.Type.SUCCESS, msg, data);
+        return new BusiResult(true, BusiResult.Type.SUCCESS, msg, data);
     }
 
     /**
@@ -148,9 +148,9 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param msg 返回内容
      * @return 警告消息
      */
-    public static KbengineResult warn(String msg)
+    public static BusiResult warn(String msg)
     {
-        return KbengineResult.warn(msg, null);
+        return BusiResult.warn(msg, null);
     }
 
     /**
@@ -160,9 +160,9 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param data 数据对象
      * @return 警告消息
      */
-    public static KbengineResult warn(String msg, Object data)
+    public static BusiResult warn(String msg, Object data)
     {
-        return new KbengineResult(false, KbengineResult.Type.WARN, msg, data);
+        return new BusiResult(false, BusiResult.Type.WARN, msg, data);
     }
 
     /**
@@ -171,9 +171,9 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param msg 返回内容
      * @return 授权消息
      */
-    public static KbengineResult unAuth()
+    public static BusiResult unAuth()
     {
-        return KbengineResult.unAuth("未登录，请在前端系统进行登录");
+        return BusiResult.unAuth("未登录，请在前端系统进行登录");
     }
 
     /**
@@ -182,9 +182,9 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param msg 返回内容
      * @return 授权消息
      */
-    public static KbengineResult unAuth(String msg)
+    public static BusiResult unAuth(String msg)
     {
-        return new KbengineResult(false, KbengineResult.Type.UNAUTH, msg);
+        return new BusiResult(false, BusiResult.Type.UNAUTH, msg);
     }
 
     /**
@@ -192,9 +192,9 @@ public class KbengineResult extends HashMap<String, Object> {
      *
      * @return
      */
-    public static KbengineResult error()
+    public static BusiResult error()
     {
-        return KbengineResult.error("操作失败");
+        return BusiResult.error("操作失败");
     }
 
     /**
@@ -203,9 +203,9 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param msg 返回内容
      * @return 警告消息
      */
-    public static KbengineResult error(String msg)
+    public static BusiResult error(String msg)
     {
-        return KbengineResult.error(msg, null);
+        return BusiResult.error(msg, null);
     }
 
     /**
@@ -215,8 +215,8 @@ public class KbengineResult extends HashMap<String, Object> {
      * @param data 数据对象
      * @return 警告消息
      */
-    public static KbengineResult error(String msg, Object data)
+    public static BusiResult error(String msg, Object data)
     {
-        return new KbengineResult(false, KbengineResult.Type.ERROR, msg, data);
+        return new BusiResult(false, BusiResult.Type.ERROR, msg, data);
     }
 }

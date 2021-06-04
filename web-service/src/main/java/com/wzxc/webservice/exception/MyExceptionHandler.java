@@ -1,6 +1,6 @@
 package com.wzxc.webservice.exception;
 
-import com.wzxc.common.core.domain.KbengineResult;
+import com.wzxc.common.core.domain.BusiResult;
 import com.wzxc.common.exception.InsertBatchException;
 import com.wzxc.common.exception.ParamInException;
 import com.wzxc.common.exception.ParamInValidException;
@@ -23,28 +23,28 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MyExceptionHandler {
 
     @ExceptionHandler(value = AuthenticationException.class)
-    public KbengineResult exceptionHandler1(Exception e){
-        return KbengineResult.unAuth();
+    public BusiResult exceptionHandler1(Exception e){
+        return BusiResult.unAuth();
     }
 
     @ExceptionHandler(value = ParamInException.class)
-    public KbengineResult exceptionHandler2(Exception e) {
-        return KbengineResult.error(e.getMessage());
+    public BusiResult exceptionHandler2(Exception e) {
+        return BusiResult.error(e.getMessage());
     }
 
     @ExceptionHandler(value = ParamInValidException.class)
-    public KbengineResult exceptionHandler3(Exception e){
-        return KbengineResult.error(e.getMessage());
+    public BusiResult exceptionHandler3(Exception e){
+        return BusiResult.error(e.getMessage());
     }
 
     @ExceptionHandler(value = HttpMessageNotReadableException.class)
-    public KbengineResult exceptionHandler4(Exception e){
-        return KbengineResult.error(e.getMessage());
+    public BusiResult exceptionHandler4(Exception e){
+        return BusiResult.error(e.getMessage());
     }
 
     @ExceptionHandler(value = InsertBatchException.class)
-    public KbengineResult exceptionHandler5(Exception e){
-        return KbengineResult.error(e.getMessage());
+    public BusiResult exceptionHandler5(Exception e){
+        return BusiResult.error(e.getMessage());
     }
 
 }

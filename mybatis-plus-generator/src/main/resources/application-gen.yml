@@ -1,0 +1,22 @@
+gen:
+  parent: com.wzxc.busi
+  super-controller-class: com.wzxc.common.core.controller.BaseController
+  package-name: com.wzxc.busi
+  datasource: ds1
+
+template:
+  path:
+    mapper: /vm/java/mapper.java.vm
+    service: /vm/java/service.java.vm
+    serviceImpl: /vm/java/serviceImpl.java.vm
+    entity: /vm/java/domain.java.vm
+    controller: /vm/java/controller.java.vm
+    xml: /vm/xml/mapper.xml.vm
+
+out-dir:
+  mapper: dao/
+  service: service/
+  serviceImpl: service/impl/
+  entity: vo/
+  controller: controller/
+  xml: mapper/system/

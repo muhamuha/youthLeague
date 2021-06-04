@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+#if(${cfg.datasource} == "")
+<mapper namespace="${cfg.packageName}.dao.${cfg.voName}Mapper">
+#else
+<mapper namespace="${cfg.packageName}.dao.${cfg.datasource}.${cfg.voName}Mapper">
+#end
+    
+    <resultMap type="${cfg.voName}" id="${cfg.voName}Result">
+#foreach ($field in ${cfg.fields})
+        <result property="${field.javaField}"    column="${field.fieldName}"    />
+#end
+    </resultMap>
+
+    <sql id="select${cfg.voName}Vo">
+        select#foreach($field in ${cfg.fields}) $field.fieldName#if($velocityCount != ${cfg.fields.size()}),#end#end from ${cfg.tableName}
+    </sql>
+
+    <select id="select${cfg.voName}List" parameterType="${cfg.voName}" resultMap="${cfg.voName}Result">
+        <include refid="select${cfg.voName}Vo"/>
+        <where>  
+#foreach($field in ${cfg.fields})
+#set($fieldName=$field.fieldName)
+#set($javaField=$field.javaField)
+#set($javaType=$field.javaType)
+#set($AttrName=$field.javaField.substring(0,1).toUpperCase() + ${column.javaField.substring(1)})
+            <if test="$javaField != null #if($javaType == 'String' ) and $javaField.trim() != ''#end"> and $fieldName = #{$javaField}</if>
+#end
+        </where>
+    </select>
+        
+    <insert id="insert${cfg.voName}" parameterType="${cfg.voName}" useGeneratedKeys="true" keyProperty="id">
+        insert into ${cfg.tableName}
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+#foreach($field in ${cfg.fields})
+#if(${field.columnKey} != "PRI")
+            <if test="${field.javaField} != null#if(${field.javaType} == 'String' && ${field.isNullable} == "NO") and ${field.javaField} != ''#end">${field.fieldName},</if>
+#end
+#end
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+#foreach($field in ${cfg.fields})
+#if(${field.columnKey} != "PRI")
+            <if test="${field.javaField} != null#if(${field.javaType} == 'String' && ${field.isNullable} == "NO") and ${field.javaField} != ''#end">#{${field.javaField}},</if>
+#end
+#end
+         </trim>
+    </insert>
+
+    <update id="update${cfg.voName}" parameterType="${cfg.voName}">
+        update ${cfg.tableName}
+        <trim prefix="SET" suffixOverrides=",">
+#foreach($field in ${cfg.fields})
+#if(${field.columnName} != "PRI")
+            <if test="${field.javaField} != null#if(${field.javaType} == 'String' && ${field.isNullable} == "NO") and ${field.javaField} != ''#end">${field.fieldName} = #{${field.javaField}},</if>
+#end
+#end
+        </trim>
+        where ${cfg.primaryColumn} = #{${cfg.primaryName}}
+    </update>
+
+</mapper>

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -9,6 +10,7 @@
         <module name="util-common" />
         <module name="web-service" />
         <module name="busi-service" />
+        <module name="mybatis-plus-generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,6 +27,7 @@
       <module name="common-config" options="-parameters" />
       <module name="config-common" options="-parameters" />
       <module name="demo1" options="-parameters" />
+      <module name="mybatis-plus-generator" options="-parameters" />
       <module name="sz-wenzhou" options="-parameters" />
       <module name="util-common" options="-parameters" />
       <module name="web-service" options="-parameters" />

@@ -1,0 +1,23 @@
+package ${cfg.packageName}.service;
+
+import java.util.List;
+import com.baomidou.mybatisplus.extension.service.IService;
+import ${cfg.packageName}.vo.${cfg.voName};
+
+/**
+ * <p>
+ * 服务类 【请填写功能名称】
+ * </p>
+ *
+ * @author ${cfg.author}
+ * @date ${cfg.datetime}
+ */
+public interface I${cfg.voName}Service extends IService<${cfg.voName}> {
+
+    List<${cfg.voName}> select${cfg.voName}List(${cfg.voName} ${cfg.moudleName});
+
+    int insert${cfg.voName}(${cfg.voName} ${cfg.moudleName});
+
+    int update${cfg.voName}(${cfg.voName} ${cfg.moudleName});
+
+}

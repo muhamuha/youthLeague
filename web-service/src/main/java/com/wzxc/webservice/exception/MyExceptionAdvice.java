@@ -1,6 +1,6 @@
 package com.wzxc.webservice.exception;
 
-import com.wzxc.common.core.domain.KbengineResult;
+import com.wzxc.common.core.domain.BusiResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorController;
@@ -33,15 +33,15 @@ public class MyExceptionAdvice implements ErrorController {
      * JSON格式错误信息
      */
     @RequestMapping(value = path_default)
-    public KbengineResult error(HttpServletRequest request, WebRequest webRequest) {
+    public BusiResult error(HttpServletRequest request, WebRequest webRequest) {
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
         switch (statusCode) {
             case 404:
-                return KbengineResult.error("接口地址错误");
+                return BusiResult.error("接口地址错误");
             case 400:
-                return KbengineResult.error("缺少必要参数");
+                return BusiResult.error("缺少必要参数");
             default:
-                return KbengineResult.error("发生未知异常");
+                return BusiResult.error("发生未知异常");
         }
     }
 

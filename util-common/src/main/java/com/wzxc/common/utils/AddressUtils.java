@@ -1,7 +1,7 @@
 package com.wzxc.common.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import com.wzxc.common.config.RuoYiConfig;
+import com.wzxc.common.config.GlobalConfig;
 import com.wzxc.common.constant.Constants;
 import com.wzxc.common.utils.http.HttpUtils;
 import org.slf4j.Logger;
@@ -30,7 +30,7 @@ public class AddressUtils
         {
             return "内网IP";
         }
-        if (RuoYiConfig.isAddressEnabled())
+        if (GlobalConfig.isAddressEnabled())
         {
             try
             {

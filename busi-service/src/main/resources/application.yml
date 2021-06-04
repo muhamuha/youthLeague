@@ -6,23 +6,27 @@ project:
 
 spring:
   profiles:
+#    active: dev
 #    active: prod
-    active: dev
-#    active: test
+    active: test
+    group:
+      dev: gen
+      test: gen
+      prd: gen
+
   servlet:
-    multipart:
+      multipart:
       max-request-size: 50MB
 
-mybatis:
+mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 logging:
   level:
-    com:
-      wzxc:
-        kbengine:
-          dao: debug
+#    - com.wzxc.busi.dao.ds1: debug
+    com.wzxc.mybatisplusgeneration.gen: debug
 
 swagger:
   enabled: true

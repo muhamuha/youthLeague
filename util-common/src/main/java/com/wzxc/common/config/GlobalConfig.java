@@ -1,7 +1,5 @@
 package com.wzxc.common.config;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,13 +8,8 @@ import org.springframework.stereotype.Component;
  * @author ruoyi
  */
 @Component
-@ConfigurationProperties(prefix = "zzd")
-public class RuoYiConfig
+public class GlobalConfig
 {
-    /** 项目名称 */
-    @Value("${zzd.name}")
-    private static String name;
-
     /** 版本 */
     private static String version;
 
@@ -32,16 +25,6 @@ public class RuoYiConfig
     /** 获取地址开关 */
     private static boolean addressEnabled;
 
-    public static String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        RuoYiConfig.name = name;
-    }
-
     public static String getVersion()
     {
         return version;
@@ -49,7 +32,7 @@ public class RuoYiConfig
 
     public void setVersion(String version)
     {
-        RuoYiConfig.version = version;
+        GlobalConfig.version = version;
     }
 
     public static String getCopyrightYear()
@@ -59,7 +42,7 @@ public class RuoYiConfig
 
     public void setCopyrightYear(String copyrightYear)
     {
-        RuoYiConfig.copyrightYear = copyrightYear;
+        GlobalConfig.copyrightYear = copyrightYear;
     }
 
     public static boolean isDemoEnabled()
@@ -69,7 +52,7 @@ public class RuoYiConfig
 
     public void setDemoEnabled(boolean demoEnabled)
     {
-        RuoYiConfig.demoEnabled = demoEnabled;
+        GlobalConfig.demoEnabled = demoEnabled;
     }
 
     public static String getProfile()
@@ -79,7 +62,7 @@ public class RuoYiConfig
 
     public void setProfile(String profile)
     {
-        RuoYiConfig.profile = profile;
+        GlobalConfig.profile = profile;
     }
 
     public static boolean isAddressEnabled()
@@ -89,7 +72,7 @@ public class RuoYiConfig
 
     public void setAddressEnabled(boolean addressEnabled)
     {
-        RuoYiConfig.addressEnabled = addressEnabled;
+        GlobalConfig.addressEnabled = addressEnabled;
     }
 
     /**

@@ -1,0 +1,25 @@
+#if(${cfg.datasource} == "")
+package ${cfg.packageName}.dao;
+#else
+package ${cfg.packageName}.dao.${cfg.datasource};
+#end
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import ${cfg.packageName}.vo.${cfg.voName};
+
+import java.util.List;
+
+/**
+ * Mapper接口 【请填写功能名称】
+ * 
+ * @author ${author}
+ * @date ${cfg.datetime}
+ */
+public interface ${cfg.voName}Mapper extends BaseMapper<${cfg.voName}> {
+
+    List<${cfg.voName}> select${cfg.voName}List(${cfg.voName} ${cfg.moudleName});
+
+    int insert${cfg.voName}(${cfg.voName} ${cfg.moudleName});
+
+    int update${cfg.voName}(${cfg.voName} ${cfg.moudleName});
+}
