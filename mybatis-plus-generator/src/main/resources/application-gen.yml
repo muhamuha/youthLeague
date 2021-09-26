@@ -1,7 +1,7 @@
 gen:
-  parent: com.wzxc.busi
+  parent: com.wzxc.kbase
   super-controller-class: com.wzxc.common.core.controller.BaseController
-  package-name: com.wzxc.busi
+  package-name: com.wzxc.kbase
   datasource: ds1
 
 template:
