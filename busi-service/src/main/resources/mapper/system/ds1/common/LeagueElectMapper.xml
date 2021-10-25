@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.ds1.LeagueElectMapper">
+    
+    <resultMap type="LeagueElect" id="LeagueElectResult">
+        <result property="commisinorId"    column="commisinor_id"    />
+        <result property="commisinorName"    column="commisinor_name"    />
+        <result property="electRegion"    column="elect_region"    />
+        <result property="groupId"    column="group_id"    />
+        <result property="id"    column="id"    />
+        <result property="isReelect"    column="is_reelect"    />
+        <result property="isStay"    column="is_stay"    />
+        <result property="year"    column="year"    />
+    </resultMap>
+
+    <sql id="selectLeagueElectVo">
+        select commisinor_id, commisinor_name, elect_region, group_id, id, is_reelect, is_stay, year, from league_elect
+    </sql>
+
+    <select id="selectLeagueElectList" parameterType="LeagueElect" resultMap="LeagueElectResult">
+        <include refid="selectLeagueElectVo"/>
+        <where>  
+            <if test="commisinorId != null "> and commisinor_id = #{commisinorId}</if>
+            <if test="commisinorName != null  and commisinorName != ''"> and commisinor_name = #{commisinorName}</if>
+            <if test="electRegion != null  and electRegion != ''"> and elect_region = #{electRegion}</if>
+            <if test="groupId != null "> and group_id = #{groupId}</if>
+            <if test="id != null "> and id = #{id}</if>
+            <if test="isReelect != null "> and is_reelect = #{isReelect}</if>
+            <if test="isStay != null "> and is_stay = #{isStay}</if>
+            <if test="year != null  and year != ''"> and year = #{year}</if>
+        </where>
+    </select>
+        
+    <insert id="insertLeagueElect" parameterType="LeagueElect" useGeneratedKeys="true" keyProperty="id">
+        insert into league_elect
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="commisinorId != null">commisinor_id,</if>
+            <if test="commisinorName != null and commisinorName != ''">commisinor_name,</if>
+            <if test="electRegion != null and electRegion != ''">elect_region,</if>
+            <if test="groupId != null">group_id,</if>
+            <if test="isReelect != null">is_reelect,</if>
+            <if test="isStay != null">is_stay,</if>
+            <if test="year != null and year != ''">year,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="commisinorId != null">#{commisinorId},</if>
+            <if test="commisinorName != null and commisinorName != ''">#{commisinorName},</if>
+            <if test="electRegion != null and electRegion != ''">#{electRegion},</if>
+            <if test="groupId != null">#{groupId},</if>
+            <if test="isReelect != null">#{isReelect},</if>
+            <if test="isStay != null">#{isStay},</if>
+            <if test="year != null and year != ''">#{year},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLeagueElect" parameterType="LeagueElect">
+        update league_elect
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="commisinorId != null">commisinor_id = #{commisinorId},</if>
+            <if test="commisinorName != null and commisinorName != ''">commisinor_name = #{commisinorName},</if>
+            <if test="electRegion != null and electRegion != ''">elect_region = #{electRegion},</if>
+            <if test="groupId != null">group_id = #{groupId},</if>
+            <if test="id != null">id = #{id},</if>
+            <if test="isReelect != null">is_reelect = #{isReelect},</if>
+            <if test="isStay != null">is_stay = #{isStay},</if>
+            <if test="year != null and year != ''">year = #{year},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

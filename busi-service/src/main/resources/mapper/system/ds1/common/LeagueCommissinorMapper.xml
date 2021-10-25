@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.ds1.LeagueCommissinorMapper">
+    
+    <resultMap type="LeagueCommissinor" id="LeagueCommissinorResult">
+        <result property="address"    column="address"    />
+        <result property="company"    column="company"    />
+        <result property="creater"    column="creater"    />
+        <result property="education"    column="education"    />
+        <result property="email"    column="email"    />
+        <result property="honorFile"    column="honor_file"    />
+        <result property="honorLevel"    column="honor_level"    />
+        <result property="honorName"    column="honor_name"    />
+        <result property="id"    column="id"    />
+        <result property="industryId"    column="industry_id"    />
+        <result property="iphone"    column="iphone"    />
+        <result property="joinDate"    column="join_date"    />
+        <result property="leaveDate"    column="leave_date"    />
+        <result property="leaveReason"    column="leave_reason"    />
+        <result property="location"    column="location"    />
+        <result property="name"    column="name"    />
+        <result property="orgPosition"    column="org_position"    />
+        <result property="organization"    column="organization"    />
+        <result property="picture"    column="picture"    />
+        <result property="position"    column="position"    />
+    </resultMap>
+
+    <sql id="selectLeagueCommissinorVo">
+        select address, company, creater, education, email, honor_file, honor_level, honor_name, id, industry_id, iphone, join_date, leave_date, leave_reason, location, name, org_position, organization, picture, position from league_commissinor
+    </sql>
+
+    <select id="selectLeagueCommissinorList" parameterType="LeagueCommissinor" resultMap="LeagueCommissinorResult">
+        <include refid="selectLeagueCommissinorVo"/>
+        <where>  
+            <if test="address != null  and address != ''"> and address = #{address}</if>
+            <if test="company != null  and company != ''"> and company = #{company}</if>
+            <if test="creater != null  and creater != ''"> and creater = #{creater}</if>
+            <if test="education != null "> and education = #{education}</if>
+            <if test="email != null  and email != ''"> and email = #{email}</if>
+            <if test="honorFile != null  and honorFile != ''"> and honor_file = #{honorFile}</if>
+            <if test="honorLevel != null "> and honor_level = #{honorLevel}</if>
+            <if test="honorName != null  and honorName != ''"> and honor_name = #{honorName}</if>
+            <if test="id != null "> and id = #{id}</if>
+            <if test="industryId != null "> and industry_id = #{industryId}</if>
+            <if test="iphone != null  and iphone != ''"> and iphone = #{iphone}</if>
+            <if test="joinDate != null "> and join_date = #{joinDate}</if>
+            <if test="leaveDate != null "> and leave_date = #{leaveDate}</if>
+            <if test="leaveReason != null  and leaveReason != ''"> and leave_reason = #{leaveReason}</if>
+            <if test="location != null  and location != ''"> and location = #{location}</if>
+            <if test="name != null  and name != ''"> and name = #{name}</if>
+            <if test="orgPosition != null  and orgPosition != ''"> and org_position = #{orgPosition}</if>
+            <if test="organization != null  and organization != ''"> and organization = #{organization}</if>
+            <if test="picture != null  and picture != ''"> and picture = #{picture}</if>
+            <if test="position != null  and position != ''"> and position = #{position}</if>
+        </where>
+    </select>
+        
+    <insert id="insertLeagueCommissinor" parameterType="LeagueCommissinor" useGeneratedKeys="true" keyProperty="id">
+        insert into league_commissinor
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="address != null">address,</if>
+            <if test="company != null">company,</if>
+            <if test="creater != null and creater != ''">creater,</if>
+            <if test="education != null">education,</if>
+            <if test="email != null">email,</if>
+            <if test="honorFile != null">honor_file,</if>
+            <if test="honorLevel != null">honor_level,</if>
+            <if test="honorName != null">honor_name,</if>
+            <if test="industryId != null">industry_id,</if>
+            <if test="iphone != null">iphone,</if>
+            <if test="joinDate != null">join_date,</if>
+            <if test="leaveDate != null">leave_date,</if>
+            <if test="leaveReason != null">leave_reason,</if>
+            <if test="location != null">location,</if>
+            <if test="name != null and name != ''">name,</if>
+            <if test="orgPosition != null">org_position,</if>
+            <if test="organization != null">organization,</if>
+            <if test="picture != null">picture,</if>
+            <if test="position != null">position,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="address != null">#{address},</if>
+            <if test="company != null">#{company},</if>
+            <if test="creater != null and creater != ''">#{creater},</if>
+            <if test="education != null">#{education},</if>
+            <if test="email != null">#{email},</if>
+            <if test="honorFile != null">#{honorFile},</if>
+            <if test="honorLevel != null">#{honorLevel},</if>
+            <if test="honorName != null">#{honorName},</if>
+            <if test="industryId != null">#{industryId},</if>
+            <if test="iphone != null">#{iphone},</if>
+            <if test="joinDate != null">#{joinDate},</if>
+            <if test="leaveDate != null">#{leaveDate},</if>
+            <if test="leaveReason != null">#{leaveReason},</if>
+            <if test="location != null">#{location},</if>
+            <if test="name != null and name != ''">#{name},</if>
+            <if test="orgPosition != null">#{orgPosition},</if>
+            <if test="organization != null">#{organization},</if>
+            <if test="picture != null">#{picture},</if>
+            <if test="position != null">#{position},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLeagueCommissinor" parameterType="LeagueCommissinor">
+        update league_commissinor
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="address != null">address = #{address},</if>
+            <if test="company != null">company = #{company},</if>
+            <if test="creater != null and creater != ''">creater = #{creater},</if>
+            <if test="education != null">education = #{education},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="honorFile != null">honor_file = #{honorFile},</if>
+            <if test="honorLevel != null">honor_level = #{honorLevel},</if>
+            <if test="honorName != null">honor_name = #{honorName},</if>
+            <if test="id != null">id = #{id},</if>
+            <if test="industryId != null">industry_id = #{industryId},</if>
+            <if test="iphone != null">iphone = #{iphone},</if>
+            <if test="joinDate != null">join_date = #{joinDate},</if>
+            <if test="leaveDate != null">leave_date = #{leaveDate},</if>
+            <if test="leaveReason != null">leave_reason = #{leaveReason},</if>
+            <if test="location != null">location = #{location},</if>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="orgPosition != null">org_position = #{orgPosition},</if>
+            <if test="organization != null">organization = #{organization},</if>
+            <if test="picture != null">picture = #{picture},</if>
+            <if test="position != null">position = #{position},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

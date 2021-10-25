@@ -1,6 +1,7 @@
 package com.wzxc.webservice.exception;
 
 import com.wzxc.common.core.domain.BusiResult;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorController;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  * 统一处理错误http状态码
  */
 @RestController
+@Slf4j
 public class MyExceptionAdvice implements ErrorController {
 
     @Autowired
@@ -36,6 +38,8 @@ public class MyExceptionAdvice implements ErrorController {
     public BusiResult error(HttpServletRequest request, WebRequest webRequest) {
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
         switch (statusCode) {
+            case 405:
+                return BusiResult.error("调用方式错误GET/POST");
             case 404:
                 return BusiResult.error("接口地址错误");
             case 400:

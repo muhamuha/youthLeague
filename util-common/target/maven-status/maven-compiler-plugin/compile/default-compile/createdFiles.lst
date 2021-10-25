@@ -11,13 +11,10 @@ com\wzxc\common\exception\user\UserDeleteException.class
 com\wzxc\common\annotation\CheckParam.class
 com\wzxc\common\annotation\InsertBatchParams.class
 com\wzxc\common\exception\user\CaptchaException.class
-com\wzxc\common\constant\ScheduleConstants$Status.class
 com\wzxc\common\utils\AddressUtils.class
 com\wzxc\common\exception\job\TaskException$Code.class
-com\wzxc\common\constant\PermissionConstants.class
 com\wzxc\common\annotation\CheckParams.class
 com\wzxc\common\constant\Constants.class
-com\wzxc\common\core\domain\KbengineResult$Type.class
 com\wzxc\common\core\text\CharsetKit.class
 com\wzxc\common\exception\file\InvalidExtensionException$InvalidFlashExtensionException.class
 com\wzxc\common\utils\bean\BeanUtils.class
@@ -27,8 +24,6 @@ com\wzxc\common\utils\security\Md5Utils.class
 com\wzxc\common\utils\http\HttpsUtils.class
 com\wzxc\common\annotation\InsertBatchParam.class
 com\wzxc\common\utils\file\MimeTypeUtils.class
-com\wzxc\common\constant\GenConstants.class
-com\wzxc\common\constant\UserConstants.class
 com\wzxc\common\exception\user\UserNotExistsException.class
 com\wzxc\common\exception\user\RoleBlockedException.class
 com\wzxc\common\utils\spring\SpringUtils.class
@@ -54,7 +49,6 @@ com\wzxc\common\utils\uuid\UUID$Holder.class
 com\wzxc\common\utils\StringUtils.class
 com\wzxc\common\exception\BusinessException.class
 com\wzxc\common\utils\http\HttpUtils$1.class
-com\wzxc\common\constant\ShiroConstants.class
 com\wzxc\common\utils\html\HTMLFilter.class
 com\wzxc\common\exception\file\InvalidExtensionException$InvalidImageExtensionException.class
 com\wzxc\common\Aspect\CheckParamAop.class
@@ -77,10 +71,8 @@ com\wzxc\common\xss\XssHttpServletRequestWrapper.class
 com\wzxc\common\exception\file\InvalidExtensionException$InvalidVideoExtensionException.class
 com\wzxc\common\utils\http\MD5Utils.class
 com\wzxc\common\utils\YamlUtil.class
-com\wzxc\common\config\RuoYiConfig.class
 com\wzxc\common\utils\http\HttpUtils$TrustAnyHostnameVerifier.class
 com\wzxc\common\config\ServerConfig.class
-com\wzxc\common\core\domain\KbengineResult.class
 com\wzxc\common\utils\file\FileTypeUtils.class
 com\wzxc\common\utils\MessageUtils.class
 com\wzxc\common\exception\user\UserPasswordRetryLimitCountException.class
@@ -88,7 +80,6 @@ com\wzxc\common\core\text\StrFormatter.class
 com\wzxc\common\exception\file\InvalidExtensionException.class
 com\wzxc\common\exception\file\FileSizeLimitExceededException.class
 com\wzxc\common\constant\ValidateConstants.class
-com\wzxc\common\constant\ScheduleConstants.class
 com\wzxc\common\exception\InsertBatchException.class
 com\wzxc\common\exception\DemoModeException.class
 com\wzxc\common\utils\reflect\ReflectUtils.class

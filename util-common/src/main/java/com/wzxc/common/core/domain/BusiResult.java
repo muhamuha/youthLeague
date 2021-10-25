@@ -30,7 +30,7 @@ public class BusiResult extends HashMap<String, Object> {
     public enum Type
     {
         /** 成功 */
-        SUCCESS(13001),
+        SUCCESS(13000),
         /** 警告 */
         WARN(13301),
         /** 未授权 */

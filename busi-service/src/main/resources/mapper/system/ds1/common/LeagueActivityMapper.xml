@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.ds1.LeagueActivityMapper">
+    
+    <resultMap type="LeagueActivity" id="LeagueActivityResult">
+        <result property="activityBegin"    column="activity_begin"    />
+        <result property="activityEnd"    column="activity_end"    />
+        <result property="activityType"    column="activity_type"    />
+        <result property="address"    column="address"    />
+        <result property="content"    column="content"    />
+        <result property="hostman"    column="hostman"    />
+        <result property="id"    column="id"    />
+        <result property="nickname"    column="nickname"    />
+        <result property="rangeIndustry"    column="range_industry"    />
+        <result property="rangeRegion"    column="range_region"    />
+        <result property="signBegin"    column="sign_begin"    />
+        <result property="signEnd"    column="sign_end"    />
+    </resultMap>
+
+    <sql id="selectLeagueActivityVo">
+        select activity_begin, activity_end, activity_type, address, content, hostman, id, nickname, range_industry, range_region, sign_begin, sign_end, from league_activity
+    </sql>
+
+    <select id="selectLeagueActivityList" parameterType="LeagueActivity" resultMap="LeagueActivityResult">
+        <include refid="selectLeagueActivityVo"/>
+        <where>  
+            <if test="activityBegin != null "> and activity_begin = #{activityBegin}</if>
+            <if test="activityEnd != null "> and activity_end = #{activityEnd}</if>
+            <if test="activityType != null "> and activity_type = #{activityType}</if>
+            <if test="address != null  and address != ''"> and address = #{address}</if>
+            <if test="content != null  and content != ''"> and content = #{content}</if>
+            <if test="hostman != null "> and hostman = #{hostman}</if>
+            <if test="id != null "> and id = #{id}</if>
+            <if test="nickname != null  and nickname != ''"> and nickname = #{nickname}</if>
+            <if test="rangeIndustry != null  and rangeIndustry != ''"> and range_industry = #{rangeIndustry}</if>
+            <if test="rangeRegion != null  and rangeRegion != ''"> and range_region = #{rangeRegion}</if>
+            <if test="signBegin != null "> and sign_begin = #{signBegin}</if>
+            <if test="signEnd != null "> and sign_end = #{signEnd}</if>
+        </where>
+    </select>
+        
+    <insert id="insertLeagueActivity" parameterType="LeagueActivity" useGeneratedKeys="true" keyProperty="id">
+        insert into league_activity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="activityBegin != null">activity_begin,</if>
+            <if test="activityEnd != null">activity_end,</if>
+            <if test="activityType != null">activity_type,</if>
+            <if test="address != null">address,</if>
+            <if test="content != null">content,</if>
+            <if test="hostman != null">hostman,</if>
+            <if test="nickname != null and nickname != ''">nickname,</if>
+            <if test="rangeIndustry != null">range_industry,</if>
+            <if test="rangeRegion != null">range_region,</if>
+            <if test="signBegin != null">sign_begin,</if>
+            <if test="signEnd != null">sign_end,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="activityBegin != null">#{activityBegin},</if>
+            <if test="activityEnd != null">#{activityEnd},</if>
+            <if test="activityType != null">#{activityType},</if>
+            <if test="address != null">#{address},</if>
+            <if test="content != null">#{content},</if>
+            <if test="hostman != null">#{hostman},</if>
+            <if test="nickname != null and nickname != ''">#{nickname},</if>
+            <if test="rangeIndustry != null">#{rangeIndustry},</if>
+            <if test="rangeRegion != null">#{rangeRegion},</if>
+            <if test="signBegin != null">#{signBegin},</if>
+            <if test="signEnd != null">#{signEnd},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLeagueActivity" parameterType="LeagueActivity">
+        update league_activity
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="activityBegin != null">activity_begin = #{activityBegin},</if>
+            <if test="activityEnd != null">activity_end = #{activityEnd},</if>
+            <if test="activityType != null">activity_type = #{activityType},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="hostman != null">hostman = #{hostman},</if>
+            <if test="id != null">id = #{id},</if>
+            <if test="nickname != null and nickname != ''">nickname = #{nickname},</if>
+            <if test="rangeIndustry != null">range_industry = #{rangeIndustry},</if>
+            <if test="rangeRegion != null">range_region = #{rangeRegion},</if>
+            <if test="signBegin != null">sign_begin = #{signBegin},</if>
+            <if test="signEnd != null">sign_end = #{signEnd},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

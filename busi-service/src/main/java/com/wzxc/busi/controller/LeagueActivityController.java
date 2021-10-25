@@ -1,0 +1,190 @@
+package com.wzxc.busi.controller;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.wzxc.common.annotation.CheckParam;
+import com.wzxc.common.annotation.CheckParams;
+import com.wzxc.common.core.controller.BaseController;
+import com.wzxc.common.core.domain.BusiResult;
+import com.wzxc.common.utils.DateUtils;
+import com.wzxc.common.validate.Check;
+import com.wzxc.busi.vo.LeagueActivity;
+import io.swagger.annotations.*;
+import jdk.nashorn.internal.objects.annotations.Getter;
+import net.bytebuddy.asm.Advice;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import com.wzxc.busi.service.impl.LeagueActivityServiceImpl;
+import springfox.documentation.annotations.ApiIgnore;
+
+/**
+ * 前端控制器 【请填写功能名称】
+ * 
+ * @author MUHAMUHA
+ * @date 2021-10-25
+ */
+@RestController
+@CrossOrigin
+@RequestMapping("/leagueActivity")
+@Api(tags="活动管理类")
+public class LeagueActivityController extends BaseController {
+
+    @Autowired
+    private LeagueActivityServiceImpl leagueActivityService;
+
+    /**
+     * 查询列表【请填写功能名称】
+     */
+    @ApiOperation(value = "查询列表", notes = "查询列表", httpMethod = "POST")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageNum", value = "页数（默认第1页）", required = false, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "pageSize", value = "每页条数（默认10条）", required = false, paramType = "query", dataType="int"),
+                @ApiImplicitParam(name = "activityBegin", value = "活动开始时间", required = false, paramType = "query", dataType="Date"),
+                @ApiImplicitParam(name = "activityEnd", value = "", required = false, paramType = "query", dataType="Date"),
+                @ApiImplicitParam(name = "activityType", value = "活动类型（字典表）", required = false, paramType = "query", dataType="Long"),
+                @ApiImplicitParam(name = "address", value = "活动地点", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "content", value = "活动内容或者行程安排", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "hostman", value = "主办人id", required = false, paramType = "query", dataType="Long"),
+                @ApiImplicitParam(name = "id", value = "主键", required = false, paramType = "query", dataType="Long"),
+                @ApiImplicitParam(name = "nickname", value = "活动别名", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "rangeIndustry", value = "行业范围", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "rangeRegion", value = "地区范围", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "signBegin", value = "签到开始时间", required = false, paramType = "query", dataType="Date"),
+                @ApiImplicitParam(name = "signEnd", value = "签到结束时间", required = false, paramType = "query", dataType="Date"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK", response = LeagueActivity.class),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @PostMapping("/list")
+    public BusiResult list(@RequestBody @ApiIgnore LeagueActivity leagueActivity) throws IOException {
+        Map<String, Object> resultMap = new HashMap<>();
+        startPage();
+        List<LeagueActivity> list = leagueActivityService.selectLeagueActivityList(leagueActivity);
+        buildTableInfo(list, resultMap);
+        return BusiResult.success("查询成功", resultMap);
+    }
+
+    /**
+    * 查询详情【请填写功能名称】
+    *
+    * @param id
+    * @return
+    */
+    @ApiOperation(value = "查询详情", notes = "查询详情", httpMethod = "GET")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType="int"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK", response = LeagueActivity.class),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @GetMapping("/detail/{id}")
+    public Object getById(@PathVariable Integer id) {
+        Map<String, Object> resultMap = new HashMap<>();
+        LeagueActivity leagueActivity = leagueActivityService.getById(id);
+        if(leagueActivity == null){
+            return BusiResult.error("查询失败");
+        }
+        resultMap.put("data", leagueActivity);
+        return BusiResult.success("查询成功", resultMap);
+    }
+
+    /**
+     * 新增记录【请填写功能名称】
+     */
+    @ApiOperation(value = "新增记录", notes = "新增记录", httpMethod = "POST")
+    @ApiImplicitParams({
+                @ApiImplicitParam(name = "activityBegin", value = "活动开始时间", required = false, paramType = "query", dataType="Date"),
+                @ApiImplicitParam(name = "activityEnd", value = "", required = false, paramType = "query", dataType="Date"),
+                @ApiImplicitParam(name = "activityType", value = "活动类型（字典表）", required = true, paramType = "query", dataType="Long"),
+                @ApiImplicitParam(name = "address", value = "活动地点", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "content", value = "活动内容或者行程安排", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "hostman", value = "主办人id", required = true, paramType = "query", dataType="Long"),
+                @ApiImplicitParam(name = "nickname", value = "活动别名", required = true, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "rangeIndustry", value = "行业范围", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "rangeRegion", value = "地区范围", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "signBegin", value = "签到开始时间", required = false, paramType = "query", dataType="Date"),
+                @ApiImplicitParam(name = "signEnd", value = "签到结束时间", required = false, paramType = "query", dataType="Date"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @CheckParams({
+            @CheckParam(value = Check.NotNull, argName = "leagueActivity.activityType", msg = "缺少活动类型（activityType）"),
+            @CheckParam(value = Check.NotNull, argName = "leagueActivity.hostman", msg = "缺少主办人id（hostman）"),
+            @CheckParam(value = Check.NotNull, argName = "leagueActivity.nickname", msg = "缺少活动别名（nickname）"),
+    })
+    @PostMapping("/add")
+    public BusiResult add(@RequestBody @ApiIgnore LeagueActivity leagueActivity)
+    {
+        int isSuccess = leagueActivityService.insertLeagueActivity(leagueActivity);
+        if(isSuccess == 0){
+            return BusiResult.error("新增失败");
+        }
+        return BusiResult.success("新增成功");
+    }
+
+    /**
+     * 修改记录【请填写功能名称】
+     */
+    @ApiOperation(value = "修改记录", notes = "修改记录", httpMethod = "POST")
+    @ApiImplicitParams({
+                @ApiImplicitParam(name = "activityBegin", value = "活动开始时间", required = false, paramType = "query", dataType="Date"),
+                @ApiImplicitParam(name = "activityEnd", value = "", required = false, paramType = "query", dataType="Date"),
+                @ApiImplicitParam(name = "activityType", value = "活动类型（字典表）", required = false, paramType = "query", dataType="Long"),
+                @ApiImplicitParam(name = "address", value = "活动地点", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "content", value = "活动内容或者行程安排", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "hostman", value = "主办人id", required = false, paramType = "query", dataType="Long"),
+                @ApiImplicitParam(name = "id", value = "主键", required = true, paramType = "query", dataType="Long"),
+                @ApiImplicitParam(name = "nickname", value = "活动别名", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "rangeIndustry", value = "行业范围", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "rangeRegion", value = "地区范围", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "signBegin", value = "签到开始时间", required = false, paramType = "query", dataType="Date"),
+                @ApiImplicitParam(name = "signEnd", value = "签到结束时间", required = false, paramType = "query", dataType="Date"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @CheckParams({
+            @CheckParam(value = Check.NotNull, argName = "leagueActivity.id", msg = "缺少系统主键（id）"),
+    })
+    @PostMapping("/edit")
+    public BusiResult edit(@RequestBody @ApiIgnore LeagueActivity leagueActivity) {
+        int isSuccess = leagueActivityService.updateLeagueActivity(leagueActivity);
+        if(isSuccess == 0){
+            return BusiResult.error("修改失败");
+        }
+        return BusiResult.success("修改成功");
+    }
+
+    /**
+     * 删除记录【请填写功能名称】
+     */
+    @ApiOperation(value = "删除记录（物理删除）", notes = "删除记录（物理删除）", httpMethod = "POST")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType="long"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @GetMapping("/remove/{id}")
+    public BusiResult remove(@PathVariable Long id) {
+        boolean isSuccess = leagueActivityService.removeById(id);
+        if(!isSuccess){
+            return BusiResult.error("删除失败");
+        }
+        return BusiResult.success("删除成功");
+    }
+
+
+}

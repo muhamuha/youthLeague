@@ -13,10 +13,12 @@ spring:
       dev: gen
       test: gen
       prd: gen
-
   servlet:
       multipart:
       max-request-size: 50MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 mybatis-plus:
   configuration:

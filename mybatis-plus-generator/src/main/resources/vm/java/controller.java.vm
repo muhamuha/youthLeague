@@ -43,7 +43,15 @@ public class ${cfg.voName}Controller extends BaseController {
      */
     @ApiOperation(value = "查询列表", notes = "查询列表", httpMethod = "POST")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "【参数名称】", value = "【参数解释】", required = false, paramType = "query", dataType="string"),
+            @ApiImplicitParam(name = "pageNum", value = "页数（默认第1页）", required = false, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "pageSize", value = "每页条数（默认10条）", required = false, paramType = "query", dataType="int"),
+        #foreach($field in ${cfg.fields})
+            #set($fieldName=$field.fieldName)
+            #set($javaField=$field.javaField)
+            #set($columnComment=$field.columnComment)
+            #set($javaType=$field.javaType)
+                @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = false, paramType = "query", dataType="$javaType"),
+        #end
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK", response = ${cfg.voName}.class),
@@ -79,7 +87,7 @@ public class ${cfg.voName}Controller extends BaseController {
         if(${cfg.moudleName} == null){
             return BusiResult.error("查询失败");
         }
-        resultMap.put("data", resultMap);
+        resultMap.put("data", ${cfg.moudleName});
         return BusiResult.success("查询成功", resultMap);
     }
 
@@ -88,14 +96,20 @@ public class ${cfg.voName}Controller extends BaseController {
      */
     @ApiOperation(value = "新增记录", notes = "新增记录", httpMethod = "POST")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "【参数名称】", value = "【参数解释】", required = false, paramType = "query", dataType="string"),
+        #foreach($field in ${cfg.fields})
+            #set($fieldName=$field.fieldName)
+            #set($javaField=$field.javaField)
+            #set($columnComment=$field.columnComment)
+            #set($javaType=$field.javaType)
+                @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = false, paramType = "query", dataType="$javaType"),
+        #end
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
             @ApiResponse(code = 13500, message = "ERROR")
     })
     @CheckParams({
-            @CheckParam(value = Check.NotNull, argName = "【参数名称 例：policyBaseInfoRep.id】", msg = "【错误信息】"),
+            @CheckParam(value = Check.NotNull, argName = "【参数名称 例：${cfg.moudleName}.id】", msg = "【错误信息】"),
     })
     @PostMapping("/add")
     public BusiResult add(@RequestBody @ApiIgnore ${cfg.voName} ${cfg.moudleName})
@@ -112,8 +126,13 @@ public class ${cfg.voName}Controller extends BaseController {
      */
     @ApiOperation(value = "修改记录", notes = "修改记录", httpMethod = "POST")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType="long"),
-            @ApiImplicitParam(name = "【参数名称】", value = "【参数解释】", required = false, paramType = "query", dataType="string"),
+        #foreach($field in ${cfg.fields})
+            #set($fieldName=$field.fieldName)
+            #set($javaField=$field.javaField)
+            #set($columnComment=$field.columnComment)
+            #set($javaType=$field.javaType)
+                @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = false, paramType = "query", dataType="$javaType"),
+        #end
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
@@ -134,7 +153,7 @@ public class ${cfg.voName}Controller extends BaseController {
     /**
      * 删除记录【请填写功能名称】
      */
-    @ApiOperation(value = "删除记录", notes = "删除记录", httpMethod = "POST")
+    @ApiOperation(value = "删除记录（物理删除）", notes = "删除记录（物理删除）", httpMethod = "POST")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType="long"),
     })

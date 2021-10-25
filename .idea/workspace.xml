@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mybatis-plus-generator/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-plus-generator/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-plus-generator/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-plus-generator/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-plus-generator/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-plus-generator/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mybatis-plus-generator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/application-prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/application-gen.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/application-gen.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/java/domain.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/java/domain.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/java/controller.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/java/controller.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/BusiResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/BusiResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/exception/MyExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/exception/MyExceptionAdvice.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,19 +54,34 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/constant/Constants.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/AESUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/controller/BaseController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpsUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/web-service/pom.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/MD5Utils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-prod.yaml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-test.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/Aspect/CheckParamAop.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/PathUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/Convert.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/AjaxResult.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/page/TableSupport.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/CharsetKit.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/xml/mapper.xml.vm" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/application-gen.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/DateUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/ExceptionUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/IpUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/MapDataUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/RequestIdUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/StringUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/json/JSONObject.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueElectController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/AESUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpsUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/MD5Utils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/config/GlobalConfig.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/Convert.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/sql/SqlUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/uuid/IdUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/BusiResult.java" root0="SKIP_INSPECTION" />
@@ -75,28 +91,21 @@
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/FileUploadUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/CheckUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/SSLClient.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/AjaxResult.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/reflect/ReflectUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/security/Base64Utils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/security/Md5Utils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/page/TableSupport.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/CharsetKit.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/pom.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/Filter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/ImageUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/FilterUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/xss/XssFilter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/xss/XssHttpServletRequestWrapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/DateUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/ExceptionUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/IpUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/MapDataUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/RequestIdUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueCommissinor.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueCommissinorService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueCommissinorServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/ds1/LeagueCommissinorMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/StringUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Ds1Config.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/json/JSONObject.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueCommissinorMapper.xml" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -130,11 +139,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system\ds1\" />
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system\" />
       <recent name="C:\javaProject\MUHAMUHA-framework-server\mybatis-plus-generator\src\main\resources\mapper\" />
       <recent name="C:\javaProject\MUHAMUHA-framework-server\mybatis-plus-generator\src\main\resources\mapper" />
       <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\java\com\wzxc\szwenzhou\vo" />
-      <recent name="C:\javaProject\zzd\kb-engine\src\main\java\com\wzxc\kbengine\dao\ds1" />
-      <recent name="C:\javaProject\zzd\sz-wenzhou\src\main\resources\mapper\system\ds1" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.wzxc.szwenzhou" />
@@ -148,11 +157,11 @@
       <recent name="com.wzxc.busi.service.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system\ds2" />
       <recent name="C:\javaProject\YouthLeague-service" />
       <recent name="C:\javaProject\MUHAMUHA-framework-server\mybatis-plus-generator\src\main\java\com\wzxc\mybatisplusgenerator\temp\dao" />
       <recent name="C:\javaProject\MUHAMUHA-framework-server\busi-service\src\main\resources" />
       <recent name="C:\javaProject\MUHAMUHA-framework-server\mybatis-plus-generator\src\main\resources" />
-      <recent name="C:\javaProject\MUHAMUHA-framework-server\mybatis-plus-generator\src\main\java\com\wzxc\mybatisplusgenerator\generator" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -167,7 +176,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BusiApplicationTests.gen">
+  <component name="RunManager" selected="Spring Boot.BusiApplication">
     <configuration name="CodeGenContrllor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wzxc.busi.generator.CodeGenContrllor" />
       <module name="busi-service" />
@@ -256,11 +265,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.BusiApplication" />
         <item itemvalue="JUnit.BusiApplicationTests.gen" />
         <item itemvalue="Application.PathUtils" />
         <item itemvalue="JUnit.MybatisPlusGeneratorApplicationTests.gen" />
         <item itemvalue="Application.CodeGenContrllor" />
-        <item itemvalue="Spring Boot.BusiApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -378,7 +387,15 @@
       <workItem from="1622771491385" duration="5376000" />
       <workItem from="1622777477340" duration="10244000" />
       <workItem from="1632640271126" duration="275000" />
-      <workItem from="1632649579360" duration="316000" />
+      <workItem from="1632649579360" duration="1106000" />
+      <workItem from="1632707156984" duration="1836000" />
+      <workItem from="1634268151758" duration="1370000" />
+      <workItem from="1634517677822" duration="3414000" />
+      <workItem from="1634716425369" duration="1324000" />
+      <workItem from="1634717947273" duration="5321000" />
+      <workItem from="1634778205235" duration="3406000" />
+      <workItem from="1634863024005" duration="1899000" />
+      <workItem from="1635146434530" duration="5911000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1621590604868</created>
@@ -408,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621591648347</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="第一次提交">
+      <created>1632650060703</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632650060703</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
