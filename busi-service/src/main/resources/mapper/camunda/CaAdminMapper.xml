@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.camunda.dao.CaAdminMapper">
+
+    <resultMap type="CaAdmin" id="CaAdminResult">
+        <result property="email" column="email"/>
+        <result property="firstname" column="firstname"/>
+        <result property="id" column="id"/>
+        <result property="lastname" column="lastname"/>
+        <result property="password" column="password"/>
+        <result property="username" column="userId"/>
+    </resultMap>
+
+    <sql id="selectCaAdminVo">
+        select username, email, firstname, id, lastname, password, userId from dsjkb_test.ca_admin
+    </sql>
+
+    <select id="selectCaAdminList" parameterType="CaAdmin" resultMap="CaAdminResult">
+        <include refid="selectCaAdminVo"/>
+        <where>
+            <if test="username != null  and username != ''">and username = #{username}</if>
+            <if test="email != null  and email != ''">and email = #{email}</if>
+            <if test="firstname != null  and firstname != ''">and firstname = #{firstname}</if>
+            <if test="id != null  and id != ''">and id = #{id}</if>
+            <if test="lastname != null  and lastname != ''">and lastname = #{lastname}</if>
+            <if test="password != null  and password != ''">and password = #{password}</if>
+        </where>
+    </select>
+
+    <insert id="insertCaAdmin" parameterType="CaAdmin" useGeneratedKeys="true" keyProperty="id">
+        insert into dsjkb_test.ca_admin
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="email != null and email != ''">email,</if>
+            <if test="firstname != null and firstname != ''">firstname,</if>
+            <if test="lastname != null and lastname != ''">lastname,</if>
+            <if test="password != null and password != ''">password,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="email != null and email != ''">#{email},</if>
+            <if test="firstname != null and firstname != ''">#{firstname},</if>
+            <if test="lastname != null and lastname != ''">#{lastname},</if>
+            <if test="password != null and password != ''">#{password},</if>
+        </trim>
+    </insert>
+
+    <update id="updateCaAdmin" parameterType="CaAdmin">
+        update dsjkb_test.ca_admin
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="email != null and email != ''">email = #{email},</if>
+            <if test="firstname != null and firstname != ''">firstname = #{firstname},</if>
+            <if test="id != null and id != ''">id = #{id},</if>
+            <if test="lastname != null and lastname != ''">lastname = #{lastname},</if>
+            <if test="password != null and password != ''">password = #{password},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

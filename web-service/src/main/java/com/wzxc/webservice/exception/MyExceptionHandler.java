@@ -4,12 +4,15 @@ import com.wzxc.common.core.domain.BusiResult;
 import com.wzxc.common.exception.InsertBatchException;
 import com.wzxc.common.exception.ParamInException;
 import com.wzxc.common.exception.ParamInValidException;
+import com.wzxc.common.exception.user.UserNotExistsException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.security.auth.login.LoginException;
 
 
 /**
@@ -24,7 +27,7 @@ public class MyExceptionHandler {
 
     @ExceptionHandler(value = AuthenticationException.class)
     public BusiResult exceptionHandler1(Exception e){
-        return BusiResult.unAuth();
+        return BusiResult.unAuth(e.getMessage());
     }
 
     @ExceptionHandler(value = ParamInException.class)
@@ -45,6 +48,11 @@ public class MyExceptionHandler {
     @ExceptionHandler(value = InsertBatchException.class)
     public BusiResult exceptionHandler5(Exception e){
         return BusiResult.error(e.getMessage());
+    }
+
+    @ExceptionHandler(value = UserNotExistsException.class)
+    public BusiResult exceptionHandler6(Exception e){
+        return BusiResult.error("用户不存在");
     }
 
 }

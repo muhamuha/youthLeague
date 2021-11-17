@@ -13,4 +13,9 @@ public class UserNotExistsException extends UserException
     {
         super("user.not.exists", null);
     }
+
+    public UserNotExistsException(String username)
+    {
+        super("user.not.exists" + username, null);
+    }
 }

@@ -2,6 +2,7 @@ package com.wzxc.busi;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import com.wzxc.common.utils.PathUtils;
+import org.camunda.bpm.spring.boot.starter.annotation.EnableProcessApplication;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.Banner;
@@ -18,6 +19,7 @@ import org.springframework.core.io.FileSystemResource;
 import java.io.File;
 import java.io.IOException;
 
+@EnableProcessApplication
 @EnableSwaggerBootstrapUI
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.wzxc.*"})

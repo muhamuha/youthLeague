@@ -15,6 +15,7 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 
+import com.alibaba.fastjson.JSONArray;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -112,6 +113,48 @@ public class HttpsUtils {
             System.out.println(e);
         }
         return JSON.parseObject(result);
+    }
+
+    /**
+     * 发送 GET 请求（HTTP），K-V形式
+     *
+     * @param url
+     * @param params
+     * @return
+     */
+    public static JSONArray doGetArray(String url, Map<String, Object> params) {
+        String apiUrl = url;
+        StringBuffer param = new StringBuffer();
+        int i = 0;
+        for (String key : params.keySet()) {
+            if (i == 0)
+                param.append("?");
+            else
+                param.append("&");
+            param.append(key).append("=").append(params.get(key));
+            i++;
+        }
+        apiUrl += param;
+        String result = null;
+        HttpClient httpClient = null;
+        if (apiUrl.startsWith("https")) {
+            httpClient = HttpClients.custom().setSSLSocketFactory(createSSLConnSocketFactory())
+                    .setConnectionManager(connMgr).setDefaultRequestConfig(requestConfig).build();
+        } else {
+            httpClient = HttpClients.createDefault();
+        }
+        try {
+            HttpGet httpGet = new HttpGet(apiUrl);
+            HttpResponse response = httpClient.execute(httpGet);
+            HttpEntity entity = response.getEntity();
+            if (entity != null) {
+                InputStream instream = entity.getContent();
+                result = IOUtils.toString(instream, "UTF-8");
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        return JSON.parseArray(result);
     }
 
     /**

@@ -15,7 +15,7 @@ import java.util.Date;
  * @date 2021-10-25
  */
 @Data
-@TableName("league_activity")
+@TableName("dsjkb_test.league_activity")
 @ApiModel(value="LeagueActivity对象", description="")
 public class LeagueActivity implements Serializable {
 

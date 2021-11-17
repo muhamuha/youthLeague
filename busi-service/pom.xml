@@ -12,17 +12,18 @@
     <description>业务代码包</description>
 
     <dependencies>
-
         <dependency>
             <groupId>com.wzxc</groupId>
             <artifactId>util-common</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.wzxc</groupId>
             <artifactId>web-service</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.wzxc</groupId>
+            <artifactId>camunda-workflow</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.wzxc</groupId>
             <artifactId>mybatis-plus-generator</artifactId>

@@ -15,7 +15,7 @@ import java.util.Date;
  * @date 2021-10-25
  */
 @Data
-@TableName("league_elect")
+@TableName("dsjkb_test.league_elect")
 @ApiModel(value="LeagueElect对象", description="")
 public class LeagueElect implements Serializable {
 
@@ -52,5 +52,8 @@ public class LeagueElect implements Serializable {
     @ApiModelProperty(value = "当选年份")
     @TableField("year")
     private String year;
+
+    private LeagueCommissinor leagueCommissinor;
+    private String iphone;
 
 }

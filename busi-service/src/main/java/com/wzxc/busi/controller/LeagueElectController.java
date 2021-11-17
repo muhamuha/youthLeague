@@ -25,14 +25,14 @@ import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * 前端控制器 【请填写功能名称】
- * 
+ *
  * @author MUHAMUHA
  * @date 2021-10-25
  */
 @RestController
 @CrossOrigin
 @RequestMapping("/leagueElect")
-@Api(tags="届次管理类")
+@Api(tags = "届次管理类")
 public class LeagueElectController extends BaseController {
 
     @Autowired
@@ -43,16 +43,17 @@ public class LeagueElectController extends BaseController {
      */
     @ApiOperation(value = "查询列表", notes = "查询列表", httpMethod = "POST")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "pageNum", value = "页数（默认第1页）", required = false, paramType = "query", dataType="int"),
-            @ApiImplicitParam(name = "pageSize", value = "每页条数（默认10条）", required = false, paramType = "query", dataType="int"),
-                @ApiImplicitParam(name = "commisinorId", value = "委员id", required = false, paramType = "query", dataType="Long"),
-                @ApiImplicitParam(name = "commisinorName", value = "委员姓名", required = false, paramType = "query", dataType="String"),
-                @ApiImplicitParam(name = "electRegion", value = "当选的地区", required = false, paramType = "query", dataType="String"),
-                @ApiImplicitParam(name = "groupId", value = "提名单位", required = false, paramType = "query", dataType="Long"),
-                @ApiImplicitParam(name = "id", value = "主键", required = false, paramType = "query", dataType="Long"),
-                @ApiImplicitParam(name = "isReelect", value = "是否连任：	0：否	1：是", required = false, paramType = "query", dataType="Integer"),
-                @ApiImplicitParam(name = "isStay", value = "是否留任：	0：否	1：是", required = false, paramType = "query", dataType="Integer"),
-                @ApiImplicitParam(name = "year", value = "当选年份", required = false, paramType = "query", dataType="String"),
+            @ApiImplicitParam(name = "pageNum", value = "页数（默认第1页）", required = false, paramType = "query", dataType = "int"),
+            @ApiImplicitParam(name = "pageSize", value = "每页条数（默认10条）", required = false, paramType = "query", dataType = "int"),
+            @ApiImplicitParam(name = "commisinorId", value = "委员id", required = false, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "commisinorName", value = "委员姓名", required = false, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "electRegion", value = "当选的地区", required = false, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "groupId", value = "提名单位", required = false, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "id", value = "主键", required = false, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "isReelect", value = "是否连任：	0：否	1：是", required = false, paramType = "query", dataType = "Integer"),
+            @ApiImplicitParam(name = "isStay", value = "是否留任：	0：否	1：是", required = false, paramType = "query", dataType = "Integer"),
+            @ApiImplicitParam(name = "year", value = "当选年份", required = false, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "iphone", value = "手机号", required = false, paramType = "query", dataType = "String"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK", response = LeagueElect.class),
@@ -68,14 +69,14 @@ public class LeagueElectController extends BaseController {
     }
 
     /**
-    * 查询详情【请填写功能名称】
-    *
-    * @param id
-    * @return
-    */
+     * 查询详情【请填写功能名称】
+     *
+     * @param id
+     * @return
+     */
     @ApiOperation(value = "查询详情", notes = "查询详情", httpMethod = "GET")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType = "int"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK", response = LeagueElect.class),
@@ -85,7 +86,7 @@ public class LeagueElectController extends BaseController {
     public Object getById(@PathVariable Integer id) {
         Map<String, Object> resultMap = new HashMap<>();
         LeagueElect leagueElect = leagueElectService.getById(id);
-        if(leagueElect == null){
+        if (leagueElect == null) {
             return BusiResult.error("查询失败");
         }
         resultMap.put("data", leagueElect);
@@ -97,13 +98,13 @@ public class LeagueElectController extends BaseController {
      */
     @ApiOperation(value = "新增记录", notes = "新增记录", httpMethod = "POST")
     @ApiImplicitParams({
-                @ApiImplicitParam(name = "commisinorId", value = "委员id", required = true, paramType = "query", dataType="Long"),
-                @ApiImplicitParam(name = "commisinorName", value = "委员姓名", required = true, paramType = "query", dataType="String"),
-                @ApiImplicitParam(name = "electRegion", value = "当选的地区", required = true, paramType = "query", dataType="String"),
-                @ApiImplicitParam(name = "groupId", value = "提名单位", required = true, paramType = "query", dataType="Long"),
-                @ApiImplicitParam(name = "isReelect", value = "是否连任：	0：否	1：是", required = false, paramType = "query", dataType="Integer"),
-                @ApiImplicitParam(name = "isStay", value = "是否留任：	0：否	1：是", required = false, paramType = "query", dataType="Integer"),
-                @ApiImplicitParam(name = "year", value = "当选年份", required = true, paramType = "query", dataType="String"),
+            @ApiImplicitParam(name = "commisinorId", value = "委员id", required = true, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "commisinorName", value = "委员姓名", required = true, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "electRegion", value = "当选的地区", required = true, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "groupId", value = "提名单位", required = true, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "isReelect", value = "是否连任：	0：否	1：是", required = false, paramType = "query", dataType = "Integer"),
+            @ApiImplicitParam(name = "isStay", value = "是否留任：	0：否	1：是", required = false, paramType = "query", dataType = "Integer"),
+            @ApiImplicitParam(name = "year", value = "当选年份", required = true, paramType = "query", dataType = "String"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
@@ -117,10 +118,17 @@ public class LeagueElectController extends BaseController {
             @CheckParam(value = Check.NotNull, argName = "leagueElect.year", msg = "缺少当选年份（year）"),
     })
     @PostMapping("/add")
-    public BusiResult add(@RequestBody @ApiIgnore LeagueElect leagueElect)
-    {
+    public BusiResult add(@RequestBody @ApiIgnore LeagueElect leagueElect) {
+        // 判断 年份和委员id 是否已经存在
+        LeagueElect elect = new LeagueElect();
+        elect.setCommisinorId(leagueElect.getCommisinorId());
+        elect.setYear(leagueElect.getYear());
+        List<LeagueElect> leagueElects = leagueElectService.selectLeagueElectList(elect);
+        if(leagueElects.size() > 0){
+            return BusiResult.error("新增失败，原因：所选年份已存在该委员");
+        }
         int isSuccess = leagueElectService.insertLeagueElect(leagueElect);
-        if(isSuccess == 0){
+        if (isSuccess == 0) {
             return BusiResult.error("新增失败");
         }
         return BusiResult.success("新增成功");
@@ -131,14 +139,14 @@ public class LeagueElectController extends BaseController {
      */
     @ApiOperation(value = "修改记录", notes = "修改记录", httpMethod = "POST")
     @ApiImplicitParams({
-                @ApiImplicitParam(name = "commisinorId", value = "委员id", required = false, paramType = "query", dataType="Long"),
-                @ApiImplicitParam(name = "commisinorName", value = "委员姓名", required = false, paramType = "query", dataType="String"),
-                @ApiImplicitParam(name = "electRegion", value = "当选的地区", required = false, paramType = "query", dataType="String"),
-                @ApiImplicitParam(name = "groupId", value = "提名单位", required = false, paramType = "query", dataType="Long"),
-                @ApiImplicitParam(name = "id", value = "主键", required = true, paramType = "query", dataType="Long"),
-                @ApiImplicitParam(name = "isReelect", value = "是否连任：	0：否	1：是", required = false, paramType = "query", dataType="Integer"),
-                @ApiImplicitParam(name = "isStay", value = "是否留任：	0：否	1：是", required = false, paramType = "query", dataType="Integer"),
-                @ApiImplicitParam(name = "year", value = "当选年份", required = false, paramType = "query", dataType="String"),
+            @ApiImplicitParam(name = "commisinorId", value = "委员id", required = false, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "commisinorName", value = "委员姓名", required = false, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "electRegion", value = "当选的地区", required = false, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "groupId", value = "提名单位", required = false, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "id", value = "主键", required = true, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "isReelect", value = "是否连任：	0：否	1：是", required = false, paramType = "query", dataType = "Integer"),
+            @ApiImplicitParam(name = "isStay", value = "是否留任：	0：否	1：是", required = false, paramType = "query", dataType = "Integer"),
+            @ApiImplicitParam(name = "year", value = "当选年份", required = false, paramType = "query", dataType = "String"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
@@ -150,7 +158,7 @@ public class LeagueElectController extends BaseController {
     @PostMapping("/edit")
     public BusiResult edit(@RequestBody @ApiIgnore LeagueElect leagueElect) {
         int isSuccess = leagueElectService.updateLeagueElect(leagueElect);
-        if(isSuccess == 0){
+        if (isSuccess == 0) {
             return BusiResult.error("修改失败");
         }
         return BusiResult.success("修改成功");
@@ -161,7 +169,7 @@ public class LeagueElectController extends BaseController {
      */
     @ApiOperation(value = "删除记录（物理删除）", notes = "删除记录（物理删除）", httpMethod = "GET")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType="long"),
+            @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType = "long"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
@@ -170,7 +178,7 @@ public class LeagueElectController extends BaseController {
     @GetMapping("/remove/{id}")
     public BusiResult remove(@PathVariable Long id) {
         boolean isSuccess = leagueElectService.removeById(id);
-        if(!isSuccess){
+        if (!isSuccess) {
             return BusiResult.error("删除失败");
         }
         return BusiResult.success("删除成功");

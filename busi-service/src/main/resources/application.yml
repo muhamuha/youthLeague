@@ -1,8 +1,12 @@
 project:
+  name: busi-service
   author:
     name: MUHAMUHA
     email: 2472350821@qq.com
   version: v1
+
+camunda:
+  active: true
 
 spring:
   profiles:
@@ -40,6 +44,10 @@ pagehelper:
   reasonable: false
   supportMethodsArguments: true
   params: count=countSql
+
+jwt:
+  secret: Pw33wctALkAMK19kBfbV
+  principals: youth-league-token
 
 
 

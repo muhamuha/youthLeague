@@ -11,6 +11,7 @@
         <module name="web-service" />
         <module name="busi-service" />
         <module name="mybatis-plus-generator" />
+        <module name="camunda-workflow" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="busi-service" options="-parameters" />
+      <module name="camunda-workflow" options="-parameters" />
       <module name="common-config" options="-parameters" />
       <module name="config-common" options="-parameters" />
       <module name="demo1" options="-parameters" />

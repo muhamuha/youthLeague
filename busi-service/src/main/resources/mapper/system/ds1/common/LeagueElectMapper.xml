@@ -13,14 +13,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="isReelect"    column="is_reelect"    />
         <result property="isStay"    column="is_stay"    />
         <result property="year"    column="year"    />
+        <association property="leagueCommissinor" column="commisinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
+                     select="com.wzxc.busi.dao.ds1.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
     </resultMap>
 
     <sql id="selectLeagueElectVo">
-        select commisinor_id, commisinor_name, elect_region, group_id, id, is_reelect, is_stay, year, from league_elect
+        select league_elect.commisinor_id, league_elect.commisinor_name, league_elect.elect_region, league_elect.group_id, league_elect.id, league_elect.is_reelect, league_elect.is_stay, league_elect.year from dsjkb_test.league_elect as league_elect
     </sql>
 
     <select id="selectLeagueElectList" parameterType="LeagueElect" resultMap="LeagueElectResult">
         <include refid="selectLeagueElectVo"/>
+        <if test="iphone != null  and iphone != ''"> inner join league_commissinor b on league_elect.iphone = b.iphone</if>
         <where>  
             <if test="commisinorId != null "> and commisinor_id = #{commisinorId}</if>
             <if test="commisinorName != null  and commisinorName != ''"> and commisinor_name = #{commisinorName}</if>
@@ -31,10 +34,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="isStay != null "> and is_stay = #{isStay}</if>
             <if test="year != null  and year != ''"> and year = #{year}</if>
         </where>
+        order by year,create_time desc
     </select>
         
     <insert id="insertLeagueElect" parameterType="LeagueElect" useGeneratedKeys="true" keyProperty="id">
-        insert into league_elect
+        insert into dsjkb_test.league_elect
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="commisinorId != null">commisinor_id,</if>
             <if test="commisinorName != null and commisinorName != ''">commisinor_name,</if>
@@ -56,7 +60,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </insert>
 
     <update id="updateLeagueElect" parameterType="LeagueElect">
-        update league_elect
+        update dsjkb_test.league_elect
         <trim prefix="SET" suffixOverrides=",">
             <if test="commisinorId != null">commisinor_id = #{commisinorId},</if>
             <if test="commisinorName != null and commisinorName != ''">commisinor_name = #{commisinorName},</if>

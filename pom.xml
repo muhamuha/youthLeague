@@ -196,6 +196,13 @@
                 <version>${wzxc.version}</version>
             </dependency>
 
+            <!-- 工作流服务依赖包 -->
+            <dependency>
+                <groupId>com.wzxc</groupId>
+                <artifactId>camunda-workflow</artifactId>
+                <version>${wzxc.version}</version>
+            </dependency>
+
             <!-- 业务代码自动生成依赖包 -->
             <dependency>
                 <groupId>com.wzxc</groupId>
@@ -245,6 +252,7 @@
         <module>util-common</module>
         <module>busi-service</module>
         <module>mybatis-plus-generator</module>
+        <module>camunda-workflow</module>
     </modules>
 
 </project>

@@ -101,7 +101,12 @@ public class ${cfg.voName}Controller extends BaseController {
             #set($javaField=$field.javaField)
             #set($columnComment=$field.columnComment)
             #set($javaType=$field.javaType)
-                @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = false, paramType = "query", dataType="$javaType"),
+            #set($isNullable=$field.isNullable)
+                #if($isNullable == "NO" && $fieldName != "id")
+                        @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = true, paramType = "query", dataType="$javaType"),
+                #elseif($fieldName != "id")
+                        @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = false, paramType = "query", dataType="$javaType"),
+                #end
         #end
     })
     @ApiResponses({
@@ -109,7 +114,14 @@ public class ${cfg.voName}Controller extends BaseController {
             @ApiResponse(code = 13500, message = "ERROR")
     })
     @CheckParams({
-            @CheckParam(value = Check.NotNull, argName = "【参数名称 例：${cfg.moudleName}.id】", msg = "【错误信息】"),
+        #foreach($field in ${cfg.fields})
+            #set($fieldName=$field.fieldName)
+            #set($columnComment=$field.columnComment)
+            #set($isNullable=$field.isNullable)
+            #if($isNullable == "NO" && $fieldName != "id")
+                    @CheckParam(value = Check.NotNull, argName = "${cfg.moudleName}.${fieldName}", msg = "缺少${columnComment}字段（${fieldName}）"),
+            #end
+        #end
     })
     @PostMapping("/add")
     public BusiResult add(@RequestBody @ApiIgnore ${cfg.voName} ${cfg.moudleName})
@@ -131,7 +143,11 @@ public class ${cfg.voName}Controller extends BaseController {
             #set($javaField=$field.javaField)
             #set($columnComment=$field.columnComment)
             #set($javaType=$field.javaType)
-                @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = false, paramType = "query", dataType="$javaType"),
+                #if($fieldName == "id")
+                        @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = true, paramType = "query", dataType="$javaType"),
+                #else
+                        @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = false, paramType = "query", dataType="$javaType"),
+                #end
         #end
     })
     @ApiResponses({

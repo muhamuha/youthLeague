@@ -173,7 +173,7 @@ public class BusiResult extends HashMap<String, Object> {
      */
     public static BusiResult unAuth()
     {
-        return BusiResult.unAuth("未登录，请在前端系统进行登录");
+        return BusiResult.unAuth("未登录，请在网站上登录");
     }
 
     /**

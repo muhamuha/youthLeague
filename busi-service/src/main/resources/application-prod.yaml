@@ -25,3 +25,13 @@ spring:
       pool-prepared-statements: true
       max-open-prepared-statements: 50
       max-pool-prepared-statement-per-connection-size: 20
+
+# 浙政钉
+zzd:
+  config:
+    appkey: wzdx_workbench_meeting-WvMn26z
+    secret: zBLhENpgVJm2j7IBXA01oh3z4U4m4VrT3YIgRB80
+    tenantid: 196729
+    domain-name: openplatform-pro.ding.zj.gov.cn
+    protocal: https
+    msgApp: wzdx_workbench_meeting

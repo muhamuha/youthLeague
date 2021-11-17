@@ -17,12 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class JwtFilter extends BasicHttpAuthenticationFilter {
 
-    private static final String TOKEN = "token";
+    private static final String TOKEN = "league-token";
     private static ThreadLocal<String> userIdThreadLocal = new ThreadLocal<>();
 
     private String[] anonUrl = new String[]{};
-
     private AntPathMatcher pathMatcher = new AntPathMatcher();
+
+    private boolean tokenExpire = false;
+    private boolean tokenIllegal = false;
 
     /**
      * 获取usrId
@@ -88,12 +90,30 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     protected boolean executeLogin(ServletRequest request, ServletResponse response) {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         String token = ((HttpServletRequest) request).getHeader(TOKEN);
-        userIdThreadLocal.set(token);
-        return true;
+        // 校验token
+        if(!JwtUtil.verify(token)){
+            tokenIllegal = true;
+        } else if(JwtUtil.isExpired(token)){
+            tokenExpire = true;
+        } else{
+            userIdThreadLocal.set(token);
+            return true;
+        }
+        return false;
+//        userIdThreadLocal.set(token);
+//        return true;
     }
 
     @Override
     protected boolean sendChallenge(ServletRequest request, ServletResponse response) {
-        throw new AuthenticationException("没有权限访问");
+        if(tokenExpire){
+            tokenExpire = false; // 过滤器全局的
+            throw new AuthenticationException("凭证过期，请重新登录");
+        } else if(tokenIllegal){
+            tokenIllegal = false; // // 过滤器全局的
+            throw new AuthenticationException("用户不存在！");
+        } else{
+            throw new AuthenticationException("没有权限访问！");
+        }
     }
 }

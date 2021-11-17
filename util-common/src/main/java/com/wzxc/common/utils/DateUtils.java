@@ -188,5 +188,16 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils
         return day + "天" + hour + "小时" + min + "分钟";
     }
 
+    /**
+     * 只支持天数
+     * @return：返回相对于今天与delta差值的日期
+     */
+    public static Date getRelativeDate(int delta) throws ParseException {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(YYYY_MM_DD);
+        calendar.setTime(simpleDateFormat.parse(getDate()));
+        calendar.add(Calendar.DATE, delta);
+        return calendar.getTime();
+    }
 
 }

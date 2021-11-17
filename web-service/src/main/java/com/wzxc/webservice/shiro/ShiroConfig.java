@@ -65,6 +65,12 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/swagger-resources/**","anon");
         filterChainDefinitionMap.put("/v2/**","anon");
         filterChainDefinitionMap.put("/druid/**","anon");
+        // 放行camunda工作台和restAPI
+        filterChainDefinitionMap.put("/", "anon");
+        filterChainDefinitionMap.put("/camunda/**", "anon");
+        filterChainDefinitionMap.put("/engine-rest/**", "anon");
+        // 放行登录接口
+        filterChainDefinitionMap.put("/login/**", "anon");
         // 其他所有请求都要经过 jwt过滤器
         filterChainDefinitionMap.put("/**", "jwt");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);

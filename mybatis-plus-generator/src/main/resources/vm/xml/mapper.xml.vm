@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="select${cfg.voName}Vo">
-        select#foreach($field in ${cfg.fields}) $field.fieldName#if($velocityCount != ${cfg.fields.size()}),#end#end from ${cfg.tableName}
+        select#foreach($field in ${cfg.fields}) $field.fieldName#if($foreach.count != ${cfg.fields.size()}),#end#end from ${cfg.tableName}
     </sql>
 
     <select id="select${cfg.voName}List" parameterType="${cfg.voName}" resultMap="${cfg.voName}Result">

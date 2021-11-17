@@ -20,14 +20,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectLeagueActivityVo">
-        select activity_begin, activity_end, activity_type, address, content, hostman, id, nickname, range_industry, range_region, sign_begin, sign_end, from league_activity
+        select activity_begin, activity_end, activity_type, address, content, hostman, id, nickname, range_industry, range_region, sign_begin, sign_end from dsjkb_test.league_activity
     </sql>
 
     <select id="selectLeagueActivityList" parameterType="LeagueActivity" resultMap="LeagueActivityResult">
         <include refid="selectLeagueActivityVo"/>
         <where>  
-            <if test="activityBegin != null "> and activity_begin = #{activityBegin}</if>
-            <if test="activityEnd != null "> and activity_end = #{activityEnd}</if>
+            <if test="activityBegin != null "> and activity_begin >= #{activityBegin}</if>
+            <if test="activityEnd != null "> and activity_end &lt;= #{activityEnd}</if>
             <if test="activityType != null "> and activity_type = #{activityType}</if>
             <if test="address != null  and address != ''"> and address = #{address}</if>
             <if test="content != null  and content != ''"> and content = #{content}</if>
@@ -36,13 +36,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="nickname != null  and nickname != ''"> and nickname = #{nickname}</if>
             <if test="rangeIndustry != null  and rangeIndustry != ''"> and range_industry = #{rangeIndustry}</if>
             <if test="rangeRegion != null  and rangeRegion != ''"> and range_region = #{rangeRegion}</if>
-            <if test="signBegin != null "> and sign_begin = #{signBegin}</if>
-            <if test="signEnd != null "> and sign_end = #{signEnd}</if>
+            <if test="signBegin != null "> and sign_begin >= #{signBegin}</if>
+            <if test="signEnd != null "> and sign_end &lt;= #{signEnd}</if>
         </where>
+        order by create_time desc
     </select>
         
     <insert id="insertLeagueActivity" parameterType="LeagueActivity" useGeneratedKeys="true" keyProperty="id">
-        insert into league_activity
+        insert into dsjkb_test.league_activity
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="activityBegin != null">activity_begin,</if>
             <if test="activityEnd != null">activity_end,</if>
@@ -72,7 +73,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </insert>
 
     <update id="updateLeagueActivity" parameterType="LeagueActivity">
-        update league_activity
+        update dsjkb_test.league_activity
         <trim prefix="SET" suffixOverrides=",">
             <if test="activityBegin != null">activity_begin = #{activityBegin},</if>
             <if test="activityEnd != null">activity_end = #{activityEnd},</if>

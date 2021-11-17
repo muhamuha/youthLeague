@@ -1,15 +1,15 @@
-package com.wzxc.webservice.config;
+package com.wzxc.webservice.config.Busi;
 
-import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import com.wzxc.common.utils.spring.SpringUtils;
+import com.wzxc.webservice.config.condition.BusiCondition;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.Resource;
@@ -21,6 +21,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Conditional({BusiCondition.class})
 @Configuration
 @MapperScan(basePackages = "com.wzxc.busi.dao.ds1", sqlSessionTemplateRef = "ds1SqlSessionTemplate")
 @Slf4j
@@ -46,7 +47,7 @@ public class Ds1Config {
                 resources.add(r);
             }
         } catch(FileNotFoundException e){
-            log.warn(activeProfile + " ---- 没有找到mapper.xml文件！！！路径 ---- " + path);
+            log.warn("mybatis --- 未找到xml映射文件，地址：" + path);
         }
         // 加载通用mapper.xml
         path = "classpath:mapper/system/ds1/common/*.xml";

@@ -1,8 +1,10 @@
-package com.wzxc.webservice.config;
+package com.wzxc.webservice.config.Busi;
 
+import com.wzxc.webservice.config.condition.BusiCondition;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -15,9 +17,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Swagger2的接口配置
- * 
- * @author ruoyi
+ *
  */
+@Conditional({BusiCondition.class})
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig
