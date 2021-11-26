@@ -1,10 +1,9 @@
 package com.wzxc.busi.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.wzxc.common.core.text.Convert;
-import com.wzxc.common.utils.DateUtils;
-import com.wzxc.busi.dao.ds1.LeagueActivityMapper;
+import com.wzxc.busi.dao.LeagueActivityMapper;
 import com.wzxc.busi.vo.LeagueActivity;
+import com.wzxc.busi.vo.LeagueCommissinor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.wzxc.busi.service.ILeagueActivityService;
@@ -58,6 +57,10 @@ public class LeagueActivityServiceImpl extends ServiceImpl<LeagueActivityMapper,
         return leagueActivityMapper.updateLeagueActivity(leagueActivity);
     }
 
+    @Override
+    public List<LeagueActivity> selectRegisterLeagueActivityList(LeagueCommissinor leagueCommissinor) {
+        return leagueActivityMapper.selectRegisterLeagueActivityList(leagueCommissinor);
+    }
 
 
 }

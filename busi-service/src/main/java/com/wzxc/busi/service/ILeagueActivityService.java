@@ -3,6 +3,7 @@ package com.wzxc.busi.service;
 import java.util.List;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wzxc.busi.vo.LeagueActivity;
+import com.wzxc.busi.vo.LeagueCommissinor;
 
 /**
  * <p>
@@ -20,4 +21,5 @@ public interface ILeagueActivityService extends IService<LeagueActivity> {
 
     int updateLeagueActivity(LeagueActivity leagueActivity);
 
+    List<LeagueActivity> selectRegisterLeagueActivityList(LeagueCommissinor leagueCommissinor);
 }

@@ -23,8 +23,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     private String[] anonUrl = new String[]{};
     private AntPathMatcher pathMatcher = new AntPathMatcher();
 
-    private boolean tokenExpire = false;
-    private boolean tokenIllegal = false;
+    private boolean TOKEN_ILLEGAL = false;
 
     /**
      * 获取usrId
@@ -92,25 +91,18 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         String token = ((HttpServletRequest) request).getHeader(TOKEN);
         // 校验token
         if(!JwtUtil.verify(token)){
-            tokenIllegal = true;
-        } else if(JwtUtil.isExpired(token)){
-            tokenExpire = true;
+            TOKEN_ILLEGAL = true;
         } else{
-            userIdThreadLocal.set(token);
+            userIdThreadLocal.set(JwtUtil.getUserId(token));
             return true;
         }
         return false;
-//        userIdThreadLocal.set(token);
-//        return true;
     }
 
     @Override
     protected boolean sendChallenge(ServletRequest request, ServletResponse response) {
-        if(tokenExpire){
-            tokenExpire = false; // 过滤器全局的
-            throw new AuthenticationException("凭证过期，请重新登录");
-        } else if(tokenIllegal){
-            tokenIllegal = false; // // 过滤器全局的
+        if(TOKEN_ILLEGAL){
+            TOKEN_ILLEGAL = false; // // 过滤器全局的
             throw new AuthenticationException("用户不存在！");
         } else{
             throw new AuthenticationException("没有权限访问！");

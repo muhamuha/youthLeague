@@ -19,6 +19,7 @@ C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\uti
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\exception\file\FileException.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\exception\base\BaseException.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\exception\user\UserPasswordNotMatchException.java
+C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\annotation\MultiRequestBody.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\utils\MessageUtils.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\validate\Check.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\core\dao\InsertBatchCommon.java

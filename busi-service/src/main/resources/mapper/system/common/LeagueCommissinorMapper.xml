@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wzxc.busi.dao.ds1.LeagueCommissinorMapper">
+<mapper namespace="com.wzxc.busi.dao.LeagueCommissinorMapper">
     
     <resultMap type="LeagueCommissinor" id="LeagueCommissinorResult">
         <result property="address"    column="address"    />
@@ -45,15 +45,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="vocationId"    column="vocation_id"    />
         <result property="workplace"    column="workplace"    />
         <result property="employeeCode"    column="employee_code"    />
+        <result property="isDelete"    column="is_delete"    />
     </resultMap>
 
     <sql id="selectLeagueCommissinorVo">
-        select address, birthday, campus, company, creater, degree, deputy_cppcc, deputy_npc, deputy_party, education, email, gender, honor_file, honor_level, honor_name, household, id, idcard, industry_id, iphone, join_date, league_office, leave_date, leave_reason, location, name, nation, org_office, org_position, org_title, organization, origin, picture, political_status, position, remark, social_office, vocation_id, workplace, employee_code from dsjkb_test.league_commissinor
+        select address, birthday, campus, company, creater, degree, deputy_cppcc, deputy_npc, deputy_party, education, email, gender, honor_file, honor_level, honor_name, household, id, idcard, industry_id, iphone, join_date, league_office, leave_date, leave_reason, location, name, nation, org_office, org_position, org_title, organization, origin, picture, political_status, position, remark, social_office, vocation_id, workplace, employee_code, is_delete from dsjkb_test.league_commissinor
     </sql>
 
     <select id="selectLeagueCommissinorList" parameterType="LeagueCommissinor" resultMap="LeagueCommissinorResult">
         <include refid="selectLeagueCommissinorVo"/>
-        <where>  
+        <where>
             <if test="address != null  and address != ''"> and address = #{address}</if>
             <if test="birthday != null "> and birthday = #{birthday}</if>
             <if test="campus != null  and campus != ''"> and campus = #{campus}</if>
@@ -93,6 +94,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="socialOffice != null  and socialOffice != ''"> and social_office = #{socialOffice}</if>
             <if test="vocationId != null "> and vocation_id = #{vocationId}</if>
             <if test="workplace != null  and workplace != ''"> and workplace = #{workplace}</if>
+            <if test="isDelete != null"> and is_delete = #{isDelete}</if>
         </where>
         order by create_time desc
     </select>
@@ -233,6 +235,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="employeeCode != null and employeeCode != ''">employee_code = #{employeeCode},</if>
         </trim>
         where id = #{id}
+    </update>
+
+    <update id="removeLogic">
+        update dsjkb_test.league_commissinor set is_delete = 1 where employee_code = #{employeeCode}
     </update>
 
 </mapper>

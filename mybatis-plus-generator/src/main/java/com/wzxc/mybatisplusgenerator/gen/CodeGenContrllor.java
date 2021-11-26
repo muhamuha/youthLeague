@@ -221,7 +221,7 @@ public class CodeGenContrllor {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名
-                return devRootPath + outDirMapperPath + datasource + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_JAVA;
+                return devRootPath + outDirMapperPath + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_JAVA;
             }
         });
         // service
@@ -262,7 +262,7 @@ public class CodeGenContrllor {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名
-                return resourceRootPath + outDirXmlPath + datasource + "/common/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
+                return resourceRootPath + outDirXmlPath + "common/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
     }

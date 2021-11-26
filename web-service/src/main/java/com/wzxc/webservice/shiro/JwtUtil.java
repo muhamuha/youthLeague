@@ -97,12 +97,35 @@ public class JwtUtil {
                     .withHeader(map)
                     .withClaim("principals", principals)
                     .withSubject(userId)
-                    .withExpiresAt(new Date(System.currentTimeMillis() + 3 * 60 * 60 * 1000)) // 过期时间(八小时之后)
+                    .withExpiresAt(new Date(System.currentTimeMillis() + 8 * 60 * 60 * 1000))
                     .withIssuedAt(new Date())
                     .sign(algorithm);
         } catch (Exception e) {
             log.error("error：{}", e);
             return null;
         }
+    }
+
+    public static void main(String[] args) {
+        String employeeCode = "GE_85617f49fbd74f21bb037306b388c25a";
+        String secret = "Pw33wctALkAMK19kBfbV";
+        String principals = "youth-league-token";
+        try {
+            Map<String, Object> map = new HashMap<>();
+            map.put("alg", "HS256");
+            map.put("typ", "JWT");
+            Algorithm algorithm = Algorithm.HMAC256(secret);
+            String sign = JWT.create()
+                    .withHeader(map)
+                    .withClaim("principals", principals)
+                    .withSubject(employeeCode)
+                    .withExpiresAt(new Date(System.currentTimeMillis() + 300000 * 60 * 60 * 1000))
+                    .withIssuedAt(new Date())
+                    .sign(algorithm);
+            System.out.println("sign --- " + sign);
+        } catch (Exception e) {
+            log.error("error：{}", e);
+        }
+
     }
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wzxc.busi.dao.ds1.LeagueActivityMapper">
+<mapper namespace="com.wzxc.busi.dao.LeagueActivityMapper">
     
     <resultMap type="LeagueActivity" id="LeagueActivityResult">
         <result property="activityBegin"    column="activity_begin"    />
@@ -17,11 +17,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="rangeRegion"    column="range_region"    />
         <result property="signBegin"    column="sign_begin"    />
         <result property="signEnd"    column="sign_end"    />
+        <result property="creater"    column="creater"    />
+        <result property="isSign"    column="is_sign"    />
+        <result property="lat"    column="lat"    />
+        <result property="lon"    column="lon"    />
+        <result property="signRange"    column="sign_range"    />
     </resultMap>
 
     <sql id="selectLeagueActivityVo">
-        select activity_begin, activity_end, activity_type, address, content, hostman, id, nickname, range_industry, range_region, sign_begin, sign_end from dsjkb_test.league_activity
+        select activity_begin, activity_end, activity_type, address, content, hostman, id, nickname, range_industry, range_region, sign_begin, sign_end, creater, is_sign, lat, lon, sign_range from dsjkb_test.league_activity
     </sql>
+
+    <select id="selectLeagueActivityById" parameterType="Long" resultMap="LeagueActivityResult">
+        <include refid="selectLeagueActivityVo"/>
+        WHERE id = #{id}
+    </select>
 
     <select id="selectLeagueActivityList" parameterType="LeagueActivity" resultMap="LeagueActivityResult">
         <include refid="selectLeagueActivityVo"/>
@@ -38,6 +48,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="rangeRegion != null  and rangeRegion != ''"> and range_region = #{rangeRegion}</if>
             <if test="signBegin != null "> and sign_begin >= #{signBegin}</if>
             <if test="signEnd != null "> and sign_end &lt;= #{signEnd}</if>
+            <if test="isSign != null "> and is_sign = #{isSign}</if>
+        </where>
+        order by create_time desc
+    </select>
+
+    <!--  活动报名列表  -->
+    <select id="selectRegisterLeagueActivityList" resultMap="LeagueActivityResult">
+        <include refid="selectLeagueActivityVo"/>
+        <where>
+            activity_begin >= sysdate()
+            and (find_in_set(#{commissinor.industryId}, range_industry) is not null and find_in_set(#{commissinor.industryId}, range_industry) != 0)
+            and (find_in_set(#{commissinor.location}, range_region) is not null and find_in_set(#{commissinor.location}, range_region) != 0)
+            and id not in (select activity_id from dsjkb_test.league_act_register where commissinor_id = #{commissinor.id})
         </where>
         order by create_time desc
     </select>
@@ -56,6 +79,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="rangeRegion != null">range_region,</if>
             <if test="signBegin != null">sign_begin,</if>
             <if test="signEnd != null">sign_end,</if>
+            <if test="creater != null and creater != ''">creater,</if>
+            <if test="isSign != null ">is_sign,</if>
+            <if test="lat != null ">lat,</if>
+            <if test="lon != null ">lon,</if>
+            <if test="signRange != null ">sign_range,</if>
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="activityBegin != null">#{activityBegin},</if>
@@ -69,6 +97,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="rangeRegion != null">#{rangeRegion},</if>
             <if test="signBegin != null">#{signBegin},</if>
             <if test="signEnd != null">#{signEnd},</if>
+            <if test="creater != null and creater != ''">#{creater},</if>
+            <if test="isSign != null ">#{isSign},</if>
+            <if test="lat != null ">#{lat},</if>
+            <if test="lon != null ">#{lon},</if>
+            <if test="signRange != null ">#{signRange},</if>
          </trim>
     </insert>
 
@@ -87,6 +120,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="rangeRegion != null">range_region = #{rangeRegion},</if>
             <if test="signBegin != null">sign_begin = #{signBegin},</if>
             <if test="signEnd != null">sign_end = #{signEnd},</if>
+            <if test="isSign != null ">is_sign = #{isSign},</if>
+            <if test="lat != null ">lat = #{lat},</if>
+            <if test="lon != null ">lon = #{lon},</if>
+            <if test="signRange != null ">sign_range = #{signRange},</if>
         </trim>
         where id = #{id}
     </update>

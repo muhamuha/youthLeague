@@ -14,6 +14,7 @@ import com.wzxc.common.core.domain.BusiResult;
 import com.wzxc.common.utils.DateUtils;
 import com.wzxc.common.validate.Check;
 import com.wzxc.busi.vo.LeagueCommissinor;
+import com.wzxc.webservice.shiro.JwtFilter;
 import io.swagger.annotations.*;
 import jdk.nashorn.internal.objects.annotations.Getter;
 import net.bytebuddy.asm.Advice;
@@ -132,70 +133,14 @@ public class LeagueCommissinorController extends BaseController {
     /**
      * 新增记录【请填写功能名称】
      */
-    @ApiOperation(value = "新增记录", notes = "新增记录", httpMethod = "POST")
-    @ApiImplicitParams({
-                        @ApiImplicitParam(name = "address", value = "家庭住址", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "birthday", value = "出生日期", required = false, paramType = "query", dataType="Date"),
-                        @ApiImplicitParam(name = "campus", value = "毕业院校", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "company", value = "所在公司", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "degree", value = "学位", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "deputyCppcc", value = "市级以上政协委员的情况", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "deputyNpc", value = "市级以上人大代表情况", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "deputyParty", value = "市级以上党代表的情况", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "education", value = "教育情况	1. 中专/高中	2. 专科	3. 本科	4. 硕士研究生	5. 博士", required = false, paramType = "query", dataType="Integer"),
-                        @ApiImplicitParam(name = "email", value = "邮箱", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "gender", value = "性别", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "honorFile", value = "荣誉附件地址", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "honorLevel", value = "荣誉层级	1. 省级	2. 市级	3. 县级", required = false, paramType = "query", dataType="Integer"),
-                        @ApiImplicitParam(name = "honorName", value = "荣誉名称", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "household", value = "户籍", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "idcard", value = "身份证号", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "industryId", value = "所在行业（字典表）", required = false, paramType = "query", dataType="Long"),
-                        @ApiImplicitParam(name = "iphone", value = "手机号码", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "joinDate", value = "入委时间", required = false, paramType = "query", dataType="Date"),
-                        @ApiImplicitParam(name = "leagueOffice", value = "青联职务", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "leaveDate", value = "出委时间", required = false, paramType = "query", dataType="Date"),
-                        @ApiImplicitParam(name = "leaveReason", value = "离开原因", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "location", value = "所在地", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "name", value = "姓名", required = true, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "nation", value = "民族", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "orgOffice", value = "职务", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "orgPosition", value = "政府所在单位和职务", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "orgTitle", value = "职称", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "organization", value = "所在政府单位", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "origin", value = "籍贯", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "picture", value = "个人照片地址", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "politicalStatus", value = "政治面貌", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "position", value = "公司职务", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "remark", value = "备注", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "socialOffice", value = "社会职务", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "vocationId", value = "职业（字典）", required = false, paramType = "query", dataType="Long"),
-                        @ApiImplicitParam(name = "workplace", value = "工作所在地", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "employeeCode", value = "浙政钉code", required = true, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "instanceId", value = "流程id", required = true, paramType = "query", dataType="String"),
-    })
-    @ApiResponses({
-            @ApiResponse(code = 13000, message = "OK"),
-            @ApiResponse(code = 13500, message = "ERROR")
-    })
-    @CheckParams({
-            @CheckParam(value = Check.NotNull, argName = "leagueCommissinor.employeeCode", msg = "缺少浙政钉code（employeeCode）"),
-            @CheckParam(value = Check.NotNull, argName = "leagueCommissinor.name", msg = "缺少姓名字段（name）"),
-            @CheckParam(value = Check.NotNull, argName = "instanceId", msg = "缺少实例id"),
-    })
-    @PostMapping("/add/{instanceId}")
-    synchronized public BusiResult add(@PathVariable("instanceId") String instanceId, @RequestBody @ApiIgnore LeagueCommissinor leagueCommissinor) {
+    synchronized public BusiResult add(LeagueCommissinor leagueCommissinor) {
         // 判断委员是否存在
         String employeeCode = leagueCommissinor.getEmployeeCode();
         long leagueCount = leagueCommissinorService.leagueCommissinorCount(employeeCode);
         if(leagueCount > 0){
             return BusiResult.error("新增失败，失败原因：该委员已存在");
         }
-        // 判断对应的实例id是否已经完结且审批通过
-        long count = historyService.createHistoricProcessInstanceQuery().completed().processInstanceBusinessKey(employeeCode).processInstanceId(instanceId).count();
-        if(count == 0){
-            return BusiResult.error("新增失败，失败原因：未找到工单信息");
-        }
+        leagueCommissinor.setCreater(JwtFilter.getUserId());
         int isSuccess = leagueCommissinorService.insertLeagueCommissinor(leagueCommissinor);
         if(isSuccess == 0){
             return BusiResult.error("新增失败，失败原因：数据库拒绝新增操作");
@@ -265,19 +210,23 @@ public class LeagueCommissinorController extends BaseController {
     }
 
     /**
-     * 删除记录【请填写功能名称】
+     * 删除记录（物理删除）【请填写功能名称】
      */
-    @ApiOperation(value = "删除记录（物理删除）", notes = "删除记录（物理删除）", httpMethod = "POST")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType="long"),
-    })
-    @ApiResponses({
-            @ApiResponse(code = 13000, message = "OK"),
-            @ApiResponse(code = 13500, message = "ERROR")
-    })
-    @GetMapping("/remove/{id}")
-    public BusiResult remove(@PathVariable Long id) {
+    synchronized private BusiResult remove(Long id) {
         boolean isSuccess = leagueCommissinorService.removeById(id);
+        if(!isSuccess){
+            return BusiResult.error("删除失败");
+        }
+        return BusiResult.success("删除成功");
+    }
+
+    /**
+     * 逻辑删除
+     * @param employeeCode
+     * @return
+     */
+    private BusiResult removeLogic(String employeeCode) {
+        boolean isSuccess = leagueCommissinorService.removeLogic(employeeCode);
         if(!isSuccess){
             return BusiResult.error("删除失败");
         }

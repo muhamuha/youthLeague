@@ -14,12 +14,10 @@ com\wzxc\camunda\identity\query\UserIdentityQuery.class
 com\wzxc\camunda\service\impl\CaGroupServiceImpl.class
 com\wzxc\camunda\persistence\entity\CaAdmin.class
 com\wzxc\camunda\dao\CaGroupMapper.class
-com\wzxc\camunda\bpm\delegate\AUser.class
 com\wzxc\camunda\wrapper\MyTask.class
 com\wzxc\camunda\identity\JpaIdentityProviderSession.class
 com\wzxc\camunda\identity\query\JpaGroupQueryImpl.class
 com\wzxc\camunda\dao\CaUserMapper.class
-com\wzxc\camunda\persistence\entity\GroupAuthorityEntity.class
 com\wzxc\camunda\camundaworkflow\CamundaWorkflowApplication.class
 com\wzxc\camunda\identity\query\JpaUserQueryImpl.class
 com\wzxc\camunda\service\ICaGroupService.class

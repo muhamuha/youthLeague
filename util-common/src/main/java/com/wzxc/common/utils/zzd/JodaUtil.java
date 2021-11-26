@@ -119,6 +119,22 @@ public class JodaUtil {
     }
 
     /**
+     * 通过accessToken获取jsapiToken
+     * @param accessToken
+     * @return
+     */
+    public static String getJsapiToken(String accessToken){
+        String api ="/get_jsapi_token.json";
+        PostClient postClient = executableClient.newPostClient(api);
+        //设置参数
+        postClient.addParameter("accessToken", accessToken);
+        //调用API
+        String apiResult = postClient.post();
+        log.info("getJsapiToken --- " + apiResult);
+        return apiResult;
+    }
+
+    /**
      * 日程列表查询
      */
     public static String searchScheduleList(String accountId) throws ParseException {
@@ -143,7 +159,6 @@ public class JodaUtil {
     public static void main(String[] args) throws ParseException {
         SimpleDateFormat simpleFormatter = new SimpleDateFormat("yyyy-MM-dd");
         System.out.println("aa --- " + simpleFormatter.parse(DateUtils.getDate()).getTime());
-
         System.out.println("bb --- " + DateUtils.getRelativeDate(1).getTime());
     }
 
@@ -151,17 +166,83 @@ public class JodaUtil {
     /**
      * 根据员工code列表 查询员工账号id列表
      */
-    public static String queryListEmployeeAccountIds(String[] emcodes){
+    public static String queryListEmployeeAccountIds(JSONArray emcodes){
         String api ="/mozi/employee/listEmployeeAccountIds";
         PostClient postClient = executableClient.newPostClient(api);
         //设置参数
-        for(String emcode : emcodes){
-            postClient.addParameter("employeeCodes", emcode);
+        for(Object emcode : emcodes){
+            postClient.addParameter("employeeCodes", emcode.toString());
         }
         postClient.addParameter("tenantId", tenantId);
         //调用API
         String apiResult = postClient.post();
 //        System.out.println(apiResult);
+        return apiResult;
+    }
+
+    /**
+     * 通过人员code列表 获取人员信息列表
+     */
+    public static String queryListEmployeeByCodes(JSONArray employeeCodes){
+        String api ="/mozi/employee/listEmployeesByCodes";
+        PostClient postClient = executableClient.newPostClient(api);
+        //设置参数
+        for(Object employeeCode : employeeCodes.toArray()){
+            postClient.addParameter("employeeCodes", employeeCode.toString());
+        }
+        postClient.addParameter("tenantId", tenantId);
+        //调用API
+        String apiResult = postClient.post();
+        return apiResult;
+    }
+
+    /**
+     * 根据组织 Code 列表查询详情
+     */
+    public static String queryListOrganizationsByCodes(JSONArray organizationCodes){
+        String api ="/mozi/organization/listOrganizationsByCodes";
+        PostClient postClient = executableClient.newPostClient(api);
+        //设置参数
+        for(Object organizationCode : organizationCodes.toArray()){
+            postClient.addParameter("organizationCodes", organizationCode.toString());
+        }
+        postClient.addParameter("tenantId", tenantId);
+        //调用API
+        String apiResult = postClient.post();
+        return apiResult;
+    }
+
+    /**
+     * 根据组织code获取下一层的组织列表
+     */
+    public static String querySubOrganizationCodes(String organizationCode){
+        String api ="/mozi/organization/pageSubOrganizationCodes";
+        PostClient postClient = executableClient.newPostClient(api);
+        //设置参数
+        postClient.addParameter("organizationCode", organizationCode);
+        postClient.addParameter("pageSize", "100");
+        postClient.addParameter("status", "A");
+        postClient.addParameter("tenantId", tenantId);
+        //调用API
+        String apiResult = postClient.post();
+        return apiResult;
+    }
+
+    /**
+     * 根据组织code 查询人员code列表
+     */
+    public static String queryPageOrganizationEmployeeCodes(String organizationCode, int pageNo){
+        String api ="/mozi/organization/pageOrganizationEmployeeCodes";
+        PostClient postClient = executableClient.newPostClient(api);
+        //设置参数
+        postClient.addParameter("organizationCode", organizationCode);
+        postClient.addParameter("returnTotalSize", "true");
+        postClient.addParameter("pageNo", String.valueOf(pageNo));
+        postClient.addParameter("pageSize", "100");
+        postClient.addParameter("status", "A");
+        postClient.addParameter("tenantId", tenantId);
+        //调用API
+        String apiResult = postClient.post();
         return apiResult;
     }
 
@@ -214,5 +295,42 @@ public class JodaUtil {
 //        System.out.println(apiResult);
         return apiResult;
     }
+
+    /**
+     * 发送工作通知
+     */
+    public static String sendWorkNotification(String content, JSONArray receiverIds){
+        String api = "/message/workNotification";
+        PostClient postClient = executableClient.newPostClient(api);
+        // 设置参数
+        StringBuilder receiverIdsStr = new StringBuilder();
+        for(int i = 0; i < receiverIds.size(); i++){
+            receiverIdsStr.append(receiverIds.get(i).toString());
+            if(i < receiverIds.size() - 1){
+                receiverIdsStr.append(",");
+            }
+        }
+        postClient.addParameter("receiverIds", receiverIdsStr.toString());
+        postClient.addParameter("tenantId", tenantId);
+        postClient.addParameter("msg", content);
+        //调用API
+        String apiResult = postClient.post();
+//        System.out.println(apiResult);
+        return apiResult;
+    }
+
+    /**
+     * 获取通讯录权限范围
+     */
+    public static String queryAuthScopesV2(){
+        String api ="/auth/scopesV2";
+        PostClient postClient = executableClient.newPostClient(api);
+        //设置参数
+        postClient.addParameter("tenantId", tenantId);
+        //调用API
+        String apiResult = postClient.post();
+        return apiResult;
+    }
+
 
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wzxc.busi.dao.ds1.LeagueElectMapper">
+<mapper namespace="com.wzxc.busi.dao.LeagueElectMapper">
     
     <resultMap type="LeagueElect" id="LeagueElectResult">
         <result property="commisinorId"    column="commisinor_id"    />
@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="isStay"    column="is_stay"    />
         <result property="year"    column="year"    />
         <association property="leagueCommissinor" column="commisinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
-                     select="com.wzxc.busi.dao.ds1.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
+                     select="com.wzxc.busi.dao.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
     </resultMap>
 
     <sql id="selectLeagueElectVo">

@@ -37,9 +37,9 @@ public class Ds1Config {
         List<Resource> resources = new ArrayList<>();
         PathMatchingResourcePatternResolver pathMatchingResourcePatternResolver = new PathMatchingResourcePatternResolver();
         switch (activeProfile){
-            case "test" : case "dev": { path = "classpath:mapper/system/ds1/test/*.xml"; break; }
-            case "prod": { path = "classpath:mapper/system/ds1/prod/*.xml"; break; }
-            default: { path = "classpath:mapper/system/ds1/test/*.xml"; break; }
+            case "test" : case "dev": { path = "classpath:mapper/system/test/*.xml"; break; }
+            case "prod": { path = "classpath:mapper/system/prod/*.xml"; break; }
+            default: { path = "classpath:mapper/system/test/*.xml"; break; }
         }
         try{
             Resource[] rs = pathMatchingResourcePatternResolver.getResources(path);
@@ -50,7 +50,7 @@ public class Ds1Config {
             log.warn("mybatis --- 未找到xml映射文件，地址：" + path);
         }
         // 加载通用mapper.xml
-        path = "classpath:mapper/system/ds1/common/*.xml";
+        path = "classpath:mapper/system/common/*.xml";
         try{
             Resource[] rs = pathMatchingResourcePatternResolver.getResources(path);
             for(Resource r1 : rs){

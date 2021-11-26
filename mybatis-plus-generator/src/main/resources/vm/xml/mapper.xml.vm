@@ -2,11 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-#if(${cfg.datasource} == "")
 <mapper namespace="${cfg.packageName}.dao.${cfg.voName}Mapper">
-#else
-<mapper namespace="${cfg.packageName}.dao.${cfg.datasource}.${cfg.voName}Mapper">
-#end
     
     <resultMap type="${cfg.voName}" id="${cfg.voName}Result">
 #foreach ($field in ${cfg.fields})

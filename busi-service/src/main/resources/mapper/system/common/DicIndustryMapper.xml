@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.DicIndustryMapper">
+    
+    <resultMap type="DicIndustry" id="DicIndustryResult">
+        <result property="id"    column="id"    />
+        <result property="industryName"    column="industry_name"    />
+    </resultMap>
+
+    <sql id="selectDicIndustryVo">
+        select id, industry_name from dic_industry
+    </sql>
+
+    <select id="selectDicIndustryList" parameterType="DicIndustry" resultMap="DicIndustryResult">
+        <include refid="selectDicIndustryVo"/>
+        <where>  
+            <if test="id != null "> and id = #{id}</if>
+            <if test="industryName != null  and industryName != ''"> and industry_name = #{industryName}</if>
+        </where>
+    </select>
+        
+    <insert id="insertDicIndustry" parameterType="DicIndustry" useGeneratedKeys="true" keyProperty="id">
+        insert into dic_industry
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="industryName != null and industryName != ''">industry_name,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="industryName != null and industryName != ''">#{industryName},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDicIndustry" parameterType="DicIndustry">
+        update dic_industry
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="id != null">id = #{id},</if>
+            <if test="industryName != null and industryName != ''">industry_name = #{industryName},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

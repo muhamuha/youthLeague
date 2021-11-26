@@ -143,7 +143,8 @@ public class ${cfg.voName}Controller extends BaseController {
             #set($javaField=$field.javaField)
             #set($columnComment=$field.columnComment)
             #set($javaType=$field.javaType)
-                #if($fieldName == "id")
+            #set($isNullable=$field.isNullable)
+                #if($fieldName == "id" || $isNullable == "NO")
                         @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = true, paramType = "query", dataType="$javaType"),
                 #else
                         @ApiImplicitParam(name = "$javaField", value = "$columnComment", required = false, paramType = "query", dataType="$javaType"),
@@ -156,6 +157,14 @@ public class ${cfg.voName}Controller extends BaseController {
     })
     @CheckParams({
             @CheckParam(value = Check.NotNull, argName = "${cfg.moudleName}.id", msg = "缺少系统主键（id）"),
+        #foreach($field in ${cfg.fields})
+            #set($fieldName=$field.fieldName)
+            #set($columnComment=$field.columnComment)
+            #set($isNullable=$field.isNullable)
+            #if($isNullable == "NO" && $fieldName != "id")
+                    @CheckParam(value = Check.NotNull, argName = "${cfg.moudleName}.${fieldName}", msg = "缺少${columnComment}字段（${fieldName}）"),
+            #end
+        #end
     })
     @PostMapping("/edit")
     public BusiResult edit(@RequestBody @ApiIgnore ${cfg.voName} ${cfg.moudleName}) {
@@ -169,7 +178,7 @@ public class ${cfg.voName}Controller extends BaseController {
     /**
      * 删除记录【请填写功能名称】
      */
-    @ApiOperation(value = "删除记录（物理删除）", notes = "删除记录（物理删除）", httpMethod = "POST")
+    @ApiOperation(value = "删除记录（物理删除）", notes = "删除记录（物理删除）", httpMethod = "GET")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType="long"),
     })

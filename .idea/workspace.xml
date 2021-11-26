@@ -2,75 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddCommissinor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/busi-service/src/main/resources/META-INF/processes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/camunda/CaAdminMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/camunda/CaGroupMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/camunda/CaUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/camunda-workflow/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/camundaworkflow/CamundaWorkflowApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/config/MyDefaultDatasourceConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/persistence/entity/MyTaskEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/utils/ConvertUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/camunda/JsonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/camunda/RequestPathUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/zzd/JodaUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util-common/src/main/resources/jar/zwdd-sdk-java-1.1.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Camunda/Ds2Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/condition/BusiCondition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/condition/CamundaCondition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicActivityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicIndustryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/SysRegionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/zzd/SynController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/DicActivityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/DicIndustryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/LeagueActRegisterMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/SysRegionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/IDicActivityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/IDicIndustryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueActRegisterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ISysRegionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/DicActivityServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/DicIndustryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActRegisterServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/SysRegionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/DicActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/DicIndustry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/SysRegion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/DeleteCommissinor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/AddAcitivityTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/AddCommissinorTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/DeleteCommissinorTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/DicActivityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/DicIndustryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActRegisterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/SysRegionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/annotation/MultiRequestBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/web/MultiRequestBodyArgumentResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busi-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/BusiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/BusiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueCommissinorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActivityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueCommissinorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueCommissinorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueElectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueElectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/ds1/LeagueCommissinorMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueCommissinorService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueCommissinorServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/ds1/LeagueActivityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/LeagueActivityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/ds1/LeagueCommissinorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/LeagueCommissinorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/ds1/LeagueElectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/LeagueElectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueActivityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueCommissinorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueCommissinorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActivityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueCommissinorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueCommissinorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueElectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueElectServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueCommissinor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueCommissinor.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueCommissinor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueElect.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueElect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddCommissinor.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddCommissinor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/application-prod.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/application-test.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueActivityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueActivityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueCommissinorMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueElectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueElectMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueActivityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActivityMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueCommissinorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueCommissinorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueElectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueElectMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/bpm/delegate/AUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/wrapper/MyProcessDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/wrapper/MyProcessDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/wrapper/MyTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/wrapper/MyTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/target/camunda-workflow-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/camunda-workflow/target/camunda-workflow-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/target/classes/com/wzxc/camunda/bpm/delegate/AUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/target/classes/com/wzxc/camunda/wrapper/MyProcessDefinition.class" beforeDir="false" afterPath="$PROJECT_DIR$/camunda-workflow/target/classes/com/wzxc/camunda/wrapper/MyProcessDefinition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/target/classes/com/wzxc/camunda/wrapper/MyTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/camunda-workflow/target/classes/com/wzxc/camunda/wrapper/MyTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/camunda-workflow/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/camunda-workflow/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-plus-generator/src/main/java/com/wzxc/mybatisplusgenerator/gen/CodeGenContrllor.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-plus-generator/src/main/java/com/wzxc/mybatisplusgenerator/gen/CodeGenContrllor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/java/controller.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/java/controller.java.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/java/domain.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/java/domain.java.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/xml/mapper.xml.vm" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/xml/mapper.xml.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/BusiResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/BusiResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/exception/user/UserNotExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/exception/user/UserNotExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/DateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpsUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/core/domain/BusiResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/core/domain/BusiResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/exception/user/UserNotExistsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/exception/user/UserNotExistsException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/DateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/DateUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpsUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpsUtils$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpsUtils$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpsUtils$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpsUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpsUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/camunda/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/camunda/JsonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/zzd/JodaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/zzd/JodaUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/camunda/JsonUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/camunda/JsonUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/zzd/JodaUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/zzd/JodaUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/util-common/target/util-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/util-common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util-common/target/zzd-common-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/database/DataSourceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Ds1Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/Ds1Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/Ds1Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/Ds1Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/swagger/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/web/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/exception/MyExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/exception/MyExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtUtil.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,10 +109,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="AnnotationType" />
         <option value="Enum" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -110,35 +121,46 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/DeleteCommissinorTask.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/config/MyDefaultDatasourceConfiguration.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/exception/MyExceptionHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueElectMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActivityMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueCommissinorMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/camunda/JsonUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/DeleteCommissinor.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/java/com/wzxc/mybatisplusgenerator/gen/CodeGenContrllor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/BusiApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActivity.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueElect.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/xss/XssHttpServletRequestWrapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/xss/XssFilter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/zzd/JodaUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/LeagueCommissinorMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LoginController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueCommissinorServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActivityServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueElectController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-test.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/web/MultiRequestBodyArgumentResolver.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/page/TableSupport.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/CharsetKit.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/Convert.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/web/WebConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/AjaxResult.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueElectMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueActivityMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/Ds1Config.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/utils/ConvertUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/controller/BaseController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/ds1/common/LeagueCommissinorMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/json/JSONObject.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/ExceptionUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/IpUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/web-service/pom.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/DateUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/test/java/com/wzxc/busi/BusiApplicationTests.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/PathUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddCommissinor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/AddressUtils.java" root0="SKIP_INSPECTION" />
@@ -147,8 +169,11 @@
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/MapDataUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/RequestIdUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/sql/SqlUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActRegisterServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/ImageUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActRegister.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActRegisterController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/application-gen.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/FileUploadUtils.java" root0="SKIP_INSPECTION" />
@@ -159,10 +184,14 @@
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/AESUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/identity/query/UserIdentityQuery.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActivityController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicIndustryController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/uuid/UUID.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/uuid/IdUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActRegisterMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/xml/mapper.xml.vm" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/reflect/ReflectUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/SysRegionController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/security/Base64Utils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-prod.yaml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/security/Md5Utils.java" root0="SKIP_INSPECTION" />
@@ -176,9 +205,14 @@
     <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/config/UserdbProcessEngineConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/Check.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/Filter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddActivity.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/zzd/SynController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/service/impl/CaUserServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/AddAcitivityTask.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/BusiResult.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicActivityController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/exception/user/UserNotExistsException.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/AddCommissinorTask.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -206,7 +240,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MUHAMUHA-framework-server" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -214,30 +248,30 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.wzxc.szwenzhou" />
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\camunda" />
-      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources" />
-      <recent name="C:\javaProject\YouthLeague-service\web-service\src\main\java\com\wzxc\webservice\config" />
-      <recent name="C:\javaProject\YouthLeague-service" />
-      <recent name="C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\utils" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.wzxc.webservice.config.Camunda" />
-      <recent name="com.wzxc.camunda.config" />
-      <recent name="com.wzxc.busi.workflow" />
-      <recent name="com.wzxc.common.utils.zzd" />
-      <recent name="com.wzxc.common.utils.token" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper" />
       <recent name="C:\javaProject\YouthLeague-service\util-common\src\main" />
       <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system\ds1\" />
       <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system\" />
       <recent name="C:\javaProject\MUHAMUHA-framework-server\mybatis-plus-generator\src\main\resources\mapper\" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.wzxc.szwenzhou" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wzxc.busi.controller.zzd" />
+      <recent name="com.wzxc.webservice.config.Camunda" />
+      <recent name="com.wzxc.camunda.config" />
+      <recent name="com.wzxc.busi.workflow" />
+      <recent name="com.wzxc.common.utils.zzd" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system" />
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\camunda" />
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources" />
+      <recent name="C:\javaProject\YouthLeague-service\web-service\src\main\java\com\wzxc\webservice\config" />
+      <recent name="C:\javaProject\YouthLeague-service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -253,6 +287,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BusiApplication">
+    <configuration name="JwtUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wzxc.webservice.shiro.JwtUtil" />
+      <module name="web-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wzxc.webservice.shiro.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PathUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wzxc.common.utils.PathUtils" />
       <module name="util-common" />
@@ -276,22 +323,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.wzxc.busi" />
       <option name="MAIN_CLASS_NAME" value="com.wzxc.busi.BusiApplicationTests" />
-      <option name="METHOD_NAME" value="gen" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MybatisPlusGeneratorApplicationTests.gen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-plus-generator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wzxc.mybatisplusgenerator.gen.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wzxc.mybatisplusgenerator" />
-      <option name="MAIN_CLASS_NAME" value="com.wzxc.mybatisplusgenerator.MybatisPlusGeneratorApplicationTests" />
       <option name="METHOD_NAME" value="gen" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -333,8 +364,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.PathUtils" />
+      <item itemvalue="Application.JwtUtil" />
       <item itemvalue="JUnit.BusiApplicationTests.gen" />
-      <item itemvalue="JUnit.MybatisPlusGeneratorApplicationTests.gen" />
       <item itemvalue="Spring Boot.MybatisPlusGeneratorApplication" />
       <item itemvalue="Spring Boot.BusiApplication" />
       <item itemvalue="Spring Boot.CamundaApplication" />
@@ -342,10 +373,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BusiApplication" />
-        <item itemvalue="Spring Boot.CamundaApplication" />
         <item itemvalue="JUnit.BusiApplicationTests.gen" />
+        <item itemvalue="Application.JwtUtil" />
+        <item itemvalue="Spring Boot.CamundaApplication" />
         <item itemvalue="Application.PathUtils" />
-        <item itemvalue="JUnit.MybatisPlusGeneratorApplicationTests.gen" />
       </list>
     </recent_temporary>
   </component>
@@ -494,7 +525,16 @@
       <workItem from="1637067389152" duration="5511000" />
       <workItem from="1637073008650" duration="7437000" />
       <workItem from="1637080782163" duration="684000" />
-      <workItem from="1637110075158" duration="14569000" />
+      <workItem from="1637110075158" duration="17941000" />
+      <workItem from="1637196626174" duration="6438000" />
+      <workItem from="1637216341138" duration="11797000" />
+      <workItem from="1637286630341" duration="22024000" />
+      <workItem from="1637542275417" duration="15406000" />
+      <workItem from="1637627910677" duration="11938000" />
+      <workItem from="1637659549166" duration="1941000" />
+      <workItem from="1637715948576" duration="17687000" />
+      <workItem from="1637801692244" duration="9781000" />
+      <workItem from="1637907572685" duration="9502000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1621590604868</created>
@@ -538,7 +578,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635154636363</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="第二版（新增委员新增工作流）">
+      <created>1637133579883</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1637133579883</updated>
+    </task>
+    <task id="LOCAL-00008" summary="第二版（新增委员新增工作流）">
+      <created>1637133611409</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637133611409</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +616,8 @@
     <MESSAGE value="第二次提交" />
     <MESSAGE value="第一次提交" />
     <MESSAGE value="第一版（委员信息类、活动类、届次类）" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一版（委员信息类、活动类、届次类）" />
+    <MESSAGE value="第二版（新增委员新增工作流）" />
+    <option name="LAST_COMMIT_MESSAGE" value="第二版（新增委员新增工作流）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -596,6 +651,16 @@
           <url>file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/PathUtils.java</url>
           <line>67</line>
           <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/camunda/bpm/camunda-engine/7.15.0/camunda-engine-7.15.0.jar!/org/camunda/bpm/engine/impl/interceptor/CommandCounterInterceptor.class</url>
+          <line>19</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/DeleteCommissinorTask.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="116" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -631,6 +696,7 @@
         <watch expression="((com.alibaba.fastjson.JSONObject)((HashMap.Node)jsonObject.entrySet().toArray()[0]).getValue()).entrySet().toArray()[1]" custom="com.alibaba.fastjson.JSONObject,java.util.HashMap.Node" />
         <watch expression="((com.alibaba.fastjson.JSONObject)((HashMap.Node)jsonObject.entrySet().toArray()[0]).getValue()).entrySet().toArray()[2]" custom="com.alibaba.fastjson.JSONObject,java.util.HashMap.Node" />
         <watch expression="hhlZzdIndicator" />
+        <watch expression="command" />
       </configuration>
       <configuration name="Application">
         <watch expression="((HttpURLConnection)urlConnection).http" custom="sun.net.www.protocol.http.HttpURLConnection" />

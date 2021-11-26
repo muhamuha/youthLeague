@@ -49,7 +49,7 @@ public class MyProcessDefinition {
         // 用户无密码登录
         UserAuthentication authentication = (UserAuthentication) authenticationService
                 .createAuthenticate(engineName, JwtFilter.getUserId(), null, null);
-        log.info("authentication--------->" + authentication.getName());
+//        log.info("userId --- " + JwtFilter.getUserId());
         // 设置当前用户为操作人
         identityService.setAuthenticatedUserId(authentication.getName());
         ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(id, bussinessKey, variables);

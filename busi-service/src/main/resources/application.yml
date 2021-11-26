@@ -8,6 +8,7 @@ project:
 camunda:
   active: true
 
+
 spring:
   profiles:
 #    active: dev
@@ -31,8 +32,8 @@ mybatis-plus:
 
 logging:
   level:
-#    - com.wzxc.busi.dao.ds1: debug
-    com.wzxc.mybatisplusgeneration.gen: debug
+    com.wzxc.busi.dao: debug
+#    com.wzxc.mybatisplusgeneration.gen: debug
 
 swagger:
   enabled: true

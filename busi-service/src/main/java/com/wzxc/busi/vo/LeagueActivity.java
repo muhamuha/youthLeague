@@ -25,6 +25,7 @@ public class LeagueActivity implements Serializable {
     @TableField("activity_begin")
     private Date activityBegin;
 
+    @ApiModelProperty(value = "活动结束时间")
     @TableField("activity_end")
     private Date activityEnd;
 
@@ -67,5 +68,28 @@ public class LeagueActivity implements Serializable {
     @ApiModelProperty(value = "签到结束时间")
     @TableField("sign_end")
     private Date signEnd;
+
+    @ApiModelProperty(value = "创建人")
+    @TableField("creater")
+    private String creater;
+
+    @ApiModelProperty(value = "是否开启打卡")
+    @TableField("is_sign")
+    private Boolean isSign;
+
+    @ApiModelProperty(value = "活动地点的纬度")
+    @TableField("lat")
+    private Double lat;
+
+    @ApiModelProperty(value = "活动地点的经度")
+    @TableField("lon")
+    private Double lon;
+
+    @ApiModelProperty(value = "打卡范围")
+    @TableField("sign_range")
+    private Integer signRange;
+
+    @TableField(exist = false)
+    private Integer scroe;
 
 }

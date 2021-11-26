@@ -1,4 +1,4 @@
-package com.wzxc.webservice.config.Busi;
+package com.wzxc.webservice.config.swagger;
 
 import com.wzxc.webservice.config.condition.BusiCondition;
 import io.swagger.annotations.ApiOperation;
@@ -19,7 +19,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Swagger2的接口配置
  *
  */
-@Conditional({BusiCondition.class})
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig

@@ -53,7 +53,9 @@ public class LeagueElect implements Serializable {
     @TableField("year")
     private String year;
 
+    @TableField(exist = false)
     private LeagueCommissinor leagueCommissinor;
+    @TableField(exist = false)
     private String iphone;
 
 }

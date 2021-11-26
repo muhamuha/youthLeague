@@ -21,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.camunda.bpm.engine.TaskService;
 import org.camunda.bpm.engine.impl.TaskServiceImpl;
 import org.camunda.bpm.engine.impl.persistence.entity.TaskEntity;
+import org.camunda.bpm.engine.rest.dto.task.TaskQueryDto;
 import org.camunda.bpm.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,10 +54,10 @@ public class MyTask extends BaseController {
      * @param assignee：受理人
      * @return
      */
-    public Map<String, Object> getAssigneeTaskByProcesskeyAndAssignee(String processkey, String assignee) {
+    public Map<String, Object> getAssigneeTaskByTaskKeyAndAssignee(String processkey, String taskKey, String assignee) {
         Map<String, Object> resultMap = new HashMap<>();
         // 获取总数
-        long count = taskService.createTaskQuery().taskAssigned().taskAssignee(assignee).processDefinitionKey(processkey).count();
+        long count = taskService.createTaskQuery().taskAssigned().taskAssignee(assignee).processDefinitionKey(processkey).taskDefinitionKey(taskKey).count();
         // 获取列表
         PageDomain pageDomain = TableSupport.buildPageRequest();
         Integer pageNum = pageDomain.getPageNum();
@@ -65,7 +66,7 @@ public class MyTask extends BaseController {
             firstResult = (pageNum - 1) * pageSize;
             maxResults = pageSize;
         }
-        List<Task> tasks = taskService.createTaskQuery().taskAssigned().taskAssignee(assignee).processDefinitionKey(processkey).listPage(firstResult, maxResults);
+        List<Task> tasks = taskService.createTaskQuery().taskAssigned().taskAssignee(assignee).processDefinitionKey(processkey).taskDefinitionKey(taskKey).listPage(firstResult, maxResults);
         List<com.wzxc.camunda.persistence.entity.MyTaskEntity> taskEntities = convertUtils.convertTaskList(tasks);
         resultMap.put("count", count);
         resultMap.put("list", taskEntities);
@@ -73,16 +74,23 @@ public class MyTask extends BaseController {
     }
 
     /**
-     * 获取未认领任务
+     * 获取未认领和认领的任务
      *
      * @param processkey：流程key
      * @param candidateUser：用户id
      * @return
      */
-    public Map<String, Object> getUnassignedTaskByProcesskeyAndAssignee(String processkey, String candidateUser) {
+    public Map<String, Object> unassignedTaskByProcesskeyAndAssignee(String processkey, String taskKey, String candidateUser) {
         Map<String, Object> resultMap = new HashMap<>();
         // 获取总数
-        long count = taskService.createTaskQuery().taskUnassigned().taskCandidateUser(candidateUser).processDefinitionKey(processkey).count();
+        long count = taskService.createTaskQuery()
+                .or()
+                .taskCandidateUser(candidateUser)
+                .taskAssignee(candidateUser)
+                .endOr()
+                .processDefinitionKey(processkey)
+                .taskDefinitionKey(taskKey)
+                .count();
         // 获取列表
         PageDomain pageDomain = TableSupport.buildPageRequest();
         Integer pageNum = pageDomain.getPageNum();
@@ -91,7 +99,14 @@ public class MyTask extends BaseController {
             firstResult = (pageNum - 1) * pageSize;
             maxResults = pageSize;
         }
-        List<Task> tasks = taskService.createTaskQuery().taskUnassigned().taskCandidateUser(candidateUser).processDefinitionKey(processkey).listPage(firstResult, maxResults);
+        List<Task> tasks = taskService.createTaskQuery()
+                .or()
+                .taskCandidateUser(candidateUser)
+                .taskAssignee(candidateUser)
+                .endOr()
+                .processDefinitionKey(processkey)
+                .taskDefinitionKey(taskKey)
+                .listPage(firstResult, maxResults);
         List<com.wzxc.camunda.persistence.entity.MyTaskEntity> taskEntities = convertUtils.convertTaskList(tasks);
         resultMap.put("count", count);
         resultMap.put("list", taskEntities);
@@ -105,6 +120,15 @@ public class MyTask extends BaseController {
      */
     public void claim(String id, String userid){
         taskService.claim(id, userid);
+    }
+
+    /**
+     * 放弃任务
+     * @param id：任务id
+     * @return
+     */
+    public void unClaim(String id){
+        taskService.setAssignee(id, null);
     }
 
     /**

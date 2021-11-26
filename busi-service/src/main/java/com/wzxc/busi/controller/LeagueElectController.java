@@ -2,16 +2,16 @@ package com.wzxc.busi.controller;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.wzxc.common.annotation.CheckParam;
 import com.wzxc.common.annotation.CheckParams;
 import com.wzxc.common.core.controller.BaseController;
 import com.wzxc.common.core.domain.BusiResult;
 import com.wzxc.common.utils.DateUtils;
+import com.wzxc.common.utils.StringUtils;
 import com.wzxc.common.validate.Check;
 import com.wzxc.busi.vo.LeagueElect;
 import io.swagger.annotations.*;
@@ -133,6 +133,61 @@ public class LeagueElectController extends BaseController {
         }
         return BusiResult.success("新增成功");
     }
+
+    /**
+     * 批量添加
+     * @param leagueElectList
+     * @return
+     */
+    @ApiOperation(value = "新增记录（批量）", notes = "新增记录（批量）", httpMethod = "POST")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "commisinorId", value = "委员id", required = true, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "commisinorName", value = "委员姓名", required = true, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "electRegion", value = "当选的地区", required = true, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "groupId", value = "提名单位", required = true, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "isReelect", value = "是否连任：	0：否	1：是", required = false, paramType = "query", dataType = "Integer"),
+            @ApiImplicitParam(name = "isStay", value = "是否留任：	0：否	1：是", required = false, paramType = "query", dataType = "Integer"),
+            @ApiImplicitParam(name = "year", value = "当选年份", required = true, paramType = "query", dataType = "String"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @PostMapping("/add/batch")
+    public BusiResult addBatch(@RequestBody @ApiIgnore List<LeagueElect> leagueElectList) {
+        List<String> ids = new ArrayList<>();
+        LambdaQueryWrapper<LeagueElect> where = Wrappers.<LeagueElect>lambdaQuery();
+        for(int count = 0; count < leagueElectList.size(); count++){
+            LeagueElect leagueElect = leagueElectList.get(count);
+            // 判断是否缺了必填字段
+            if(StringUtils.isEmpty(leagueElect.getCommisinorId().toString())
+                    || StringUtils.isEmpty(leagueElect.getCommisinorName())
+                    || StringUtils.isEmpty(leagueElect.getElectRegion())
+                    || StringUtils.isEmpty(leagueElect.getGroupId().toString())
+                    || StringUtils.isEmpty(leagueElect.getYear())){
+                return BusiResult.error("新增失败，失败原因：缺少必填字段");
+            }
+            // 判断 年份和委员id 是否已经存在
+            where.eq(LeagueElect::getCommisinorId, leagueElect.getCommisinorId()).eq(LeagueElect::getYear, leagueElect.getYear());
+            if(count < leagueElectList.size() - 1){
+                where.or();
+            }
+        }
+        int count = leagueElectService.count(where);
+        if(count > 0){
+            return BusiResult.error("新增失败，失败原因：个别届次已存在");
+        }
+        List<LeagueElect> leagueElects = leagueElectService.list(where);
+        if(leagueElects.size() > 0){
+            return BusiResult.error("新增失败，失败原因：所选年份已存在该委员");
+        }
+        boolean isSuccess = leagueElectService.saveBatch(leagueElectList);
+        if (isSuccess == false) {
+            return BusiResult.error("新增失败，失败原因：数据库拒绝新增操作");
+        }
+        return BusiResult.success("新增成功");
+    }
+
 
     /**
      * 修改记录【请填写功能名称】

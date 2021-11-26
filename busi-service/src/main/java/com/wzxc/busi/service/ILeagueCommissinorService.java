@@ -22,4 +22,7 @@ public interface ILeagueCommissinorService extends IService<LeagueCommissinor> {
 
     long leagueCommissinorCount(String employeeCode);
 
+    boolean removeLogic(String employeeCode);
+
+    LeagueCommissinor queryOne(String employeeCode);
 }

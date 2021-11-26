@@ -34,12 +34,11 @@ public class JsonUtils {
         for (Iterator<String> it = iterator; it.hasNext(); ) {
             String key = it.next();
             try{
-                String value = StringUtils.isEmpty(obj.getString(key)) ? null : obj.getString(key);
-                if(StringUtils.isNotEmpty(value)){
-                    var.put(key, value);
-                }
+                Object value = StringUtils.isEmpty(obj.getString(key)) ? null : obj.get(key);
+                var.put(key, value);
             } catch (Exception e){}
         }
         return var;
     }
+
 }

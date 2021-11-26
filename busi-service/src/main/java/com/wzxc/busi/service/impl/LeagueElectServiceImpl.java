@@ -1,9 +1,7 @@
 package com.wzxc.busi.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.wzxc.common.core.text.Convert;
-import com.wzxc.common.utils.DateUtils;
-import com.wzxc.busi.dao.ds1.LeagueElectMapper;
+import com.wzxc.busi.dao.LeagueElectMapper;
 import com.wzxc.busi.vo.LeagueElect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.SysRegionMapper">
+    
+    <resultMap type="SysRegion" id="SysRegionResult">
+        <result property="areaLevel"    column="area_level"    />
+        <result property="creator"    column="creator"    />
+        <result property="id"    column="id"    />
+        <result property="nodeId"    column="node_id"    />
+        <result property="parentId"    column="parent_id"    />
+        <result property="regionCd"    column="region_cd"    />
+        <result property="regionName"    column="region_name"    />
+        <result property="updator"    column="updator"    />
+    </resultMap>
+
+    <sql id="selectSysRegionVo">
+        select area_level, creator, id, node_id, parent_id, region_cd, region_name, updator from sys_region
+    </sql>
+
+    <select id="selectSysRegionList" parameterType="SysRegion" resultMap="SysRegionResult">
+        <include refid="selectSysRegionVo"/>
+        <where>  
+            <if test="areaLevel != null "> and area_level = #{areaLevel}</if>
+            <if test="creator != null  and creator != ''"> and creator = #{creator}</if>
+            <if test="id != null "> and id = #{id}</if>
+            <if test="nodeId != null "> and node_id = #{nodeId}</if>
+            <if test="parentId != null "> and parent_id = #{parentId}</if>
+            <if test="regionCd != null  and regionCd != ''"> and region_cd = #{regionCd}</if>
+            <if test="regionName != null  and regionName != ''"> and region_name = #{regionName}</if>
+            <if test="updator != null  and updator != ''"> and updator = #{updator}</if>
+        </where>
+    </select>
+        
+    <insert id="insertSysRegion" parameterType="SysRegion" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_region
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="areaLevel != null">area_level,</if>
+            <if test="creator != null and creator != ''">creator,</if>
+            <if test="nodeId != null">node_id,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="regionCd != null and regionCd != ''">region_cd,</if>
+            <if test="regionName != null and regionName != ''">region_name,</if>
+            <if test="updator != null">updator,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="areaLevel != null">#{areaLevel},</if>
+            <if test="creator != null and creator != ''">#{creator},</if>
+            <if test="nodeId != null">#{nodeId},</if>
+            <if test="parentId != null">#{parentId},</if>
+            <if test="regionCd != null and regionCd != ''">#{regionCd},</if>
+            <if test="regionName != null and regionName != ''">#{regionName},</if>
+            <if test="updator != null">#{updator},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysRegion" parameterType="SysRegion">
+        update sys_region
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="areaLevel != null">area_level = #{areaLevel},</if>
+            <if test="creator != null and creator != ''">creator = #{creator},</if>
+            <if test="id != null">id = #{id},</if>
+            <if test="nodeId != null">node_id = #{nodeId},</if>
+            <if test="parentId != null">parent_id = #{parentId},</if>
+            <if test="regionCd != null and regionCd != ''">region_cd = #{regionCd},</if>
+            <if test="regionName != null and regionName != ''">region_name = #{regionName},</if>
+            <if test="updator != null">updator = #{updator},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

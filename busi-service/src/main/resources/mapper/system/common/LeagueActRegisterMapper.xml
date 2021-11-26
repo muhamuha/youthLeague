@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.LeagueActRegisterMapper">
+    
+    <resultMap type="LeagueActRegister" id="LeagueActRegisterResult">
+        <result property="id"    column="id"    />
+        <result property="activityId"    column="activity_id"    />
+        <result property="commissinorId"    column="commissinor_id"    />
+        <result property="notifyMessage"    column="notify_message"    />
+        <result property="notifyTime"    column="notify_time"    />
+        <result property="postNotify"    column="post_notify"    />
+        <result property="postSign"    column="post_sign"    />
+        <result property="signMessage"    column="sign_message"    />
+        <result property="signNotifyTime"    column="sign_notify_time"    />
+        <result property="signTime"    column="sign_time"    />
+        <association property="leagueCommissinor" column="commisinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
+                     select="com.wzxc.busi.dao.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
+        <association property="leagueActivity" column="activity_id" javaType="com.wzxc.busi.vo.LeagueActivity"
+                     select="com.wzxc.busi.dao.LeagueActivityMapper.selectLeagueActivityById"/>
+    </resultMap>
+
+    <sql id="selectLeagueActRegisterVo">
+        select activity_id, commissinor_id, id, notify_message, notify_time, post_notify, post_sign, sign_message, sign_time, sign_notify_time from league_act_register
+    </sql>
+
+    <select id="selectLeagueActRegisterList" parameterType="LeagueActRegister" resultMap="LeagueActRegisterResult">
+        <include refid="selectLeagueActRegisterVo"/>
+        <where>  
+            <if test="activityId != null "> and activity_id = #{activityId}</if>
+            <if test="commissinorId != null "> and commissinor_id = #{commissinorId}</if>
+        </where>
+        order by create_time desc
+    </select>
+        
+    <insert id="insertLeagueActRegister" parameterType="LeagueActRegister" useGeneratedKeys="true" keyProperty="id">
+        insert into league_act_register
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="activityId != null">activity_id,</if>
+            <if test="commissinorId != null">commissinor_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="activityId != null">#{activityId},</if>
+            <if test="commissinorId != null">#{commissinorId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLeagueActRegister" parameterType="LeagueActRegister">
+        update league_act_register
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="notifyMessage != null">notify_message = #{notifyMessage},</if>
+            <if test="notifyTime != null">notify_time = #{notifyTime},</if>
+            <if test="postNotify != null">post_notify = #{postNotify},</if>
+            <if test="postSign != null">post_sign = #{postSign},</if>
+            <if test="signMessage != null">sign_message = #{signMessage},</if>
+            <if test="signTime != null">sign_time = #{signTime},</if>
+            <if test="signNotifyTime != null">sign_notify_time = #{signNotifyTime},</if>
+        </trim>
+        where activity_id = #{activityId} and commissinor_id = #{commissinorId}
+    </update>
+
+</mapper>

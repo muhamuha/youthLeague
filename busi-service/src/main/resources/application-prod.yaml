@@ -28,6 +28,7 @@ spring:
 
 # 浙政钉
 zzd:
+  active: true
   config:
     appkey: wzdx_workbench_meeting-WvMn26z
     secret: zBLhENpgVJm2j7IBXA01oh3z4U4m4VrT3YIgRB80

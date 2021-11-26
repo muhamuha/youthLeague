@@ -7,12 +7,15 @@ import com.wzxc.common.exception.ParamInValidException;
 import com.wzxc.common.exception.user.UserNotExistsException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.security.auth.login.LoginException;
+import java.sql.SQLException;
 
 
 /**
@@ -50,9 +53,24 @@ public class MyExceptionHandler {
         return BusiResult.error(e.getMessage());
     }
 
+    // camunda-flow 相关异常
     @ExceptionHandler(value = UserNotExistsException.class)
-    public BusiResult exceptionHandler6(Exception e){
-        return BusiResult.error("用户不存在");
+    public BusiResult camundaException(Exception e){
+        return BusiResult.error(e.getMessage());
+    }
+
+    // 数据库 相关异常
+    @ExceptionHandler(value = SQLException.class)
+    public BusiResult databaseException(Exception e){
+        return BusiResult.error("数据库交互异常");
+    }
+
+    // 其他异常
+    @Order(Ordered.LOWEST_PRECEDENCE - 2)
+    @ExceptionHandler(value = RuntimeException.class)
+    public BusiResult exceptionHandler(Exception e){
+        log.error("发生未知异常", e);
+        return BusiResult.error("系统发生未知异常");
     }
 
 }

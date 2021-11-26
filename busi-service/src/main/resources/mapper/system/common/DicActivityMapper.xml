@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.DicActivityMapper">
+    
+    <resultMap type="DicActivity" id="DicActivityResult">
+        <result property="id"    column="id"    />
+        <result property=" score"    column=" score"    />
+        <result property="activityName"    column="activity_name"    />
+    </resultMap>
+
+    <sql id="selectDicActivityVo">
+        select  score, activity_name, id from dic_activity
+    </sql>
+
+    <select id="selectDicActivityList" parameterType="DicActivity" resultMap="DicActivityResult">
+        <include refid="selectDicActivityVo"/>
+        <where>  
+            <if test=" score != null  and score != ''"> and  score = #{ score}</if>
+            <if test="activityName != null  and activityName != ''"> and activity_name = #{activityName}</if>
+            <if test="id != null "> and id = #{id}</if>
+        </where>
+    </select>
+        
+    <insert id="insertDicActivity" parameterType="DicActivity" useGeneratedKeys="true" keyProperty="id">
+        insert into dic_activity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test=" score != null and  score != ''"> score,</if>
+            <if test="activityName != null and activityName != ''">activity_name,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test=" score != null and  score != ''">#{ score},</if>
+            <if test="activityName != null and activityName != ''">#{activityName},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDicActivity" parameterType="DicActivity">
+        update dic_activity
+        <trim prefix="SET" suffixOverrides=",">
+            <if test=" score != null and  score != ''"> score = #{ score},</if>
+            <if test="activityName != null and activityName != ''">activity_name = #{activityName},</if>
+            <if test="id != null">id = #{id},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

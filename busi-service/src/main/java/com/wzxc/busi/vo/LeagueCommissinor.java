@@ -1,5 +1,6 @@
 package com.wzxc.busi.vo;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
@@ -30,7 +31,8 @@ public class LeagueCommissinor implements Serializable {
     @ApiModelProperty(value = "出生日期")
     @TableField("birthday")
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @JSONField(format="yyyy-MM-dd")
+//    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date birthday;
 
     @ApiModelProperty(value = "毕业院校")
@@ -108,7 +110,8 @@ public class LeagueCommissinor implements Serializable {
     @ApiModelProperty(value = "入委时间")
     @TableField("join_date")
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @JSONField(format="yyyy-MM-dd")
+//    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date joinDate;
 
     @ApiModelProperty(value = "青联职务")
@@ -118,7 +121,8 @@ public class LeagueCommissinor implements Serializable {
     @ApiModelProperty(value = "出委时间")
     @TableField("leave_date")
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @JSONField(format="yyyy-MM-dd")
+//    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date leaveDate;
 
     @ApiModelProperty(value = "离开原因")
@@ -188,5 +192,9 @@ public class LeagueCommissinor implements Serializable {
     @ApiModelProperty(value = "浙政钉code")
     @TableField("employee_code")
     private String employeeCode;
+
+    @ApiModelProperty(value = "是否删除")
+    @TableField("is_delete")
+    private int isDelete;
 
 }

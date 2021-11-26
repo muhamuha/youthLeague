@@ -1,7 +1,9 @@
-package com.wzxc.busi.dao.ds1;
+package com.wzxc.busi.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.wzxc.busi.vo.LeagueActivity;
+import com.wzxc.busi.vo.LeagueCommissinor;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +20,6 @@ public interface LeagueActivityMapper extends BaseMapper<LeagueActivity> {
     int insertLeagueActivity(LeagueActivity leagueActivity);
 
     int updateLeagueActivity(LeagueActivity leagueActivity);
+
+    List<LeagueActivity> selectRegisterLeagueActivityList(@Param("commissinor") LeagueCommissinor leagueCommissinor);
 }

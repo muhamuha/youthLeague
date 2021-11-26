@@ -1,4 +1,4 @@
-package com.wzxc.busi.dao.ds1;
+package com.wzxc.busi.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.wzxc.busi.vo.LeagueCommissinor;
@@ -21,4 +21,6 @@ public interface LeagueCommissinorMapper extends BaseMapper<LeagueCommissinor> {
     int updateLeagueCommissinor(LeagueCommissinor leagueCommissinor);
 
     LeagueCommissinor selectLeagueCommissinorById(@Param("id") Long id);
+
+    boolean removeLogic(@Param("employeeCode") String employeeCode);
 }

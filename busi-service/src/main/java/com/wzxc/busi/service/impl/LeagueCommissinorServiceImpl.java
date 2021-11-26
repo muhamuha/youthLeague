@@ -1,11 +1,8 @@
 package com.wzxc.busi.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.wzxc.common.core.text.Convert;
-import com.wzxc.common.utils.DateUtils;
-import com.wzxc.busi.dao.ds1.LeagueCommissinorMapper;
+import com.wzxc.busi.dao.LeagueCommissinorMapper;
 import com.wzxc.busi.vo.LeagueCommissinor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -62,9 +59,22 @@ public class LeagueCommissinorServiceImpl extends ServiceImpl<LeagueCommissinorM
 
     @Override
     public long leagueCommissinorCount(String employeeCode) {
-        LambdaQueryWrapper<LeagueCommissinor> where = Wrappers.<LeagueCommissinor>lambdaQuery();
-        long leagueCount = this.count(where.eq(LeagueCommissinor::getEmployeeCode, employeeCode).isNull(LeagueCommissinor::getLeaveDate));
+        long leagueCount = this.count(Wrappers.<LeagueCommissinor>lambdaQuery()
+                .eq(LeagueCommissinor::getEmployeeCode, employeeCode)
+                .eq(LeagueCommissinor::getIsDelete, 0));
         return leagueCount;
+    }
+
+    @Override
+    public boolean removeLogic(String employeeCode) {
+        return leagueCommissinorMapper.removeLogic(employeeCode);
+    }
+
+    @Override
+    public LeagueCommissinor queryOne(String employeeCode) {
+        return this.getOne(Wrappers.<LeagueCommissinor>lambdaQuery()
+                .eq(LeagueCommissinor::getEmployeeCode, employeeCode)
+                .eq(LeagueCommissinor::getIsDelete, 0));
     }
 
 
