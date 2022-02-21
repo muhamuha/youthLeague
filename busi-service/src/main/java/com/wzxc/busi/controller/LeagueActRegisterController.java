@@ -11,6 +11,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.wzxc.busi.en.lz.LzType;
 import com.wzxc.busi.service.impl.LeagueActivityServiceImpl;
 import com.wzxc.busi.service.impl.LeagueCommissinorServiceImpl;
 import com.wzxc.busi.vo.LeagueActivity;
@@ -23,6 +24,7 @@ import com.wzxc.common.utils.DateUtils;
 import com.wzxc.common.utils.StringUtils;
 import com.wzxc.common.validate.Check;
 import com.wzxc.busi.vo.LeagueActRegister;
+import com.wzxc.webservice.shiro.JwtFilter;
 import io.swagger.annotations.*;
 import jdk.nashorn.internal.objects.annotations.Getter;
 import net.bytebuddy.asm.Advice;
@@ -64,8 +66,7 @@ public class LeagueActRegisterController extends BaseController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "pageNum", value = "页数（默认第1页）", required = false, paramType = "query", dataType = "int"),
             @ApiImplicitParam(name = "pageSize", value = "每页条数（默认10条）", required = false, paramType = "query", dataType = "int"),
-            @ApiImplicitParam(name = "activityId", value = "活动id（该活动的报名信息）", required = false, paramType = "query", dataType = "Long"),
-            @ApiImplicitParam(name = "commissinorId", value = "委员id（该委员的报名信息）", required = false, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "activityId", value = "活动id（活动的报名信息）", required = false, paramType = "query", dataType = "Long"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK", response = LeagueActRegister.class),
@@ -74,6 +75,11 @@ public class LeagueActRegisterController extends BaseController {
     @PostMapping("/list")
     public BusiResult list(@RequestBody @ApiIgnore LeagueActRegister leagueActRegister) throws IOException {
         Map<String, Object> resultMap = new HashMap<>();
+
+        if(leagueActRegister.getActivityId() == null){
+            LeagueCommissinor leagueCommissinor = leagueCommissinorService.queryOne(JwtFilter.getUserId());
+            leagueActRegister.setCommissinorId(leagueCommissinor.getId());
+        }
         startPage();
         List<LeagueActRegister> list = leagueActRegisterService.selectLeagueActRegisterList(leagueActRegister);
         buildTableInfo(list, resultMap);
@@ -85,8 +91,7 @@ public class LeagueActRegisterController extends BaseController {
      */
     @ApiOperation(value = "活动报名", notes = "活动报名", httpMethod = "POST")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "activityId", value = "活动id", required = true, paramType = "query", dataType = "Long"),
-            @ApiImplicitParam(name = "commissinorId", value = "委员id", required = true, paramType = "query", dataType = "Long"),
+            @ApiImplicitParam(name = "activityId", value = "活动id", required = true, paramType = "path", dataType = "Long"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
@@ -94,12 +99,18 @@ public class LeagueActRegisterController extends BaseController {
     })
     @CheckParams({
             @CheckParam(value = Check.NotNull, argName = "activityId", msg = "缺少活动id字段（activityId）"),
-            @CheckParam(value = Check.NotNull, argName = "commissinorId", msg = "缺少委员id字段（commissinorId）"),
     })
-    @PostMapping("/add")
-    public BusiResult add(Long activityId, Long commissinorId) {
-        if(activityId == null || commissinorId == null){
-            return BusiResult.error("新增失败，失败原因：缺少必填参数");
+    @PostMapping("/add/{activityId}")
+    public BusiResult add(@PathVariable Long activityId) {
+        LeagueCommissinor leagueCommissinor = leagueCommissinorService.queryOne(JwtFilter.getUserId());
+        Long commissinorId = leagueCommissinor.getId();
+
+        // 判断是否已经报名
+        int count = leagueActRegisterService.count(Wrappers.<LeagueActRegister>lambdaQuery()
+                .eq(LeagueActRegister::getActivityId, activityId)
+                .eq(LeagueActRegister::getCommissinorId, commissinorId));
+        if(count > 0){
+            return BusiResult.success("新增成功");
         }
         LeagueActRegister leagueActRegister = new LeagueActRegister();
         leagueActRegister.setActivityId(activityId);
@@ -116,15 +127,17 @@ public class LeagueActRegisterController extends BaseController {
      */
     @ApiOperation(value = "取消报名", notes = "取消报名", httpMethod = "GET")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "activityId", value = "活动id", required = true, paramType = "query", dataType = "long"),
-            @ApiImplicitParam(name = "commissinorId", value = "委员id", required = true, paramType = "query", dataType = "long"),
+            @ApiImplicitParam(name = "activityId", value = "活动id", required = true, paramType = "path", dataType = "long"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
             @ApiResponse(code = 13500, message = "ERROR")
     })
-    @GetMapping("/remove/{activityId}/{commissinorId}")
-    public BusiResult remove(@PathVariable Long activityId, @PathVariable Long commissinorId) {
+    @GetMapping("/remove/{activityId}")
+    public BusiResult remove(@PathVariable Long activityId) {
+        LeagueCommissinor leagueCommissinor = leagueCommissinorService.queryOne(JwtFilter.getUserId());
+        Long commissinorId = leagueCommissinor.getId();
+
         boolean isSuccess = leagueActRegisterService.remove(Wrappers.<LeagueActRegister>lambdaQuery()
                 .eq(LeagueActRegister::getActivityId, activityId)
                 .eq(LeagueActRegister::getCommissinorId, commissinorId));
@@ -139,23 +152,24 @@ public class LeagueActRegisterController extends BaseController {
      */
     @ApiOperation(value = "签到", notes = "签到", httpMethod = "POST")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "activityId", value = "活动id", required = true, paramType = "query", dataType = "long"),
-            @ApiImplicitParam(name = "commissinorId", value = "委员id", required = true, paramType = "query", dataType = "long"),
-            @ApiImplicitParam(name = "lat", value = "纬度", required = true, paramType = "query", dataType = "float"),
-            @ApiImplicitParam(name = "lon", value = "经度", required = true, paramType = "query", dataType = "float"),
+            @ApiImplicitParam(name = "activityId", value = "活动id", required = true, paramType = "path", dataType = "long"),
+            @ApiImplicitParam(name = "lat", value = "纬度", required = true, paramType = "path", dataType = "float"),
+            @ApiImplicitParam(name = "lon", value = "经度", required = true, paramType = "path", dataType = "float"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK"),
             @ApiResponse(code = 13500, message = "ERROR")
     })
-    @PostMapping("/sign")
+    @PostMapping("/sign/{activityId}/{lat}/{lon}")
     @CheckParams({
             @CheckParam(value = Check.NotNull, argName = "activityId", msg = "缺少活动id字段（activityId）"),
-            @CheckParam(value = Check.NotNull, argName = "commissinorId", msg = "缺少委员id字段（commissinorId）"),
             @CheckParam(value = Check.NotNull, argName = "lat", msg = "缺少纬度（lat）"),
             @CheckParam(value = Check.NotNull, argName = "lon", msg = "缺少经度（lon）"),
     })
-    public BusiResult sign(Long activityId, Long commissinorId, float lat, float lon){
+    public BusiResult sign(@PathVariable Long activityId, @PathVariable Double lat, @PathVariable Double lon){
+        LeagueCommissinor leagueCommissinor = leagueCommissinorService.queryOne(JwtFilter.getUserId());
+        Long commissinorId = leagueCommissinor.getId();
+
         // 获取活动信息
         LeagueActivity leagueActivity = leagueActivityService.getOne(Wrappers.<LeagueActivity>lambdaQuery().eq(LeagueActivity::getId, activityId));
         Integer signRange = leagueActivity.getSignRange();
@@ -169,7 +183,7 @@ public class LeagueActRegisterController extends BaseController {
         LeagueActRegister leagueActRegister = new LeagueActRegister();
         leagueActRegister.setActivityId(activityId);
         leagueActRegister.setCommissinorId(commissinorId);
-        leagueActRegister.setSignNotifyTime(new Date());
+        leagueActRegister.setSignTime(new Date());
         int success = leagueActRegisterService.updateLeagueActRegister(leagueActRegister);
         if(success == 0){
             return BusiResult.error("签到失败，失败原因：数据库操作失败");

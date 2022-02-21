@@ -268,7 +268,7 @@ public class UserIdentityQuery {
         LambdaQueryWrapper<CaAdmin> queryWrapper = Wrappers.<CaAdmin>lambdaQuery();
         queryWrapper.eq(CaAdmin::getUsername, username);
         CaAdmin admin = Optional.ofNullable(caAdminService.getOne(queryWrapper))
-                .orElseThrow(() -> new UserNotExistsException(username));
+                .orElseThrow(() -> new UserNotExistsException());
 
         return password.equals(admin.getPassword());
     }

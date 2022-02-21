@@ -3,6 +3,7 @@ package com.wzxc.common.validate;
 import com.alibaba.fastjson.JSONArray;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.wzxc.common.exception.ParamInValidException;
+import com.wzxc.common.utils.StringUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.omg.CORBA.SystemException;
 
@@ -33,7 +34,7 @@ public class CheckUtil {
      * @return true or false
      */
     public static Boolean isNull(Object value, String express) {
-        if (null != value) {
+        if (null != value || StringUtils.isEmpty(value.toString())) {
             return Boolean.FALSE;
         }
         return Boolean.TRUE;
@@ -151,7 +152,7 @@ public class CheckUtil {
      * 支持String类型，yyyy-MM-dd、yyyyMMdd、yyyy/MM/dd格式； 默认仅支持yyyy-MM-dd
      */
     public static Boolean isDateOrEmpty(Object value, String express){
-        if(isNull(value, express)) {
+        if(isNull(value, express) || StringUtils.isEmpty(value.toString())) {
             return Boolean.TRUE;
         }
         return isDate(value, express);
@@ -418,7 +419,7 @@ public class CheckUtil {
      * @param enumClazz
      * @return
      */
-    public static String isEnum(Object value, String enumClazzStr) {
+    public static Object isEnum(Object value, String enumClazzStr) {
         if(isNull(value, enumClazzStr)) {
             return null;
         }
@@ -429,7 +430,7 @@ public class CheckUtil {
             for(Enum e : enumConstants){
                 Object key = enumClazz.getMethod("getKey").invoke(e);
                 if(key.toString().equals(value)){
-                    return enumClazz.getMethod("getValue").invoke(e).toString();
+                    return enumClazz.getMethod("getValue").invoke(e);
                 }
             }
         } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {

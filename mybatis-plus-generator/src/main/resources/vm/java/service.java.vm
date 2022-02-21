@@ -20,4 +20,6 @@ public interface I${cfg.voName}Service extends IService<${cfg.voName}> {
 
     int update${cfg.voName}(${cfg.voName} ${cfg.moudleName});
 
+    int insertWithDistinct(${cfg.voName} ${cfg.moudleName});
+
 }

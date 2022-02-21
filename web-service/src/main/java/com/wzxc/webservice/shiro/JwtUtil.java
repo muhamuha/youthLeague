@@ -107,7 +107,7 @@ public class JwtUtil {
     }
 
     public static void main(String[] args) {
-        String employeeCode = "GE_85617f49fbd74f21bb037306b388c25a";
+        String employeeCode = "GE_a2a075739ead473d9750e83b91bad930";
         String secret = "Pw33wctALkAMK19kBfbV";
         String principals = "youth-league-token";
         try {
@@ -119,7 +119,7 @@ public class JwtUtil {
                     .withHeader(map)
                     .withClaim("principals", principals)
                     .withSubject(employeeCode)
-                    .withExpiresAt(new Date(System.currentTimeMillis() + 300000 * 60 * 60 * 1000))
+                    .withExpiresAt(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000))
                     .withIssuedAt(new Date())
                     .sign(algorithm);
             System.out.println("sign --- " + sign);

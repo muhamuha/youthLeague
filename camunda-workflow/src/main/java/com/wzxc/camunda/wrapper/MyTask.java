@@ -57,7 +57,12 @@ public class MyTask extends BaseController {
     public Map<String, Object> getAssigneeTaskByTaskKeyAndAssignee(String processkey, String taskKey, String assignee) {
         Map<String, Object> resultMap = new HashMap<>();
         // 获取总数
-        long count = taskService.createTaskQuery().taskAssigned().taskAssignee(assignee).processDefinitionKey(processkey).taskDefinitionKey(taskKey).count();
+        long count = taskService.createTaskQuery()
+                .taskAssigned()
+                .taskAssignee(assignee)
+                .processDefinitionKey(processkey)
+                .taskDefinitionKey(taskKey)
+                .count();
         // 获取列表
         PageDomain pageDomain = TableSupport.buildPageRequest();
         Integer pageNum = pageDomain.getPageNum();
@@ -66,7 +71,13 @@ public class MyTask extends BaseController {
             firstResult = (pageNum - 1) * pageSize;
             maxResults = pageSize;
         }
-        List<Task> tasks = taskService.createTaskQuery().taskAssigned().taskAssignee(assignee).processDefinitionKey(processkey).taskDefinitionKey(taskKey).listPage(firstResult, maxResults);
+        List<Task> tasks = taskService.createTaskQuery()
+                .taskAssigned()
+                .taskAssignee(assignee)
+                .processDefinitionKey(processkey)
+                .taskDefinitionKey(taskKey)
+                .orderByTaskCreateTime().desc()
+                .listPage(firstResult, maxResults);
         List<com.wzxc.camunda.persistence.entity.MyTaskEntity> taskEntities = convertUtils.convertTaskList(tasks);
         resultMap.put("count", count);
         resultMap.put("list", taskEntities);

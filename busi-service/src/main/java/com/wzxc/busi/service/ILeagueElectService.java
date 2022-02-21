@@ -20,4 +20,5 @@ public interface ILeagueElectService extends IService<LeagueElect> {
 
     int updateLeagueElect(LeagueElect leagueElect);
 
+    int insertWithDistinct(LeagueElect leagueElect);
 }

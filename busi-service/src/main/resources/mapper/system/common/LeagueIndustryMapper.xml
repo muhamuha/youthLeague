@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.LeagueIndustryMapper">
+    
+    <resultMap type="LeagueIndustry" id="LeagueIndustryResult">
+        <result property="id"    column="id"    />
+        <result property="commissinorId"    column="commissinor_id"    />
+        <result property="position"    column="position"    />
+        <result property="position_name"    column="positionName"    />
+        <result property="creater"    column="creater"    />
+        <result property="industryId"    column="industry_id"    />
+        <result property="industryName"    column="industry_name"    />
+        <association property="leagueCommissinor" column="commissinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
+                     select="com.wzxc.busi.dao.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
+    </resultMap>
+
+    <sql id="selectLeagueIndustryVo">
+        select a.id, a.commissinor_id, a.position, (select dic_value from dic_universal where id = a.position) as position_name, a.creater, a.industry_id, (select dic_value from dic_universal where id = a.industry_id) as industry_name from league_industry as a
+    </sql>
+
+    <select id="selectLeagueIndustryList" parameterType="LeagueIndustry" resultMap="LeagueIndustryResult">
+        <include refid="selectLeagueIndustryVo"/>
+        inner join league_commissinor b on a.commissinor_id = b.id
+        <trim>
+            <if test="name != null and name != ''">and b.name = #{name}</if>
+            <if test="iphone != null and iphone != ''">and b.iphone = #{iphone}</if>
+        </trim>
+        <where>  
+            <if test="id != null "> and a.id = #{id}</if>
+            <if test="commissinorId != null "> and a.commissinor_id = #{commissinorId}</if>
+            <if test="position != null "> and a.position = #{position}</if>
+            <if test="industryId != null "> and a.industry_id = #{industryId}</if>
+        </where>
+        order by a.create_time desc
+    </select>
+
+    <select id="queryOneById" resultMap="LeagueIndustryResult">
+        <include refid="selectLeagueIndustryVo"/>
+        where a.id = #{id}
+    </select>
+        
+    <insert id="insertLeagueIndustry" parameterType="LeagueIndustry" useGeneratedKeys="true" keyProperty="id">
+        insert into league_industry
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="commissinorId != null">commissinor_id,</if>
+            <if test="position != null">position,</if>
+            <if test="creater != null">creater,</if>
+            <if test="industryId != null">industry_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="commissinorId != null">#{commissinorId},</if>
+            <if test="position != null">#{position},</if>
+            <if test="creater != null">#{creater},</if>
+            <if test="industryId != null">#{industryId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLeagueIndustry" parameterType="LeagueIndustry">
+        update league_industry
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="id != null">id = #{id},</if>
+            <if test="commissinorId != null">commissinor_id = #{commissinorId},</if>
+            <if test="position != null">position = #{position},</if>
+            <if test="creater != null">creater = #{creater},</if>
+            <if test="industryId != null">industry_id = #{industryId},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

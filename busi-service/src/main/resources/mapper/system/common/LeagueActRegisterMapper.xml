@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="signMessage"    column="sign_message"    />
         <result property="signNotifyTime"    column="sign_notify_time"    />
         <result property="signTime"    column="sign_time"    />
-        <association property="leagueCommissinor" column="commisinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
+        <association property="leagueCommissinor" column="commissinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
                      select="com.wzxc.busi.dao.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
         <association property="leagueActivity" column="activity_id" javaType="com.wzxc.busi.vo.LeagueActivity"
                      select="com.wzxc.busi.dao.LeagueActivityMapper.selectLeagueActivityById"/>
@@ -32,6 +32,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="commissinorId != null "> and commissinor_id = #{commissinorId}</if>
         </where>
         order by create_time desc
+    </select>
+
+    <select id="myLzList" resultMap="LeagueActRegisterResult">
+        <include refid="selectLeagueActRegisterVo"/>
+        where commissinor_id = #{commissinorId} and sign_time is not null
+        order by create_time desc
+    </select>
+
+    <!--  查询详情  -->
+    <select id="queryOneById" resultMap="LeagueActRegisterResult">
+        <include refid="selectLeagueActRegisterVo"/>
+        where id = #{id}
     </select>
         
     <insert id="insertLeagueActRegister" parameterType="LeagueActRegister" useGeneratedKeys="true" keyProperty="id">

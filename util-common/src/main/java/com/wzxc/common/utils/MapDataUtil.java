@@ -50,7 +50,7 @@ public class MapDataUtil
         return returnMap;
     }
 
-    //Map转Object
+    // Map转Object
     public static Object getMapToObject(Map<Object, Object> map, Class<?> cla) throws Exception {
         if (map == null)
             return null;
@@ -70,7 +70,7 @@ public class MapDataUtil
         return obj;
     }
 
-    //Object转Map
+    // Object转Map
     public static Map<String, Object> getObjectToMap(Object obj) throws IllegalAccessException {
         Map<String, Object> map = new HashMap<String, Object>();
         Class<?> cla = obj.getClass();
@@ -82,6 +82,27 @@ public class MapDataUtil
             superClass = superClass.getSuperclass();
         }
         return map;
+    }
+
+    // Map中获取object，获取的值从map中删除
+    public static Object getObjectFromMap(Map<String, Object> map, Class<?> cla) throws Exception {
+        if (map == null)
+            return null;
+        Object obj = cla.newInstance();
+        cla = obj.getClass();
+        Field[] fields = cla.getDeclaredFields();
+        for (Field field : fields) {
+            int mod = field.getModifiers();
+            if (Modifier.isStatic(mod) || Modifier.isFinal(mod)) {
+                continue;
+            }
+            field.setAccessible(true);
+            if (map.containsKey(field.getName())) {
+                field.set(obj, map.get(field.getName()));
+                map.remove(field.getName());
+            }
+        }
+        return obj;
     }
     private static void getObjectToMap(Object obj, Class<?> cla, Map<String, Object> map) throws IllegalAccessException {
         Field[] fields = cla.getDeclaredFields();

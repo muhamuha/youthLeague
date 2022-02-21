@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.LeagueActivityLzMapper">
+    
+    <resultMap type="LeagueActivityLz" id="LeagueActivityLzResult">
+        <result property="id"    column="id"    />
+        <result property="honorName"    column="honor_name"    />
+        <result property="honorType"    column="honor_type"    />
+        <result property="honorTime"    column="honor_time"    />
+        <result property="creater"    column="creater"    />
+        <result property="commissinorId"    column="commissinor_id"    />
+        <association property="leagueCommissinor" column="commissinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
+                     select="com.wzxc.busi.dao.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
+    </resultMap>
+
+    <sql id="selectLeagueActivityLzVo">
+        select a.id, a.honor_name, a.honor_type, a.honor_time, a.creater, a.commissinor_id from dsjkb_test.league_activity_lz as a
+    </sql>
+
+    <select id="selectLeagueActivityLzList" parameterType="LeagueActivityLz" resultMap="LeagueActivityLzResult">
+        <include refid="selectLeagueActivityLzVo"/>
+        <where>  
+            <if test="id != null "> and a.id = #{id}</if>
+            <if test="honorName != null  and honorName != ''"> and a.honor_name = #{honorName}</if>
+            <if test="honorType != null and honorType != ''"> and a.honor_type = #{honorType}</if>
+            <if test="honorTime != null "> and a.honor_time = #{honorTime}</if>
+            <if test="commissinorId != null"> and a.commissinor_id = #{commissinorId}</if>
+        </where>
+        order by a.create_time desc
+    </select>
+
+    <!--  查询详情  -->
+    <select id="queryOneById" resultMap="LeagueActivityLzResult">
+        <include refid="selectLeagueActivityLzVo"/>
+        where id = #{id}
+    </select>
+
+    <!--  所有履职年份（包含履职和年份）  -->
+    <select id="yearList" resultType="java.lang.String">
+        select distinct c.year from
+        (
+            (select DATE_FORMAT(a.sign_time, '%Y') as year from league_act_register a where a.sign_time is not null)
+            union all
+            (select DATE_FORMAT(b.create_time, '%Y') as year from league_activity_lz b)
+        ) c
+    </select>
+
+    <!--  获取履职总积分  -->
+    <select id="scoreTotal" resultType="java.util.HashMap">
+        select e.id, e.name, e.iphone, d.score, d.times  from
+        (
+            select commissinor_id as id, sum(score) as score, count(commissinor_id) as times from
+                    (
+                    -- 荣誉积分
+                    select commissinor_id, score as score from dsjkb_test.league_activity_lz
+                    -- 活动积分
+                    union all
+                    (
+                    select a.commissinor_id, (select score from dsjkb_test.dic_activity where id = b.activity_type) as score from dsjkb_test.league_act_register a
+                    left join dsjkb_test.league_activity b on a.activity_id = b.id
+                    where a.sign_time is not null
+                    )
+                    -- 主持人积分
+                    union all
+                    (
+                    select a.hostman_id commissinor_id, (select 2*score as score from dsjkb_test.dic_activity where id = a.activity_type) as score from dsjkb_test.league_activity a
+                    where a.hostman_id is not null
+                    )
+                ) c
+            group by c.commissinor_id
+            <if test="id != null and id != ''">having commissinor_id = #{id}</if>
+            order by score desc
+        ) d LEFT JOIN dsjkb_test.league_commissinor e on d.id = e.id
+    </select>
+        
+    <insert id="insertLeagueActivityLz" parameterType="LeagueActivityLz" useGeneratedKeys="true" keyProperty="id">
+        insert into league_activity_lz
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="honorName != null  and honorName != ''">honor_name,</if>
+            <if test="honorType != null and honorType != ''">honor_type,</if>
+            <if test="honorTime != null ">honor_time,</if>
+            <if test="score != null ">score,</if>
+            <if test="creater != null">creater,</if>
+            <if test="commissinorId != null">commissinor_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="honorName != null  and honorName != ''">#{honorName},</if>
+            <if test="honorType != null and honorType != ''">#{honorType},</if>
+            <if test="honorTime != null ">#{honorTime},</if>
+            <if test="score != null ">#{score},</if>
+            <if test="creater != null">#{creater},</if>
+            <if test="commissinorId != null">#{commissinorId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLeagueActivityLz" parameterType="LeagueActivityLz">
+        update league_activity_lz
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="honorName != null  and honorName != ''">honor_name = #{honorName},</if>
+            <if test="honorType != null and honorType != ''">honor_type = #{honorType},</if>
+            <if test="honorTime != null ">honor_time = #{honorTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

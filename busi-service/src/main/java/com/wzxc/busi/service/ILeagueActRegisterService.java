@@ -1,6 +1,9 @@
 package com.wzxc.busi.service;
 
 import java.util.List;
+import java.util.Map;
+
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wzxc.busi.vo.LeagueActRegister;
 
@@ -19,5 +22,9 @@ public interface ILeagueActRegisterService extends IService<LeagueActRegister> {
     int insertLeagueActRegister(LeagueActRegister leagueActRegister);
 
     int updateLeagueActRegister(LeagueActRegister leagueActRegister);
+
+    List<LeagueActRegister> myLzList(Long commissinorId);
+
+    LeagueActRegister queryOneById(Long id);
 
 }

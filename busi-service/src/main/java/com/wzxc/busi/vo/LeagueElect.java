@@ -41,17 +41,17 @@ public class LeagueElect implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "是否连任：	0：否	1：是")
+    @ApiModelProperty(value = "是否留任：	0：否	1：是")
     @TableField("is_reelect")
     private Integer isReelect;
-
-    @ApiModelProperty(value = "是否留任：	0：否	1：是")
-    @TableField("is_stay")
-    private Integer isStay;
 
     @ApiModelProperty(value = "当选年份")
     @TableField("year")
     private String year;
+
+    @ApiModelProperty(value = "团体名称")
+    @TableField("group_name")
+    private String groupName;
 
     @TableField(exist = false)
     private LeagueCommissinor leagueCommissinor;

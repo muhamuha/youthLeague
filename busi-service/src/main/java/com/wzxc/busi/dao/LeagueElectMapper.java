@@ -18,4 +18,6 @@ public interface LeagueElectMapper extends BaseMapper<LeagueElect> {
     int insertLeagueElect(LeagueElect leagueElect);
 
     int updateLeagueElect(LeagueElect leagueElect);
+
+    int insertWithDistinct(LeagueElect leagueElect);
 }

@@ -29,6 +29,10 @@ public class LeagueActivity implements Serializable {
     @TableField("activity_end")
     private Date activityEnd;
 
+    @ApiModelProperty(value = "活动时间区间：半天 全天")
+    @TableField("activity_period")
+    private String activityPeriod;
+
     @ApiModelProperty(value = "活动类型（字典表）")
     @TableField("activity_type")
     private Long activityType;
@@ -41,9 +45,13 @@ public class LeagueActivity implements Serializable {
     @TableField("content")
     private String content;
 
-    @ApiModelProperty(value = "主办人id")
+    @ApiModelProperty(value = "主办人名称")
     @TableField("hostman")
-    private Long hostman;
+    private String hostman;
+
+    @ApiModelProperty(value = "主办人id")
+    @TableField("hostman_id")
+    private String hostmanId;
 
     @ApiModelProperty(value = "主键")
     @TableId(value = "id", type = IdType.AUTO)
@@ -90,6 +98,6 @@ public class LeagueActivity implements Serializable {
     private Integer signRange;
 
     @TableField(exist = false)
-    private Integer scroe;
+    private Integer score;
 
 }

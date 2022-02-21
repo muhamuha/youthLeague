@@ -56,6 +56,10 @@ public class LeagueElectServiceImpl extends ServiceImpl<LeagueElectMapper, Leagu
         return leagueElectMapper.updateLeagueElect(leagueElect);
     }
 
+    @Override
+    public int insertWithDistinct(LeagueElect leagueElect) {
+        return leagueElectMapper.insertWithDistinct(leagueElect);
+    }
 
 
 }

@@ -11,30 +11,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="groupId"    column="group_id"    />
         <result property="id"    column="id"    />
         <result property="isReelect"    column="is_reelect"    />
-        <result property="isStay"    column="is_stay"    />
         <result property="year"    column="year"    />
+        <result property="groupName"    column="group_name"    />
         <association property="leagueCommissinor" column="commisinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
                      select="com.wzxc.busi.dao.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
     </resultMap>
 
     <sql id="selectLeagueElectVo">
-        select league_elect.commisinor_id, league_elect.commisinor_name, league_elect.elect_region, league_elect.group_id, league_elect.id, league_elect.is_reelect, league_elect.is_stay, league_elect.year from dsjkb_test.league_elect as league_elect
+        select league_elect.commisinor_id, league_elect.commisinor_name, league_elect.elect_region, league_elect.group_id, league_elect.id, league_elect.is_reelect, league_elect.year, league_elect.group_name, (select iphone from dsjkb_test.league_commissinor where id = commisinor_id) as iphone from dsjkb_test.league_elect as league_elect
     </sql>
 
     <select id="selectLeagueElectList" parameterType="LeagueElect" resultMap="LeagueElectResult">
         <include refid="selectLeagueElectVo"/>
-        <if test="iphone != null  and iphone != ''"> inner join league_commissinor b on league_elect.iphone = b.iphone</if>
+        <if test="iphone != null  and iphone != ''"> inner join league_commissinor b on league_elect.commisinor_id = b.id and b.iphone = #{iphone}</if>
         <where>  
-            <if test="commisinorId != null "> and commisinor_id = #{commisinorId}</if>
-            <if test="commisinorName != null  and commisinorName != ''"> and commisinor_name = #{commisinorName}</if>
-            <if test="electRegion != null  and electRegion != ''"> and elect_region = #{electRegion}</if>
-            <if test="groupId != null "> and group_id = #{groupId}</if>
-            <if test="id != null "> and id = #{id}</if>
-            <if test="isReelect != null "> and is_reelect = #{isReelect}</if>
-            <if test="isStay != null "> and is_stay = #{isStay}</if>
-            <if test="year != null  and year != ''"> and year = #{year}</if>
+            <if test="commisinorId != null "> and league_elect.commisinor_id = #{commisinorId}</if>
+            <if test="commisinorName != null  and commisinorName != ''"> and league_elect.commisinor_name = #{commisinorName}</if>
+            <if test="electRegion != null  and electRegion != ''"> and league_elect.elect_region = #{electRegion}</if>
+            <if test="groupId != null "> and league_elect.group_id = #{groupId}</if>
+            <if test="id != null "> and league_elect.id = #{id}</if>
+            <if test="isReelect != null "> and league_elect.is_reelect = #{isReelect}</if>
+            <if test="year != null  and year != ''"> and league_elect.year = #{year}</if>
         </where>
-        order by year,create_time desc
+        order by league_elect.create_time desc, league_elect.id desc
     </select>
         
     <insert id="insertLeagueElect" parameterType="LeagueElect" useGeneratedKeys="true" keyProperty="id">
@@ -45,8 +44,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="electRegion != null and electRegion != ''">elect_region,</if>
             <if test="groupId != null">group_id,</if>
             <if test="isReelect != null">is_reelect,</if>
-            <if test="isStay != null">is_stay,</if>
             <if test="year != null and year != ''">year,</if>
+            <if test="groupName != null and groupName != ''">group_name,</if>
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="commisinorId != null">#{commisinorId},</if>
@@ -54,9 +53,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="electRegion != null and electRegion != ''">#{electRegion},</if>
             <if test="groupId != null">#{groupId},</if>
             <if test="isReelect != null">#{isReelect},</if>
-            <if test="isStay != null">#{isStay},</if>
             <if test="year != null and year != ''">#{year},</if>
+            <if test="groupName != null and groupName != ''">#{groupName},</if>
          </trim>
+    </insert>
+
+    <insert id="insertWithDistinct" parameterType="LeagueElect" useGeneratedKeys="true" keyProperty="id">
+        insert into dsjkb_test.league_elect
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="commisinorId != null">commisinor_id,</if>
+            <if test="commisinorName != null and commisinorName != ''">commisinor_name,</if>
+            <if test="electRegion != null and electRegion != ''">elect_region,</if>
+            <if test="groupId != null">group_id,</if>
+            <if test="isReelect != null">is_reelect,</if>
+            <if test="year != null and year != ''">year,</if>
+            <if test="groupName != null and groupName != ''">group_name,</if>
+        </trim>
+        SELECT  FROM dual WHERE NOT EXISTS (SELECT id FROM user WHERE id = 1)
     </insert>
 
     <update id="updateLeagueElect" parameterType="LeagueElect">
@@ -68,8 +81,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="groupId != null">group_id = #{groupId},</if>
             <if test="id != null">id = #{id},</if>
             <if test="isReelect != null">is_reelect = #{isReelect},</if>
-            <if test="isStay != null">is_stay = #{isStay},</if>
             <if test="year != null and year != ''">year = #{year},</if>
+            <if test="groupName != null and groupName != ''">group_name = #{groupName},</if>
         </trim>
         where id = #{id}
     </update>

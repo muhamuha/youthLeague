@@ -1,5 +1,6 @@
 package com.wzxc.busi.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wzxc.busi.dao.LeagueActRegisterMapper;
 import com.wzxc.busi.vo.LeagueActRegister;
@@ -56,6 +57,15 @@ public class LeagueActRegisterServiceImpl extends ServiceImpl<LeagueActRegisterM
         return leagueActRegisterMapper.updateLeagueActRegister(leagueActRegister);
     }
 
+    @Override
+    public List<LeagueActRegister> myLzList(Long commissinorId) {
+        return leagueActRegisterMapper.myLzList(commissinorId);
+    }
+
+    @Override
+    public LeagueActRegister queryOneById(Long id) {
+        return leagueActRegisterMapper.queryOneById(id);
+    }
 
 
 }

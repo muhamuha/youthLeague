@@ -103,7 +103,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     protected boolean sendChallenge(ServletRequest request, ServletResponse response) {
         if(TOKEN_ILLEGAL){
             TOKEN_ILLEGAL = false; // // 过滤器全局的
-            throw new AuthenticationException("用户不存在！");
+            throw new AuthenticationException("非法凭证，无权限调用！");
         } else{
             throw new AuthenticationException("没有权限访问！");
         }

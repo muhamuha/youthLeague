@@ -1,4 +1,4 @@
-package com.wzxc.busi.dao.ds1;
+package com.wzxc.busi.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.wzxc.busi.vo.SysRegion;

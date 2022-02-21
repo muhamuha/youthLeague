@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.LeagueGroupMapper">
+    
+    <resultMap type="LeagueGroup" id="LeagueGroupResult">
+        <result property="id"    column="id"    />
+        <result property="commissinorId"    column="commissinor_id"    />
+        <result property="position"    column="position"    />
+        <result property="position_name"    column="positionName"    />
+        <result property="creater"    column="creater"    />
+        <result property="groupId"    column="group_id"    />
+        <result property="groupName"    column="group_name"    />
+        <association property="leagueCommissinor" column="commissinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
+                     select="com.wzxc.busi.dao.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
+    </resultMap>
+
+    <sql id="selectLeagueGroupVo">
+        select a.id, a.commissinor_id, a.position, (select dic_value from dic_universal where id = a.position) as position_name, a.creater, a.group_id, (select group_name from dic_group where id = a.group_id) as group_name from league_group as a
+    </sql>
+
+    <select id="selectLeagueGroupList" parameterType="LeagueGroup" resultMap="LeagueGroupResult">
+        <include refid="selectLeagueGroupVo"/>
+        inner join league_commissinor b on a.commissinor_id = b.id
+        <trim>
+            <if test="name != null and name != ''">and b.name = #{name}</if>
+            <if test="iphone != null and iphone != ''">and b.iphone = #{iphone}</if>
+        </trim>
+        <where>  
+            <if test="id != null "> and a.id = #{id}</if>
+            <if test="commissinorId != null "> and a.commissinor_id = #{commissinorId}</if>
+            <if test="position != null"> and a.position = #{position}</if>
+            <if test="groupId != null "> and a.group_id = #{groupId}</if>
+        </where>
+        order by a.create_time desc
+    </select>
+
+    <select id="queryOneById" resultMap="LeagueGroupResult">
+        <include refid="selectLeagueGroupVo"/>
+        where a.id = #{id}
+    </select>
+        
+    <insert id="insertLeagueGroup" parameterType="LeagueGroup" useGeneratedKeys="true" keyProperty="id">
+        insert into league_group
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="commissinorId != null">commissinor_id,</if>
+            <if test="position != null">position,</if>
+            <if test="creater != null">creater,</if>
+            <if test="groupId != null">group_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="commissinorId != null">#{commissinorId},</if>
+            <if test="position != null">#{position},</if>
+            <if test="creater != null">#{creater},</if>
+            <if test="groupId != null">#{groupId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLeagueGroup" parameterType="LeagueGroup">
+        update league_group
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="commissinorId != null">commissinor_id = #{commissinorId},</if>
+            <if test="position != null">position = #{position},</if>
+            <if test="groupId != null">group_id = #{groupId},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

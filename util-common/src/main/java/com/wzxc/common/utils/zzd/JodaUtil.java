@@ -26,25 +26,14 @@ import java.text.SimpleDateFormat;
 public class JodaUtil {
 
     private static ExecutableClient executableClient;
-    @Value("${zzd.config.msgApp}")
-    private static String msgApp;
-    @Value("${zzd.config.appkey}")
-    private static String appkey;
-    @Value("${zzd.config.secret}")
-    private static String secret;
+    private static ExecutableClient executableClientc;
+
     @Value("${zzd.config.tenantid}")
     private static String tenantId;
     @Value("${zzd.config.domain-name}")
     private static String domainName;
     @Value("${zzd.config.protocal}")
     private static String protocal;
-
-    public void setAppkey(String appkeySet){
-        appkey = appkeySet;
-    }
-    public void setSecret(String secretSet){
-        secret = secretSet;
-    }
     public void setTenantId(String tenantIdSet){
         tenantId = tenantIdSet;
     }
@@ -54,8 +43,29 @@ public class JodaUtil {
     public void setProtocal(String protocalSet){
         protocal = protocalSet;
     }
-    public void setMsgApp(String msgAppSet){
-        msgApp = msgAppSet;
+
+    ///////////////// pc端密钥对 //////////////////
+    @Value("${zzd.config.appkey}")
+    private static String appkey;
+    @Value("${zzd.config.secret}")
+    private static String secret;
+    public void setAppkey(String appkeySet){
+        appkey = appkeySet;
+    }
+    public void setSecret(String secretSet){
+        secret = secretSet;
+    }
+
+    ///////////////// 移动端密钥对 //////////////////
+    @Value("${zzd.config.cellphone.appkeyc}")
+    private static String appkeyc;
+    @Value("${zzd.config.cellphone.secretc}")
+    private static String secretc;
+    public void setAppkeyc(String appkeySetc){
+        appkeyc = appkeySetc;
+    }
+    public void setSecretc(String secretSetc){
+        secretc = secretSetc;
     }
 
     @PostConstruct
@@ -66,6 +76,13 @@ public class JodaUtil {
         executableClient.setDomainName(domainName);
         executableClient.setProtocal(protocal);
         executableClient.init();
+
+        executableClientc = ExecutableClient.getInstance();
+        executableClientc.setAccessKey(appkeyc);
+        executableClientc.setSecretKey(secretc);
+        executableClientc.setDomainName(domainName);
+        executableClientc.setProtocal(protocal);
+        executableClientc.init();
     }
 
     // 登录模块 ///////////////////////////
@@ -81,6 +98,17 @@ public class JodaUtil {
         getClient.addParameter("appsecret", secret);
         //调用API
         String apiResult = getClient.get();
+        return apiResult;
+    }
+    public static String gettoken_c(){
+        String api ="/gettoken.json";
+        GetClient getClient = executableClientc.newGetClient(api);
+        //设置参数
+        getClient.addParameter("appkey", appkeyc);
+        getClient.addParameter("appsecret", secretc);
+        //调用API
+        String apiResult = getClient.get();
+        log.info("apiResult --- " + apiResult);
         return apiResult;
     }
 
@@ -117,6 +145,17 @@ public class JodaUtil {
         String apiResult = postClient.post();
         return apiResult;
     }
+    public static String getUserByAuthCode_c(String accessToken, String authCode){
+        String api ="/rpc/oauth2/dingtalk_app_user.json";
+        PostClient postClient = executableClientc.newPostClient(api);
+        //设置参数
+        postClient.addParameter("access_token", accessToken);
+        postClient.addParameter("auth_code", authCode);
+        //调用API
+        String apiResult = postClient.post();
+        log.info("apiResult --- " + apiResult);
+        return apiResult;
+    }
 
     /**
      * 通过accessToken获取jsapiToken
@@ -130,7 +169,6 @@ public class JodaUtil {
         postClient.addParameter("accessToken", accessToken);
         //调用API
         String apiResult = postClient.post();
-        log.info("getJsapiToken --- " + apiResult);
         return apiResult;
     }
 

@@ -31,7 +31,7 @@ public class AddAcitivityTask implements JavaDelegate {
             LeagueActivity leagueActivity = JSONObject.toJavaObject(o, LeagueActivity.class);
             BusiResult re = leagueActivityController.add(leagueActivity);
             if(!re.get(BusiResult.CODE_TAG).equals(BusiResult.Type.SUCCESS)){
-                log.error(re.get(BusiResult.MSG_TAG).toString());
+                log.info(re.get(BusiResult.MSG_TAG).toString());
             }
         } catch (Exception e){
             runtimeService.setVariable(processInstanceId, "addErrorMessage", e.getMessage());

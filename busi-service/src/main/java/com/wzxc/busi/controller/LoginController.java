@@ -49,9 +49,42 @@ public class LoginController extends BaseController {
         JSONObject userMessage = Optional.ofNullable(JSONObject.parseObject(JodaUtil.getUserByAuthCode(accessToken, code)).getJSONObject("content").getJSONObject("data"))
                 .orElseThrow(() -> new UserNotExistsException());
         // 判断用户是否是委员
+//        log.info("employeeCode --- " + userMessage.getString("employeeCode"));
         int count = leagueCommissinorService.count(Wrappers.<LeagueCommissinor>lambdaQuery()
-                .eq(LeagueCommissinor::getEmail, userMessage.getString("employeeCode"))
+                .eq(LeagueCommissinor::getEmployeeCode, userMessage.getString("employeeCode"))
                 .eq(LeagueCommissinor::getIsDelete, 0));
+        if(count > 0){
+            // 生成系统token
+            String sysToken = JwtUtil.sign(userMessage.getString("employeeCode"));
+            resultMap.put("userMessage", userMessage);
+            resultMap.put("sysToken", sysToken);
+            return BusiResult.success("登录成功", resultMap);
+        }
+        return BusiResult.error("登录失败，失败原因：未找到该用户", resultMap);
+    }
+
+    @ApiOperation(value = "移动端登录", notes = "移动端登录", httpMethod = "GET")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "code", value = "浙政钉code", required = true, paramType = "query", dataType="string"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @GetMapping("/cellphone/{code}")
+    public BusiResult loginCellphone(@PathVariable String code) {
+        Map<String, Object> resultMap = new HashMap<>();
+        // 获取应用access_token
+        String accessToken = Optional.ofNullable(JSONObject.parseObject(JodaUtil.gettoken_c()).getJSONObject("content").getJSONObject("data").getString("accessToken"))
+                .orElseThrow(() -> new UserNotExistsException());
+        // 获取用户信息
+        JSONObject userMessage = Optional.ofNullable(JSONObject.parseObject(JodaUtil.getUserByAuthCode_c(accessToken, code)).getJSONObject("content").getJSONObject("data"))
+                .orElseThrow(() -> new UserNotExistsException());
+        // 判断用户是否是委员
+        int count = leagueCommissinorService.count(Wrappers.<LeagueCommissinor>lambdaQuery()
+                .eq(LeagueCommissinor::getEmployeeCode, userMessage.getString("employeeCode"))
+                .eq(LeagueCommissinor::getIsDelete, 0));
+        log.info("employeeCode --- " + userMessage.getString("employeeCode"));
         if(count > 0){
             // 生成系统token
             String sysToken = JwtUtil.sign(userMessage.getString("employeeCode"));

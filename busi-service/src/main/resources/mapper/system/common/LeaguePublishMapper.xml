@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.LeaguePublishMapper">
+    
+    <resultMap type="LeaguePublish" id="LeaguePublishResult">
+        <result property="id"    column="id"    />
+        <result property="createrId"    column="creater_id"    />
+        <result property="createrName"    column="creater_name"    />
+        <result property="content"    column="content"    />
+        <result property="title"    column="title"    />
+        <result property="isDelete"    column="is_delete"    />
+        <result property="createTime"    column="create_time"    />
+    </resultMap>
+
+    <sql id="selectLeaguePublishVo">
+        select a.id, a.creater_id, a.content, a.title, a.is_delete, a.creater_name, a.create_time from league_publish as a
+    </sql>
+
+    <select id="selectLeaguePublishList" parameterType="LeaguePublish" resultMap="LeaguePublishResult">
+        <include refid="selectLeaguePublishVo"/>
+        <where>
+            a.is_delete = 0
+            <if test="createrName != null  and createrName != ''"> and a.creater_name = #{createrName}</if>
+            <if test="title != null  and title != ''"> and a.title like '%${title}%'</if>
+        </where>
+        order by create_time desc
+    </select>
+        
+    <insert id="insertLeaguePublish" parameterType="LeaguePublish" useGeneratedKeys="true" keyProperty="id">
+        insert into league_publish
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="createrId != null">creater_id,</if>
+            <if test="createrName != null and createrName != ''">creater_name,</if>
+            <if test="content != null and content != ''">content,</if>
+            <if test="title != null and title != ''">title,</if>
+            <if test="isDelete != null">is_delete,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="createrId != null">#{createrId},</if>
+            <if test="createrName != null and createrName != ''">#{createrName},</if>
+            <if test="content != null and content != ''">#{content},</if>
+            <if test="title != null and title != ''">#{title},</if>
+            <if test="isDelete != null">#{isDelete},</if>
+         </trim>
+    </insert>
+
+    <!--  逻辑删除帖子  -->
+    <update id="logicDelete" parameterType="java.lang.Long">
+        update league_publish set is_delete = 1 where id = #{id}
+    </update>
+
+</mapper>

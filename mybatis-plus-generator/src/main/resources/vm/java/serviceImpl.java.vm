@@ -3,7 +3,7 @@ package ${cfg.packageName}.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wzxc.common.core.text.Convert;
 import com.wzxc.common.utils.DateUtils;
-import ${cfg.packageName}.dao.ds1.${cfg.voName}Mapper;
+import ${cfg.packageName}.dao.${cfg.voName}Mapper;
 import ${cfg.packageName}.vo.${cfg.voName};
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,34 +25,21 @@ public class ${cfg.voName}ServiceImpl extends ServiceImpl<${cfg.voName}Mapper, $
     @Autowired
     private ${cfg.voName}Mapper ${cfg.moudleName}Mapper;
 
-    /**
-     * 查询【请填写功能名称】列表
-     *
-     * @param ${cfg.moudleName} 【请填写功能名称】
-     * @return 【请填写功能名称】
-     */
     @Override
     public List<${cfg.voName}> select${cfg.voName}List(${cfg.voName} ${cfg.moudleName}) {
         return ${cfg.moudleName}Mapper.select${cfg.voName}List(${cfg.moudleName});
     }
 
-    /**
-     * 新增【请填写功能名称】
-     *
-     * @param ${cfg.moudleName} 【请填写功能名称】
-     * @return 结果
-     */
     @Override
     public int insert${cfg.voName}(${cfg.voName} ${cfg.moudleName}) {
         return ${cfg.moudleName}Mapper.insert${cfg.voName}(${cfg.moudleName});
     }
 
-    /**
-     * 修改【请填写功能名称】
-     *
-     * @param ${cfg.moudleName} 【请填写功能名称】
-     * @return 结果
-     */
+    @Override
+    public int insertWithDistinct(${cfg.voName} ${cfg.moudleName}) {
+        return ${cfg.moudleName}Mapper.insertWithDistinct(${cfg.moudleName});
+    }
+
     @Override
     public int update${cfg.voName}(${cfg.voName} ${cfg.moudleName}) {
         return ${cfg.moudleName}Mapper.update${cfg.voName}(${cfg.moudleName});

@@ -1,28 +1,43 @@
 package com.wzxc.busi.controller;
 
 import java.io.IOException;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.wzxc.busi.service.impl.LeagueElectServiceImpl;
+import com.wzxc.busi.vo.LeagueElect;
 import com.wzxc.common.annotation.CheckParam;
 import com.wzxc.common.annotation.CheckParams;
+import com.wzxc.common.annotation.InsertBatchParam;
+import com.wzxc.common.annotation.InsertBatchParams;
 import com.wzxc.common.core.controller.BaseController;
+import com.wzxc.common.core.dao.InsertBatchCommon;
 import com.wzxc.common.core.domain.BusiResult;
+import com.wzxc.common.core.domain.MyEntry;
 import com.wzxc.common.utils.DateUtils;
+import com.wzxc.common.utils.MapDataUtil;
+import com.wzxc.common.utils.file.ExcelUtils;
+import com.wzxc.common.utils.reflect.ReflectUtils;
+import com.wzxc.common.utils.uuid.IdUtils;
 import com.wzxc.common.validate.Check;
 import com.wzxc.busi.vo.LeagueCommissinor;
+import com.wzxc.common.validate.Filter;
 import com.wzxc.webservice.shiro.JwtFilter;
 import io.swagger.annotations.*;
 import jdk.nashorn.internal.objects.annotations.Getter;
+import lombok.extern.slf4j.Slf4j;
 import net.bytebuddy.asm.Advice;
+import org.apache.commons.collections4.CollectionUtils;
 import org.camunda.bpm.engine.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import com.wzxc.busi.service.impl.LeagueCommissinorServiceImpl;
+import org.springframework.web.multipart.MultipartFile;
 import springfox.documentation.annotations.ApiIgnore;
 
 /**
@@ -35,10 +50,13 @@ import springfox.documentation.annotations.ApiIgnore;
 @CrossOrigin
 @RequestMapping("/leagueCommissinor")
 @Api(tags="委员管理类")
+@Slf4j
 public class LeagueCommissinorController extends BaseController {
 
     @Autowired
     private LeagueCommissinorServiceImpl leagueCommissinorService;
+    @Autowired
+    private LeagueElectServiceImpl leagueElectService;
 
     @Autowired
     private HistoryService historyService;
@@ -70,7 +88,7 @@ public class LeagueCommissinorController extends BaseController {
                 @ApiImplicitParam(name = "household", value = "户籍", required = false, paramType = "query", dataType="String"),
                 @ApiImplicitParam(name = "id", value = "主键", required = false, paramType = "query", dataType="Long"),
                 @ApiImplicitParam(name = "idcard", value = "身份证号", required = false, paramType = "query", dataType="String"),
-                @ApiImplicitParam(name = "industryId", value = "所在行业（字典表）", required = false, paramType = "query", dataType="Long"),
+                @ApiImplicitParam(name = "industry", value = "所在行业", required = false, paramType = "query", dataType="String"),
                 @ApiImplicitParam(name = "iphone", value = "手机号码", required = false, paramType = "query", dataType="String"),
                 @ApiImplicitParam(name = "joinDate", value = "入委时间", required = false, paramType = "query", dataType="Date"),
                 @ApiImplicitParam(name = "leagueOffice", value = "青联职务", required = false, paramType = "query", dataType="String"),
@@ -79,7 +97,7 @@ public class LeagueCommissinorController extends BaseController {
                 @ApiImplicitParam(name = "location", value = "所在地", required = false, paramType = "query", dataType="String"),
                 @ApiImplicitParam(name = "name", value = "姓名", required = false, paramType = "query", dataType="String"),
                 @ApiImplicitParam(name = "nation", value = "民族", required = false, paramType = "query", dataType="String"),
-                @ApiImplicitParam(name = "orgOffice", value = "职务", required = false, paramType = "query", dataType="String"),
+                @ApiImplicitParam(name = "orgOffice", value = "职级", required = false, paramType = "query", dataType="String"),
                 @ApiImplicitParam(name = "orgPosition", value = "政府所在单位和职务", required = false, paramType = "query", dataType="String"),
                 @ApiImplicitParam(name = "orgTitle", value = "职称", required = false, paramType = "query", dataType="String"),
                 @ApiImplicitParam(name = "organization", value = "所在政府单位", required = false, paramType = "query", dataType="String"),
@@ -113,15 +131,22 @@ public class LeagueCommissinorController extends BaseController {
     */
     @ApiOperation(value = "查询详情", notes = "查询详情", httpMethod = "GET")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "系统主键", required = true, paramType = "query", dataType="int"),
+            @ApiImplicitParam(name = "id", value = "系统主键", required = false, paramType = "query", dataType="Long"),
     })
     @ApiResponses({
             @ApiResponse(code = 13000, message = "OK", response = LeagueCommissinor.class),
             @ApiResponse(code = 13500, message = "ERROR")
     })
-    @GetMapping("/detail/{id}")
-    public Object getById(@PathVariable Integer id) {
+    @GetMapping("/detail")
+    public Object getById(@RequestParam(required = false) Long id) {
         Map<String, Object> resultMap = new HashMap<>();
+
+        // 获取用户id
+        if(id == null){
+            LeagueCommissinor leagueCommissinor = leagueCommissinorService.queryOne(JwtFilter.getUserId());
+            id = leagueCommissinor.getId();
+        }
+
         LeagueCommissinor leagueCommissinor = leagueCommissinorService.getById(id);
         if(leagueCommissinor == null){
             return BusiResult.error("查询失败");
@@ -171,7 +196,7 @@ public class LeagueCommissinorController extends BaseController {
                         @ApiImplicitParam(name = "household", value = "户籍", required = false, paramType = "query", dataType="String"),
                         @ApiImplicitParam(name = "id", value = "主键", required = true, paramType = "query", dataType="Long"),
                         @ApiImplicitParam(name = "idcard", value = "身份证号", required = false, paramType = "query", dataType="String"),
-                        @ApiImplicitParam(name = "industryId", value = "所在行业（字典表）", required = false, paramType = "query", dataType="Long"),
+                        @ApiImplicitParam(name = "industry", value = "所在行业", required = false, paramType = "query", dataType="String"),
                         @ApiImplicitParam(name = "iphone", value = "手机号码", required = false, paramType = "query", dataType="String"),
                         @ApiImplicitParam(name = "joinDate", value = "入委时间", required = false, paramType = "query", dataType="Date"),
                         @ApiImplicitParam(name = "leagueOffice", value = "青联职务", required = false, paramType = "query", dataType="String"),
@@ -231,6 +256,76 @@ public class LeagueCommissinorController extends BaseController {
             return BusiResult.error("删除失败");
         }
         return BusiResult.success("删除成功");
+    }
+
+    /**
+     * 通过接口 - 批导入
+     */
+    @ApiOperation(value = "批导入-接口导入", notes = "批导入-接口导入", httpMethod = "POST")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "data", value = "导入数据", required = true, paramType = "query", dataType="Object"),
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @InsertBatchParams({
+            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "提名单位", fieldName = "group_name"),
+            @InsertBatchParam(value = Check.NotEmpty, fieldNameZh = "姓名", fieldName = "name"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "性别", fieldName = "gender"),
+            @InsertBatchParam(value = Check.DateOrEmpty, fieldNameZh = "出生年月", fieldName = "birthday"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "身份证号码", fieldName = "idcard"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "籍贯", fieldName = "origin"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "界别", fieldName = "industry"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "户籍所在地", fieldName = "household"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "工作所在地", fieldName = "workplace"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "民族", fieldName = "nation"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "政治面貌", fieldName = "political_status"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "学历", fieldName = "education"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "学位", fieldName = "degree"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "工作单位及职务", fieldName = "org_position"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "联系方式", fieldName = "iphone"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "专业技术职称", fieldName = "org_title"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "职级", fieldName = "org_office"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "职业", fieldName = "vocation"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "主要社会职务", fieldName = "social_office"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "重要奖项及荣誉", fieldName = "honor_name"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "担任市级以上党代表的情况", fieldName = "deputy_party"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "担任市级以上人大代表的情况", fieldName = "deputy_npc"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "担任市级以上政协委员的情况", fieldName = "deputy_cppcc"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "备注", fieldName = "remark"),
+            @InsertBatchParam(value = Check.IsEnum, fieldNameZh = "是否留任", fieldName = "is_reelect", express = "com.wzxc.busi.en.IsReelect"),
+            @InsertBatchParam(value = Check.Any, fieldNameZh = "青联职务", fieldName = "league_office"),
+    })
+    @PostMapping(value = "/batch")
+    public BusiResult insertBatch(@RequestParam("file") MultipartFile file) throws Exception {
+        Method method = ReflectUtils.getAccessibleMethodByName(this, "insertBatch", 1);
+        Annotation annotation = ReflectUtils.getAnntationByMethod(method, "InsertBatchParams");
+        InsertBatchParam[] insertBatchParams = ((InsertBatchParams) annotation).value();
+        if (file.isEmpty()) {
+            return BusiResult.error("上传失败，失败原因：文件未空");
+        }
+        // 获取表格中的中文名称
+        List<String> fieldNameZhList = ExcelUtils.exportTitleListFromExcel(file);
+        // 获取字段名称
+        List<MyEntry<String, Integer>> fieldNameList = ExcelUtils.getFieldNameList(fieldNameZhList, insertBatchParams);
+        // 获取数据
+        List<Map<String, Object>> contentList = ExcelUtils.exportContentListFromExcel(file, fieldNameList, insertBatchParams);
+        if(contentList == null || contentList.size() == 0){
+            return BusiResult.success("导入成功");
+        }
+        for(Map<String, Object> map : contentList){
+            LeagueCommissinor leaueCommissinor = (LeagueCommissinor) MapDataUtil.getObjectFromMap(map, LeagueCommissinor.class);
+            leaueCommissinor.setCreater(JwtFilter.getUserId());
+            leagueCommissinorService.insertLeagueCommissinor(leaueCommissinor);
+            LeagueElect leagueElect = (LeagueElect) MapDataUtil.getObjectFromMap(map, LeagueElect.class);
+            leagueElect.setCommisinorId(leaueCommissinor.getId());
+            leagueElect.setYear("2021");
+            leagueElect.setCommisinorName(leaueCommissinor.getName());
+            leagueElectService.insertLeagueElect(leagueElect);
+        }
+
+        return BusiResult.success("批导入成功");
     }
 
 

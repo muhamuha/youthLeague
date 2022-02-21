@@ -32,7 +32,6 @@ public class LeagueCommissinor implements Serializable {
     @TableField("birthday")
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
     @JSONField(format="yyyy-MM-dd")
-//    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date birthday;
 
     @ApiModelProperty(value = "毕业院校")
@@ -63,9 +62,9 @@ public class LeagueCommissinor implements Serializable {
     @TableField("deputy_party")
     private String deputyParty;
 
-    @ApiModelProperty(value = "教育情况	1. 中专/高中	2. 专科	3. 本科	4. 硕士研究生	5. 博士")
+    @ApiModelProperty(value = "教育情况")
     @TableField("education")
-    private Integer education;
+    private String education;
 
     @ApiModelProperty(value = "邮箱")
     @TableField("email")
@@ -99,9 +98,9 @@ public class LeagueCommissinor implements Serializable {
     @TableField("idcard")
     private String idcard;
 
-    @ApiModelProperty(value = "所在行业（字典表）")
-    @TableField("industry_id")
-    private Long industryId;
+    @ApiModelProperty(value = "所在行业")
+    @TableField("industry")
+    private String industry;
 
     @ApiModelProperty(value = "手机号码")
     @TableField("iphone")
@@ -181,9 +180,9 @@ public class LeagueCommissinor implements Serializable {
     @TableField("social_office")
     private String socialOffice;
 
-    @ApiModelProperty(value = "职业（字典）")
-    @TableField("vocation_id")
-    private Long vocationId;
+    @ApiModelProperty(value = "职业")
+    @TableField("vocation")
+    private String vocation;
 
     @ApiModelProperty(value = "工作所在地")
     @TableField("workplace")

@@ -35,6 +35,7 @@ C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\uti
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\utils\ExceptionUtil.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\exception\user\CaptchaException.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\core\domain\AjaxResult.java
+C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\core\domain\MyEntry.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\utils\camunda\JsonUtils.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\utils\file\ExcelUtils.java
 C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\annotation\InsertBatchParam.java

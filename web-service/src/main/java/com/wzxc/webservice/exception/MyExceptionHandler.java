@@ -1,5 +1,6 @@
 package com.wzxc.webservice.exception;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import com.wzxc.common.core.domain.BusiResult;
 import com.wzxc.common.exception.InsertBatchException;
 import com.wzxc.common.exception.ParamInException;
@@ -28,6 +29,13 @@ import java.sql.SQLException;
 @Slf4j
 public class MyExceptionHandler {
 
+    // body为空
+    @ExceptionHandler(value = HttpMessageNotReadableException.class)
+    public BusiResult bodyParamHandler2(Exception e){
+        return BusiResult.error("body为空/body参数格式错误");
+    }
+
+
     @ExceptionHandler(value = AuthenticationException.class)
     public BusiResult exceptionHandler1(Exception e){
         return BusiResult.unAuth(e.getMessage());
@@ -43,13 +51,8 @@ public class MyExceptionHandler {
         return BusiResult.error(e.getMessage());
     }
 
-    @ExceptionHandler(value = HttpMessageNotReadableException.class)
-    public BusiResult exceptionHandler4(Exception e){
-        return BusiResult.error(e.getMessage());
-    }
-
     @ExceptionHandler(value = InsertBatchException.class)
-    public BusiResult exceptionHandler5(Exception e){
+    public BusiResult exceptionHandler4(Exception e){
         return BusiResult.error(e.getMessage());
     }
 
@@ -69,7 +72,7 @@ public class MyExceptionHandler {
     @Order(Ordered.LOWEST_PRECEDENCE - 2)
     @ExceptionHandler(value = RuntimeException.class)
     public BusiResult exceptionHandler(Exception e){
-        log.error("发生未知异常", e);
+        log.error("发生异常", e);
         return BusiResult.error("系统发生未知异常");
     }
 

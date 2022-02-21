@@ -2,6 +2,7 @@ package com.wzxc.busi.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.wzxc.busi.vo.LeagueActRegister;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,8 @@ public interface LeagueActRegisterMapper extends BaseMapper<LeagueActRegister> {
     int insertLeagueActRegister(LeagueActRegister leagueActRegister);
 
     int updateLeagueActRegister(LeagueActRegister leagueActRegister);
+
+    List<LeagueActRegister> myLzList(@Param("commissinorId") Long commissinorId);
+
+    LeagueActRegister queryOneById(Long id);
 }

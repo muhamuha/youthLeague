@@ -3,6 +3,10 @@ server:
   servlet:
       context-path: /youth-league/v1
 
+logging:
+  level:
+    com.wzxc.busi.dao: debug
+
 spring:
   datasource:
     ds1:
@@ -50,11 +54,12 @@ spring:
 zzd:
   active: true
   config:
-#    appkey: smart-qinlian-pc_dingoa-4EYAHr86PH622Q8Ma7tEr8Z20EKliOWe58qqEVzm
-#    secret: vvQTLlS6Voie5517M6Eg7Wm8Sdd939MHz1ZgY85b
-    appkey: smart-qinlian-649qeB40s9AfqMRj
-    secret: M1OPFyfnNNrVfki0mIBEQTrXRtWJ27N6bKpSOx53
     tenantid: 50162234
     domain-name: openplatform.dg-work.cn
     protocal: https
-    msgApp: smart-qinlian-pc_dingoa
+    # pc端
+    appkey: smart-qinlian-pc_dingoa-4EYAHr86PH622Q8Ma7tEr8Z20EKliOWe58qqEVzm
+    secret: vvQTLlS6Voie5517M6Eg7Wm8Sdd939MHz1ZgY85b
+    # 手机端
+    appkeyc: smart-qinlian-649qeB40s9AfqMRj
+    secretc: M1OPFyfnNNrVfki0mIBEQTrXRtWJ27N6bKpSOx53

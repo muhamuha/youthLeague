@@ -1,8 +1,4 @@
-#if(${cfg.datasource} == "")
 package ${cfg.packageName}.dao;
-#else
-package ${cfg.packageName}.dao.${cfg.datasource};
-#end
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import ${cfg.packageName}.vo.${cfg.voName};
@@ -20,6 +16,8 @@ public interface ${cfg.voName}Mapper extends BaseMapper<${cfg.voName}> {
     List<${cfg.voName}> select${cfg.voName}List(${cfg.voName} ${cfg.moudleName});
 
     int insert${cfg.voName}(${cfg.voName} ${cfg.moudleName});
+
+    int insertWithDistinct(${cfg.voName} ${cfg.moudleName});
 
     int update${cfg.voName}(${cfg.voName} ${cfg.moudleName});
 }

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.LeagueGoodmanMapper">
+    
+    <resultMap type="LeagueGoodman" id="LeagueGoodmanResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="iphone"    column="iphone"    />
+        <result property="email"    column="email"    />
+        <result property="address"    column="address"    />
+        <result property="education"    column="education"    />
+        <result property="company"    column="company"    />
+        <result property="honorLevel"    column="honor_level"    />
+        <result property="honorName"    column="honor_name"    />
+        <result property="honorFile"    column="honor_file"    />
+        <result property="orgPosition"    column="org_position"    />
+        <result property="picture"    column="picture"    />
+        <result property="workplace"    column="workplace"    />
+        <result property="industry"    column="industry"    />
+        <result property="updteTime"    column="updte_time"    />
+        <result property="creater"    column="creater"    />
+        <result property="gender"    column="gender"    />
+        <result property="birthday"    column="birthday"    />
+        <result property="idcard"    column="idcard"    />
+        <result property="household"    column="household"    />
+        <result property="origin"    column="origin"    />
+        <result property="nation"    column="nation"    />
+        <result property="politicalStatus"    column="political_status"    />
+        <result property="degree"    column="degree"    />
+        <result property="orgTitle"    column="org_title"    />
+        <result property="orgOffice"    column="org_office"    />
+        <result property="vocation"    column="vocation"    />
+        <result property="socialOffice"    column="social_office"    />
+        <result property="deputyParty"    column="deputy_party"    />
+        <result property="deputyNpc"    column="deputy_npc"    />
+        <result property="deputyCppcc"    column="deputy_cppcc"    />
+        <result property="remark"    column="remark"    />
+        <result property="location"    column="location"    />
+        <result property="organization"    column="organization"    />
+        <result property="position"    column="position"    />
+        <result property="campus"    column="campus"    />
+        <result property="employeeCode"    column="employee_code"    />
+        <result property="isDelete"    column="is_delete"    />
+        <result property="commissinorId"    column="commissinor_id"    />
+        <result property="goodmanId"    column="goodman_id"    />
+        <association property="leagueCommissinor" column="commissinor_id" javaType="com.wzxc.busi.vo.LeagueCommissinor"
+                     select="com.wzxc.busi.dao.LeagueCommissinorMapper.selectLeagueCommissinorById"/>
+        <association property="leagueGoodman" column="goodman_id" javaType="com.wzxc.busi.vo.LeagueGoodman"
+                     select="com.wzxc.busi.dao.LeagueGoodmanMapper.queryOneById"/>
+<!--        <collection property="leagueGatheringGoodList" column="{commissinorId=commissinor_id,goodmanId=id}" ofType="com.wzxc.busi.vo.LeagueGatheringGood" javaType="java.util.List"-->
+<!--                    select="com.wzxc.busi.dao.LeagueGatheringGoodMapper.selectLeagueGatheringGoodListByCollection"/>-->
+    </resultMap>
+
+    <resultMap type="LeagueGoodmanRecommend" id="LeagueGoodmanRecommendResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="parent"    column="parent"    />
+        <result property="goodmanId"    column="goodman_id"    />
+        <collection property="childList" column="{goodmanId=goodman_id}" ofType="com.wzxc.busi.vo.LeagueGoodmanRecommend" javaType="java.util.List"
+                     select="com.wzxc.busi.dao.LeagueGoodmanMapper.queryRecommendList"/>
+    </resultMap>
+
+    <sql id="selectLeagueGoodmanVo">
+        select a.id, a.name, a.iphone, a.email, a.address, a.education, a.company, a.honor_level, a.honor_name, a.honor_file, a.org_position, a.picture, a.workplace, a.industry, a.updte_time, a.creater, a.gender, a.birthday, a.idcard, a.household, a.origin, a.nation, a.political_status, a.degree, a.org_title, a.org_office, a.vocation, a.social_office, a.deputy_party, a.deputy_npc, a.deputy_cppcc, a.remark, a.location, a.organization, a.position, a.campus, a.employee_code, a.is_delete, a.commissinor_id, a.goodman_id from league_goodman as a
+    </sql>
+
+    <select id="selectLeagueGoodmanList" parameterType="LeagueGoodman" resultMap="LeagueGoodmanResult">
+        <include refid="selectLeagueGoodmanVo"/>
+        <if test="commissinorName != null and commissinorName != ''">
+            inner join league_commissinor b
+            on a.commissinor_id = b.id and b.name like '%${commissinorName}%'
+        </if>
+        <where>
+            a.is_delete = 0
+            <if test="name != null  and name != ''"> and a.name = #{name}</if>
+            <if test="iphone != null  and iphone != ''"> and a.iphone = #{iphone}</if>
+            <if test="commissinorId != null  and commissinorId != ''"> and a.commissinor_id = #{commissinorId}</if>
+            <if test="goodmanId != null  and goodmanId != ''"> and a.goodman_id = #{goodmanId}</if>
+        </where>
+        order by a.create_time desc
+    </select>
+
+    <!--  查询详情  -->
+    <select id="queryOneById" resultMap="LeagueGoodmanResult">
+        <include refid="selectLeagueGoodmanVo"/>
+        where id = #{id}
+    </select>
+
+    <!--  推荐图谱  -->
+    <select id="queryRecommendList" resultMap="LeagueGoodmanRecommendResult">
+        select
+            <if test="commissinorId != null">CONCAT("commissinor_", #{commissinorId}) parent, </if>
+            <if test="goodmanId != null">CONCAT("goodman_", #{goodmanId}) parent, </if>
+            CONCAT("goodman_", id) id, name, id as goodman_id
+        from league_goodman
+        <where>
+            <if test="commissinorId != null"> and commissinor_id = #{commissinorId}</if>
+            <if test="goodmanId != null"> and goodman_id = #{goodmanId}</if>
+        </where>
+    </select>
+        
+    <insert id="insertLeagueGoodman" parameterType="LeagueGoodman" useGeneratedKeys="true" keyProperty="id">
+        insert into league_goodman
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null and name != ''">name,</if>
+            <if test="iphone != null">iphone,</if>
+            <if test="email != null">email,</if>
+            <if test="address != null">address,</if>
+            <if test="education != null">education,</if>
+            <if test="company != null">company,</if>
+            <if test="honorLevel != null">honor_level,</if>
+            <if test="honorName != null">honor_name,</if>
+            <if test="honorFile != null">honor_file,</if>
+            <if test="orgPosition != null">org_position,</if>
+            <if test="picture != null">picture,</if>
+            <if test="workplace != null">workplace,</if>
+            <if test="industry != null">industry,</if>
+            <if test="updteTime != null">updte_time,</if>
+            <if test="creater != null and creater != ''">creater,</if>
+            <if test="gender != null">gender,</if>
+            <if test="birthday != null">birthday,</if>
+            <if test="idcard != null">idcard,</if>
+            <if test="household != null">household,</if>
+            <if test="origin != null">origin,</if>
+            <if test="nation != null">nation,</if>
+            <if test="politicalStatus != null">political_status,</if>
+            <if test="degree != null">degree,</if>
+            <if test="orgTitle != null">org_title,</if>
+            <if test="orgOffice != null">org_office,</if>
+            <if test="vocation != null">vocation,</if>
+            <if test="socialOffice != null">social_office,</if>
+            <if test="deputyParty != null">deputy_party,</if>
+            <if test="deputyNpc != null">deputy_npc,</if>
+            <if test="deputyCppcc != null">deputy_cppcc,</if>
+            <if test="remark != null">remark,</if>
+            <if test="location != null">location,</if>
+            <if test="organization != null">organization,</if>
+            <if test="position != null">position,</if>
+            <if test="campus != null">campus,</if>
+            <if test="employeeCode != null">employee_code,</if>
+            <if test="isDelete != null">is_delete,</if>
+            <if test="goodmanId != null and goodmanId != ''">goodman_id,</if>
+            <if test="commissinorId != null and commissinorId != ''">commissinor_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null and name != ''">#{name},</if>
+            <if test="iphone != null">#{iphone},</if>
+            <if test="email != null">#{email},</if>
+            <if test="address != null">#{address},</if>
+            <if test="education != null">#{education},</if>
+            <if test="company != null">#{company},</if>
+            <if test="honorLevel != null">#{honorLevel},</if>
+            <if test="honorName != null">#{honorName},</if>
+            <if test="honorFile != null">#{honorFile},</if>
+            <if test="orgPosition != null">#{orgPosition},</if>
+            <if test="picture != null">#{picture},</if>
+            <if test="workplace != null">#{workplace},</if>
+            <if test="industry != null">#{industry},</if>
+            <if test="updteTime != null">#{updteTime},</if>
+            <if test="creater != null and creater != ''">#{creater},</if>
+            <if test="gender != null">#{gender},</if>
+            <if test="birthday != null">#{birthday},</if>
+            <if test="idcard != null">#{idcard},</if>
+            <if test="household != null">#{household},</if>
+            <if test="origin != null">#{origin},</if>
+            <if test="nation != null">#{nation},</if>
+            <if test="politicalStatus != null">#{politicalStatus},</if>
+            <if test="degree != null">#{degree},</if>
+            <if test="orgTitle != null">#{orgTitle},</if>
+            <if test="orgOffice != null">#{orgOffice},</if>
+            <if test="vocation != null">#{vocation},</if>
+            <if test="socialOffice != null">#{socialOffice},</if>
+            <if test="deputyParty != null">#{deputyParty},</if>
+            <if test="deputyNpc != null">#{deputyNpc},</if>
+            <if test="deputyCppcc != null">#{deputyCppcc},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="location != null">#{location},</if>
+            <if test="organization != null">#{organization},</if>
+            <if test="position != null">#{position},</if>
+            <if test="campus != null">#{campus},</if>
+            <if test="employeeCode != null">#{employeeCode},</if>
+            <if test="isDelete != null">#{isDelete},</if>
+            <if test="goodmanId != null and goodmanId != ''">#{goodmanId},</if>
+            <if test="commissinorId != null and commissinorId != ''">#{commissinorId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLeagueGoodman" parameterType="LeagueGoodman">
+        update league_goodman
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="id != null">id = #{id},</if>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="iphone != null">iphone = #{iphone},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="education != null">education = #{education},</if>
+            <if test="company != null">company = #{company},</if>
+            <if test="honorLevel != null">honor_level = #{honorLevel},</if>
+            <if test="honorName != null">honor_name = #{honorName},</if>
+            <if test="honorFile != null">honor_file = #{honorFile},</if>
+            <if test="orgPosition != null">org_position = #{orgPosition},</if>
+            <if test="picture != null">picture = #{picture},</if>
+            <if test="workplace != null">workplace = #{workplace},</if>
+            <if test="industry != null">industry = #{industry},</if>
+            <if test="updteTime != null">updte_time = #{updteTime},</if>
+            <if test="creater != null and creater != ''">creater = #{creater},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="birthday != null">birthday = #{birthday},</if>
+            <if test="idcard != null">idcard = #{idcard},</if>
+            <if test="household != null">household = #{household},</if>
+            <if test="origin != null">origin = #{origin},</if>
+            <if test="nation != null">nation = #{nation},</if>
+            <if test="politicalStatus != null">political_status = #{politicalStatus},</if>
+            <if test="degree != null">degree = #{degree},</if>
+            <if test="orgTitle != null">org_title = #{orgTitle},</if>
+            <if test="orgOffice != null">org_office = #{orgOffice},</if>
+            <if test="vocation != null">vocation = #{vocation},</if>
+            <if test="socialOffice != null">social_office = #{socialOffice},</if>
+            <if test="deputyParty != null">deputy_party = #{deputyParty},</if>
+            <if test="deputyNpc != null">deputy_npc = #{deputyNpc},</if>
+            <if test="deputyCppcc != null">deputy_cppcc = #{deputyCppcc},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="location != null">location = #{location},</if>
+            <if test="organization != null">organization = #{organization},</if>
+            <if test="position != null">position = #{position},</if>
+            <if test="campus != null">campus = #{campus},</if>
+            <if test="employeeCode != null">employee_code = #{employeeCode},</if>
+            <if test="isDelete != null">is_delete = #{isDelete},</if>
+            <if test="goodmanId != null and goodmanId != ''">goodman_id = #{goodmanId},</if>
+            <if test="commissinorId != null and commissinorId != ''">commissinor_id = #{commissinorId},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

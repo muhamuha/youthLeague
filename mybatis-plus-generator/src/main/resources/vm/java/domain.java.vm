@@ -1,11 +1,9 @@
 package ${cfg.packageName}.vo;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -32,11 +30,6 @@ public class ${cfg.voName} implements Serializable {
     @TableId(value = "${field.fieldName}", type = IdType.AUTO)
 #else
     @TableField("${field.fieldName}")
-#end
-## 判断是否是“DATE”类型
-#if(${field.dataType} == "date")
-    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
-    @DateTimeFormat(pattern="yyyy-MM-dd")
 #end
 ## 是否是逻辑删除字段
 #if("$!field.fieldName" == "deleted")

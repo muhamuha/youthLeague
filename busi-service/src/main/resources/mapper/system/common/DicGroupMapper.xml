@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.DicGroupMapper">
+    
+    <resultMap type="DicGroup" id="DicGroupResult">
+        <result property="id"    column="id"    />
+        <result property="groupName"    column="group_name"    />
+        <result property="groupType"    column="group_type"    />
+        <result property="isRegister"    column="is_register"    />
+        <result property="upperGroup"    column="upper_group"    />
+    </resultMap>
+
+    <sql id="selectDicGroupVo">
+        select id, group_name, group_type, is_register, upper_group from dic_group
+    </sql>
+
+    <select id="selectDicGroupList" parameterType="DicGroup" resultMap="DicGroupResult">
+        <include refid="selectDicGroupVo"/>
+        <where>  
+            <if test="id != null "> and id = #{id}</if>
+            <if test="groupName != null  and groupName != ''"> and group_name = #{groupName}</if>
+            <if test="groupType != null  and groupType != ''"> and group_type = #{groupType}</if>
+            <if test="isRegister != null "> and is_register = #{isRegister}</if>
+            <if test="upperGroup != null  and upperGroup != ''"> and upper_group = #{upperGroup}</if>
+        </where>
+    </select>
+        
+    <insert id="insertDicGroup" parameterType="DicGroup" useGeneratedKeys="true" keyProperty="id">
+        insert into dic_group
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="groupName != null and groupName != ''">group_name,</if>
+            <if test="groupType != null and groupType != ''">group_type,</if>
+            <if test="isRegister != null">is_register,</if>
+            <if test="upperGroup != null">upper_group,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="groupName != null and groupName != ''">#{groupName},</if>
+            <if test="groupType != null and groupType != ''">#{groupType},</if>
+            <if test="isRegister != null">#{isRegister},</if>
+            <if test="upperGroup != null">#{upperGroup},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDicGroup" parameterType="DicGroup">
+        update dic_group
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="id != null">id = #{id},</if>
+            <if test="groupName != null and groupName != ''">group_name = #{groupName},</if>
+            <if test="groupType != null and groupType != ''">group_type = #{groupType},</if>
+            <if test="isRegister != null">is_register = #{isRegister},</if>
+            <if test="upperGroup != null">upper_group = #{upperGroup},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

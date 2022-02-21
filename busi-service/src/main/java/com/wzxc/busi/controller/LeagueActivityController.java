@@ -64,7 +64,7 @@ public class LeagueActivityController extends BaseController {
         String employeeCode = JwtFilter.getUserId();
         LeagueCommissinor leagueCommissinor = leagueCommissinorService.queryOne(employeeCode);
         if(leagueCommissinor == null){
-            return BusiResult.success("查询失败：失败原因：未找到该用户");
+            return BusiResult.success("查询失败，失败原因：未找到该用户");
         }
         // 查询用户合法的报名活动列表
         startPage();
@@ -140,7 +140,7 @@ public class LeagueActivityController extends BaseController {
     @CheckParams({
             @CheckParam(value = Check.NotNull, argName = "leagueActivity.id", msg = "缺少系统主键（id）"),
             @CheckParam(value = Check.NotNull, argName = "leagueActivity.activityType", msg = "缺少活动类型（activityType）"),
-            @CheckParam(value = Check.NotNull, argName = "leagueActivity.hostman", msg = "缺少主办人id（hostman）"),
+            @CheckParam(value = Check.NotNull, argName = "leagueActivity.hostman", msg = "缺少主办人（hostman）"),
             @CheckParam(value = Check.NotNull, argName = "leagueActivity.nickname", msg = "缺少活动别名（nickname）"),
             @CheckParam(value = Check.NotNull, argName = "leagueActivity.activityBegin", msg = "缺少活动开始时间（activityBegin）"),
             @CheckParam(value = Check.NotNull, argName = "leagueActivity.address", msg = "缺少活动地点（address）"),

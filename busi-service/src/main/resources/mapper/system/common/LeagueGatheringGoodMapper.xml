@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.LeagueGatheringGoodMapper">
+    
+    <resultMap type="LeagueGatheringGood" id="LeagueGatheringGoodResult">
+        <result property="id"    column="id"    />
+        <result property="commissinorId"    column="commissinor_id"    />
+        <result property="gmId"    column="gm_id"    />
+        <result property="goodmanId"    column="goodman_id"    />
+        <result property="activityTitle"    column="activity_title"    />
+        <result property="content"    column="content"    />
+        <result property="gatherDate"    column="gather_date"    />
+        <result property="creater"    column="creater"    />
+    </resultMap>
+
+    <sql id="selectLeagueGatheringGoodVo">
+        select a.id, a.commissinor_id, a.gm_id, a.goodman_id, a.activity_title, a.content, a.creater, a.gather_date gatherDate from league_gathering_good as a
+    </sql>
+
+    <select id="selectLeagueGatheringGoodList" parameterType="LeagueGatheringGood" resultMap="LeagueGatheringGoodResult">
+        <include refid="selectLeagueGatheringGoodVo"/>
+        <where>  
+            <if test="commissinorId != null "> and a.commissinor_id = #{commissinorId}</if>
+            <if test="gmId != null "> and a.gm_id = #{gmId}</if>
+            <if test="goodmanId != null "> and a.goodman_id = #{goodmanId}</if>
+            <if test="activityTitle != null  and activityTitle != ''"> and a.activity_title like '%${activityTitle}%'</if>
+        </where>
+        order by a.create_time desc
+    </select>
+<!--    <select id="selectLeagueGatheringGoodListByCollection" parameterType="java.util.Map" resultMap="LeagueGatheringGoodResult">-->
+<!--        <include refid="selectLeagueGatheringGoodVo"/>-->
+<!--        where a.commissinor_id = #{commissinorId} and a.goodman_id = #{goodmanId}-->
+<!--        order by a.create_time desc-->
+<!--    </select>-->
+        
+    <insert id="insertLeagueGatheringGood" parameterType="LeagueGatheringGood" useGeneratedKeys="true" keyProperty="id">
+        insert into league_gathering_good
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="commissinorId != null">commissinor_id,</if>
+            <if test="goodmanId != null">goodman_id,</if>
+            <if test="gmId != null ">gm_id,</if>
+            <if test="activityTitle != null and activityTitle != ''">activity_title,</if>
+            <if test="content != null">content,</if>
+            <if test="gatherDate != null">gather_date,</if>
+            <if test="creater != null">creater,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="commissinorId != null">#{commissinorId},</if>
+            <if test="goodmanId != null">#{goodmanId},</if>
+            <if test="gmId != null ">#{gmId},</if>
+            <if test="activityTitle != null and activityTitle != ''">#{activityTitle},</if>
+            <if test="content != null">#{content},</if>
+            <if test="gatherDate != null">#{gatherDate},</if>
+            <if test="creater != null">#{creater},</if>
+         </trim>
+    </insert>
+
+    <update id="updateLeagueGatheringGood" parameterType="LeagueGatheringGood">
+        update league_gathering_good
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="activityTitle != null and activityTitle != ''">activity_title = #{activityTitle},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="gatherDate != null">gather_date = #{gatherDate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+</mapper>

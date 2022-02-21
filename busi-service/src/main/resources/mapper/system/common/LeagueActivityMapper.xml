@@ -22,10 +22,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="lat"    column="lat"    />
         <result property="lon"    column="lon"    />
         <result property="signRange"    column="sign_range"    />
+        <result property="score"    column="score"    />
     </resultMap>
 
     <sql id="selectLeagueActivityVo">
-        select activity_begin, activity_end, activity_type, address, content, hostman, id, nickname, range_industry, range_region, sign_begin, sign_end, creater, is_sign, lat, lon, sign_range from dsjkb_test.league_activity
+        select activity_begin, activity_end, activity_type, address, content, hostman, id, nickname, range_industry, range_region, sign_begin, sign_end, creater, is_sign, lat, lon, sign_range, (select score from dsjkb_test.dic_activity where id = activity_type) as score from dsjkb_test.league_activity
     </sql>
 
     <select id="selectLeagueActivityById" parameterType="Long" resultMap="LeagueActivityResult">
@@ -58,8 +59,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectLeagueActivityVo"/>
         <where>
             activity_begin >= sysdate()
-            and (find_in_set(#{commissinor.industryId}, range_industry) is not null and find_in_set(#{commissinor.industryId}, range_industry) != 0)
-            and (find_in_set(#{commissinor.location}, range_region) is not null and find_in_set(#{commissinor.location}, range_region) != 0)
+            and (range_industry is null
+                    or (find_in_set(#{commissinor.industry}, range_industry) is not null and find_in_set(#{commissinor.industry}, range_industry) != 0))
+            and (range_region is null
+                    or find_in_set(#{commissinor.location}, range_region) is not null and find_in_set(#{commissinor.location}, range_region) != 0)
             and id not in (select activity_id from dsjkb_test.league_act_register where commissinor_id = #{commissinor.id})
         </where>
         order by create_time desc

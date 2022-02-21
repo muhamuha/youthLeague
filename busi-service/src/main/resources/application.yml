@@ -30,11 +30,6 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-logging:
-  level:
-    com.wzxc.busi.dao: debug
-#    com.wzxc.mybatisplusgeneration.gen: debug
-
 swagger:
   enabled: true
   title: MUHAMUHAの接口文档

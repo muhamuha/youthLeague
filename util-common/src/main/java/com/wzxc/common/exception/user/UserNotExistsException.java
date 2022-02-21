@@ -5,17 +5,10 @@ package com.wzxc.common.exception.user;
  * 
  * @author ruoyi
  */
-public class UserNotExistsException extends UserException
-{
+public class UserNotExistsException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
-    public UserNotExistsException()
-    {
-        super("user.not.exists", null);
-    }
-
-    public UserNotExistsException(String username)
-    {
-        super("user.not.exists" + username, null);
+    public UserNotExistsException() {
+        super("用户不存在");
     }
 }

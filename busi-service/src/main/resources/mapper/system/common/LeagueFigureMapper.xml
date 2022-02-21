@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxc.busi.dao.LeagueFigureMapper">
+
+    <sql id="commissinorTotal">
+        select * from league_commissinor where is_delete = 0
+    </sql>
+
+    <!--  性别分布  -->
+    <select id="queryGender" resultType="java.util.HashMap">
+        select IFNULL(gender, '未知') gender, count(1) total
+        from (<include refid="commissinorTotal"></include>) a
+        group by a.gender
+    </select>
+
+    <!--  年龄分布  -->
+    <select id="queryAge" resultType="java.util.HashMap">
+        SELECT
+        case
+            when a.age &lt; 20 then '&lt;20'
+            when a.age &gt;=20 and a.age &lt; 30 then'20-30'
+            when a.age &gt;=30 and a.age &lt; 40 then'30-40'
+            when a.age &gt;=40 and a.age &lt;= 50 then'40-50'
+            else '未知'
+        end age, count(1) total
+        FROM
+        (
+            SELECT TIMESTAMPDIFF(YEAR, birthday, SYSDATE()) age FROM league_commissinor where is_delete = 0
+        ) a
+        group by case
+            when a.age &lt; 20 then '&lt;20'
+            when a.age &gt;=20 and a.age &lt; 30 then'20-30'
+            when a.age &gt;=30 and a.age &lt; 40 then'30-40'
+            when a.age &gt;=40 and a.age &lt;= 50 then'40-50'
+            else '未知'
+        end
+    </select>
+
+    <!--  学历分布  -->
+    <select id="queryEducation" resultType="java.util.HashMap">
+        SELECT
+        case
+            when (a.education like '%高中%' or a.education like '%中学%' or a.education like '%小学%') then '高中及以下'
+            when (a.education like '%大专%' or a.education like '%中专%') then '专科'
+            when (a.education like '%大学%' or a.education like '%本科%') then '本科'
+            when (a.education like '%研究生%' or a.education like '%硕士%') then '研究生'
+            when (a.education like '%博士%' or a.education like '%博士后%') then '博士及以上'
+            else '未知'
+        end education,
+        count(1) total
+        FROM
+        (
+            <include refid="commissinorTotal"></include>
+        ) a
+        group by
+        case
+            when (a.education like '%高中%' or a.education like '%中学%' or a.education like '%小学%') then '高中及以下'
+            when (a.education like '%大专%' or a.education like '%中专%') then '专科'
+            when (a.education like '%大学%' or a.education like '%本科%') then '本科'
+            when (a.education like '%研究生%' or a.education like '%硕士%') then '研究生'
+            when (a.education like '%博士%' or a.education like '%博士后%') then '博士及以上'
+        else '未知'
+        end
+    </select>
+
+    <!--  学位分布  -->
+    <select id="queryDegree" resultType="java.util.HashMap">
+        SELECT
+        case
+            when (a.degree like '%理学%') then '理学学士'
+            when (a.degree like '%工学%') then '工学学士'
+            when (a.degree like '%法学%') then '法学学士'
+            when (a.degree like '%艺术%') then '艺术学士'
+            when (a.degree like '%文学%') then '文学学士'
+        else '未知'
+        end degree,
+        count(1) total
+        FROM
+        (<include refid="commissinorTotal"></include>) a
+        group by
+        case
+            when (a.degree like '%理学%') then '理学学士'
+            when (a.degree like '%工学%') then '工学学士'
+            when (a.degree like '%法学%') then '法学学士'
+            when (a.degree like '%艺术%') then '艺术学士'
+            when (a.degree like '%文学%') then '文学学士'
+            else '未知'
+        end
+    </select>
+
+    <!--  籍贯分布  -->
+    <select id="queryOrigin" resultType="java.util.HashMap">
+        select IFNULL(origin, '未知') origin, count(1) total
+        from (<include refid="commissinorTotal"></include>) a
+        group by a.origin
+    </select>
+
+    <!--  民族分布  -->
+    <select id="queryNation" resultType="java.util.HashMap">
+        select IFNULL(nation, '未知') nation, count(1) total
+        from (<include refid="commissinorTotal"></include>) a
+        group by a.nation
+    </select>
+
+    <!--  政治面貌分布  -->
+    <select id="queryPoliticalStatus" resultType="java.util.HashMap">
+        select IFNULL(political_status, '未知') political_status, count(1) total
+        from (<include refid="commissinorTotal"></include>) a
+        group by a.political_status
+    </select>
+
+    <!--  界别分布  -->
+    <select id="queryIndustry" resultType="java.util.HashMap">
+        select IFNULL(industry, '未知') industry, count(1) total
+        from (<include refid="commissinorTotal"></include>) a
+        group by a.industry
+    </select>
+
+    <!--  职业分布  -->
+    <select id="queryVocation" resultType="java.util.HashMap">
+        select IFNULL(vocation, '未知') vocation, count(1) total
+        from (select * from league_commissinor where is_delete = 0) a
+        group by a.vocation
+    </select>
+
+    <!--  委员总数  -->
+    <select id="count" resultType="java.lang.Long">
+        select count(1) from (<include refid="commissinorTotal"></include>) a
+    </select>
+
+</mapper>
