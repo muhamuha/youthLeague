@@ -518,6 +518,7 @@
       <workItem from="1643518129957" duration="1647000" />
       <workItem from="1645097586024" duration="770000" />
       <workItem from="1645440654104" duration="1684000" />
+      <workItem from="1645505596766" duration="796000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1621590604868</created>
@@ -589,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645440795891</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="第二版（新增委员新增工作流）&#10;第三版（新增委员删除工作流、活动新增工作流、活动报名类接口）">
+      <created>1645505710102</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1645505710102</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
