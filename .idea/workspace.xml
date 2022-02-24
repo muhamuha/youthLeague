@@ -1,31 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b3509e38-0ee0-45d0-8861-c6654e309a99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueCommissinorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueCommissinorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueCommissinorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueCommissinorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camunda-workflow/target/classes/META-INF/camunda-workflow.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/target/classes/META-INF/util-common.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/file/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/file/FileUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/file/ImageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/file/ImageUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpsUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/util-common/target/classes/com/wzxc/common/utils/http/HttpsUtils.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="zzd" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -42,130 +53,130 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/DeleteCommissinorTask.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/config/MyDefaultDatasourceConfiguration.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueElectMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActivityMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueCommissinorMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueGatheringGoodController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/camunda/JsonUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueGatheringGood.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/DeleteCommissinor.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/java/com/wzxc/mybatisplusgenerator/gen/CodeGenContrllor.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtFilter.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueGoodmanController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/xss/XssHttpServletRequestWrapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/DicGroupServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueGatheringGoodMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/xss/XssFilter.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/zzd/JodaUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueGoodmanMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueGoodman.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueIndustry.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueIndustryController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/page/TableSupport.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/CharsetKit.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/Convert.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/web/WebConfig.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/AjaxResult.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/Ds1Config.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/controller/BaseController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueIndustryMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/json/JSONObject.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/ExceptionUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueGroupMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/IpUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueGroupServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/DateUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueGroup.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueGroupController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/PathUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddCommissinor.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/AddressUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/StringUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActivityLzMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/MapDataUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActivityLz.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/RequestIdUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActivityLzController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/sql/SqlUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActivityLzServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/ImageUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/application-gen.yml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/FileUploadUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpsUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/SSLClient.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/MD5Utils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/AESUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicUniversalController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/uuid/UUID.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/uuid/IdUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/reflect/ReflectUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/security/Base64Utils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-prod.yaml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/security/Md5Utils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/Aspect/CheckParamAop.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/config/GlobalConfig.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/constant/Constants.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/CheckUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/FilterUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueAnswerMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/Check.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/Filter.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/xml/mapper.xml.vm" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeaguePublish.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeaguePublishController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/en/IsReelect.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/DicGroupMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/BusiResult.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueGoodmanRecommend.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/exception/user/UserNotExistsException.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/DicUniversalMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueFigureServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueFigureMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/exception/MyExceptionHandler.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/BusiApplication.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActivity.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueElect.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/LeagueCommissinorMapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeaguePublishMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LoginController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueElectService.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueCommissinorServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActivityServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueElectController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-test.yml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/web/MultiRequestBodyArgumentResolver.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/utils/ConvertUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/web-service/pom.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/pom.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/test/java/com/wzxc/busi/BusiApplicationTests.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueCommissinorController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueFigureConroller.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActRegisterServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActRegister.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActRegisterController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/DicIndustryServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/identity/query/UserIdentityQuery.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActivityController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActRegisterMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/SysRegionController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueCommissinorController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeaguePublishController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueGatheringGoodController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-prod.yaml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-dev.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/identity/query/UserIdentityQuery.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicActivityController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/application-gen.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/DicIndustryServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueCommissinorServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/resources/vm/xml/mapper.xml.vm" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/mybatis-plus-generator/src/main/java/com/wzxc/mybatisplusgenerator/gen/CodeGenContrllor.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application-test.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/zzd/SynController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActRegisterServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueGroupServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/DicGroupServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueFigureServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/ILeagueElectService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/exception/user/UserNotExistsException.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActivityLzServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/dao/LeagueCommissinorMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/service/impl/LeagueActivityServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueGoodman.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueGroup.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/constant/Constants.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueGoodmanRecommend.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/config/GlobalConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueElect.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/security/Base64Utils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/Aspect/CheckParamAop.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActivity.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/reflect/ReflectUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/security/Md5Utils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActRegister.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/service/impl/CaUserServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/wrapper/MyProcessDefinition.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/wrapper/MyTask.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicGroupController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/FilterUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/CheckUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/Filter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/validate/Check.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/AESUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/utils/ConvertUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/config/MyDefaultDatasourceConfiguration.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/MD5Utils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/en/IsReelect.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/config/UserdbProcessEngineConfig.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddActivity.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/zzd/SynController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/java/com/wzxc/camunda/service/impl/CaUserServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/AddAcitivityTask.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicActivityController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/BusiApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/FileUploadUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/ExcelUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueIndustry.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/camunda/JsonUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeaguePublish.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueActivityLz.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/uuid/IdUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/SSLClient.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/vo/LeagueGatheringGood.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/uuid/UUID.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpsUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/http/HttpUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/PathUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/MapDataUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/IpUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/DateUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/file/ImageUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/zzd/JodaUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/StringUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/sql/SqlUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LoginController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueGoodmanController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/test/java/com/wzxc/busi/BusiApplicationTests.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/Busi/Ds1Config.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/json/JSONObject.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/RequestIdUtils.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/controller/BaseController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/web/MultiRequestBodyArgumentResolver.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/config/web/WebConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/DeleteCommissinorTask.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueElectMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/AddressUtils.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/AddCommissinorTask.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueFigureConroller.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueIndustryController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActivityLzController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActRegisterMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeaguePublishMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueActRegisterController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueCommissinorMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/utils/ExceptionUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/LeagueGroupController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/DicUniversalMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/exception/MyExceptionHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/DicGroupMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/page/TableSupport.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueIndustryMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddActivity.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueFigureMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/AddCommissinor.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActivityMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueGatheringGoodMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/serivce/AddAcitivityTask.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/workflow/DeleteCommissinor.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueGoodmanMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/BusiResult.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/domain/AjaxResult.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueGroupMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueActivityLzMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/Convert.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/src/main/java/com/wzxc/webservice/shiro/JwtUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/web-service/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/core/text/CharsetKit.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicUniversalController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/xss/XssHttpServletRequestWrapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/util-common/src/main/java/com/wzxc/common/xss/XssFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/camunda-workflow/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/SysRegionController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/java/com/wzxc/busi/controller/dic/DicGroupController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/busi-service/src/main/resources/mapper/system/common/LeagueAnswerMapper.xml" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -173,15 +184,15 @@
         <option name="userSettingsFile" value="C:\Maven\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProjectId" id="1nuGogwbNSfLkilaZnbqzOtOmyX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
@@ -190,6 +201,8 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -198,19 +211,19 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper" />
+      <recent name="C:\javaProject\YouthLeague-service\util-common\src\main" />
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system\ds1\" />
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system\" />
+      <recent name="C:\javaProject\MUHAMUHA-framework-server\mybatis-plus-generator\src\main\resources\mapper\" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.wzxc.szwenzhou" />
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\javaProject\YouthLeague-service\mybatis-plus-generator\src\main\resources\vm\java" />
-      <recent name="C:\javaProject\YouthLeague-service\mybatis-plus-generator\src\main\resources\vm\xml" />
-      <recent name="C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\utils\file" />
-      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system" />
-      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\camunda" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.wzxc.common.utils.zzd" />
@@ -219,25 +232,13 @@
       <recent name="com.wzxc.common.core.domain" />
       <recent name="com.wzxc.busi.controller.zzd" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper" />
-      <recent name="C:\javaProject\YouthLeague-service\util-common\src\main" />
-      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system\ds1\" />
-      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system\" />
-      <recent name="C:\javaProject\MUHAMUHA-framework-server\mybatis-plus-generator\src\main\resources\mapper\" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\javaProject\YouthLeague-service\mybatis-plus-generator\src\main\resources\vm\java" />
+      <recent name="C:\javaProject\YouthLeague-service\mybatis-plus-generator\src\main\resources\vm\xml" />
+      <recent name="C:\javaProject\YouthLeague-service\util-common\src\main\java\com\wzxc\common\utils\file" />
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\system" />
+      <recent name="C:\javaProject\YouthLeague-service\busi-service\src\main\resources\mapper\camunda" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BusiApplication">
     <configuration name="ExcelUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -519,6 +520,8 @@
       <workItem from="1645097586024" duration="770000" />
       <workItem from="1645440654104" duration="1684000" />
       <workItem from="1645505596766" duration="796000" />
+      <workItem from="1645510860187" duration="4281000" />
+      <workItem from="1645592233009" duration="11263000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1621590604868</created>
@@ -601,20 +604,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -624,6 +626,64 @@
     <MESSAGE value="第二版（新增委员新增工作流）" />
     <MESSAGE value="第二版（新增委员新增工作流）&#10;第三版（新增委员删除工作流、活动新增工作流、活动报名类接口）" />
     <option name="LAST_COMMIT_MESSAGE" value="第二版（新增委员新增工作流）&#10;第三版（新增委员删除工作流、活动新增工作流、活动报名类接口）" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1645605725926">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1645605725926" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1645666782558">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1645666782558" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1645666782558">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1645666782558" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1645666782558">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1645666782558" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1645666782558">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1645666782558" />
+    <state width="1493" height="210" key="GridCell.Tab.1.bottom" timestamp="1645666782559">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1645666782559" />
+    <state width="1493" height="210" key="GridCell.Tab.1.center" timestamp="1645666782559">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1645666782559" />
+    <state width="1493" height="210" key="GridCell.Tab.1.left" timestamp="1645666782558">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1645666782558" />
+    <state width="1493" height="210" key="GridCell.Tab.1.right" timestamp="1645666782559">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1645666782559" />
+    <state width="1493" height="209" key="GridCell.Tab.2.bottom" timestamp="1645605701392">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="209" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1645605701392" />
+    <state width="1493" height="209" key="GridCell.Tab.2.center" timestamp="1645605701392">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="209" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1645605701392" />
+    <state width="1493" height="209" key="GridCell.Tab.2.left" timestamp="1645605701392">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="209" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1645605701392" />
+    <state width="1493" height="209" key="GridCell.Tab.2.right" timestamp="1645605701392">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="209" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1645605701392" />
+    <state x="270" y="57" key="SettingsEditor" timestamp="1645592147056">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1645592147056" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

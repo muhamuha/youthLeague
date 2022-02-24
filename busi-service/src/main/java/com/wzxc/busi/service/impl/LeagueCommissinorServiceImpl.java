@@ -77,5 +77,10 @@ public class LeagueCommissinorServiceImpl extends ServiceImpl<LeagueCommissinorM
                 .eq(LeagueCommissinor::getIsDelete, 0));
     }
 
+    @Override
+    public List<LeagueCommissinor> selectByIphone(String iphone) {
+        return null;
+    }
+
 
 }
