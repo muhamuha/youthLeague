@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.security.auth.login.LoginException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -57,6 +58,41 @@ public class LoginController extends BaseController {
             // 生成系统token
             String sysToken = JwtUtil.sign(userMessage.getString("employeeCode"));
             resultMap.put("userMessage", userMessage);
+            resultMap.put("sysToken", sysToken);
+            return BusiResult.success("登录成功", resultMap);
+        }
+        return BusiResult.error("登录失败，失败原因：未找到该用户", resultMap);
+    }
+
+    @ApiOperation(value = "浙里办登录", notes = "浙里办登录", httpMethod = "GET")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "iphone", value = "手机号码", required = true, paramType = "query", dataType="string"),
+            @ApiImplicitParam(name = "idcard", value = "身份证", required = false, paramType = "query", dataType="string")
+    })
+    @ApiResponses({
+            @ApiResponse(code = 13000, message = "OK"),
+            @ApiResponse(code = 13500, message = "ERROR")
+    })
+    @RequestMapping(value = "/zheliban",method = RequestMethod.GET)
+    public BusiResult zheLiBanLogin(@RequestParam(value = "iphone") String iphone,
+                                    @RequestParam(value = "idcard",required = false) String idcard) {
+
+        Map<String, Object> resultMap = new HashMap<>();
+        LeagueCommissinor commissinor = new LeagueCommissinor();
+        if ("".equals(idcard)||idcard==null){
+            commissinor = leagueCommissinorService.getOne(Wrappers.<LeagueCommissinor>lambdaQuery()
+                    .like(LeagueCommissinor::getIphone, iphone)
+                    .eq(LeagueCommissinor::getIsDelete, 0));
+        }else {
+            commissinor = leagueCommissinorService.getOne(Wrappers.<LeagueCommissinor>lambdaQuery()
+                    .like(LeagueCommissinor::getIphone, iphone)
+                    .eq(LeagueCommissinor::getIdcard, idcard)
+                    .eq(LeagueCommissinor::getIsDelete, 0));
+        }
+        if(commissinor!=null){
+            // 生成系统token
+            String sysToken = JwtUtil.sign(commissinor.toString());
+            resultMap.put("commissinor", commissinor);
             resultMap.put("sysToken", sysToken);
             return BusiResult.success("登录成功", resultMap);
         }

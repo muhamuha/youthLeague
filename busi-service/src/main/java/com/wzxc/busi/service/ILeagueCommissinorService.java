@@ -25,4 +25,6 @@ public interface ILeagueCommissinorService extends IService<LeagueCommissinor> {
     boolean removeLogic(String employeeCode);
 
     LeagueCommissinor queryOne(String employeeCode);
+
+    List<LeagueCommissinor> selectByIphone(String iphone);
 }
